@@ -149,7 +149,7 @@
             
         </Grid>
         <Border
-        	Grid.Column="0" Margin="0,651,-2,0" Background="#FFD3D1D1" />
+        	Grid.Column="0" Margin="-2,651,0,0" Background="#FFD3D1D1" />
 
 
         <StackPanel
