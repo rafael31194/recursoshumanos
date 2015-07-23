@@ -1,0 +1,1736 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HelpDesk.RecursosHumanos.BEL.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.CertificacionesE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.#ctor(HelpDesk.RecursosHumanos.BEL.CertificacionesE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.Constructor">
+            <summary>Establecer el shim de CertificacionesE.CertificacionesE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.ConstructorInt32Int32StringStringInt32">
+            <summary>Establecer el shim de CertificacionesE.CertificacionesE(Int32 pId_certificaciones, Int32 Pid_candidato, String pNombre, String pInstitucion, Int32 pAnio)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.anioGet">
+            <summary>Establecer el shim de CertificacionesE.get_anio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.anioSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_anio(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.id_candidatoGet">
+            <summary>Establecer el shim de CertificacionesE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.id_candidatoSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.id_certificacionesGet">
+            <summary>Establecer el shim de CertificacionesE.get_id_certificaciones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.id_certificacionesSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_id_certificaciones(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.institucionGet">
+            <summary>Establecer el shim de CertificacionesE.get_institucion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.institucionSetString">
+            <summary>Establecer el shim de CertificacionesE.set_institucion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.nombreGet">
+            <summary>Establecer el shim de CertificacionesE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.nombreSetString">
+            <summary>Establecer el shim de CertificacionesE.set_nombre(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.anioGet">
+            <summary>Establecer el shim de CertificacionesE.get_anio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.anioSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_anio(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.id_candidatoGet">
+            <summary>Establecer el shim de CertificacionesE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.id_candidatoSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.id_certificacionesGet">
+            <summary>Establecer el shim de CertificacionesE.get_id_certificaciones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.id_certificacionesSetInt32">
+            <summary>Establecer el shim de CertificacionesE.set_id_certificaciones(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.institucionGet">
+            <summary>Establecer el shim de CertificacionesE.get_institucion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.institucionSetString">
+            <summary>Establecer el shim de CertificacionesE.set_institucion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.nombreGet">
+            <summary>Establecer el shim de CertificacionesE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimCertificacionesE.AllInstances.nombreSetString">
+            <summary>Establecer el shim de CertificacionesE.set_nombre(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.DepartamentoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.#ctor(HelpDesk.RecursosHumanos.BEL.DepartamentoE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.Constructor">
+            <summary>Establecer el shim de DepartamentoE.DepartamentoE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.ConstructorInt32String">
+            <summary>Establecer el shim de DepartamentoE.DepartamentoE(Int32 pId_departamento, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.descripcionGet">
+            <summary>Establecer el shim de DepartamentoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.descripcionSetString">
+            <summary>Establecer el shim de DepartamentoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.id_departamentoGet">
+            <summary>Establecer el shim de DepartamentoE.get_id_departamento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.id_departamentoSetInt32">
+            <summary>Establecer el shim de DepartamentoE.set_id_departamento(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de DepartamentoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de DepartamentoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.AllInstances.id_departamentoGet">
+            <summary>Establecer el shim de DepartamentoE.get_id_departamento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimDepartamentoE.AllInstances.id_departamentoSetInt32">
+            <summary>Establecer el shim de DepartamentoE.set_id_departamento(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.ExpLaboralE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.#ctor(HelpDesk.RecursosHumanos.BEL.ExpLaboralE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.Constructor">
+            <summary>Establecer el shim de ExpLaboralE.ExpLaboralE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.ConstructorInt32Int32StringStringStringStringString">
+            <summary>Establecer el shim de ExpLaboralE.ExpLaboralE(Int32 pId_expericiaLaboral, Int32 pId_candidato, String pnombreEmpresa, String pcargoDesp, String pdescripPuesto, String pFechaInicio, String pFechaFin)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.cargoDespGet">
+            <summary>Establecer el shim de ExpLaboralE.get_cargoDesp()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.cargoDespSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_cargoDesp(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.descripPuestoGet">
+            <summary>Establecer el shim de ExpLaboralE.get_descripPuesto()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.descripPuestoSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_descripPuesto(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.fechaFinGet">
+            <summary>Establecer el shim de ExpLaboralE.get_fechaFin()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.fechaFinSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_fechaFin(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.fechaInicioGet">
+            <summary>Establecer el shim de ExpLaboralE.get_fechaInicio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.fechaInicioSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_fechaInicio(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.id_candidatoGet">
+            <summary>Establecer el shim de ExpLaboralE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.id_candidatoSetInt32">
+            <summary>Establecer el shim de ExpLaboralE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.id_experienciaLaboralGet">
+            <summary>Establecer el shim de ExpLaboralE.get_id_experienciaLaboral()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.id_experienciaLaboralSetInt32">
+            <summary>Establecer el shim de ExpLaboralE.set_id_experienciaLaboral(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.nombreEmpresaGet">
+            <summary>Establecer el shim de ExpLaboralE.get_nombreEmpresa()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.nombreEmpresaSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_nombreEmpresa(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.cargoDespGet">
+            <summary>Establecer el shim de ExpLaboralE.get_cargoDesp()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.cargoDespSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_cargoDesp(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.descripPuestoGet">
+            <summary>Establecer el shim de ExpLaboralE.get_descripPuesto()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.descripPuestoSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_descripPuesto(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.fechaFinGet">
+            <summary>Establecer el shim de ExpLaboralE.get_fechaFin()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.fechaFinSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_fechaFin(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.fechaInicioGet">
+            <summary>Establecer el shim de ExpLaboralE.get_fechaInicio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.fechaInicioSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_fechaInicio(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.id_candidatoGet">
+            <summary>Establecer el shim de ExpLaboralE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.id_candidatoSetInt32">
+            <summary>Establecer el shim de ExpLaboralE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.id_experienciaLaboralGet">
+            <summary>Establecer el shim de ExpLaboralE.get_id_experienciaLaboral()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.id_experienciaLaboralSetInt32">
+            <summary>Establecer el shim de ExpLaboralE.set_id_experienciaLaboral(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.nombreEmpresaGet">
+            <summary>Establecer el shim de ExpLaboralE.get_nombreEmpresa()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimExpLaboralE.AllInstances.nombreEmpresaSetString">
+            <summary>Establecer el shim de ExpLaboralE.set_nombreEmpresa(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.GeneroE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.#ctor(HelpDesk.RecursosHumanos.BEL.GeneroE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.Constructor">
+            <summary>Establecer el shim de GeneroE.GeneroE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.ConstructorInt32String">
+            <summary>Establecer el shim de GeneroE.GeneroE(Int32 pId_genero, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.descripcionGet">
+            <summary>Establecer el shim de GeneroE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.descripcionSetString">
+            <summary>Establecer el shim de GeneroE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.id_generoGet">
+            <summary>Establecer el shim de GeneroE.get_id_genero()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.id_generoSetInt32">
+            <summary>Establecer el shim de GeneroE.set_id_genero(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de GeneroE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de GeneroE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.AllInstances.id_generoGet">
+            <summary>Establecer el shim de GeneroE.get_id_genero()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimGeneroE.AllInstances.id_generoSetInt32">
+            <summary>Establecer el shim de GeneroE.set_id_genero(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.HabAplicacion</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.#ctor(HelpDesk.RecursosHumanos.BEL.HabAplicacion)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.Constructor">
+            <summary>Establecer el shim de HabAplicacion.HabAplicacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.ConstructorInt32StringInt32">
+            <summary>Establecer el shim de HabAplicacion.HabAplicacion(Int32 pId_habilidadAplicacion, String pDescripcion, Int32 pId_habilidad)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.descripcionGet">
+            <summary>Establecer el shim de HabAplicacion.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.descripcionSetString">
+            <summary>Establecer el shim de HabAplicacion.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.id_habilidadAplicacionGet">
+            <summary>Establecer el shim de HabAplicacion.get_id_habilidadAplicacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.id_habilidadAplicacionSetInt32">
+            <summary>Establecer el shim de HabAplicacion.set_id_habilidadAplicacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.id_habilidadGet">
+            <summary>Establecer el shim de HabAplicacion.get_id_habilidad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.id_habilidadSetInt32">
+            <summary>Establecer el shim de HabAplicacion.set_id_habilidad(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.descripcionGet">
+            <summary>Establecer el shim de HabAplicacion.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de HabAplicacion.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.id_habilidadAplicacionGet">
+            <summary>Establecer el shim de HabAplicacion.get_id_habilidadAplicacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.id_habilidadAplicacionSetInt32">
+            <summary>Establecer el shim de HabAplicacion.set_id_habilidadAplicacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.id_habilidadGet">
+            <summary>Establecer el shim de HabAplicacion.get_id_habilidad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabAplicacion.AllInstances.id_habilidadSetInt32">
+            <summary>Establecer el shim de HabAplicacion.set_id_habilidad(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.HabCandidatoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.#ctor(HelpDesk.RecursosHumanos.BEL.HabCandidatoE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.Constructor">
+            <summary>Establecer el shim de HabCandidatoE.HabCandidatoE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.ConstructorInt32Int32Int32Int32Int32">
+            <summary>Establecer el shim de HabCandidatoE.HabCandidatoE(Int32 pId_habilidadCandidato, Int32 pId_candidato, Int32 pIdhabilidadTecnica, Int32 pId_nivel, Int32 pId_habilidadAplicacion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_candidatoGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_candidatoSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_habilidadAplicacionGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_habilidadAplicacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_habilidadAplicacionSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_habilidadAplicacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_habilidadCandidatoGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_habilidadCandidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_habilidadCandidatoSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_habilidadCandidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_nivelGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_nivel()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.id_nivelSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_nivel(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.idhabilidadTecnicaGet">
+            <summary>Establecer el shim de HabCandidatoE.get_idhabilidadTecnica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.idhabilidadTecnicaSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_idhabilidadTecnica(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_candidatoGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_candidatoSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_habilidadAplicacionGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_habilidadAplicacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_habilidadAplicacionSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_habilidadAplicacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_habilidadCandidatoGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_habilidadCandidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_habilidadCandidatoSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_habilidadCandidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_nivelGet">
+            <summary>Establecer el shim de HabCandidatoE.get_id_nivel()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.id_nivelSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_id_nivel(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.idhabilidadTecnicaGet">
+            <summary>Establecer el shim de HabCandidatoE.get_idhabilidadTecnica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabCandidatoE.AllInstances.idhabilidadTecnicaSetInt32">
+            <summary>Establecer el shim de HabCandidatoE.set_idhabilidadTecnica(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.HabilidadTecnicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.#ctor(HelpDesk.RecursosHumanos.BEL.HabilidadTecnicaE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.Constructor">
+            <summary>Establecer el shim de HabilidadTecnicaE.HabilidadTecnicaE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.ConstructorInt32String">
+            <summary>Establecer el shim de HabilidadTecnicaE.HabilidadTecnicaE(Int32 pId_habilidadTecnica, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.descripcionGet">
+            <summary>Establecer el shim de HabilidadTecnicaE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.descripcionSetString">
+            <summary>Establecer el shim de HabilidadTecnicaE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.id_habilidadTecnicaGet">
+            <summary>Establecer el shim de HabilidadTecnicaE.get_id_habilidadTecnica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.id_habilidadTecnicaSetInt32">
+            <summary>Establecer el shim de HabilidadTecnicaE.set_id_habilidadTecnica(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de HabilidadTecnicaE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de HabilidadTecnicaE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.AllInstances.id_habilidadTecnicaGet">
+            <summary>Establecer el shim de HabilidadTecnicaE.get_id_habilidadTecnica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimHabilidadTecnicaE.AllInstances.id_habilidadTecnicaSetInt32">
+            <summary>Establecer el shim de HabilidadTecnicaE.set_id_habilidadTecnica(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.InfoBasicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.#ctor(HelpDesk.RecursosHumanos.BEL.InfoBasicaE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AFPGet">
+            <summary>Establecer el shim de InfoBasicaE.get_AFP()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AFPSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_AFP(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.CODIGOGet">
+            <summary>Establecer el shim de InfoBasicaE.get_CODIGO()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.CODIGOSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_CODIGO(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.Constructor">
+            <summary>Establecer el shim de InfoBasicaE.InfoBasicaE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.ConstructorInt32StringStringInt32StringStringInt32StringDateTimeInt32StringStringStringStringStringInt32Int32">
+            <summary>Establecer el shim de InfoBasicaE.InfoBasicaE(Int32 pId_candidato, String pNombre, String pNacionalidad, Int32 pId_genero, String pTelefono_celular, String pTelefono_fijo, Int32 pProfesiones, String pCorreo, DateTime pFecha_nacimiento, Int32 pId_municipio, String pDireccion, String pDUI, String pNIT, String pAFP, String PISSS, Int32 pId_situacionProfesional, Int32 PEdad)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.DUIGet">
+            <summary>Establecer el shim de InfoBasicaE.get_DUI()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.DUISetString">
+            <summary>Establecer el shim de InfoBasicaE.set_DUI(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.ISSSGet">
+            <summary>Establecer el shim de InfoBasicaE.get_ISSS()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.ISSSSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_ISSS(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.NITGet">
+            <summary>Establecer el shim de InfoBasicaE.get_NIT()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.NITSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_NIT(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.correoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_correo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.correoSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_correo(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.direccionGet">
+            <summary>Establecer el shim de InfoBasicaE.get_direccion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.direccionSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_direccion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.edadGet">
+            <summary>Establecer el shim de InfoBasicaE.get_edad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.edadSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_edad(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.fecha_nacimientoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_fecha_nacimiento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.fecha_nacimientoSetDateTime">
+            <summary>Establecer el shim de InfoBasicaE.set_fecha_nacimiento(DateTime value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_candidatoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_candidatoSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_generoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_genero()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_generoSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_genero(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_municipioGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_municipio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_municipioSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_municipio(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_profesionesGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_profesiones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_profesionesSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_profesiones(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_situacionProfesionalGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_situacionProfesional()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.id_situacionProfesionalSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_situacionProfesional(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.nacionalidadGet">
+            <summary>Establecer el shim de InfoBasicaE.get_nacionalidad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.nacionalidadSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_nacionalidad(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.nombreGet">
+            <summary>Establecer el shim de InfoBasicaE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.nombreSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_nombre(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.telefono_celularGet">
+            <summary>Establecer el shim de InfoBasicaE.get_telefono_celular()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.telefono_celularSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_telefono_celular(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.telefono_fijoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_telefono_fijo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.telefono_fijoSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_telefono_fijo(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.AFPGet">
+            <summary>Establecer el shim de InfoBasicaE.get_AFP()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.AFPSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_AFP(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.CODIGOGet">
+            <summary>Establecer el shim de InfoBasicaE.get_CODIGO()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.CODIGOSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_CODIGO(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.DUIGet">
+            <summary>Establecer el shim de InfoBasicaE.get_DUI()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.DUISetString">
+            <summary>Establecer el shim de InfoBasicaE.set_DUI(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.ISSSGet">
+            <summary>Establecer el shim de InfoBasicaE.get_ISSS()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.ISSSSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_ISSS(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.NITGet">
+            <summary>Establecer el shim de InfoBasicaE.get_NIT()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.NITSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_NIT(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.correoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_correo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.correoSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_correo(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.direccionGet">
+            <summary>Establecer el shim de InfoBasicaE.get_direccion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.direccionSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_direccion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.edadGet">
+            <summary>Establecer el shim de InfoBasicaE.get_edad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.edadSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_edad(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.fecha_nacimientoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_fecha_nacimiento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.fecha_nacimientoSetDateTime">
+            <summary>Establecer el shim de InfoBasicaE.set_fecha_nacimiento(DateTime value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_candidatoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_candidatoSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_generoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_genero()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_generoSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_genero(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_municipioGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_municipio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_municipioSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_municipio(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_profesionesGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_profesiones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_profesionesSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_profesiones(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_situacionProfesionalGet">
+            <summary>Establecer el shim de InfoBasicaE.get_id_situacionProfesional()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.id_situacionProfesionalSetInt32">
+            <summary>Establecer el shim de InfoBasicaE.set_id_situacionProfesional(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.nacionalidadGet">
+            <summary>Establecer el shim de InfoBasicaE.get_nacionalidad()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.nacionalidadSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_nacionalidad(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.nombreGet">
+            <summary>Establecer el shim de InfoBasicaE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.nombreSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_nombre(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.telefono_celularGet">
+            <summary>Establecer el shim de InfoBasicaE.get_telefono_celular()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.telefono_celularSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_telefono_celular(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.telefono_fijoGet">
+            <summary>Establecer el shim de InfoBasicaE.get_telefono_fijo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInfoBasicaE.AllInstances.telefono_fijoSetString">
+            <summary>Establecer el shim de InfoBasicaE.set_telefono_fijo(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.InformacionAcademicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.#ctor(HelpDesk.RecursosHumanos.BEL.InformacionAcademicaE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.Constructor">
+            <summary>Establecer el shim de InformacionAcademicaE.InformacionAcademicaE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.ConstructorInt32StringStringInt32Int32Int32Int32">
+            <summary>Establecer el shim de InformacionAcademicaE.InformacionAcademicaE(Int32 pId_informacionAcademica, String pTitulo, String PInstitucion, Int32 pAnio_de_finalizacion, Int32 pId_statusAcademico, Int32 pId_tipoEducacion, Int32 pCandidato)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.anio_de_finalizacionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_anio_de_finalizacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.anio_de_finalizacionSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_anio_de_finalizacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.candidatoGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.candidatoSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_informacionAcademicaGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_informacionAcademica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_informacionAcademicaSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_informacionAcademica(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_statusAcademicoGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_statusAcademico()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_statusAcademicoSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_statusAcademico(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_tipoEducacionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_tipoEducacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.id_tipoEducacionSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_tipoEducacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.institucionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_institucion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.institucionSetString">
+            <summary>Establecer el shim de InformacionAcademicaE.set_institucion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.tituloGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_titulo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.tituloSetString">
+            <summary>Establecer el shim de InformacionAcademicaE.set_titulo(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.anio_de_finalizacionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_anio_de_finalizacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.anio_de_finalizacionSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_anio_de_finalizacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.candidatoGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_candidato()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.candidatoSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_candidato(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_informacionAcademicaGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_informacionAcademica()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_informacionAcademicaSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_informacionAcademica(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_statusAcademicoGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_statusAcademico()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_statusAcademicoSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_statusAcademico(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_tipoEducacionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_id_tipoEducacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.id_tipoEducacionSetInt32">
+            <summary>Establecer el shim de InformacionAcademicaE.set_id_tipoEducacion(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.institucionGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_institucion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.institucionSetString">
+            <summary>Establecer el shim de InformacionAcademicaE.set_institucion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.tituloGet">
+            <summary>Establecer el shim de InformacionAcademicaE.get_titulo()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimInformacionAcademicaE.AllInstances.tituloSetString">
+            <summary>Establecer el shim de InformacionAcademicaE.set_titulo(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.MunicipoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.#ctor(HelpDesk.RecursosHumanos.BEL.MunicipoE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.Constructor">
+            <summary>Establecer el shim de MunicipoE.MunicipoE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.ConstructorInt32StringInt32">
+            <summary>Establecer el shim de MunicipoE.MunicipoE(Int32 pId_municipio, String pDescripcion, Int32 pId_departamento)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.descripcionGet">
+            <summary>Establecer el shim de MunicipoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.descripcionSetString">
+            <summary>Establecer el shim de MunicipoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.id_departamentoGet">
+            <summary>Establecer el shim de MunicipoE.get_id_departamento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.id_departamentoSetInt32">
+            <summary>Establecer el shim de MunicipoE.set_id_departamento(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.id_municipioGet">
+            <summary>Establecer el shim de MunicipoE.get_id_municipio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.id_municipioSetInt32">
+            <summary>Establecer el shim de MunicipoE.set_id_municipio(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de MunicipoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de MunicipoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.id_departamentoGet">
+            <summary>Establecer el shim de MunicipoE.get_id_departamento()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.id_departamentoSetInt32">
+            <summary>Establecer el shim de MunicipoE.set_id_departamento(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.id_municipioGet">
+            <summary>Establecer el shim de MunicipoE.get_id_municipio()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimMunicipoE.AllInstances.id_municipioSetInt32">
+            <summary>Establecer el shim de MunicipoE.set_id_municipio(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.NivelE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.#ctor(HelpDesk.RecursosHumanos.BEL.NivelE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.Constructor">
+            <summary>Establecer el shim de NivelE.NivelE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.ConstructorInt32String">
+            <summary>Establecer el shim de NivelE.NivelE(Int32 pId_nivel, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.descripcionGet">
+            <summary>Establecer el shim de NivelE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.descripcionSetString">
+            <summary>Establecer el shim de NivelE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.id_nivelGet">
+            <summary>Establecer el shim de NivelE.get_id_nivel()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.id_nivelSetInt32">
+            <summary>Establecer el shim de NivelE.set_id_nivel(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de NivelE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de NivelE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.AllInstances.id_nivelGet">
+            <summary>Establecer el shim de NivelE.get_id_nivel()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimNivelE.AllInstances.id_nivelSetInt32">
+            <summary>Establecer el shim de NivelE.set_id_nivel(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.ProfesionesE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.#ctor(HelpDesk.RecursosHumanos.BEL.ProfesionesE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.Constructor">
+            <summary>Establecer el shim de ProfesionesE.ProfesionesE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.ConstructorInt32String">
+            <summary>Establecer el shim de ProfesionesE.ProfesionesE(Int32 pId_profesion, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.descripcionGet">
+            <summary>Establecer el shim de ProfesionesE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.descripcionSetString">
+            <summary>Establecer el shim de ProfesionesE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.id_profesionesGet">
+            <summary>Establecer el shim de ProfesionesE.get_id_profesiones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.id_profesionesSetInt32">
+            <summary>Establecer el shim de ProfesionesE.set_id_profesiones(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de ProfesionesE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de ProfesionesE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.AllInstances.id_profesionesGet">
+            <summary>Establecer el shim de ProfesionesE.get_id_profesiones()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimProfesionesE.AllInstances.id_profesionesSetInt32">
+            <summary>Establecer el shim de ProfesionesE.set_id_profesiones(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.RefecenciasE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.#ctor(HelpDesk.RecursosHumanos.BEL.RefecenciasE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.Constructor">
+            <summary>Establecer el shim de RefecenciasE.RefecenciasE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.ConstructorInt32Int32StringStringString">
+            <summary>Establecer el shim de RefecenciasE.RefecenciasE(Int32 pId_referencia, Int32 pId_tipoReferencia, String pNombre, String pTelefono, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.descripcionGet">
+            <summary>Establecer el shim de RefecenciasE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.descripcionSetString">
+            <summary>Establecer el shim de RefecenciasE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.id_referenciasGet">
+            <summary>Establecer el shim de RefecenciasE.get_id_referencias()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.id_referenciasSetInt32">
+            <summary>Establecer el shim de RefecenciasE.set_id_referencias(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.id_tipoReferenciasGet">
+            <summary>Establecer el shim de RefecenciasE.get_id_tipoReferencias()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.id_tipoReferenciasSetInt32">
+            <summary>Establecer el shim de RefecenciasE.set_id_tipoReferencias(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.nombreGet">
+            <summary>Establecer el shim de RefecenciasE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.nombreSetString">
+            <summary>Establecer el shim de RefecenciasE.set_nombre(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.telefonoGet">
+            <summary>Establecer el shim de RefecenciasE.get_telefono()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.telefonoSetString">
+            <summary>Establecer el shim de RefecenciasE.set_telefono(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de RefecenciasE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de RefecenciasE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.id_referenciasGet">
+            <summary>Establecer el shim de RefecenciasE.get_id_referencias()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.id_referenciasSetInt32">
+            <summary>Establecer el shim de RefecenciasE.set_id_referencias(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.id_tipoReferenciasGet">
+            <summary>Establecer el shim de RefecenciasE.get_id_tipoReferencias()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.id_tipoReferenciasSetInt32">
+            <summary>Establecer el shim de RefecenciasE.set_id_tipoReferencias(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.nombreGet">
+            <summary>Establecer el shim de RefecenciasE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.nombreSetString">
+            <summary>Establecer el shim de RefecenciasE.set_nombre(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.telefonoGet">
+            <summary>Establecer el shim de RefecenciasE.get_telefono()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.telefonoSetString">
+            <summary>Establecer el shim de RefecenciasE.set_telefono(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.SituacionProfesionalE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.#ctor(HelpDesk.RecursosHumanos.BEL.SituacionProfesionalE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.Constructor">
+            <summary>Establecer el shim de SituacionProfesionalE.SituacionProfesionalE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.ConstructorInt32String">
+            <summary>Establecer el shim de SituacionProfesionalE.SituacionProfesionalE(Int32 pId_situacionProfesional, String Pdescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.descripcionGet">
+            <summary>Establecer el shim de SituacionProfesionalE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.descripcionSetString">
+            <summary>Establecer el shim de SituacionProfesionalE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.id_SituacionProfesionalGet">
+            <summary>Establecer el shim de SituacionProfesionalE.get_id_SituacionProfesional()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.id_SituacionProfesionalSetInt32">
+            <summary>Establecer el shim de SituacionProfesionalE.set_id_SituacionProfesional(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de SituacionProfesionalE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de SituacionProfesionalE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.AllInstances.id_SituacionProfesionalGet">
+            <summary>Establecer el shim de SituacionProfesionalE.get_id_SituacionProfesional()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE.AllInstances.id_SituacionProfesionalSetInt32">
+            <summary>Establecer el shim de SituacionProfesionalE.set_id_SituacionProfesional(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.StatusAcademicoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.#ctor(HelpDesk.RecursosHumanos.BEL.StatusAcademicoE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.Constructor">
+            <summary>Establecer el shim de StatusAcademicoE.StatusAcademicoE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.ConstructorInt32String">
+            <summary>Establecer el shim de StatusAcademicoE.StatusAcademicoE(Int32 pId_statusAcademico, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.descripcionGet">
+            <summary>Establecer el shim de StatusAcademicoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.descripcionSetString">
+            <summary>Establecer el shim de StatusAcademicoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.id_statusAcademicoGet">
+            <summary>Establecer el shim de StatusAcademicoE.get_id_statusAcademico()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.id_statusAcademicoSetInt32">
+            <summary>Establecer el shim de StatusAcademicoE.set_id_statusAcademico(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de StatusAcademicoE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de StatusAcademicoE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.AllInstances.id_statusAcademicoGet">
+            <summary>Establecer el shim de StatusAcademicoE.get_id_statusAcademico()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimStatusAcademicoE.AllInstances.id_statusAcademicoSetInt32">
+            <summary>Establecer el shim de StatusAcademicoE.set_id_statusAcademico(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.TipoEducacionE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.#ctor(HelpDesk.RecursosHumanos.BEL.TipoEducacionE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.Constructor">
+            <summary>Establecer el shim de TipoEducacionE.TipoEducacionE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.ConstructorInt32String">
+            <summary>Establecer el shim de TipoEducacionE.TipoEducacionE(Int32 pId_tipoEducacion, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.descripcionGet">
+            <summary>Establecer el shim de TipoEducacionE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.descripcionSetString">
+            <summary>Establecer el shim de TipoEducacionE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.id_tipoEducacionGet">
+            <summary>Establecer el shim de TipoEducacionE.get_id_tipoEducacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.id_tipoEducacionSetInt32">
+            <summary>Establecer el shim de TipoEducacionE.set_id_tipoEducacion(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de TipoEducacionE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de TipoEducacionE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.AllInstances.id_tipoEducacionGet">
+            <summary>Establecer el shim de TipoEducacionE.get_id_tipoEducacion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoEducacionE.AllInstances.id_tipoEducacionSetInt32">
+            <summary>Establecer el shim de TipoEducacionE.set_id_tipoEducacion(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.TipoReferenciaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.#ctor(HelpDesk.RecursosHumanos.BEL.TipoReferenciaE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.Constructor">
+            <summary>Establecer el shim de TipoReferenciaE.TipoReferenciaE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.ConstructorInt32String">
+            <summary>Establecer el shim de TipoReferenciaE.TipoReferenciaE(Int32 pId_tipoReferencias, String pDescripcion)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimTipoReferenciaE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.usuariosE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.#ctor(HelpDesk.RecursosHumanos.BEL.usuariosE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.Constructor">
+            <summary>Establecer el shim de usuariosE.usuariosE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.ConstructorInt32StringString">
+            <summary>Establecer el shim de usuariosE.usuariosE(Int32 pId_usuario, String pNombre, String pContrasena)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.contrasenaGet">
+            <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.contrasenaSetString">
+            <summary>Establecer el shim de usuariosE.set_contrasena(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_usuarioGet">
+            <summary>Establecer el shim de usuariosE.get_id_usuario()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_usuarioSetInt32">
+            <summary>Establecer el shim de usuariosE.set_id_usuario(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nombreGet">
+            <summary>Establecer el shim de usuariosE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nombreSetString">
+            <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.contrasenaGet">
+            <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.contrasenaSetString">
+            <summary>Establecer el shim de usuariosE.set_contrasena(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_usuarioGet">
+            <summary>Establecer el shim de usuariosE.get_id_usuario()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_usuarioSetInt32">
+            <summary>Establecer el shim de usuariosE.set_id_usuario(Int32 value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nombreGet">
+            <summary>Establecer el shim de usuariosE.get_nombre()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nombreSetString">
+            <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.CertificacionesE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.#ctor(System.Int32,System.Int32,System.String,System.String,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubCertificacionesE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.DepartamentoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubDepartamentoE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubDepartamentoE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.ExpLaboralE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.#ctor(System.Int32,System.Int32,System.String,System.String,System.String,System.String,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubExpLaboralE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubExpLaboralE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.GeneroE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubGeneroE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubGeneroE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.HabAplicacion</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubHabAplicacion</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabAplicacion.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.HabCandidatoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubHabCandidatoE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabCandidatoE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.HabilidadTecnicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubHabilidadTecnicaE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubHabilidadTecnicaE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.InfoBasicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.#ctor(System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.Int32,System.String,System.DateTime,System.Int32,System.String,System.String,System.String,System.String,System.String,System.Int32,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubInfoBasicaE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInfoBasicaE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.InformacionAcademicaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.#ctor(System.Int32,System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubInformacionAcademicaE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubInformacionAcademicaE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.MunicipoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.#ctor(System.Int32,System.String,System.Int32)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubMunicipoE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubMunicipoE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.NivelE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubNivelE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubNivelE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.ProfesionesE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubProfesionesE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubProfesionesE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.RefecenciasE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.#ctor(System.Int32,System.Int32,System.String,System.String,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubRefecenciasE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.SituacionProfesionalE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubSituacionProfesionalE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.StatusAcademicoE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubStatusAcademicoE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubStatusAcademicoE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.TipoEducacionE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubTipoEducacionE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoEducacionE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.TipoReferenciaE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubTipoReferenciaE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubTipoReferenciaE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.usuariosE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor(System.Int32,System.String,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubusuariosE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
+    </members>
+</doc>
