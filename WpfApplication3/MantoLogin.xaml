@@ -41,8 +41,8 @@
                             </BulletDecorator>
                         </Expander.Header>
                         <WrapPanel>
-                            <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Candiato"/>
-                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Perfil Canidato"/>
+                            <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Candiato" MouseDown="Label_MouseDown"/>
+                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Perfil Canidato" MouseDown="lab_menuCreacionPerf_MouseDown"/>
                         </WrapPanel>
                     </Expander>
                     <Expander Background="#CC119EDA" Margin="0,76,0,-54" HorizontalAlignment="Left" Width="200">
@@ -51,11 +51,16 @@
                                 <TextBlock Margin="10,0,0,0" Text="Configuraciones" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" FontSize="14" Height="38" FontWeight="Bold" Width="142" />
                             </BulletDecorator>
                         </Expander.Header>
-                        <WrapPanel Height="44">
+                        <WrapPanel Height="105">
 
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                            <Label Margin="35,5,5,5" Foreground="white" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
+                            <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
+                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles" RenderTransformOrigin="0.824,0.348" Width="88"/>
+                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
+
+
+
                         </WrapPanel>
                     </Expander>
 
@@ -83,11 +88,11 @@
 
                 </DataGrid.Columns>
             </DataGrid>
-            <Button x:Name="btn_CrearCandidato" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="229,111,0,0" VerticalAlignment="Top" Width="257" Height="40">
+            <Button x:Name="btn_nuevoUsuario" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="229,111,0,0" VerticalAlignment="Top" Width="257" Height="40" MouseDown="btn_nuevoUsuario_MouseDown_1">
                 <Border BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="15">
                     <DockPanel>
                         <Image Source="Imagenes/New_candidato.png" Width="35" RenderTransformOrigin="0.506,-0.758" />
-                        <TextBlock Height="27"  Width="158" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.665,-0.091" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="NUEVO USUARIO"/></TextBlock>
+                        <TextBlock Height="27"  Width="158" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.665,-0.091" Margin="15,5,5,0" FontSize="15" FontWeight="Bold" MouseDown="TextBlock_MouseDown"><Run Text="NUEVO USUARIO"/></TextBlock>
                     </DockPanel>
                 </Border>
             </Button>
