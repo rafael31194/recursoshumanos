@@ -9,43 +9,43 @@
 
 
     <Controls:MetroContentControl>
-       
-    <Grid Height="741" VerticalAlignment="Bottom">
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        <Grid Height="741" VerticalAlignment="Bottom">
 
-        <Grid.RowDefinitions>
-            <RowDefinition />
-        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0"
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0"
           Grid.Column="0" Margin="0,9,812,85">
 
-            <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,100,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203" Height="360" VerticalAlignment="Top" >
-                <!--<ListBox.Resources>
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,100,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203" Height="360" VerticalAlignment="Top" >
+                    <!--<ListBox.Resources>
                     <Style TargetType="{x:Type Expander}">
                         <Setter Property="IsExpanded"
     					Value="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}"/>
                     </Style>
                 </ListBox.Resources>-->
-                <ListBox.Template>
-                    <ControlTemplate TargetType="{x:Type ListBox}">
-                        <ItemsPresenter/>
-                    </ControlTemplate>
-                </ListBox.Template>
-                <ListBox.ItemContainerStyle>
-                    <Style TargetType="{x:Type ListBoxItem}">
-                        <Setter Property="Template">
-                            <Setter.Value>
-                                <ControlTemplate TargetType="{x:Type ListBoxItem}">
-                                    <ContentPresenter Content="{TemplateBinding Content}"/>
-                                </ControlTemplate>
-                            </Setter.Value>
-                        </Setter>
-                    </Style>
-                </ListBox.ItemContainerStyle>
+                    <ListBox.Template>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <ItemsPresenter/>
+                        </ControlTemplate>
+                    </ListBox.Template>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
                     <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="201">
                         <Expander.Header>
                             <BulletDecorator Width="133" Height="36">
@@ -68,78 +68,77 @@
 
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
+                            <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88" MouseDown="Label_MouseDown"/>
                             <Label Margin="35,5,5,5" Foreground="Black" Content="Roles" RenderTransformOrigin="0.824,0.348" Width="88"/>
                             <Label Margin="35,5,5,5" Foreground="Black" Content="Roles usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
                         </WrapPanel>
                     </Expander>
 
                 </ListBox>
-        </Grid>
+            </Grid>
 
-        <Grid Grid.Row="0" Margin="209,35,41,0" Height="84" VerticalAlignment="Top" >
-            
-            <Label  Content="BUSQUEDA DE INFORMACION BASICA" Margin="0,23,48,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Top"/>
-        </Grid>
+            <Grid Grid.Row="0" Margin="209,35,41,0" Height="84" VerticalAlignment="Top" >
 
-        <Grid
+                <Label  Content="BUSQUEDA DE INFORMACION BASICA" Margin="0,23,48,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid
           Background="White" Height="537" VerticalAlignment="Bottom" Margin="209,0,0,85" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="78*"/>
-                    <ColumnDefinition Width="191*"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-            <DataGrid Height="365" Margin="70,162,73,0" 
+                <DataGrid Height="232" Margin="70,162,73,0" 
         		x:Name="data_gridBusqueda" VerticalAlignment="Top" RowHeight="15" 
         		ColumnHeaderHeight="30"  HeadersVisibility="Column"
-        		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" Grid.ColumnSpan="2" >
-                <DataGrid.Columns>
-                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
-                     <DataGridTemplateColumn.CellTemplate>
-                            <ItemContainerTemplate>
-                                <DockPanel>
-                                    <Image Source="Imagenes\helpdesBusqueda.png" Width="18" />
-                                </DockPanel>
-                            </ItemContainerTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
+        		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" >
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
+                            <DataGridTemplateColumn.CellTemplate>
+                                <ItemContainerTemplate>
+                                    <DockPanel>
+                                        <Image Source="Imagenes\helpdesBusqueda.png" Width="18" />
+                                    </DockPanel>
+                                </ItemContainerTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <ItemContainerTemplate>
-                                <DockPanel>
-                                    <Image Source="Imagenes\EDG.png" Width="18" MouseDown="Image_MouseDown_1" Loaded="Image_Loaded_1" />
-                                </DockPanel>
-                            </ItemContainerTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-                    
-                    
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRES}" />
-                    <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}" />
-                    <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding TELEFONO CELULAR }" />
-                    <DataGridTextColumn Header="TELEFONO FIJO" Binding="{Binding TELEFONO FIJO }" />
-                    <DataGridTextColumn Header="EDAD DEL CANDIDATO" Binding="{Binding EDAD }" />
+                        <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <ItemContainerTemplate>
+                                    <DockPanel>
+                                        <Image Source="Imagenes\EDG.png" Width="18" MouseDown="Image_MouseDown_1" Loaded="Image_Loaded_1" />
+                                    </DockPanel>
+                                </ItemContainerTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
 
 
-                </DataGrid.Columns>
+                        <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRES}" />
+                        <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}" />
+                        <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding TELEFONO CELULAR }" />
+                        <DataGridTextColumn Header="TELEFONO FIJO" Binding="{Binding TELEFONO FIJO }" />
+                        <DataGridTextColumn Header="EDAD DEL CANDIDATO" Binding="{Binding EDAD }" />
 
-            </DataGrid>
-            <StackPanel Margin="50,0,0,0" Grid.ColumnSpan="2"></StackPanel>
-            <!--<Border BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="15">-->
-                <Button Name="btn_CrearCandidato" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="71,35,0,0" VerticalAlignment="Top" Width="257" Height="40" Click="Button_Click_1" Grid.ColumnSpan="2">
-                <Border BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="15">
-                    <DockPanel>
-                        <Image Source="Imagenes\New_candidato.png" Width="35" RenderTransformOrigin="0.506,-0.758" />
-                        <TextBlock Height="27"  Width="158" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.665,-0.091" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="NUEVO CANDIDATO"/></TextBlock>
-                    </DockPanel>
-                </Border>
+
+                    </DataGrid.Columns>
+
+                </DataGrid>
+                <StackPanel Margin="50,0,0,0"/>
+                <!--<Border BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="15">-->
+                <Button Name="btn_CrearCandidato" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="71,35,0,0" VerticalAlignment="Top" Width="257" Height="40" Click="Button_Click_1">
+                    <Border BorderBrush="#FF000000" BorderThickness="1,1,1,1" CornerRadius="15">
+                        <DockPanel>
+                            <Image Source="Imagenes\New_candidato.png" Width="35" RenderTransformOrigin="0.506,-0.758" />
+                            <TextBlock Height="27"  Width="158" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.665,-0.091" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="NUEVO CANDIDATO"/></TextBlock>
+                        </DockPanel>
+                    </Border>
                 </Button>
-           
-            <!--</Border>-->
+
+                <!--</Border>-->
 
 
-                <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusqueda"  Height="21" Margin="110,109,300,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Grid.ColumnSpan="2"/>
-                <Button Name="btn_buscarInfb"  HorizontalAlignment="Left" Margin="335,99,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="btn_buscarInfb_1Click" Grid.Column="1">
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusqueda"  Height="21" Margin="110,109,300,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1"/>
+                <Button Name="btn_buscarInfb"  HorizontalAlignment="Left" Margin="569,99,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="btn_buscarInfb_1Click">
                     <DockPanel>
                         <Image Source="Imagenes\helpdesBusqueda.png" Width="32" />
                         <TextBlock Height="24"  Width="63" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="BUSCAR"/></TextBlock>
@@ -147,18 +146,18 @@
                 </Button>
                 <TextBlock HorizontalAlignment="Left" Margin="38,118,0,0" TextWrapping="Wrap" Text="BUSQUEDA" VerticalAlignment="Top"/>
 
-        
-            
-        </Grid>
-        <Border
+
+
+            </Grid>
+            <Border
         	Grid.Column="0" Margin="-2,651,0,0" Background="#FFD3D1D1" />
 
 
-        <StackPanel
+            <StackPanel
            
             Orientation="Horizontal" Margin="0,741,0,0"/>
-                </Grid>
-           
-     </Controls:MetroContentControl>
+        </Grid>
+
+    </Controls:MetroContentControl>
 </Controls:MetroWindow>
 

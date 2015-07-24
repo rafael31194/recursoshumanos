@@ -98,6 +98,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ModificarUsuario.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="NewUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -110,6 +114,9 @@
   <ItemGroup>
     <Compile Include="MantoCandidatos.xaml.cs">
       <DependentUpon>MantoCandidatos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarUsuario.xaml.cs">
+      <DependentUpon>ModificarUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
@@ -182,6 +189,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Save_Icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -12,13 +12,21 @@ namespace HelpDesk.RecursosHumanos.BEL
         public string nombre { get; set; }
         public string contrasena { get; set; }
 
+        public int rol { get; set; }
+
         public usuariosE() { }
-        public usuariosE(int pId_usuario, string pNombre, string pContrasena)
+        public usuariosE(int pId_usuario, string pNombre, string pContrasena, int prol)
         {
             id_usuario = pId_usuario;
             nombre = pNombre;
-            contrasena = pContrasena; 
+            contrasena = pContrasena;
+            rol = prol;
         
+        }
+
+        public int GuardarUsuarios(usuariosE _usuarioRegistro, ref string oerro)
+        {
+            throw new NotImplementedException();
         }
     }
 }

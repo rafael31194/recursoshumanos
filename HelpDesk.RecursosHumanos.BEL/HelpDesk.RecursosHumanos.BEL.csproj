@@ -53,6 +53,7 @@
     <Compile Include="ProfesionesE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RefecenciasE.cs" />
+    <Compile Include="RolUsuarioE.cs" />
     <Compile Include="SituacionProfesionalE.cs" />
     <Compile Include="StatusAcademicoE.cs" />
     <Compile Include="TipoEducacionE.cs" />
