@@ -24,7 +24,9 @@ namespace WpfApplication3
     /// </summary>
     public partial  class Busqueda : MetroWindow
     {
+        public Object SelectedItem { get; set; }
         InfoBasicaBLL infoBl = new InfoBasicaBLL();
+        //public DataRow dataRow = new DataRow();
 
         //public Busqueda()
         //{
@@ -54,10 +56,24 @@ namespace WpfApplication3
             DataSet ds = infoBl.SelectInfoBusqueda("", ref oError);
             data_gridBusqueda.ItemsSource = ds.Tables[0].DefaultView;
             
+            
         }
 
         private void data_gridBusqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            string nombre="No existe ese candidato";
+            foreach(DataRowView dr in data_gridBusqueda.Items)
+                {
+                    if(data_gridBusqueda.SelectedItem==dr)
+                    nombre = dr[0].ToString();
+                }
+
+            txtBusqueda.Text = nombre;
+            //object candidato = (object)data_gridBusqueda.Name;
+            //if(candidato!=null)
+            //txtBusqueda.Text = candidato.ToString();
+            //else txtBusqueda.Text = data_gridBusqueda.SelectedValue.ToString();
+            
 
         }
 
@@ -80,9 +96,13 @@ namespace WpfApplication3
 
         private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-            MantoCandidatos _mt = new MantoCandidatos();
-            this.Close();
-            _mt.ShowDialog(); 
+           
+            
+            //MantoCandidatos _mt = new MantoCandidatos();
+            //this.Close();
+            //_mt.ShowDialog(); 
+
+            
         }
 
         private void Image_Loaded_1(object sender, RoutedEventArgs e)

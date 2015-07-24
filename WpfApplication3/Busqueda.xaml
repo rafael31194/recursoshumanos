@@ -86,7 +86,7 @@
                 <ColumnDefinition Width="78*"/>
                     <ColumnDefinition Width="191*"/>
                 </Grid.ColumnDefinitions>
-            <DataGrid Height="365" Margin="70,162,73,0" 
+                <DataGrid Height="365" Margin="70,162,73,0"  
         		x:Name="data_gridBusqueda" VerticalAlignment="Top" RowHeight="15" 
         		ColumnHeaderHeight="30"  HeadersVisibility="Column"
         		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" Grid.ColumnSpan="2" >
@@ -111,8 +111,8 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
                     
-                    
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRES}" />
+                    <DataGridTextColumn Header="ID" Binding="{Binding CODIGO}" Visibility="Hidden"/>
+                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRES}" x:Name="NOMBRE1"/>
                     <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}" />
                     <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding TELEFONO CELULAR }" />
                     <DataGridTextColumn Header="TELEFONO FIJO" Binding="{Binding TELEFONO FIJO }" />
