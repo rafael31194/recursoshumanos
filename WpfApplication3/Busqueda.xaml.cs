@@ -110,5 +110,13 @@ namespace WpfApplication3
 
         }
 
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
     }
 }

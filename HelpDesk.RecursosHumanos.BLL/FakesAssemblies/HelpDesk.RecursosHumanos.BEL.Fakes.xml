@@ -1111,6 +1111,57 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRefecenciasE.AllInstances.telefonoSetString">
             <summary>Establecer el shim de RefecenciasE.set_telefono(String value)</summary>
         </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE">
+            <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.RolUsuarioE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.#ctor">
+            <summary>Inicializa una nueva instancia de correcciones de compatibilidad (shim)</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.#ctor(HelpDesk.RecursosHumanos.BEL.RolUsuarioE)">
+            <summary>Inicializa nuevas correcciones de compatibilidad (shim) para la instancia especificada</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.BehaveAsCurrent">
+            <summary>Asigna el comportamiento &apos;Current&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.BehaveAsNotImplemented">
+            <summary>Asigna el comportamiento &apos;NotImplemented&apos; a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.Behavior">
+            <summary>Asigna el comportamiento a todos los métodos del tipo corregido para compatibilidad</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.Constructor">
+            <summary>Establecer el shim de RolUsuarioE.RolUsuarioE()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.ConstructorInt32String">
+            <summary>Establecer el shim de RolUsuarioE.RolUsuarioE(Int32 pId_rol, String pDescripcion)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.descripcionGet">
+            <summary>Establecer el shim de RolUsuarioE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.descripcionSetString">
+            <summary>Establecer el shim de RolUsuarioE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.id_rolGet">
+            <summary>Establecer el shim de RolUsuarioE.get_id_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.id_rolSetInt32">
+            <summary>Establecer el shim de RolUsuarioE.set_id_rol(Int32 value)</summary>
+        </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.AllInstances">
+            <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.AllInstances.descripcionGet">
+            <summary>Establecer el shim de RolUsuarioE.get_descripcion()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.AllInstances.descripcionSetString">
+            <summary>Establecer el shim de RolUsuarioE.set_descripcion(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.AllInstances.id_rolGet">
+            <summary>Establecer el shim de RolUsuarioE.get_id_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimRolUsuarioE.AllInstances.id_rolSetInt32">
+            <summary>Establecer el shim de RolUsuarioE.set_id_rol(Int32 value)</summary>
+        </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimSituacionProfesionalE">
             <summary>Tipo de correcciones de compatibilidad (shim) de HelpDesk.RecursosHumanos.BEL.SituacionProfesionalE</summary>
         </member>
@@ -1312,8 +1363,11 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.Constructor">
             <summary>Establecer el shim de usuariosE.usuariosE()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.ConstructorInt32StringString">
-            <summary>Establecer el shim de usuariosE.usuariosE(Int32 pId_usuario, String pNombre, String pContrasena)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.ConstructorInt32StringStringInt32">
+            <summary>Establecer el shim de usuariosE.usuariosE(Int32 pId_usuario, String pNombre, String pContrasena, Int32 prol)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.GuardarUsuariosusuariosEStringRef">
+            <summary>Establecer el shim de usuariosE.GuardarUsuarios(usuariosE _usuarioRegistro, String&amp; oerro)</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.contrasenaGet">
             <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
@@ -1333,8 +1387,17 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nombreSetString">
             <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
         </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.rolGet">
+            <summary>Establecer el shim de usuariosE.get_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.rolSetInt32">
+            <summary>Establecer el shim de usuariosE.set_rol(Int32 value)</summary>
+        </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances">
             <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.GuardarUsuariosusuariosEStringRef">
+            <summary>Establecer el shim de usuariosE.GuardarUsuarios(usuariosE _usuarioRegistro, String&amp; oerro)</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.contrasenaGet">
             <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
@@ -1353,6 +1416,12 @@
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nombreSetString">
             <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.rolGet">
+            <summary>Establecer el shim de usuariosE.get_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.rolSetInt32">
+            <summary>Establecer el shim de usuariosE.set_rol(Int32 value)</summary>
         </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE">
             <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.CertificacionesE</summary>
@@ -1627,6 +1696,27 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRefecenciasE.InstanceObserver">
             <summary>Obtiene o establece el observador de la instancia.</summary>
         </member>
+        <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE">
+            <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.RolUsuarioE</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.#ctor">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.#ctor(System.Int32,System.String)">
+            <summary>Inicializa una nueva instancia</summary>
+        </member>
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.InitializeStub">
+            <summary>Inicializa una nueva instancia de type StubRolUsuarioE</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.CallBase">
+            <summary>Obtiene o establece un valor que indica si debe llamarse al método base en lugar del comportamiento de reserva</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.InstanceBehavior">
+            <summary>Obtiene o establece el comportamiento de instancia.</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.StubRolUsuarioE.InstanceObserver">
+            <summary>Obtiene o establece el observador de la instancia.</summary>
+        </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubSituacionProfesionalE">
             <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.SituacionProfesionalE</summary>
         </member>
@@ -1717,7 +1807,7 @@
         <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor">
             <summary>Inicializa una nueva instancia</summary>
         </member>
-        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor(System.Int32,System.String,System.String)">
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor(System.Int32,System.String,System.String,System.Int32)">
             <summary>Inicializa una nueva instancia</summary>
         </member>
         <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.InitializeStub">
