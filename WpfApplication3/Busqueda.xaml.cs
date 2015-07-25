@@ -14,16 +14,20 @@ using System.Windows.Shapes;
 using HelpDesk.RecursosHumanos.BLL;
 using System.Data;
 using MahApps.Metro.Controls;
+using System.Collections;
 
 
 
 namespace WpfApplication3
 {
+
+   
     /// <summary>
     /// Lógica de interacción para Busqueda.xaml
     /// </summary>
     public partial  class Busqueda : MetroWindow
     {
+        
         public Object SelectedItem { get; set; }
         InfoBasicaBLL infoBl = new InfoBasicaBLL();
         //public DataRow dataRow = new DataRow();
@@ -61,14 +65,15 @@ namespace WpfApplication3
 
         private void data_gridBusqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            string nombre="No existe ese candidato";
-            foreach(DataRowView dr in data_gridBusqueda.Items)
-                {
-                    if(data_gridBusqueda.SelectedItem==dr)
-                    nombre = dr[0].ToString();
-                }
+            //string[] nombre={"0","No existe ese candidato"};
+            //foreach(DataRowView dr in data_gridBusqueda.Items)
+            //    {
+            //        if(data_gridBusqueda.SelectedItem==dr)
+            //        nombre[0] = dr[0].ToString();
+            //        nombre[1] = dr[1].ToString();
+            //    }
 
-            txtBusqueda.Text = nombre;
+            
             //object candidato = (object)data_gridBusqueda.Name;
             //if(candidato!=null)
             //txtBusqueda.Text = candidato.ToString();
@@ -96,11 +101,21 @@ namespace WpfApplication3
 
         private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-           
+           //int dataRow = data_gridBusqueda.SelectedIndex;
+           // string[] nombre = { "0", "No existe ese candidato" };
+           // foreach (DataRowView dr in  data_gridBusqueda.Items)
+           // {
+           //     if (true)
+           //     {
+           //         nombre[0] = dr[0].ToString();
+           //         nombre[1] = dr[1].ToString();
+           //     }
+           // }
             
-            //MantoCandidatos _mt = new MantoCandidatos();
-            //this.Close();
-            //_mt.ShowDialog(); 
+           // MantoCandidatos _mt = new MantoCandidatos();
+           // _mt.setearCampos(nombre);
+           // this.Close();
+           // _mt.ShowDialog(); 
 
             
         }
@@ -116,6 +131,97 @@ namespace WpfApplication3
             _mt.InitializeComponent();
             this.Close();
             _mt.ShowDialog();
+        }
+
+        private void Image_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            int dataRow = data_gridBusqueda.SelectedIndex;
+        }
+
+
+        //mostrar la ventana de modificar al darle doble click a la fila
+        private void data_gridBusqueda_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            int dataRow = data_gridBusqueda.SelectedIndex;
+            string[] nombre = { "0", "No existe ese candidato" };
+            foreach (DataRowView dr in data_gridBusqueda.Items)
+            {
+                //entro a la linea que le di doble click
+                if (dr==data_gridBusqueda.SelectedItem)
+                {
+                    nombre[0] = dr[0].ToString();
+                    nombre[1] = dr[1].ToString();
+                    int id=Int32.Parse(nombre[0]);
+                    String oError = "";
+                    DataSet ds = infoBl.SelectInfoBusquedaLLenar(id, ref oError);
+                    //DataTables recuperados
+
+                    MantoCandidatos _mt = new MantoCandidatos();
+                    recuperarMostrarDatosCandidato(ds, _mt);
+                    
+                    
+                    this.Close();
+                    _mt.ShowDialog(); 
+                }
+               
+            }
+        }
+
+        public void recuperarMostrarDatosCandidato(DataSet ds,MantoCandidatos mt)
+        {
+
+            //***************Recuperar Datos********************************
+                    DataTable tableInfoBasica = ds.Tables[0];
+                    DataTable tableInfoAcade = ds.Tables[1];
+                    DataTable tableCertifi = ds.Tables[2];
+                    DataTable tableInfoExpeLab = ds.Tables[3];
+                    DataTable tableRefe = ds.Tables[4];
+                    DataTable tableHabiliId = ds.Tables[5];
+
+
+                    String[] infoBasica = new string[12];
+                    DataRow candidatoInfo=null;//voy a guardar toda la info del candidato
+                        //the next array are instantiated with 50 element to dont will have a exception 
+                    DataRow[] candiInfoAca =new DataRow[50];
+                    DataRow[] candiCeriti = new DataRow[50];
+                    DataRow[] candiInfoExpe = new DataRow[50];
+                    DataRow[] candiHabili = new DataRow[50];
+                    foreach (DataRow datar in tableInfoBasica.Rows)
+                    {
+                        candidatoInfo = datar;
+
+                    }
+                    int i = 0;
+                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    {
+                        candiInfoAca[i] = datar;
+                        i++;
+                    }
+                    i = 0;
+
+                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    {
+                        candiCeriti[i] = datar;
+                        i++;
+                    }
+                    i = 0;
+                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    {
+                        candiInfoExpe[i] = datar;
+                        i++;
+                    }
+                    i = 0;
+                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    {
+                        candiHabili[i] = datar;
+                        i++;
+                    }
+                    i = 0;
+            //**********************************************
+            //*******************Setear datos*******************
+
+                    mt.setearCampos(candidatoInfo);
+
         }
 
     }

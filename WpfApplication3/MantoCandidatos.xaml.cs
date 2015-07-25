@@ -120,5 +120,24 @@ namespace WpfApplication3
             this.Close();
             _bw.ShowDialog();
         }
+
+        public void setearCampos(DataRow datos)
+        {
+            txtNombreInfBasica.Text = datos.ItemArray[1].ToString();
+            txtNacionalidadInfBasica.Text = datos.ItemArray[2].ToString();
+            if (datos.ItemArray[3].ToString() == "1")
+            {
+                rbsexoM.IsChecked = true;
+            }
+            else {
+                rbsexoF.IsChecked = false;
+            }
+
+            txtTeNocelularInfBasica.Text = datos.ItemArray[3].ToString();
+            txtTelefonoCasaInfBasica.Text = datos.ItemArray[4].ToString();
+
+            
+
+        }
     }
 }
