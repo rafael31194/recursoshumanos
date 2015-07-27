@@ -182,45 +182,54 @@ namespace WpfApplication3
                     String[] infoBasica = new string[12];
                     DataRow candidatoInfo=null;//voy a guardar toda la info del candidato
                         //the next array are instantiated with 50 element to dont will have a exception 
-                    DataRow[] candiInfoAca =new DataRow[50];
-                    DataRow[] candiCeriti = new DataRow[50];
-                    DataRow[] candiInfoExpe = new DataRow[50];
-                    DataRow[] candiHabili = new DataRow[50];
+                    List<DataRow>candiInfoAca = new List<DataRow>();//new DataRow[50];
+                    List<DataRow> candiCeriti = new List<DataRow>();
+                    List<DataRow> candiInfoExpe = new List<DataRow>();
+                    List<DataRow> candiHabili = new List<DataRow>();
+                    List<DataRow> candiRefe = new List<DataRow>();
+            
                     foreach (DataRow datar in tableInfoBasica.Rows)
                     {
                         candidatoInfo = datar;
 
                     }
-                    int i = 0;
+                    
                     foreach (DataRow datar in tableInfoAcade.Rows)
                     {
-                        candiInfoAca[i] = datar;
-                        i++;
+                        candiInfoAca.Add(datar);
+                        
                     }
-                    i = 0;
+                    
 
                     foreach (DataRow datar in tableInfoAcade.Rows)
                     {
-                        candiCeriti[i] = datar;
-                        i++;
+                        candiCeriti.Add(datar);
+                        
                     }
-                    i = 0;
-                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    
+                    foreach (DataRow datar in tableInfoExpeLab.Rows)
                     {
-                        candiInfoExpe[i] = datar;
-                        i++;
+                        candiInfoExpe.Add(datar);
+                    
                     }
-                    i = 0;
-                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    
+                    foreach (DataRow datar in tableHabiliId.Rows)
                     {
-                        candiHabili[i] = datar;
-                        i++;
+                        candiHabili.Add(datar);
+                        
                     }
-                    i = 0;
+
+                    foreach (DataRow datar in tableRefe.Rows)
+                    {
+                        candiRefe.Add(datar);
+
+                    }
+            
+                    
             //**********************************************
             //*******************Setear datos*******************
 
-                    mt.setearCampos(candidatoInfo);
+                    mt.setearCampos(candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
 
         }
 
