@@ -96,11 +96,11 @@ namespace WpfApplication3
 
         private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
-           
-            
-            //MantoCandidatos _mt = new MantoCandidatos();
-            //this.Close();
-            //_mt.ShowDialog(); 
+
+
+            MantoCandidatos _mt = new MantoCandidatos();
+            this.Close();
+            _mt.ShowDialog(); 
 
             
         }
