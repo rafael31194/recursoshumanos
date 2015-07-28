@@ -274,7 +274,7 @@ namespace WpfApplication3
         }
 
 
-        public void setearComboBox()
+        public void setearComboBox(string idMuni,string idTipoEdu, string idNivel, string idHabilidad,string idTipoRefe, string idProfesion,string idSituacion)
         {
 
             DataSet ds = new DataSet();
