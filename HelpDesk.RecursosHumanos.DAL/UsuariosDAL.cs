@@ -19,16 +19,15 @@ namespace HelpDesk.RecursosHumanos.DAL
             {
                 if (!(_conn == null))
                 {
-                    SqlCommand comando = new SqlCommand();
-                    comando.Connection = _conn;
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
-                    comando.CommandText = "SP_insertar_Usuarios";
-                    comando.Parameters.AddWithValue("@id_usuario", pusuario.id_usuario);
-                    comando.Parameters.AddWithValue("@nombre", pusuario.nombre);
-                    comando.Parameters.AddWithValue("@contrasena", pusuario.contrasena);
-
-
-                    resultado = comando.ExecuteNonQuery();
+                    SqlCommand Comando = new SqlCommand();
+                    Comando.Connection = _conn;
+                    Comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    Comando.CommandText = "SP_insertar_USUARIOS";
+                    Comando.Parameters.AddWithValue("@userName ", pusuario.userName);
+                    Comando.Parameters.AddWithValue("@contrasena", pusuario.contrasena);
+                    Comando.Parameters.AddWithValue("@name", pusuario.name);
+                    Comando.Parameters.AddWithValue("id_rol", pusuario.id_rol); 
+                    resultado = Comando.ExecuteNonQuery();
                 }
                 else
                     resultado = 0;
@@ -38,5 +37,19 @@ namespace HelpDesk.RecursosHumanos.DAL
             return resultado;
 
         }
+        public DataSet BusquedaUsuarios(string valorFiltro, ref string oError)
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                SqlConnection oConn = CommonDb.ObtenerConnSql();
+                SqlCommand oCmd = new SqlCommand("SP_select_usuarios", oConn);
+                oCmd.Parameters.AddWithValue("@busqueda", valorFiltro);
+                oCmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(oCmd);
+                DataSet ds = new DataSet();
+                return ds;
+            }
+        }
+
     }
 }

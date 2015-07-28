@@ -1363,11 +1363,8 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.Constructor">
             <summary>Establecer el shim de usuariosE.usuariosE()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.ConstructorInt32StringStringInt32">
-            <summary>Establecer el shim de usuariosE.usuariosE(Int32 pId_usuario, String pNombre, String pContrasena, Int32 prol)</summary>
-        </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.GuardarUsuariosusuariosEStringRef">
-            <summary>Establecer el shim de usuariosE.GuardarUsuarios(usuariosE _usuarioRegistro, String&amp; oerro)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.ConstructorInt32StringStringStringInt32">
+            <summary>Establecer el shim de usuariosE.usuariosE(Int32 pId_usuario, String pNombre, String pContrasena, String pNombreUser, Int32 pId_rol)</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.contrasenaGet">
             <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
@@ -1375,29 +1372,32 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.contrasenaSetString">
             <summary>Establecer el shim de usuariosE.set_contrasena(String value)</summary>
         </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_rolGet">
+            <summary>Establecer el shim de usuariosE.get_id_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_rolSetInt32">
+            <summary>Establecer el shim de usuariosE.set_id_rol(Int32 value)</summary>
+        </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_usuarioGet">
             <summary>Establecer el shim de usuariosE.get_id_usuario()</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.id_usuarioSetInt32">
             <summary>Establecer el shim de usuariosE.set_id_usuario(Int32 value)</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nombreGet">
-            <summary>Establecer el shim de usuariosE.get_nombre()</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nameGet">
+            <summary>Establecer el shim de usuariosE.get_name()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nombreSetString">
-            <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.nameSetString">
+            <summary>Establecer el shim de usuariosE.set_name(String value)</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.rolGet">
-            <summary>Establecer el shim de usuariosE.get_rol()</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.userNameGet">
+            <summary>Establecer el shim de usuariosE.get_userName()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.rolSetInt32">
-            <summary>Establecer el shim de usuariosE.set_rol(Int32 value)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.userNameSetString">
+            <summary>Establecer el shim de usuariosE.set_userName(String value)</summary>
         </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances">
             <summary>Definir correcciones de compatibilidad (shim) para todos los miembros de instancia</summary>
-        </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.GuardarUsuariosusuariosEStringRef">
-            <summary>Establecer el shim de usuariosE.GuardarUsuarios(usuariosE _usuarioRegistro, String&amp; oerro)</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.contrasenaGet">
             <summary>Establecer el shim de usuariosE.get_contrasena()</summary>
@@ -1405,23 +1405,29 @@
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.contrasenaSetString">
             <summary>Establecer el shim de usuariosE.set_contrasena(String value)</summary>
         </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_rolGet">
+            <summary>Establecer el shim de usuariosE.get_id_rol()</summary>
+        </member>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_rolSetInt32">
+            <summary>Establecer el shim de usuariosE.set_id_rol(Int32 value)</summary>
+        </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_usuarioGet">
             <summary>Establecer el shim de usuariosE.get_id_usuario()</summary>
         </member>
         <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.id_usuarioSetInt32">
             <summary>Establecer el shim de usuariosE.set_id_usuario(Int32 value)</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nombreGet">
-            <summary>Establecer el shim de usuariosE.get_nombre()</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nameGet">
+            <summary>Establecer el shim de usuariosE.get_name()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nombreSetString">
-            <summary>Establecer el shim de usuariosE.set_nombre(String value)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.nameSetString">
+            <summary>Establecer el shim de usuariosE.set_name(String value)</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.rolGet">
-            <summary>Establecer el shim de usuariosE.get_rol()</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.userNameGet">
+            <summary>Establecer el shim de usuariosE.get_userName()</summary>
         </member>
-        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.rolSetInt32">
-            <summary>Establecer el shim de usuariosE.set_rol(Int32 value)</summary>
+        <member name="P:HelpDesk.RecursosHumanos.BEL.Fakes.ShimusuariosE.AllInstances.userNameSetString">
+            <summary>Establecer el shim de usuariosE.set_userName(String value)</summary>
         </member>
         <member name="T:HelpDesk.RecursosHumanos.BEL.Fakes.StubCertificacionesE">
             <summary>Tipo stub de HelpDesk.RecursosHumanos.BEL.CertificacionesE</summary>
@@ -1807,7 +1813,7 @@
         <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor">
             <summary>Inicializa una nueva instancia</summary>
         </member>
-        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor(System.Int32,System.String,System.String,System.Int32)">
+        <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.#ctor(System.Int32,System.String,System.String,System.String,System.Int32)">
             <summary>Inicializa una nueva instancia</summary>
         </member>
         <member name="M:HelpDesk.RecursosHumanos.BEL.Fakes.StubusuariosE.InitializeStub">

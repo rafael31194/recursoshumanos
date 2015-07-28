@@ -19,9 +19,9 @@ namespace HelpDesk.RecursosHumanos.DAL
                 SqlCommand oCmd = new SqlCommand("SP_select_rol", oconn);
                 oCmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da1 = new SqlDataAdapter(oCmd);
-                DataSet ds10 = new DataSet();
-                da1.Fill(ds10);
-                return ds10;
+                DataSet ds11 = new DataSet();
+                da1.Fill(ds11);
+                return ds11;
             }
         }
         public List<RolUsuarioE> obtenerRolUsuario()

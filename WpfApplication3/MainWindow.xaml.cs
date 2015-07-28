@@ -27,7 +27,10 @@ namespace WpfApplication3
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : MetroWindow
+
     {
+        // Instancias de eventos 
+
         DepartamentosBL _DeptoBL = new DepartamentosBL();
         MunicipioBLL _MunicBL = new MunicipioBLL();
         SituacionProfesionalBLL _SituacionpBL = new SituacionProfesionalBLL();
@@ -43,7 +46,7 @@ namespace WpfApplication3
         InformacionAcademicaBLL _informacionAcademicaBL = new InformacionAcademicaBLL();
         ProfesionesBLL _profesionesBL = new ProfesionesBLL();
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
-
+        RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
 
         public MainWindow()
         {
@@ -103,6 +106,7 @@ namespace WpfApplication3
         {
             try
             {
+                //DATASET  PARA LLENAR LOS COMBOBOX 
                 DataSet ds = new DataSet();
                 ds = _DeptoBL.SelectdepSelectAll();
 
@@ -152,9 +156,7 @@ namespace WpfApplication3
                 cb_profesionesIB.SelectedValuePath = ds10.Tables[0].Columns[0].ToString();
                 cb_profesionesIB.SelectedIndex = 0;
 
-
-
-
+            
                 DataSet dss = new DataSet();
                 dss = _SituacionpBL.SelectSituacionProfeALL();
 
@@ -198,7 +200,7 @@ namespace WpfApplication3
 
         private void btn_GuardarInfoBasica_Click(object sender, RoutedEventArgs e)
             
-           //VALIDACION DE MAINWIND
+            //VALIDACION DE MAINWIND
             //VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
         
         
@@ -213,7 +215,7 @@ namespace WpfApplication3
 
             else
             {
-               
+               //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
                 InfoBasicaE _InfoBasicaE = new InfoBasicaE();
                 DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
@@ -255,7 +257,7 @@ namespace WpfApplication3
             }
 
         }
-
+        //OTRAS VALIDACIONES SOLO LESTRAS SOLO NUMEROS EN LOS EVENTOS
         private void txtNombreInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
         }
@@ -316,6 +318,7 @@ namespace WpfApplication3
 
         private void tcPrincipal_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            //IF PARA OCULTAR LOS BOTONES EN EL FORMULARIO MAIN WINDOWS 
             if (e.Source is TabControl)
             {
                 if (tcPrincipal.SelectedIndex == 0)
@@ -495,7 +498,7 @@ namespace WpfApplication3
 
         private void cb_habtecnica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //aquiiiiii para llenar la habilidadaplicacion 
+            //PARA LLENAR COMBOBOX DE HABILIDAD TECNICA
 
             int id_habilidadTecnica = Convert.ToInt32(cb_habtecnica.SelectedValue);
             DataSet ds5 = new DataSet();
@@ -513,7 +516,7 @@ namespace WpfApplication3
         DataTable dt1 = new DataTable();
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
         {
-            //Aquiii para agregrar como temporal a ala grid 
+            //BOTON PARA AGREGAR COMO TEMPORAL A LA GRID DE INFO.LABORAL 
 
             string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
             NombreEmpesa = txt_NombreEmpresaLab.Text;
@@ -752,6 +755,7 @@ namespace WpfApplication3
 
         private void BTOCancelarIngresoInfAcademica_Click(object sender, RoutedEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();
@@ -760,6 +764,7 @@ namespace WpfApplication3
 
         private void buscarPerfil_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();
@@ -773,6 +778,7 @@ namespace WpfApplication3
 
         private void Label_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE MAINWINDOW
             MainWindow _mw = new MainWindow();
             _mw.InitializeComponent();
             this.Close();
@@ -781,6 +787,7 @@ namespace WpfApplication3
 
         private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();
@@ -790,6 +797,7 @@ namespace WpfApplication3
 
         private void BTOcancelarHabTec_Click(object sender, RoutedEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();
@@ -799,6 +807,7 @@ namespace WpfApplication3
 
         private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();

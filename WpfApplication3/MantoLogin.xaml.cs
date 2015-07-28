@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using HelpDesk.RecursosHumanos.BLL;
+using System.Data;
 using MahApps.Metro.Controls;
 
 
@@ -19,11 +21,12 @@ namespace WpfApplication3
     /// <summary>
     /// Lógica de interacción para Login.xaml
     /// </summary>
-    public partial class Login : MetroWindow    {
-        public Login()
-        {
-            InitializeComponent();
-        }
+    public partial class Login : MetroWindow   
+    {
+        public object SelectItem { get; set; }
+        UsuarioBLL usuariobl = new UsuarioBLL();
+        
+        
 
         private void btn_nuevo_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -67,6 +70,26 @@ namespace WpfApplication3
             _nu.ShowDialog();
         }
 
-       
+        private void btn_buscarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            string oError = "";
+            DataSet ds = usuariobl.Selecusuarios(txt_busquedaUsuario.Text, ref oError);
+            DataGrid_Usiarioslogin.ItemsSource = ds.Tables[0].DefaultView;
+             
+        }
+
+     
+
+        private void DataGrid_Usiarioslogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string nombre1="No existe ese candidato";
+            foreach (DataRowView dr in DataGrid_Usiarioslogin.Items)
+            {
+                if (DataGrid_Usiarioslogin.SelectedItem == dr)
+                    nombre1 = dr[0].ToString();
+            }
+            txt_busquedaUsuario.Text = nombre1;
+        }
+
       }
     }
