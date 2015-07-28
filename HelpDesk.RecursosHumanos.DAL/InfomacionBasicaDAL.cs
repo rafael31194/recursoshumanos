@@ -63,6 +63,22 @@ namespace HelpDesk.RecursosHumanos.DAL
                 return ds;
             }
         }
+
+        public DataSet BusquedaInfoBasicaLLenar(int valorFiltro, ref string oError)
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+
+                SqlConnection oConn = CommonDb.ObtenerConnSql();
+                SqlCommand oCmd = new SqlCommand("SP_select_masivoperfil", oConn);
+                oCmd.Parameters.AddWithValue("@Id", valorFiltro);
+                oCmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(oCmd);
+                DataSet ds = new DataSet();
+                da.Fill(ds);
+                return ds;
+            }
+        }
     }
 
 }

@@ -39,5 +39,12 @@ namespace HelpDesk.RecursosHumanos.BLL
 
            
         }
+
+        public DataSet SelectInfoBusquedaLLenar(int valorFiltro, ref string oError)
+        {
+            return _infBasDal.BusquedaInfoBasicaLLenar(valorFiltro, ref oError);
+
+
+        }
     }
 }

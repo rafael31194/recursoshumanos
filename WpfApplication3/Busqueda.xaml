@@ -90,9 +90,13 @@
                 <DataGrid Height="232" Margin="70,162,73,0" 
         		x:Name="data_gridBusqueda" VerticalAlignment="Top" RowHeight="15" 
         		ColumnHeaderHeight="30"  HeadersVisibility="Column"
-        		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" >
-                    <DataGrid.Columns>
-                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
+        		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" MouseDoubleClick="data_gridBusqueda_MouseDoubleClick" >
+                    
+                    <DataGrid.Columns >
+                            <DataGridTemplateColumn>
+                                
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <ItemContainerTemplate>
                                     <DockPanel>
@@ -106,7 +110,7 @@
                             <DataGridTemplateColumn.CellTemplate>
                                 <ItemContainerTemplate>
                                     <DockPanel>
-                                        <Image Source="Imagenes\EDG.png" Width="18" MouseDown="Image_MouseDown_1" Loaded="Image_Loaded_1" />
+                                        <Image Source="Imagenes\EDG.png" Width="18" PreviewMouseDown="Image_PreviewMouseDown" MouseDown="Image_MouseDown_1" Loaded="Image_Loaded_1" />
                                     </DockPanel>
                                 </ItemContainerTemplate>
                             </DataGridTemplateColumn.CellTemplate>
@@ -118,6 +122,8 @@
                         <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding TELEFONO CELULAR }" />
                         <DataGridTextColumn Header="TELEFONO FIJO" Binding="{Binding TELEFONO FIJO }" />
                         <DataGridTextColumn Header="EDAD DEL CANDIDATO" Binding="{Binding EDAD }" />
+                        
+
 
 
                     </DataGrid.Columns>
