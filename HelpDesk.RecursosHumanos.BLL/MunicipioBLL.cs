@@ -16,5 +16,15 @@ namespace HelpDesk.RecursosHumanos.BEL
        {
            return _municDAL.SelectmunicipioALL(id_departamento);
        }
+       public DataSet SelectmunicipioALL()
+       {
+           return _municDAL.SelectmunicipioALL();
+       }
+
+
+       public DataSet SelectDptoPorMunicipio(int id_municipio)
+       {
+           return _municDAL.SelectDptoMunicipio(id_municipio);
+       }
     }
 }

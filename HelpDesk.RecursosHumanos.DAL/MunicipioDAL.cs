@@ -27,5 +27,38 @@ namespace HelpDesk.RecursosHumanos.DAL
                return ds;
            }
        }
+
+       public DataSet SelectmunicipioALL()
+       {
+           using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+           {
+
+               SqlConnection oConn = CommonDb.ObtenerConnSql();
+               SqlCommand oCmd = new SqlCommand("SP_select_MunicipioTodos", oConn);
+               oCmd.CommandType = CommandType.StoredProcedure;
+               SqlDataAdapter da = new SqlDataAdapter(oCmd);
+               DataSet ds = new DataSet();
+               da.Fill(ds);
+               return ds;
+           }
+       }
+
+       public DataSet SelectDptoMunicipio(int id_municipio)
+       {
+           using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+           {
+
+               SqlConnection oConn = CommonDb.ObtenerConnSql();
+               SqlCommand oCmd = new SqlCommand("SP_select_DepartamentoPorMunicipio", oConn);
+               oCmd.CommandType = CommandType.StoredProcedure;
+               SqlParameter idmun = new SqlParameter("@Id", id_municipio);
+               oCmd.Parameters.Add(idmun);
+               SqlDataAdapter da = new SqlDataAdapter(oCmd);
+               DataSet ds = new DataSet();
+               da.Fill(ds);
+               return ds;
+           }
+       }
+
     }
 }
