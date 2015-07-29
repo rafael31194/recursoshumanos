@@ -1,8 +1,21 @@
-﻿<Window x:Class="WpfApplication3.LoginInicio"
+﻿<Controls:MetroWindow  x:Class="WpfApplication3.LoginInicio"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="LoginInicio" Height="768" Width="1024">
-    <Grid>
-        
-    </Grid>
-</Window>
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="LoginInicio" Height="768" Width="1024" WindowState="Maximized">
+    <Controls:MetroContentControl>
+        <Grid Margin="-52,10,52,-10">
+
+            <Image Source="Imagenes\logoHelpdesk.png" Margin="378,89,308,473"/>
+            <Image Source="Imagenes\helpdesBusqueda.png" Margin="617,323,346,391" RenderTransformOrigin="0.5,0.5" />
+            <Image Source="Imagenes\helpdesBusqueda.png" Margin="617,402,351,312" RenderTransformOrigin="0.214,4.792" />
+
+            <TextBlock HorizontalAlignment="Left" Margin="670,323,0,0" TextWrapping="Wrap" Text="USUARIOS" VerticalAlignment="Top" FontSize="18"/>
+            <TextBox Controls:TextBoxHelper.ClearTextButton="True"  x:Name="txt_usuarioInicio" controls:TextBoxHelper.Watermark="Usuario"  Height="21" ToolTip="INGRESE SU USUARIO"  Margin="609,352,169,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txt_usuarioInicio_TextChanged" GotFocus="txt_usuarioInicio_GotFocus" />
+            <TextBlock HorizontalAlignment="Left" Margin="670,402,0,0" TextWrapping="Wrap"  Text="CONTRASEÑA" VerticalAlignment="Top" FontSize="18"/>
+            <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txt_contraña"  Height="21" ToolTip="INGRESE SU CONTRASEÑA"  Margin="609,431,169,0" TextWrapping="Wrap" controls:TextBoxHelper.Watermark="Contraseña" VerticalAlignment="Top" />
+
+        </Grid>
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>

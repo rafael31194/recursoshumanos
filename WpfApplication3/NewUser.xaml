@@ -4,13 +4,13 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         Title="NewUser" Height="768" Width="1024" Loaded="MetroWindow_Loaded" WindowState="Maximized">
-    <Controls:MetroContentControl>
-        <Grid Margin="-10,-34,10,33">
+    <Controls:MetroContentControl Margin="0,0,0,6">
+        <Grid Margin="-10,-34,0,0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Row="0"
-    		Grid.Column="0"  Margin="10,10,802,84">
+    		Grid.Column="0"  Margin="10,32,802,84">
 
                 <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,100,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203" Height="324" VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged" >
                     <!--<ListBox.Resources>
@@ -64,12 +64,12 @@
 
                 </ListBox>
             </Grid>
-            <Grid Grid.Row="0" Margin="209,26,10,0" Height="84" VerticalAlignment="Top" >
+            <Grid Grid.Row="0" Margin="229,32,0,0" Height="96" VerticalAlignment="Top" >
 
-                <Label  Content="CREAR NUEVO USUARIOS" Margin="0,0,48,10" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Bottom"/>
+                <Label  Content="CREAR NUEVO USUARIOS" Margin="51,0,0,10" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Left" Width="698" Height="51" VerticalAlignment="Bottom"/>
             </Grid>
             <Border
-        	Grid.Column="0" Margin="-2,632,0,-6"  Height="116" VerticalAlignment="Top" />
+        	Grid.Column="0" Margin="10,539,-12,0"  Height="116" VerticalAlignment="Top" />
             <GroupBox Header="CREAR NUEVO USUARIO" Margin="369,151,149,0" VerticalAlignment="Top" Height="362" FontWeight="Bold">
                 <Grid>
                     <TextBlock HorizontalAlignment="Left" Margin="62,30,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top"/>
@@ -98,5 +98,5 @@
         </Grid>
 
     </Controls:MetroContentControl>
-    
+
 </Controls:MetroWindow>
