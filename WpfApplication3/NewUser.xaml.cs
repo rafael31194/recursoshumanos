@@ -118,6 +118,7 @@ namespace WpfApplication3
             }
         }
 
+
         private void cb_tipoRol_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
