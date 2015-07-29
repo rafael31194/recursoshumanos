@@ -78,7 +78,12 @@ namespace WpfApplication3
              
         }
 
-     
+        private void DataGrid_Usiarioslogin_Loaded(object sender, RoutedEventArgs e)
+        {
+            string oError = "";
+            DataSet ds = usuariobl.Selecusuarios("", ref oError);
+            DataGrid_Usiarioslogin.ItemsSource = ds.Tables[0].DefaultView;
+        }
 
         private void DataGrid_Usiarioslogin_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -90,6 +95,8 @@ namespace WpfApplication3
             }
             txt_busquedaUsuario.Text = nombre1;
         }
+
+     
 
       }
     }
