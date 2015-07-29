@@ -37,16 +37,17 @@ namespace HelpDesk.RecursosHumanos.DAL
             return resultado;
 
         }
-        public DataSet BusquedaUsuarios(string valorFiltro, ref string oError)
+        public DataSet  BusquedaUsuarios(string valorFiltro, ref string oError)
         {
             using (SqlConnection _conn = CommonDb.ObtenerConnSql())
-            {
+             {
                 SqlConnection oConn = CommonDb.ObtenerConnSql();
-                SqlCommand oCmd = new SqlCommand("SP_select_usuarios", oConn);
-                oCmd.Parameters.AddWithValue("@busqueda", valorFiltro);
+                SqlCommand oCmd = new SqlCommand("SP_select_BusquedaUsuario", oConn);
+                oCmd.Parameters.AddWithValue("@busquedaUsuario", valorFiltro);
                 oCmd.CommandType = CommandType.StoredProcedure;
                 SqlDataAdapter da = new SqlDataAdapter(oCmd);
                 DataSet ds = new DataSet();
+                da.Fill(ds);
                 return ds;
             }
         }

@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LoginInicio.xaml.cs">
+      <DependentUpon>LoginInicio.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MantoLogin.xaml.cs">
       <DependentUpon>MantoLogin.xaml</DependentUpon>
     </Compile>
@@ -73,6 +76,10 @@
     <Page Include="Busqueda.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="LoginInicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MantoLogin.xaml">
       <SubType>Designer</SubType>

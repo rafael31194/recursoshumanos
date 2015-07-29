@@ -89,7 +89,8 @@
             <DataGrid Height="232" Margin="279,225,73,0" 
             	x:Name="DataGrid_Usiarioslogin" VerticalAlignment="Top" RowHeight="15" 
             	ColumnHeaderHeight="30"  HeadersVisibility="Column"
-            	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Usiarioslogin_SelectionChanged" >
+            	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Usiarioslogin_SelectionChanged" Loaded="DataGrid_Usiarioslogin_Loaded" >
+                
                 <DataGrid.Columns>
                     <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
                         <DataGridTemplateColumn.CellTemplate>
@@ -112,8 +113,10 @@
                     </DataGridTemplateColumn>
 
                     <DataGridTextColumn Header="CODIGO" Binding="{Binding CODIGO}" />
-                    <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRE}" />
-               
+                    <DataGridTextColumn Header="USARNAME" Binding="{Binding NOMBRE DE USUARIO}" />
+                    <DataGridTextColumn Header="NOMBRE DEL  USUARIO" Binding="{Binding NOMBRE }" />
+                    <DataGridTextColumn Header="ROL DEL USUARIO" Binding="{Binding ROL }" />
+
                 </DataGrid.Columns>
 
             </DataGrid>

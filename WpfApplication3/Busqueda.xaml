@@ -87,6 +87,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                
                 <DataGrid Height="232" Margin="70,162,73,0" 
         		x:Name="data_gridBusqueda" VerticalAlignment="Top" RowHeight="15" 
         		ColumnHeaderHeight="30"  HeadersVisibility="Column"
