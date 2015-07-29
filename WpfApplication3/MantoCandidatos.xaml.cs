@@ -257,6 +257,7 @@ namespace WpfApplication3
                 tablaReference.Rows.Add(dr.ItemArray[0].ToString(), tipoRef, dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString());
                 
             }
+            
 
             DataGrid_Referencias.ItemsSource = tablaReference.DefaultView;
             //Seteando Info Certificaciones Tab*******************************
@@ -271,52 +272,48 @@ namespace WpfApplication3
                 tablaCerti.Rows.Add(dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString()); //puede dar error por la columna int y el dato string
             }
             DataGrid_Certificaciones.ItemsSource = tablaCerti.DefaultView;
+
+            setearComboBox(idMunicipio, idProfesion,idSituProfe);
         }
 
 
-        public void setearComboBox(string idMuni,string idTipoEdu, string idNivel, string idHabilidad,string idTipoRefe, string idProfesion,string idSituacion)
+        public void setearComboBox(string idMuni, string idProfesion,string idSituacion)
         {
 
+
+
+            DataSet dsIdDpto = new DataSet();
+            dsIdDpto = _MunicBL.SelectDptoPorMunicipio(Int32.Parse(idMuni));
+
+            string id_departamentoGet=(dsIdDpto.Tables[0].Rows[0][0].ToString());
+            int id_departamento = Convert.ToInt32(id_departamentoGet);
             DataSet ds = new DataSet();
             ds = _DeptoBL.SelectdepSelectAll();
 
             cbDeptos.ItemsSource = ds.Tables[0].DefaultView;
             cbDeptos.DisplayMemberPath = ds.Tables[0].Columns[1].ToString();
             cbDeptos.SelectedValuePath = ds.Tables[0].Columns[0].ToString();
-            cbDeptos.SelectedIndex = 0;
+            cbDeptos.SelectedIndex =id_departamento-1; 
 
-            DataSet ds3 = new DataSet();
-            ds3 = _TipoEducacion.SelectTipoEducacionALL();
-
-            cb_tipoeducacion.ItemsSource = ds3.Tables[0].DefaultView;
-            cb_tipoeducacion.DisplayMemberPath = ds3.Tables[0].Columns[1].ToString();
-            cb_tipoeducacion.SelectedValuePath = ds3.Tables[0].Columns[0].ToString();
-            cb_tipoeducacion.SelectedIndex = 0;
+            DataSet dsMuni = new DataSet();
+            dsMuni = _MunicBL.SelectmunicipioALL();
 
 
-            DataSet ds4 = new DataSet();
-            ds4 = _NivelBL.SelectnivelALL();
+            //cbMunic.Items.Clear();
+            cbMunic.ItemsSource = dsMuni.Tables[0].DefaultView;
+            cbMunic.DisplayMemberPath = dsMuni.Tables[0].Columns[1].ToString();
+            cbMunic.SelectedValuePath = dsMuni.Tables[0].Columns[0].ToString();
+            cbMunic.SelectedIndex = Int32.Parse(idMuni)-1;
 
-            cb_nivelhabapp.ItemsSource = ds4.Tables[0].DefaultView;
-            cb_nivelhabapp.DisplayMemberPath = ds4.Tables[0].Columns[1].ToString();
-            cb_nivelhabapp.SelectedValuePath = ds4.Tables[0].Columns[0].ToString();
-            cb_nivelhabapp.SelectedIndex = 0;
+            //DataSet ds3 = new DataSet();
+            //ds3 = _TipoEducacion.SelectTipoEducacionALL();
 
-            DataSet ds5 = new DataSet();
-            ds5 = _HabilidadTec.SelectHabilidadTecnicaALL();
-
-            cb_habtecnica.ItemsSource = ds5.Tables[0].DefaultView;
-            cb_habtecnica.DisplayMemberPath = ds5.Tables[0].Columns[1].ToString();
-            cb_habtecnica.SelectedValuePath = ds5.Tables[0].Columns[0].ToString();
+            //cb_tipoeducacion.ItemsSource = ds3.Tables[0].DefaultView;
+            //cb_tipoeducacion.DisplayMemberPath = ds3.Tables[0].Columns[1].ToString();
+            //cb_tipoeducacion.SelectedValuePath = ds3.Tables[0].Columns[0].ToString();
+            //cb_tipoeducacion.SelectedIndex = Int32.Parse(idTipoEdu);
 
 
-            DataSet ds8 = new DataSet();
-            ds8 = _TipoRefereniaBL.SelecttipoReferenciaALL();
-
-            cb_tipoRef.ItemsSource = ds8.Tables[0].DefaultView;
-            cb_tipoRef.DisplayMemberPath = ds8.Tables[0].Columns[1].ToString();
-            cb_tipoRef.SelectedValuePath = ds8.Tables[0].Columns[0].ToString();
-            cb_tipoRef.SelectedIndex = 0;
 
             DataSet ds10 = new DataSet();
             ds10 = _profesionesBL.SelectdepartamentoALL();
@@ -324,7 +321,7 @@ namespace WpfApplication3
             cb_profesionesIB.ItemsSource = ds10.Tables[0].DefaultView;
             cb_profesionesIB.DisplayMemberPath = ds10.Tables[0].Columns[1].ToString();
             cb_profesionesIB.SelectedValuePath = ds10.Tables[0].Columns[0].ToString();
-            cb_profesionesIB.SelectedIndex = 0;
+            cb_profesionesIB.SelectedIndex = Int32.Parse(idProfesion)-1;
 
 
 
@@ -335,7 +332,7 @@ namespace WpfApplication3
             cbSitLab.ItemsSource = dss.Tables[0].DefaultView;
             cbSitLab.DisplayMemberPath = dss.Tables[0].Columns[1].ToString();
             cbSitLab.SelectedValuePath = dss.Tables[0].Columns[0].ToString();
-            cbSitLab.SelectedIndex = 0;
+            cbSitLab.SelectedIndex = Int32.Parse(idSituacion)-1;
         }
     }
 }
