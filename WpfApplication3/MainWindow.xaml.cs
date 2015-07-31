@@ -20,6 +20,7 @@ using HelpDesk.RecursosHumanos.DAL;
 using System.Data;
 using System.Data.SqlClient;
 using MahApps.Metro.Controls;
+using WpfApplication3.Class;
 
 namespace WpfApplication3
 {
@@ -27,7 +28,6 @@ namespace WpfApplication3
     /// Lógica de interacción para MainWindow.xaml
     /// </summary>
     public partial class MainWindow : MetroWindow
-
     {
         // Instancias de eventos 
 
@@ -51,7 +51,7 @@ namespace WpfApplication3
         public MainWindow()
         {
             InitializeComponent();
-            
+
         }
 
         private void ListBox_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
@@ -106,6 +106,8 @@ namespace WpfApplication3
         {
             try
             {
+                //***Esta linea de codigo es para que en el formulario en la parte superiro se vea que usuario esta en el sistema***///
+                Title = Title + " Usuario: " + UserLogin.Nombre + "ROL: " + UserLogin.RolID + " " + UserLogin.NRol;
                 //DATASET  PARA LLENAR LOS COMBOBOX 
                 DataSet ds = new DataSet();
                 ds = _DeptoBL.SelectdepSelectAll();
@@ -156,7 +158,7 @@ namespace WpfApplication3
                 cb_profesionesIB.SelectedValuePath = ds10.Tables[0].Columns[0].ToString();
                 cb_profesionesIB.SelectedIndex = 0;
 
-            
+
                 DataSet dss = new DataSet();
                 dss = _SituacionpBL.SelectSituacionProfeALL();
 
@@ -199,12 +201,9 @@ namespace WpfApplication3
         }
 
         private void btn_GuardarInfoBasica_Click(object sender, RoutedEventArgs e)
-            
+
             //VALIDACION DE MAINWIND
-            //VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
-        
-        
-        
+        //VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
         {
             if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
                 (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
@@ -215,7 +214,7 @@ namespace WpfApplication3
 
             else
             {
-               //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
+                //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
                 InfoBasicaE _InfoBasicaE = new InfoBasicaE();
                 DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
@@ -246,14 +245,14 @@ namespace WpfApplication3
                 string oerro = "";
 
                 int returinfoacademica = 0;
-               returinfoacademica=  _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
-               if (returinfoacademica > 0)
-               {
-                   MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                   tcPrincipal.SelectedIndex = 1;
-                   tab1.IsEnabled = false; 
-               }
-                
+                returinfoacademica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
+                if (returinfoacademica > 0)
+                {
+                    MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    tcPrincipal.SelectedIndex = 1;
+                    tab1.IsEnabled = false;
+                }
+
             }
 
         }
@@ -402,10 +401,10 @@ namespace WpfApplication3
             {
                 MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 tcPrincipal.SelectedIndex = 2;
-                tab2.IsEnabled = false; 
+                tab2.IsEnabled = false;
             }
-            }
-        
+        }
+
 
         private void btn_Referencias_Click(object sender, RoutedEventArgs e)
         {
@@ -486,10 +485,10 @@ namespace WpfApplication3
             cb_tipoeducacion.Text = string.Empty;
             txt_Tituloedu.Text = string.Empty;
             txt_institucionedu.Text = string.Empty;
-            cb_añofinalizacionedu.Text = string.Empty;             
+            cb_añofinalizacionedu.Text = string.Empty;
 
 
-         }
+        }
 
         private void DataGrid_InfAcademica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -594,7 +593,7 @@ namespace WpfApplication3
             {
                 MessageBox.Show("EL CAMPO DE HABILIDADA TECNICA NO PUEDE QUEDAR VACIO");
             }
-           
+
 
             else
             {
@@ -625,12 +624,12 @@ namespace WpfApplication3
                 dt3.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
                 DataG_Habilidades.ItemsSource = dt3.DefaultView;
 
-                cb_habtecnica.Text = string.Empty;
-                cb_nivelhabapp.Text = string.Empty;
+                //cb_habtecnica.Text = string.Empty;
+                //cb_nivelhabapp.Text = string.Empty;
                 cb_habilidadApp.Text = string.Empty;
             }
 
-           
+
         }
 
         private void btn_Habilidades_Click(object sender, RoutedEventArgs e)
@@ -658,7 +657,7 @@ namespace WpfApplication3
                 MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 tcPrincipal.SelectedIndex = 4;
                 tab4.IsEnabled = false;
-               
+
             }
 
         }
@@ -688,7 +687,7 @@ namespace WpfApplication3
             {
                 MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
                 tcPrincipal.SelectedIndex = 3;
-                tab3.IsEnabled = false; 
+                tab3.IsEnabled = false;
             }
         }
         DataTable dt9 = new DataTable();
@@ -750,7 +749,7 @@ namespace WpfApplication3
 
         private void txt_TitutloCertificacion_LostFocus(object sender, RoutedEventArgs e)
         {
-           
+
         }
 
         private void BTOCancelarIngresoInfAcademica_Click(object sender, RoutedEventArgs e)
@@ -811,10 +810,9 @@ namespace WpfApplication3
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
             this.Close();
-           _bw.ShowDialog();
+            _bw.ShowDialog();
 
         }
-
     }
 }
 

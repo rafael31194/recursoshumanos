@@ -3,9 +3,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+                    
         Title="NewUser" Height="768" Width="1024" Loaded="MetroWindow_Loaded" WindowState="Maximized">
     <Controls:MetroContentControl Margin="0,0,0,6">
-        <Grid Margin="-10,-34,0,0">
+        <Grid Margin="-10,-34,0,0" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
@@ -56,9 +57,7 @@
                         <WrapPanel Height="115">
 
                             <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88" MouseDown="Label_MouseDown_1"/>
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles" RenderTransformOrigin="0.824,0.348" Width="88"/>
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
-
+                            
                         </WrapPanel>
                     </Expander>
 

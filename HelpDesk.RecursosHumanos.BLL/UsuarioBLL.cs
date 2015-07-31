@@ -28,8 +28,11 @@ namespace HelpDesk.RecursosHumanos.BLL
         public DataSet Selecusuarios (string valorFiltro, ref string oError)
         {
             return _usuarioDAL.BusquedaUsuarios(valorFiltro, ref oError);
+        }
 
-
+        public usuariosE AutentificacionUser(usuariosE pUsuario)
+        {
+            return _usuarioDAL.AutentificarUsuario(pUsuario);
         }
     }
 

@@ -15,8 +15,7 @@ using HelpDesk.RecursosHumanos.BLL;
 using System.Data;
 using MahApps.Metro.Controls;
 using System.Collections;
-
-
+using WpfApplication3.Class;
 
 namespace WpfApplication3
 {
@@ -25,7 +24,7 @@ namespace WpfApplication3
     /// <summary>
     /// Lógica de interacción para Busqueda.xaml
     /// </summary>
-    public partial  class Busqueda : MetroWindow
+    public partial class Busqueda : MetroWindow
     {
         
         public Object SelectedItem { get; set; }
@@ -48,7 +47,7 @@ namespace WpfApplication3
         private void btn_buscarInfb_1Click(object sender, RoutedEventArgs e)
         {
             string oError = "";
-            DataSet ds =  infoBl.SelectInfoBusqueda(txtBusqueda.Text, ref oError);
+            DataSet ds = infoBl.SelectInfoBusqueda(txtBusqueda.Text, ref oError);
             data_gridBusqueda.ItemsSource = ds.Tables[0].DefaultView;
           
         }
@@ -59,7 +58,8 @@ namespace WpfApplication3
             string oError = "";
             DataSet ds = infoBl.SelectInfoBusqueda("", ref oError);
             data_gridBusqueda.ItemsSource = ds.Tables[0].DefaultView;
-            
+
+            Title = Title + " Usuario: " + UserLogin.Nombre;
             
         }
 
@@ -94,7 +94,6 @@ namespace WpfApplication3
         private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MainWindow _mw = new MainWindow();
-            _mw.InitializeComponent();
             this.Close();
             _mw.ShowDialog();
         }

@@ -64,6 +64,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Class\UserLogin.cs" />
     <Compile Include="LoginInicio.xaml.cs">
       <DependentUpon>LoginInicio.xaml</DependentUpon>
     </Compile>
@@ -202,6 +203,21 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\logoHelpdesk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Userlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\passwordlogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\degradadologin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\PerfielLogin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cargando.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -77,7 +77,8 @@ namespace WpfApplication3
             _usuarioRegistro.userName = txt_NombreUsuario.Text;
             _usuarioRegistro.contrasena = txt_constrasenaUsuario.Password.ToString();
             _usuarioRegistro.name = txt_nombreDelUsuario.Text.ToUpper();
-            _usuarioRegistro.id_rol = Convert.ToInt32(cb_tipoRol.SelectedValue);
+            _usuarioRegistro.id_rol = new RolUsuarioE();
+            _usuarioRegistro.id_rol.id_rol = Convert.ToInt32(cb_tipoRol.SelectedValue);
 
             string oerro = "";
 

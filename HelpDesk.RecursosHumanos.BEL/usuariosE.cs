@@ -12,18 +12,17 @@ namespace HelpDesk.RecursosHumanos.BEL
         public string userName { get; set; }
         public string contrasena { get; set; }
         public string name { get; set; }
-        public int id_rol { get; set; }
+        public RolUsuarioE id_rol { get; set; }
 
        
 
         public usuariosE() { }
-        public usuariosE(int pId_usuario, string pUserName, string pContrasena, string pName, int pId_rol)
+        public usuariosE(int pId_usuario, string pUserName, string pContrasena, string pName)
         {
             id_usuario = pId_usuario;
             userName = pUserName;
             contrasena = pContrasena;
             name = pName ;
-            id_rol = pId_rol;
  
         }
    }
