@@ -156,7 +156,7 @@ namespace WpfApplication3
                     //DataTables recuperados
 
                     MantoCandidatos _mt = new MantoCandidatos();
-                    recuperarMostrarDatosCandidato(ds, _mt);
+                    recuperarMostrarDatosCandidato(id.ToString(),ds, _mt);
                     
                     
                     this.Close();
@@ -166,7 +166,7 @@ namespace WpfApplication3
             }
         }
 
-        public void recuperarMostrarDatosCandidato(DataSet ds,MantoCandidatos mt)
+        public void recuperarMostrarDatosCandidato(string id,DataSet ds,MantoCandidatos mt)
         {
 
             //***************Recuperar Datos********************************
@@ -228,7 +228,7 @@ namespace WpfApplication3
             //**********************************************
             //*******************Setear datos*******************
 
-                    mt.setearCampos(candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
+                    mt.setearCampos(id,candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
 
         }
 

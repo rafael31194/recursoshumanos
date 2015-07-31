@@ -232,8 +232,8 @@
                                             <TextBlock HorizontalAlignment="Left" Margin="15,20,0,0" TextWrapping="Wrap" Text="Tipo de Educacion" VerticalAlignment="Top"/>
                                             <RadioButton Name="rb_InfoAcompleto" Content="Completo" HorizontalAlignment="Left" Margin="129,180,0,0" VerticalAlignment="Top"/>
                                             <RadioButton Name="rb_InfoIncompleto" Content="Incompleto" HorizontalAlignment="Left" Margin="225,180,0,0" VerticalAlignment="Top"/>
-                                            <Button Name="BTOAgregarInfAcademica" Content="Agregar" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" />
-                                            <Button Name="BTOCancelarIngresoInfAcademica" Content="Cancelar" HorizontalAlignment="Left" Margin="460,180,0,0" VerticalAlignment="Top" Width="75" />
+                                            <Button Name="BTOAgregarInfAcademica" Content="Agregar" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarInfAcademica_Click"/>
+                                            <Button Name="BTOCancelarIngresoInfAcademica" Content="Cancelar" HorizontalAlignment="Left" Margin="460,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelarIngresoInfAcademica_Click" />
 
                                         </Grid>
                                     </GroupBox>
@@ -242,10 +242,10 @@
                                     <DataGrid   Style="{StaticResource AzureDataGrid}" Margin="10,306,47,53" 
                         	Name="DataGrid_InfAcademica" RowHeight="30" CanUserAddRows="False"
                         	ColumnHeaderHeight="20" HeadersVisibility="Column" 
-                          AutoGenerateColumns="True"  IsReadOnly="True">
+                          AutoGenerateColumns="True"  IsReadOnly="True" SelectionChanged="DataGrid_InfAcademica_SelectionChanged" MouseDoubleClick="DataGrid_InfAcademica_MouseDoubleClick">
                                         <DataGrid.Columns>
 
-                                            <DataGridTextColumn Header="TIPO DE EDUCACION" Visibility="Hidden" Binding="{Binding Path=''}"/>
+                                            <DataGridTextColumn Header="TIPO DE EDUCACION" Visibility="Visible" Binding="{Binding Path=''}"/>
 
                                         </DataGrid.Columns>
                                     </DataGrid>
@@ -283,15 +283,15 @@
                                                     <ColumnDefinition/>
                                                 </Grid.ColumnDefinitions>
                                             </Grid>
-                                            <Button Name="BTOAgregarInfLaboral" Content="Agregar" HorizontalAlignment="Left" Margin="388,184,0,0" VerticalAlignment="Top" Width="75" />
-                                            <Button Name="BTOCancelarIngresoInfLaboral"  Content="Cancelar" HorizontalAlignment="Left" Margin="479,184,0,0" VerticalAlignment="Top" Width="75" />
+                                            <Button Name="BTOAgregarInfLaboral" Content="Agregar" HorizontalAlignment="Left" Margin="388,184,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarInfLaboral_Click" />
+                                            <Button Name="BTOCancelarIngresoInfLaboral"  Content="Cancelar" HorizontalAlignment="Left" Margin="479,184,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelarIngresoInfLaboral_Click" />
 
                                         </Grid>
                                     </GroupBox>
                                     <Grid Margin="0,54,96,0"/>
                                     <DataGrid  Height="155" Margin="10,0,30,24" 
                         	Name="DataGrid_Inf_Laboral" VerticalAlignment="Bottom" RowHeight="25" ColumnWidth="150" 
-                        	ColumnHeaderHeight="25" HeadersVisibility="Column" AutoGenerateColumns="True" IsReadOnly="True"/>
+                        	ColumnHeaderHeight="25" HeadersVisibility="Column" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Inf_Laboral_MouseDoubleClick"/>
                                     <GroupBox Header="Opciones" Margin="650,10,48,0" VerticalAlignment="Top" Height="219">
                                         <Grid>
                                             <Button Content="Nuevo" HorizontalAlignment="Left" Margin="10,40,0,0" VerticalAlignment="Top" Width="75"/>
@@ -350,7 +350,7 @@
                                     <DataGrid Height="142" Margin="30,0,10,70" 
                         	x:Name="DataGrid_Certificaciones" VerticalAlignment="Bottom" RowHeight="30" 
                         	ColumnHeaderHeight="20" HeadersVisibility="Column"  CanUserAddRows="False"
-                        	BorderBrush="Gray" BorderThickness="6" AutoGenerateColumns="True" IsReadOnly="True"
+                        	BorderBrush="Gray" BorderThickness="6" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Certificaciones_MouseDoubleClick"
                   />
                                     <GroupBox Name="grub_certificaciones" Header="Certificaciones" Margin="166,46,126,0" VerticalAlignment="Top" Height="205">
                                         <Grid>
@@ -377,7 +377,7 @@
                                                 <ComboBoxItem Content="2015"/>
 
                                             </ComboBox>
-                                            <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" />
+                                            <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click" />
                                             <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Width="75"/>
 
                                         </Grid>
@@ -407,15 +407,15 @@
                                             <TextBox Name="txt_telefonoRef" Height="20" Margin="125,100,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
 
                                             <TextBlock HorizontalAlignment="Left" Margin="15,20,0,0" TextWrapping="Wrap" Text="Tipo de Referencia" VerticalAlignment="Top"/>
-                                            <Button x:Name="BTOAgregarTipoReferencia" Content="Agregar" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" />
-                                            <Button x:Name="BTOCancelaringreTipoReferencia" Content="Cancelar" HorizontalAlignment="Left" Margin="460,180,0,0" VerticalAlignment="Top" Width="75" />
+                                            <Button x:Name="BTOAgregarTipoReferencia" Content="Agregar" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarTipoReferencia_Click" />
+                                            <Button x:Name="BTOCancelaringreTipoReferencia" Content="Cancelar" HorizontalAlignment="Left" Margin="460,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelaringreTipoReferencia_Click" />
                                             <TextBox Name="txt_descripcionREF" HorizontalAlignment="Left" Height="23" Margin="125,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
                                         </Grid>
                                     </GroupBox>
                                     <DataGrid Height="177"  Style="{StaticResource AzureDataGrid}" Margin="20,0,20,36" 
                         	Name="DataGrid_Referencias" VerticalAlignment="Bottom" RowHeight="30"  
-                        	ColumnHeaderHeight="25" HeadersVisibility="Column" CanUserAddRows="False" AutoGenerateColumns="True" IsReadOnly="True"/>
+                        	ColumnHeaderHeight="25" HeadersVisibility="Column" CanUserAddRows="False" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Referencias_MouseDoubleClick"/>
                                 </Grid>
                             </TabItem>
 

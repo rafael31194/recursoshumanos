@@ -43,6 +43,18 @@ namespace WpfApplication3
         InformacionAcademicaBLL _informacionAcademicaBL = new InformacionAcademicaBLL();
         ProfesionesBLL _profesionesBL = new ProfesionesBLL();
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
+        
+        //***************TABLAS DE INFORMACION DEL CANDIDATO*****************
+
+        DataTable tablaReference = new DataTable();
+        DataTable tableInfoAcad = new DataTable();
+        DataTable tablaExperiencia = new DataTable();
+        DataTable tablaCerti = new DataTable();
+
+
+        //**************Pivotes tables for tabs
+
+        DataRow RowPivotInfoAca = null;
 
         string idProfesion;
         string idMunicipio;
@@ -53,6 +65,8 @@ namespace WpfApplication3
         public MantoCandidatos()
         {
             InitializeComponent();
+            BTOAgregarInfAcademica.IsEnabled = false;
+            BTOCancelarIngresoInfAcademica.IsEnabled = false;
         }
 
         private void btn_Referencias_Click(object sender, RoutedEventArgs e)
@@ -143,7 +157,7 @@ namespace WpfApplication3
             _bw.ShowDialog();
         }
 
-        public void setearCampos(DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
+        public void setearCampos(string idCandi,DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
         {
 
             //Seteando Info Basica Tab*******************************
@@ -172,10 +186,11 @@ namespace WpfApplication3
 
             
             //Seteando Info Academica Tab*******************************
-            DataTable tableInfoAcad = new DataTable();
+   
 
 
-//            tableInfoAcad.Columns.Add("IDTipoEduacion", typeof(Int32));
+            tableInfoAcad.Columns.Add("IDTipoEduacion", typeof(Int32));
+            
             tableInfoAcad.Columns.Add("Tipo Educacion", typeof(string));
             tableInfoAcad.Columns.Add("Titulo", typeof(string));
             tableInfoAcad.Columns.Add("Institucion", typeof(string));
@@ -214,17 +229,18 @@ namespace WpfApplication3
 
 
 
-                tableInfoAcad.Rows.Add(tipoEduca, dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), statusName, Convert.ToInt32(dr.ItemArray[4].ToString()));
+                tableInfoAcad.Rows.Add(idTipoEduca,tipoEduca, dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), statusName, Convert.ToInt32(dr.ItemArray[4].ToString()));
 
                 
             }
 
             DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
+            DataGrid_InfAcademica.Columns[0].Visibility=Visibility.Collapsed;
 
             
             //Seteando Info experiencia laboral Tab*******************************
 
-            DataTable tablaExperiencia = new DataTable();
+            
 
             tablaExperiencia.Columns.Add("Nombre de la empresa", typeof(string));
             tablaExperiencia.Columns.Add("Cargo Desempeñado", typeof(string));
@@ -233,13 +249,13 @@ namespace WpfApplication3
             tablaExperiencia.Columns.Add("Fecha Fin", typeof(string));
             foreach (DataRow dr in candiInfoExpe)
             {
-                tablaExperiencia.Rows.Add(dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString());
+                tablaExperiencia.Rows.Add(dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString());
             }
 
             DataGrid_Inf_Laboral.ItemsSource = tablaExperiencia.DefaultView;
             //Seteando Info Habilidades Tab*******************************
 
-            DataTable tablaReference = new DataTable();
+           
 
             tablaReference.Columns.Add("IDTIPOREF", typeof(Int32));
             tablaReference.Columns.Add("TIPO DE REFERENCIA", typeof(string));
@@ -261,7 +277,7 @@ namespace WpfApplication3
 
             DataGrid_Referencias.ItemsSource = tablaReference.DefaultView;
             //Seteando Info Certificaciones Tab*******************************
-            DataTable tablaCerti = new DataTable();
+            
 
             tablaCerti.Columns.Add("CERTIFICACION", typeof(string));
             tablaCerti.Columns.Add("INSTITUCION DE CERTIFICACION", typeof(string));
@@ -293,7 +309,7 @@ namespace WpfApplication3
             cbDeptos.ItemsSource = ds.Tables[0].DefaultView;
             cbDeptos.DisplayMemberPath = ds.Tables[0].Columns[1].ToString();
             cbDeptos.SelectedValuePath = ds.Tables[0].Columns[0].ToString();
-            cbDeptos.SelectedIndex =id_departamento-1; 
+            cbDeptos.SelectedValue=id_departamento.ToString(); 
 
             DataSet dsMuni = new DataSet();
             dsMuni = _MunicBL.SelectmunicipioALL();
@@ -303,15 +319,16 @@ namespace WpfApplication3
             cbMunic.ItemsSource = dsMuni.Tables[0].DefaultView;
             cbMunic.DisplayMemberPath = dsMuni.Tables[0].Columns[1].ToString();
             cbMunic.SelectedValuePath = dsMuni.Tables[0].Columns[0].ToString();
-            cbMunic.SelectedIndex = Int32.Parse(idMuni)-1;
+            cbMunic.SelectedValue = idMuni.ToString();
 
-            //DataSet ds3 = new DataSet();
-            //ds3 = _TipoEducacion.SelectTipoEducacionALL();
 
-            //cb_tipoeducacion.ItemsSource = ds3.Tables[0].DefaultView;
-            //cb_tipoeducacion.DisplayMemberPath = ds3.Tables[0].Columns[1].ToString();
-            //cb_tipoeducacion.SelectedValuePath = ds3.Tables[0].Columns[0].ToString();
-            //cb_tipoeducacion.SelectedIndex = Int32.Parse(idTipoEdu);
+            DataSet ds3 = new DataSet();
+            ds3 = _TipoEducacion.SelectTipoEducacionALL();
+
+            cb_tipoeducacion.ItemsSource = ds3.Tables[0].DefaultView;
+            cb_tipoeducacion.DisplayMemberPath = ds3.Tables[0].Columns[1].ToString();
+            cb_tipoeducacion.SelectedValuePath = ds3.Tables[0].Columns[0].ToString();
+            cb_tipoeducacion.SelectedIndex = 0;
 
 
 
@@ -334,5 +351,317 @@ namespace WpfApplication3
             cbSitLab.SelectedValuePath = dss.Tables[0].Columns[0].ToString();
             cbSitLab.SelectedIndex = Int32.Parse(idSituacion)-1;
         }
+
+        //**************************************************************************************************
+
+        //************************************INFORMACION ACADEMICA*************************************
+
+        private void DataGrid_InfAcademica_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            BTOAgregarInfAcademica.IsEnabled = true;
+            BTOCancelarIngresoInfAcademica.IsEnabled = true;
+            int dataRow = DataGrid_InfAcademica.SelectedIndex;
+            string[] datos = { "0", "No existe ese candidato" };
+            
+            foreach (DataRowView dr in DataGrid_InfAcademica.Items)
+            {
+                
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_InfAcademica.SelectedItem)
+                {
+                    cb_tipoeducacion.SelectedValue = dr[0].ToString();
+                    txt_Tituloedu.Text = dr[2].ToString();
+                    txt_institucionedu.Text = dr[3].ToString();
+                    string anio=dr[4].ToString();
+                    cb_añofinalizacionedu.SelectedItem= anio;
+                    if (dr[6].ToString() == "1") rb_InfoAcompleto.IsChecked = true;
+                    else rb_InfoIncompleto.IsChecked = true;
+
+                    
+                    RowPivotInfoAca = dr.Row;
+                           
+                   
+                }
+
+            }
+            //tableInfoAcad.Rows.Remove(RowPivot);
+            //DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
+//            DataGrid_InfAcademica.Items.RemoveAt(dataRow);
+
+
+        }
+
+        private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
+        {
+
+            tableInfoAcad.Rows.Remove(RowPivotInfoAca);
+            RowPivotInfoAca = null;
+            string tipoEducacion, titulo, institucion, StatusName;
+            int id_tipoEducacion, status, finalizacion;
+
+            id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
+            tipoEducacion = cb_tipoeducacion.Text.ToString();
+            titulo = txt_Tituloedu.Text;
+            institucion = txt_institucionedu.Text;
+            finalizacion = Convert.ToInt32(cb_añofinalizacionedu.SelectionBoxItem);
+            if (rb_InfoAcompleto.IsChecked == true)
+            {
+                status = 1;
+                StatusName = "Completo";
+            }
+            else
+            {
+                status = 2;
+                StatusName = "Incompleto";
+
+            }
+
+            
+            
+            tableInfoAcad.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+
+            //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
+            cb_tipoeducacion.Text = string.Empty;
+            txt_Tituloedu.Text = string.Empty;
+            txt_institucionedu.Text = string.Empty;
+            cb_añofinalizacionedu.Text = string.Empty;             
+
+        }
+
+        private void BTOCancelarIngresoInfAcademica_Click(object sender, RoutedEventArgs e)
+        {
+//            tableInfoAcad.Rows.Add(RowPivotInfoAca);
+            RowPivotInfoAca = null;
+            BTOAgregarInfAcademica.IsEnabled = false;
+            BTOCancelarIngresoInfAcademica.IsEnabled = false;
+            cb_tipoeducacion.SelectedValue = 0;
+            txt_Tituloedu.Text = "";
+            txt_institucionedu.Text = "";
+            cb_añofinalizacionedu.SelectedValue = 0;
+            rb_InfoAcompleto.IsChecked = false;
+            rb_InfoIncompleto.IsChecked = false;
+        }
+
+
+        //**************************************************************************************************
+
+        //**************************INFORMACION LABORAL O EXPERIENCIA*************************************
+
+        private void DataGrid_Inf_Laboral_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            BTOAgregarInfLaboral.IsEnabled = true;
+            BTOCancelarIngresoInfLaboral.IsEnabled = true;
+            
+
+            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            {
+
+                //error con la tabla inconsistencia de columnas
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                {
+                    txt_NombreEmpresaLab.Text = dr[1].ToString();
+                    txt_CargoDespeLab.Text = dr[2].ToString();
+                    txt_DescripPuestoLab.Text = dr[3].ToString();
+                    txt_FechaInicioLab.Text = dr[4].ToString();
+                    //txt_FechaFinLab.Text = dr[5].ToString();
+
+
+                    RowPivotInfoAca = dr.Row;
+
+
+                }
+            }
+        }
+
+        private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            tablaExperiencia.Rows.Remove(RowPivotInfoAca);
+            RowPivotInfoAca = null;
+
+            BTOAgregarInfLaboral.IsEnabled = false;
+            BTOCancelarIngresoInfLaboral.IsEnabled = false;
+
+            string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
+            NombreEmpesa = txt_NombreEmpresaLab.Text;
+            CargoDesempeñado = txt_CargoDespeLab.Text;
+            DescripcionPuesto = txt_DescripPuestoLab.Text;
+            FechaInicio = txt_FechaInicioLab.Text;
+            fechaFin = txt_FechaFinLab.Text;
+
+            //ds.Tables.Add(dt);
+     
+
+            tablaExperiencia.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+
+            
+
+            txt_NombreEmpresaLab.Text = string.Empty;
+            txt_CargoDespeLab.Text = string.Empty;
+            txt_DescripPuestoLab.Text = string.Empty;
+            txt_FechaInicioLab.Text = string.Empty;
+            txt_FechaFinLab.Text = string.Empty;
+
+            //DataGrid_InfAcademica.ItemsSource = dt;
+
+        }
+
+        private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            BTOAgregarInfLaboral.IsEnabled = false;
+            BTOCancelarIngresoInfLaboral.IsEnabled = false;
+
+            txt_NombreEmpresaLab.Text = string.Empty;
+            txt_CargoDespeLab.Text = string.Empty;
+            txt_DescripPuestoLab.Text = string.Empty;
+            txt_FechaInicioLab.Text = string.Empty;
+            txt_FechaFinLab.Text = string.Empty;
+        }
+        //**************************************************************************************************
+        //*****************************************CERTIFICACIONES******************************************
+        private void DataGrid_Certificaciones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            btn_agragarcertificaciones.IsEnabled = true;
+            bt_cancerAcertificaciones.IsEnabled = true;
+            
+            foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+            {
+
+                //error con la tabla inconsistencia de columnas
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Certificaciones.SelectedItem)
+                {
+                    txt_TitutloCertificacion.Text = dr[0].ToString();
+                    txt_InstCertiicacion.Text = dr[1].ToString();
+                    cb_añoFinCertificacion.SelectedValue = dr[2].ToString();
+                    //txt_FechaFinLab.Text = dr[5].ToString();
+
+
+                    RowPivotInfoAca = dr.Row;
+
+
+                }
+            }
+        }
+        private void btn_agragarcertificaciones_Click(object sender, RoutedEventArgs e)
+        {
+
+
+            tablaCerti.Rows.Remove(RowPivotInfoAca);
+            RowPivotInfoAca = null;
+
+            btn_agragarcertificaciones.IsEnabled = false;
+            bt_cancerAcertificaciones.IsEnabled = false;
+            
+            string nombre, institutucion;
+            int anio;
+            nombre = txt_TitutloCertificacion.Text;
+            institutucion = txt_InstCertiicacion.Text;
+            anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
+
+            
+            tablaCerti.Rows.Add(nombre, institutucion, anio);
+
+            txt_TitutloCertificacion.Text = string.Empty;
+            txt_InstCertiicacion.Text = string.Empty;
+            cb_añoFinCertificacion.SelectedIndex = 0;
+        }
+
+        private void bt_cancerAcertificaciones_Click(object sender, RoutedEventArgs e)
+        {
+
+            btn_agragarcertificaciones.IsEnabled = false;
+            bt_cancerAcertificaciones.IsEnabled = false;
+            txt_TitutloCertificacion.Text = string.Empty;
+            txt_InstCertiicacion.Text = string.Empty;
+            cb_añoFinCertificacion.SelectedIndex = 0;
+        }
+
+        
+        //**************************************************************************************************
+        //*****************************************REFERENCIAS******************************************
+
+
+        private void DataGrid_Referencias_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            BTOAgregarTipoReferencia.IsEnabled = true;
+            BTOCancelaringreTipoReferencia.IsEnabled = true;
+
+
+
+            foreach (DataRowView dr in DataGrid_Referencias.Items)
+            {
+
+                //error con la tabla inconsistencia de columnas
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Referencias.SelectedItem)
+                {
+
+                    cb_tipoRef.SelectedValue = dr[0].ToString();
+                    txt_nombreRef.Text = dr[1].ToString();
+                    txt_telefonoRef.Text = dr[2].ToString();
+                    txt_descripcionREF.Text = dr[3].ToString();
+                    
+
+
+                    RowPivotInfoAca = dr.Row;
+
+
+                }
+            }
+        }
+
+        private void BTOAgregarTipoReferencia_Click(object sender, RoutedEventArgs e)
+        {
+            BTOAgregarTipoReferencia.IsEnabled = false;
+            BTOCancelaringreTipoReferencia.IsEnabled =false;
+
+            tablaReference.Rows.Remove(RowPivotInfoAca);
+
+            RowPivotInfoAca = null;
+            string TipoReferencia, Nombre, Telefono, Descripcion;
+            int idReferencia;
+
+            idReferencia = Convert.ToInt32(cb_tipoRef.SelectedValue);
+            TipoReferencia = cb_tipoRef.Text.ToString();
+            Nombre = txt_nombreRef.Text;
+            Telefono = txt_telefonoRef.Text;
+            Descripcion = txt_descripcionREF.Text;
+          
+          
+            tablaReference.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+            
+            cb_tipoRef.Text = string.Empty;
+            txt_nombreRef.Text = string.Empty;
+            txt_telefonoRef.Text = string.Empty;
+            txt_descripcionREF.Text = string.Empty;
+        }
+
+        private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
+        {
+            BTOAgregarTipoReferencia.IsEnabled = false;
+            BTOCancelaringreTipoReferencia.IsEnabled = false;
+            cb_tipoRef.Text = string.Empty;
+            txt_nombreRef.Text = string.Empty;
+            txt_telefonoRef.Text = string.Empty;
+            txt_descripcionREF.Text = string.Empty;
+        }
+
+        private void DataGrid_InfAcademica_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+
+
+        //**************************************************************************************************
+        
+
+       
     }
 }
