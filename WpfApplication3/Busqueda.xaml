@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="Busqueda" Height="768" Width="1024" Loaded="Window_Loaded_1" WindowState="Maximized">
+        Title="Busqueda" Height="768" Width="1024" Loaded="Window_Loaded_1"  WindowState="Maximized">
 
 
 
@@ -144,7 +144,7 @@
                 <!--</Border>-->
 
 
-                <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusqueda"  Height="21" Margin="110,109,300,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1"/>
+                <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusqueda"  Height="21"  Margin="110,109,300,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1"/>
                 <Button Name="btn_buscarInfb"  HorizontalAlignment="Left" Margin="569,99,0,0" VerticalAlignment="Top" Width="130" Height="32" Click="btn_buscarInfb_1Click">
                     <DockPanel>
                         <Image Source="Imagenes\helpdesBusqueda.png" Width="32" />

@@ -11,17 +11,32 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MahApps.Metro.Controls;
 
 namespace WpfApplication3
 {
     /// <summary>
     /// Lógica de interacción para LoginInicio.xaml
     /// </summary>
-    public partial class LoginInicio : Window
+    public partial class LoginInicio : MetroWindow
     {
         public LoginInicio()
         {
+
             InitializeComponent();
         }
+
+        private void txt_usuarioInicio_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txt_usuarioInicio_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+
+
+        }
+
     }
 }
