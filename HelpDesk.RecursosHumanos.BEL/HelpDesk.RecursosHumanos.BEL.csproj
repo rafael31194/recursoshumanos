@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnioE.cs" />
     <Compile Include="CertificacionesE.cs" />
     <Compile Include="DepartamentoE.cs" />
     <Compile Include="ExpLaboralE.cs" />

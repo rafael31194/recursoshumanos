@@ -38,6 +38,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnioDAL.cs" />
     <Compile Include="CertificacionesDAL.cs" />
     <Compile Include="CommonDb.cs" />
     <Compile Include="DepartamentoDAL.cs" />

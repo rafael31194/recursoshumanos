@@ -358,21 +358,21 @@
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_TitutloCertificacion" Height="23" Margin="160,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250" LostFocus="txt_TitutloCertificacion_LostFocus"/>
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_InstCertiicacion" Height="23" Margin="160,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250"/>
                                             <ComboBox HorizontalAlignment="Left" Name="cb_añoFinCertificacion" Margin="160,140,0,0" VerticalAlignment="Top" Width="120">
-                                                <ComboBoxItem Content="2000"/>
-                                                <ComboBoxItem Content="2001"/>
-                                                <ComboBoxItem Content="2002"/>
-                                                <ComboBoxItem Content="2003"/>
-                                                <ComboBoxItem Content="2004"/>
-                                                <ComboBoxItem Content="2005"/>
-                                                <ComboBoxItem Content="2006"/>
-                                                <ComboBoxItem Content="2007"/>
-                                                <ComboBoxItem Content="2008"/>
-                                                <ComboBoxItem Content="2009"/>
-                                                <ComboBoxItem Content="2010"/>
-                                                <ComboBoxItem Content="2012"/>
-                                                <ComboBoxItem Content="2013"/>
-                                                <ComboBoxItem Content="2014"/>
-                                                <ComboBoxItem Content="2015"/>
+                                                <ComboBoxItem Content="2000" />
+                                                <ComboBoxItem Content="2001" />
+                                                <ComboBoxItem Content="2002" />
+                                                <ComboBoxItem Content="2003" />
+                                                <ComboBoxItem Content="2004" />
+                                                <ComboBoxItem Content="2005" />
+                                                <ComboBoxItem Content="2006" />
+                                                <ComboBoxItem Content="2007" />
+                                                <ComboBoxItem Content="2008" />
+                                                <ComboBoxItem Content="2009" />
+                                                <ComboBoxItem Content="2010" />
+                                                <ComboBoxItem Content="2012" />
+                                                <ComboBoxItem Content="2013" />
+                                                <ComboBoxItem Content="2014" />
+                                                <ComboBoxItem Content="2015" />
 
                                             </ComboBox>
                                             <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click"/>
