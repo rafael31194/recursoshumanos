@@ -200,7 +200,7 @@ namespace WpfApplication3
                     }
                     
 
-                    foreach (DataRow datar in tableInfoAcade.Rows)
+                    foreach (DataRow datar in tableCertifi.Rows)
                     {
                         candiCeriti.Add(datar);
                         

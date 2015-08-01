@@ -194,38 +194,9 @@
                                             <ComboBox  Name="cb_tipoeducacion" HorizontalAlignment="Left" Margin="125,20,0,0" VerticalAlignment="Top" Width="120"/>
                                             <TextBox Name="txt_Tituloedu" Height="20" Margin="125,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                                             <TextBox Name="txt_institucionedu" Height="20" Margin="125,100,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                                            <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,140,0,0" VerticalAlignment="Top" Width="99" >
-                                                <ComboBoxItem Content="1986"/>
-                                                <ComboBoxItem Content="1987"/>
-                                                <ComboBoxItem Content="1988"/>
-                                                <ComboBoxItem Content="1989"/>
-                                                <ComboBoxItem Content="1990"/>
-                                                <ComboBoxItem Content="1991"/>
-                                                <ComboBoxItem Content="1992"/>
-                                                <ComboBoxItem Content="1993"/>
-                                                <ComboBoxItem Content="1993"/>
-                                                <ComboBoxItem Content="1994"/>
-                                                <ComboBoxItem Content="1995"/>
-                                                <ComboBoxItem Content="1996"/>
-                                                <ComboBoxItem Content="1997"/>
-                                                <ComboBoxItem Content="1998"/>
-                                                <ComboBoxItem Content="1999"/>
-                                                <ComboBoxItem Content="2000"/>
-                                                <ComboBoxItem Content="2001"/>
-                                                <ComboBoxItem Content="2002"/>
-                                                <ComboBoxItem Content="2003"/>
-                                                <ComboBoxItem Content="2004"/>
-                                                <ComboBoxItem Content="2005"/>
-                                                <ComboBoxItem Content="2006"/>
-                                                <ComboBoxItem Content="2007"/>
-                                                <ComboBoxItem Content="2008"/>
-                                                <ComboBoxItem Content="2009"/>
-                                                <ComboBoxItem Content="2010"/>
-                                                <ComboBoxItem Content="2012"/>
-                                                <ComboBoxItem Content="2013"/>
-                                                <ComboBoxItem Content="2014"/>
-                                                <ComboBoxItem Content="2015"/>
-                                            </ComboBox>
+                                            <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,140,0,0" VerticalAlignment="Top" Width="99" />
+                                                
+                                            
 
 
                                             <TextBlock HorizontalAlignment="Left" Margin="15,20,0,0" TextWrapping="Wrap" Text="Tipo de Educacion" VerticalAlignment="Top"/>
@@ -305,17 +276,20 @@
                                             <TextBlock Margin="25,20,550,0" TextWrapping="Wrap" Text="Habilidad Tecnica" Height="13" VerticalAlignment="Top"/>
                                             <TextBlock Margin="282,20,368,0" TextWrapping="Wrap" Text="Nivel" VerticalAlignment="Top"/>
                                             <TextBlock Margin="450,20,90,0" TextWrapping="Wrap" Text="Seleccione Aplicacion" VerticalAlignment="Top"/>
-                                            <ComboBox Name="cb_habtecnica" Margin="25,38,510,0" VerticalAlignment="Top"/>
-                                            <ComboBox Name="cb_nivelhabapp" HorizontalAlignment="Left" Margin="282,38,0,0" VerticalAlignment="Top" Width="120"/>
+                                            <ComboBox Name="cb_habtecnica" Margin="25,38,510,0" VerticalAlignment="Top" SelectionChanged="cb_habtecnica_SelectionChanged"/>
+                                            <ComboBox Name="cb_nivelhabapp" HorizontalAlignment="Left" Margin="300,38,0,0" VerticalAlignment="Top" Width="120"/>
                                             <ComboBox Name="cb_habilidadApp" HorizontalAlignment="Left" Margin="450,38,0,0" VerticalAlignment="Top" Width="283"/>
-                                            <Button Name="BTOagregarHabTec" Content="Agregar" HorizontalAlignment="Left" Margin="524,102,0,0" VerticalAlignment="Top" Width="76" />
-                                            <Button Name="BTOcancelarHabTec" Content="Cancelar" HorizontalAlignment="Left" Margin="624,101,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.213,0.7" />
+                                            <Button Name="BTOagregarHabTec" Content="Agregar" HorizontalAlignment="Left" Margin="524,102,0,0" VerticalAlignment="Top" Width="76" Click="BTOagregarHabTec_Click" />
+                                            <Button Name="BTOcancelarHabTec" Content="Cancelar" HorizontalAlignment="Left" Margin="624,101,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.213,0.7" Click="BTOcancelarHabTec_Click" />
 
                                         </Grid>
                                     </GroupBox>
 
 
-                                    <DataGrid Margin="100,222,100,0" Name="DataG_Habilidades"  AutoGenerateColumns="False" IsReadOnly="True">
+                                    <DataGrid Margin="10,182,28,40" Name="DataG_Habilidades" 
+                        	ColumnHeaderHeight="25" RowBackground="LightYellow"
+                        	AlternatingRowBackground="LightBlue"
+                        	BorderBrush="gray" BorderThickness="4" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataG_Habilidades_MouseDoubleClick">
                                         <DataGrid.Columns>
                                             <DataGridTextColumn Header="IdH" Visibility="Hidden" Binding="{Binding Path='ID HAB TECNICA'}"/>
                                             <DataGridTextColumn Header="Habilidad" Binding="{Binding Path='HABILIDAD TECNICA'}"/>
@@ -347,26 +321,11 @@
                                             <TextBlock HorizontalAlignment="Left" Margin="40,140,0,0" TextWrapping="Wrap" Text="Año de Realizacion" Height="17" VerticalAlignment="Top"/>
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_TitutloCertificacion" Height="23" Margin="160,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250" />
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_InstCertiicacion" Height="23" Margin="160,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250"/>
-                                            <ComboBox HorizontalAlignment="Left" Name="cb_añoFinCertificacion" Margin="160,130,0,0" Width="120" Height="26" VerticalAlignment="Top">
-                                                <ComboBoxItem Content="2000"/>
-                                                <ComboBoxItem Content="2001"/>
-                                                <ComboBoxItem Content="2002"/>
-                                                <ComboBoxItem Content="2003"/>
-                                                <ComboBoxItem Content="2004"/>
-                                                <ComboBoxItem Content="2005"/>
-                                                <ComboBoxItem Content="2006"/>
-                                                <ComboBoxItem Content="2007"/>
-                                                <ComboBoxItem Content="2008"/>
-                                                <ComboBoxItem Content="2009"/>
-                                                <ComboBoxItem Content="2010"/>
-                                                <ComboBoxItem Content="2012"/>
-                                                <ComboBoxItem Content="2013"/>
-                                                <ComboBoxItem Content="2014"/>
-                                                <ComboBoxItem Content="2015"/>
+                                            <ComboBox HorizontalAlignment="Left" Name="cb_añoFinCertificacion" Margin="160,140,0,0" VerticalAlignment="Top" Width="120"/>
+                                                
 
-                                            </ComboBox>
-                                            <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,128,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click" />
-                                            <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,128,0,0" Width="75" Height="25" VerticalAlignment="Top"/>
+                                            <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click" />
+                                            <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Width="75"/>
 
                                         </Grid>
                                     </GroupBox>
