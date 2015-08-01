@@ -3,18 +3,29 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        Title="LoginInicio" Height="768" Width="1024" WindowState="Maximized">
+        Title="LoginInicio" Height="768" Width="1024" WindowState="Maximized" Loaded="MetroWindow_Loaded">
     <Controls:MetroContentControl>
-        <Grid Margin="-52,10,52,-10">
 
-            <Image Source="Imagenes\logoHelpdesk.png" Margin="378,89,308,473"/>
-            <Image Source="Imagenes\helpdesBusqueda.png" Margin="617,323,346,391" RenderTransformOrigin="0.5,0.5" />
-            <Image Source="Imagenes\helpdesBusqueda.png" Margin="617,402,351,312" RenderTransformOrigin="0.214,4.792" />
+        <Grid Background="#FFFAFDFD" Margin="0,0,0,10">
+            <Rectangle Fill="White" Margin="300,110,300,230" Stroke="Blue"></Rectangle>
+                
+                    <Image Source="Imagenes\logoHelpdesk.png" Margin="345,139,335,489"/>
+                    <Image Source="Imagenes\Userlogin.png" Margin="345,234,622,0" VerticalAlignment="Top" Height="24" />
+                    <Image Source="Imagenes\passwordlogin.png" Margin="345,313,622,0" Visibility="Visible" VerticalAlignment="Top" RenderTransformOrigin="0.379,0.106" Height="24"/>
 
-            <TextBlock HorizontalAlignment="Left" Margin="670,323,0,0" TextWrapping="Wrap" Text="USUARIOS" VerticalAlignment="Top" FontSize="18"/>
-            <TextBox Controls:TextBoxHelper.ClearTextButton="True"  x:Name="txt_usuarioInicio" controls:TextBoxHelper.Watermark="Usuario"  Height="21" ToolTip="INGRESE SU USUARIO"  Margin="609,352,169,0" TextWrapping="Wrap" VerticalAlignment="Top" TextChanged="txt_usuarioInicio_TextChanged" GotFocus="txt_usuarioInicio_GotFocus" />
-            <TextBlock HorizontalAlignment="Left" Margin="670,402,0,0" TextWrapping="Wrap"  Text="CONTRASEÑA" VerticalAlignment="Top" FontSize="18"/>
-            <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txt_contraña"  Height="21" ToolTip="INGRESE SU CONTRASEÑA"  Margin="609,431,169,0" TextWrapping="Wrap" controls:TextBoxHelper.Watermark="Contraseña" VerticalAlignment="Top" />
+                    <TextBlock Margin="388,234,525,0" TextWrapping="Wrap" Text="USUARIOS" VerticalAlignment="Top" FontSize="18" Height="24"/>
+                    <TextBox controls:TextBoxHelper.ClearTextButton="True"  x:Name="txt_usuarioInicio"  controls:TextBoxHelper.Watermark="Usuario"  Height="21" ToolTip="INGRESE SU USUARIO"  Margin="345,263,345,0"  VerticalAlignment="Top" TextChanged="txt_usuarioInicio_TextChanged" GotFocus="txt_usuarioInicio_GotFocus" />
+                    <TextBlock HorizontalAlignment="Left" Margin="388,313,0,0" TextWrapping="Wrap"  Text="CONTRASEÑA" VerticalAlignment="Top" FontSize="18"/>
+                    <PasswordBox  PasswordChar="*" controls:TextBoxHelper.ClearTextButton="True" x:Name="txt_contraña"  Height="21" ToolTip="INGRESE SU CONTRASEÑA"  Margin="345,342,345,0"  controls:TextBoxHelper.Watermark="Contraseña" VerticalAlignment="Top" />
+
+            <Button x:Name="btn_EntrarLogin" HorizontalAlignment="Left" Margin="345,414,0,0" VerticalAlignment="Top" Width="326" Height="31" Click="btn_EntrarLogin_Click"  Style="{StaticResource AccentedSquareButtonStyle}">
+                        <DockPanel>
+                            <TextBlock Height="24"  Width="79" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="INGRESAR"/></TextBlock>
+                        </DockPanel>
+                    </Button>
+                    
+            
+
 
         </Grid>
     </Controls:MetroContentControl>
