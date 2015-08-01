@@ -657,6 +657,24 @@ namespace WpfApplication3
 
         }
 
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void buscarPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {  
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+
+        }
+
 
 
         //**************************************************************************************************
