@@ -539,30 +539,44 @@ namespace WpfApplication3
 
         private void DataGrid_Inf_Laboral_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
-            BTOAgregarInfLaboral.IsEnabled = true;
-            BTOCancelarIngresoInfLaboral.IsEnabled = true;
-            
-
-            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            if (string.IsNullOrEmpty(txt_NombreEmpresaLab.Text) | string.IsNullOrEmpty(txt_CargoDespeLab.Text) |
+                string.IsNullOrEmpty(txt_DescripPuestoLab.Text) | string.IsNullOrEmpty(txt_FechaInicioLab.Text) |
+                string.IsNullOrEmpty(txt_FechaFinLab.Text))
             {
 
-                //error con la tabla inconsistencia de columnas
-
-                //entro a la linea que le di doble click
-                if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                if (nuevoExpe == false)
                 {
-                    txt_NombreEmpresaLab.Text = dr[1].ToString();
-                    txt_CargoDespeLab.Text = dr[2].ToString();
-                    txt_DescripPuestoLab.Text = dr[3].ToString();
-                    txt_FechaInicioLab.Text = dr[4].ToString();
-                    //txt_FechaFinLab.Text = dr[5].ToString();
+
+                    foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+                    {
 
 
-                    RowPivotInfoAca = dr.Row;
+
+                        //entro a la linea que le di doble click
+                        if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                        {
+                            txt_NombreEmpresaLab.Text = dr[0].ToString();
+                            txt_CargoDespeLab.Text = dr[1].ToString();
+                            txt_DescripPuestoLab.Text = dr[2].ToString();
+                            txt_FechaInicioLab.Text = dr[3].ToString();
+                            txt_FechaFinLab.Text = dr[4].ToString();
+                            //txt_FechaFinLab.Text = dr[5].ToString();
 
 
+                            RowPivotInfoAca = dr.Row;
+
+
+                        }
+                    }
                 }
+                else
+                {
+                    agregarExperiencia();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Debe llenar todos los datos solicitados");
             }
         }
 
