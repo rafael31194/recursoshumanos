@@ -23,6 +23,7 @@ namespace HelpDesk.RecursosHumanos.BEL
             userName = pUserName;
             contrasena = pContrasena;
             name = pName ;
+           
  
         }
    }

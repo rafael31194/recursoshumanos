@@ -26,7 +26,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     Comando.Parameters.AddWithValue("@userName ", pusuario.userName);
                     Comando.Parameters.AddWithValue("@contrasena", pusuario.contrasena);
                     Comando.Parameters.AddWithValue("@name", pusuario.name);
-                    Comando.Parameters.AddWithValue("id_rol", pusuario.id_rol);
+                    Comando.Parameters.AddWithValue("id_rol", pusuario.id_rol.id_rol);
                     resultado = Comando.ExecuteNonQuery();
                 }
                 else

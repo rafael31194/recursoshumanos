@@ -200,62 +200,63 @@ namespace WpfApplication3
 
         }
 
-        private void btn_GuardarInfoBasica_Click(object sender, RoutedEventArgs e)
+        //private void btn_GuardarInfoBasica_Click(object sender, RoutedEventArgs e)
 
-            //VALIDACION DE MAINWIND
-        //VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
-        {
-            if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
-                (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
-                || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) || (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text)))
-            {
-                MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
-            }
+        //    //VALIDACION DE MAINWIND
+        ////VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
+        //{
+        //    if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
+        //        (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
+        //        || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) || (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text)))
+        //    {
+        //        MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
+        //    }
 
-            else
-            {
-                //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
-                InfoBasicaE _InfoBasicaE = new InfoBasicaE();
-                DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
-                _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
-                _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
-                _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
-                _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
-                //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
-                _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
-                _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
-                _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-                if (rbsexoM.IsChecked == true)
-                {
-                    _InfoBasicaE.id_genero = 1;
-                }
-                else if (rbsexoF.IsChecked == true)
-                {
-                    _InfoBasicaE.id_genero = 2;
-                }
+        //    else
+        //    {
+        //        //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
+        //        InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+        //        DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+        //        _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+        //        _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+        //        _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+        //        _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+        //        //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+        //        _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+        //        _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
+        //        _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+        //        _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+        //        if (rbsexoM.IsChecked == true)
+        //        {
+        //            _InfoBasicaE.id_genero = 1;
+        //        }
+        //        else if (rbsexoF.IsChecked == true)
+        //        {
+        //            _InfoBasicaE.id_genero = 2;
+        //        }
 
-                _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
-                _InfoBasicaE.NIT = txtNnitInfBasica.Text;
-                _InfoBasicaE.AFP = txtNafpInfBasica.Text;
-                _InfoBasicaE.ISSS = txtNiss.Text;
-                _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
-                _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+        //        _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+        //        _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+        //        _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+        //        _InfoBasicaE.ISSS = txtNiss.Text;
+        //        _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+        //        _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
 
-                string oerro = "";
+        //        string oerro = "";
 
-                int returinfoacademica = 0;
-                returinfoacademica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
-                if (returinfoacademica > 0)
-                {
-                    MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    tcPrincipal.SelectedIndex = 1;
-                    tab1.IsEnabled = false;
-                }
+        //        int returinfoacademica = 0;
+        //        returinfoacademica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
 
-            }
+        //        if (returinfoacademica > 0)
+        //        {
+        //            MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //            tcPrincipal.SelectedIndex = 1;
+        //            tab1.IsEnabled = false;
+        //        }
 
-        }
+        //    }
+
+        //}
         //OTRAS VALIDACIONES SOLO LESTRAS SOLO NUMEROS EN LOS EVENTOS
         private void txtNombreInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -315,128 +316,65 @@ namespace WpfApplication3
 
         }
 
-        private void tcPrincipal_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            //IF PARA OCULTAR LOS BOTONES EN EL FORMULARIO MAIN WINDOWS 
-            if (e.Source is TabControl)
-            {
-                if (tcPrincipal.SelectedIndex == 0)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Visible;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Hidden;
-                    btn_Habilidades.Visibility = Visibility.Hidden;
-                    btn_Certificaciones.Visibility = Visibility.Hidden;
-                    btn_Referencias.Visibility = Visibility.Hidden;
-                }
-                else if (tcPrincipal.SelectedIndex == 1)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Visible;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Hidden;
-                    btn_Habilidades.Visibility = Visibility.Hidden;
-                    btn_Certificaciones.Visibility = Visibility.Hidden;
-                    btn_Referencias.Visibility = Visibility.Hidden;
-                }
-                else if (tcPrincipal.SelectedIndex == 2)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Visible;
-                    btn_Habilidades.Visibility = Visibility.Hidden;
-                    btn_Certificaciones.Visibility = Visibility.Hidden;
-                    btn_Referencias.Visibility = Visibility.Hidden;
-
-                }
-                else if (tcPrincipal.SelectedIndex == 3)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Hidden;
-                    btn_Habilidades.Visibility = Visibility.Visible;
-                    btn_Certificaciones.Visibility = Visibility.Hidden;
-                    btn_Referencias.Visibility = Visibility.Hidden;
-                }
-                else if (tcPrincipal.SelectedIndex == 4)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Hidden;
-                    btn_Habilidades.Visibility = Visibility.Hidden;
-                    btn_Certificaciones.Visibility = Visibility.Visible;
-                    btn_Referencias.Visibility = Visibility.Hidden;
-
-                }
-                else if (tcPrincipal.SelectedIndex == 5)
-                {
-                    btn_GuardarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoAcademica.Visibility = Visibility.Hidden;
-                    btn_Guardar_InfoLaboral.Visibility = Visibility.Hidden;
-                    btn_Habilidades.Visibility = Visibility.Hidden;
-                    btn_Certificaciones.Visibility = Visibility.Hidden;
-                    btn_Referencias.Visibility = Visibility.Visible;
-                }
-            }
-        }
-
-        private void btn_Guardar_InfoAcademica_Click(object sender, RoutedEventArgs e)
-        {   //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
-            int returVariable3 = 0;
+       
+        //private void btn_Guardar_InfoAcademica_Click(object sender, RoutedEventArgs e)
+        //{   //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
+        //    int returVariable3 = 0;
 
 
-            // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
-            string oerror = "";
-            InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
-            foreach (DataRowView row in DataGrid_InfAcademica.Items)
-            {
-                refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
-                refinfoAcademica.titulo = Convert.ToString(row[2]);
-                refinfoAcademica.institucion = Convert.ToString(row[3]);
-                refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
-                refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
+        //    // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
+        //    string oerror = "";
+        //    InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
+        //    foreach (DataRowView row in DataGrid_InfAcademica.Items)
+        //    {
+        //        refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
+        //        refinfoAcademica.titulo = Convert.ToString(row[2]);
+        //        refinfoAcademica.institucion = Convert.ToString(row[3]);
+        //        refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
+        //        refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
 
-                returVariable3 = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerror);
-            }
-            if (returVariable3 > 0)
-            {
-                MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                tcPrincipal.SelectedIndex = 2;
-                tab2.IsEnabled = false;
-            }
-        }
-
-
-        private void btn_Referencias_Click(object sender, RoutedEventArgs e)
-        {
-            //VARIABLE PARA MANDAR MENSAJE PARA GUARDAR REFERENCIA 
-            int returVariable4 = 0;
-
-            //    BOTON PARA GUARDAR REFERECNCIASS  (EVENTO)
-            string oerror = "";
-            RefecenciasE refE = new RefecenciasE();
-            foreach (DataRowView row in DataGrid_Referencias.Items)
-            {
-                refE.id_tipoReferencias = Convert.ToInt32(row[0]);
-                refE.nombre = Convert.ToString(row[2]);
-                refE.telefono = Convert.ToString(row[3]);
-                refE.descripcion = Convert.ToString(row[4]);
+        //        returVariable3 = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerror);
+        //    }
+        //    if (returVariable3 > 0)
+        //    {
+        //        MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        tcPrincipal.SelectedIndex = 2;
+        //        tab2.IsEnabled = false;
+        //    }
+        //}
 
 
-                returVariable4 = _referenciasBL.GuardarReferencias(refE, ref oerror);
-            }
-            if (returVariable4 > 0)
-            {
-                MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                tcPrincipal.SelectedIndex = 6;
-                tab6.IsEnabled = false;
+        //private void btn_Referencias_Click(object sender, RoutedEventArgs e)
+        //{
+        //    //VARIABLE PARA MANDAR MENSAJE PARA GUARDAR REFERENCIA 
+        //    int returVariable4 = 0;
 
-                Busqueda _bw = new Busqueda();
-                _bw.InitializeComponent();
-                this.Close();
-                _bw.Show();
+        //    //    BOTON PARA GUARDAR REFERECNCIASS  (EVENTO)
+        //    string oerror = "";
+        //    RefecenciasE refE = new RefecenciasE();
+        //    foreach (DataRowView row in DataGrid_Referencias.Items)
+        //    {
+        //        refE.id_tipoReferencias = Convert.ToInt32(row[0]);
+        //        refE.nombre = Convert.ToString(row[2]);
+        //        refE.telefono = Convert.ToString(row[3]);
+        //        refE.descripcion = Convert.ToString(row[4]);
 
-            }
-        }
+
+        //        returVariable4 = _referenciasBL.GuardarReferencias(refE, ref oerror);
+        //    }
+        //    if (returVariable4 > 0)
+        //    {
+        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        tcPrincipal.SelectedIndex = 6;
+        //        tab6.IsEnabled = false;
+
+        //        Busqueda _bw = new Busqueda();
+        //        _bw.InitializeComponent();
+        //        this.Close();
+        //        _bw.Show();
+
+        //    }
+        //}
         DataTable dt2 = new DataTable();
         private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
         {
@@ -632,64 +570,64 @@ namespace WpfApplication3
 
         }
 
-        private void btn_Habilidades_Click(object sender, RoutedEventArgs e)
-        {
-            // VARIABLE PARA MESAJE DE GUARDAR DATOS DE HABILIDAD
-            int returVariable1 = 0;
+        //private void btn_Habilidades_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // VARIABLE PARA MESAJE DE GUARDAR DATOS DE HABILIDAD
+        //    int returVariable1 = 0;
 
-            // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
+        //    // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
 
-            string oerror = "";
-            HabCandidatoE refHabCandidato = new HabCandidatoE();
-            foreach (DataRowView row in DataG_Habilidades.Items)
-            {
+        //    string oerror = "";
+        //    HabCandidatoE refHabCandidato = new HabCandidatoE();
+        //    foreach (DataRowView row in DataG_Habilidades.Items)
+        //    {
 
 
-                refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row[0]);
-                refHabCandidato.id_nivel = Convert.ToInt32(row[2]);
-                refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row[4]);
+        //        refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row[0]);
+        //        refHabCandidato.id_nivel = Convert.ToInt32(row[2]);
+        //        refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row[4]);
 
-                returVariable1 = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerror);
+        //        returVariable1 = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerror);
 
-            }
-            if (returVariable1 > 0)
-            {
-                MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                tcPrincipal.SelectedIndex = 4;
-                tab4.IsEnabled = false;
+        //    }
+        //    if (returVariable1 > 0)
+        //    {
+        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        tcPrincipal.SelectedIndex = 4;
+        //        tab4.IsEnabled = false;
 
-            }
+        //    }
 
-        }
+        //}
 
-        private void btn_Guardar_InfoLaboral_Click(object sender, RoutedEventArgs e)
-        {
-            // VARIABLE PARA MENSAJE DE GUARDAR INFORMACION LABORAL 
-            int returVariable2 = 0;
+        //private void btn_Guardar_InfoLaboral_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // VARIABLE PARA MENSAJE DE GUARDAR INFORMACION LABORAL 
+        //    int returVariable2 = 0;
 
-            //BOTON PARA GUARDAR INFORMACION LABORAL DE LA GRID 
+        //    //BOTON PARA GUARDAR INFORMACION LABORAL DE LA GRID 
 
-            string oerror = "";
-            ExpLaboralE refExpL = new ExpLaboralE();
-            foreach (DataRowView row in DataGrid_Inf_Laboral.Items)
-            {
+        //    string oerror = "";
+        //    ExpLaboralE refExpL = new ExpLaboralE();
+        //    foreach (DataRowView row in DataGrid_Inf_Laboral.Items)
+        //    {
 
-                refExpL.nombreEmpresa = Convert.ToString(row[0]);
-                refExpL.cargoDesp = Convert.ToString(row[1]);
-                refExpL.descripPuesto = Convert.ToString(row[2]);
-                refExpL.fechaInicio = Convert.ToString(row[3]);
-                refExpL.fechaFin = Convert.ToString(row[4]);
+        //        refExpL.nombreEmpresa = Convert.ToString(row[0]);
+        //        refExpL.cargoDesp = Convert.ToString(row[1]);
+        //        refExpL.descripPuesto = Convert.ToString(row[2]);
+        //        refExpL.fechaInicio = Convert.ToString(row[3]);
+        //        refExpL.fechaFin = Convert.ToString(row[4]);
 
-                returVariable2 = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerror);
+        //        returVariable2 = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerror);
 
-            }
-            if (returVariable2 > 0)
-            {
-                MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                tcPrincipal.SelectedIndex = 3;
-                tab3.IsEnabled = false;
-            }
-        }
+        //    }
+        //    if (returVariable2 > 0)
+        //    {
+        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        tcPrincipal.SelectedIndex = 3;
+        //        tab3.IsEnabled = false;
+        //    }
+        //}
         DataTable dt9 = new DataTable();
         private void btn_agragarcertificaciones_Click(object sender, RoutedEventArgs e)
         {
@@ -719,33 +657,33 @@ namespace WpfApplication3
             cb_añoFinCertificacion.SelectedIndex = 0;
         }
 
-        private void btn_Certificaciones_Click(object sender, RoutedEventArgs e)
-        {
-            // VARAIABLE DE MESAJE PARA GUARDAR CERTIFCACIONES 
-            int returVariable = 0;
+        //private void btn_Certificaciones_Click(object sender, RoutedEventArgs e)
+        //{
+        //    // VARAIABLE DE MESAJE PARA GUARDAR CERTIFCACIONES 
+        //    int returVariable = 0;
 
 
-            //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
-            string oerror = "";
-            CertificacionesE certifi = new CertificacionesE();
-            foreach (DataRowView row in DataGrid_Certificaciones.Items)
-            {
-                certifi.nombre = Convert.ToString(row[0]);
-                certifi.institucion = Convert.ToString(row[1]);
-                certifi.anio = Convert.ToInt16(row[2]);
+        //    //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
+        //    string oerror = "";
+        //    CertificacionesE certifi = new CertificacionesE();
+        //    foreach (DataRowView row in DataGrid_Certificaciones.Items)
+        //    {
+        //        certifi.nombre = Convert.ToString(row[0]);
+        //        certifi.institucion = Convert.ToString(row[1]);
+        //        certifi.anio = Convert.ToInt16(row[2]);
 
-                returVariable = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerror);
+        //        returVariable = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerror);
 
-            }
+        //    }
 
-            if (returVariable > 0)
-            {
-                MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                tcPrincipal.SelectedIndex = 5;
-                tab5.IsEnabled = false;
-            }
+        //    if (returVariable > 0)
+        //    {
+        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        tcPrincipal.SelectedIndex = 5;
+        //        tab5.IsEnabled = false;
+        //    }
 
-        }
+        //}
 
         private void txt_TitutloCertificacion_LostFocus(object sender, RoutedEventArgs e)
         {
@@ -754,13 +692,41 @@ namespace WpfApplication3
 
         private void BTOCancelarIngresoInfAcademica_Click(object sender, RoutedEventArgs e)
         {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
+            //***LIMPIA LAS CAJAS DE TEXTO***//
+            cb_tipoeducacion.Text = string.Empty;
+            txt_Tituloedu.Text = string.Empty;
+            txt_institucionedu.Text = string.Empty;
+            cb_añofinalizacionedu.Text = string.Empty;
         }
+        private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            //***LIMPIA LAS CAJAS DE TEXTO***//
+            txt_NombreEmpresaLab.Text = string.Empty;
+            txt_CargoDespeLab.Text = string.Empty;
+            txt_DescripPuestoLab.Text = string.Empty;
+            txt_FechaInicioLab.Text = string.Empty;
+            txt_FechaFinLab.Text = string.Empty;
 
+        }
+        private void BTOcancelarHabTec_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void bt_cancerAcertificaciones_Click(object sender, RoutedEventArgs e)
+        {
+            //***LIMPIA LAS CAJAS DE TEXTO***//
+            txt_TitutloCertificacion.Text = string.Empty;
+            txt_InstCertiicacion.Text = string.Empty;
+            cb_añoFinCertificacion.Text = string.Empty;
+        }
+        private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
+        {
+            cb_tipoRef.Text = string.Empty;
+            txt_nombreRef.Text = string.Empty;
+            txt_telefonoRef.Text = string.Empty;
+            txt_descripcionREF.Text = string.Empty;
+
+        }
         private void buscarPerfil_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
             //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
@@ -784,35 +750,151 @@ namespace WpfApplication3
             _mw.ShowDialog();
         }
 
-        private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
 
+        private void UsuarioMenu_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
         }
 
-        private void BTOcancelarHabTec_Click(object sender, RoutedEventArgs e)
+        //***BOTON PARA GUARDAR TODA LA INFORMACION DE UN NUEVO PERFIL***/// 
+        private void GuardarTodo_Click(object sender, RoutedEventArgs e)
         {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
+            //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
+            int returVariable3 = 0;
 
-        }
 
-        private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
 
+            if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
+                (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
+                || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) || (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text)))
+            {
+                MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
+            }
+
+            else
+            {
+                //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
+                InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+                DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+                _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+                _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+                _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+                _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+                //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+                _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+                _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
+                _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+                _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+                if (rbsexoM.IsChecked == true)
+                {
+                    _InfoBasicaE.id_genero = 1;
+                }
+                else if (rbsexoF.IsChecked == true)
+                {
+                    _InfoBasicaE.id_genero = 2;
+                }
+
+                _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+                _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+                _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+                _InfoBasicaE.ISSS = txtNiss.Text;
+                _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+                _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+
+                string oerro = "";
+
+                int returinfoacademica = 0;
+                returinfoacademica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
+
+               
+
+            // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
+            
+            InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
+            foreach (DataRowView row in DataGrid_InfAcademica.Items)
+            {
+                refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
+                refinfoAcademica.titulo = Convert.ToString(row[2]);
+                refinfoAcademica.institucion = Convert.ToString(row[3]);
+                refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
+                refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
+            }
+
+
+
+            //BOTON PARA GUARDAR INFORMACION LABORAL
+
+
+            ExpLaboralE refExpL = new ExpLaboralE();
+            foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
+            {
+
+                refExpL.nombreEmpresa = Convert.ToString(row1[0]);
+                refExpL.cargoDesp = Convert.ToString(row1[1]);
+                refExpL.descripPuesto = Convert.ToString(row1[2]);
+                refExpL.fechaInicio = Convert.ToString(row1[3]);
+                refExpL.fechaFin = Convert.ToString(row1[4]);
+
+            }
+
+            //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
+
+            CertificacionesE certifi = new CertificacionesE();
+            foreach (DataRowView row2 in DataGrid_Certificaciones.Items)
+            {
+                certifi.nombre = Convert.ToString(row2[0]);
+                certifi.institucion = Convert.ToString(row2[1]);
+                certifi.anio = Convert.ToInt16(row2[2]);
+
+            }
+
+
+
+            // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
+
+            HabCandidatoE refHabCandidato = new HabCandidatoE();
+            foreach (DataRowView row3 in DataG_Habilidades.Items)
+            {
+
+
+                refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row3[0]);
+                refHabCandidato.id_nivel = Convert.ToInt32(row3[2]);
+                refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row3[4]);
+
+            }
+
+            //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
+
+            CertificacionesE certifi2 = new CertificacionesE();
+            foreach (DataRowView row4 in DataGrid_Certificaciones.Items)
+            {
+                certifi2.nombre = Convert.ToString(row4[0]);
+                certifi2.institucion = Convert.ToString(row4[1]);
+                certifi2.anio = Convert.ToInt16(row4[2]);
+
+
+            }
+
+            RefecenciasE refE = new RefecenciasE();
+            foreach (DataRowView row5 in DataGrid_Referencias.Items)
+            {
+                refE.id_tipoReferencias = Convert.ToInt32(row5[0]);
+                refE.nombre = Convert.ToString(row5[2]);
+                refE.telefono = Convert.ToString(row5[3]);
+                refE.descripcion = Convert.ToString(row5[4]);
+
+                if (returVariable3 == 0)
+                {
+                    MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                
+                }
+            }
         }
     }
 }
 
+}       
+ 
