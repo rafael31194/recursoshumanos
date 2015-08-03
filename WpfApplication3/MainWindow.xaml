@@ -42,7 +42,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
-                        <Controls:MetroTabControl Name="tcPrincipal" Height="541" VerticalAlignment="Top"  Margin="0,31,8,-90" SelectionChanged="tcPrincipal_SelectionChanged" >
+                        <Controls:MetroTabControl Name="tcPrincipal" Height="541" VerticalAlignment="Top"  Margin="0,31,8,-90">
                             <TabControl.BorderBrush>
                                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                     <GradientStop Color="Black" Offset="0"/>
@@ -437,38 +437,10 @@
                                 <TranslateTransform/>
                             </TransformGroup>
                         </Grid.RenderTransform>
-                        <Button x:Name="btn_GuardarInfoBasica" HorizontalAlignment="Right" Margin="0,10,90,0" Width="100" Click="btn_GuardarInfoBasica_Click" Style="{StaticResource AccentedSquareButtonStyle}" MinWidth="120" MinHeight="40" Height="44" VerticalAlignment="Top">
-                            <Button.Content>
-                                <TextBlock x:Name="btn_GuardarInfoBasicaTB1" Text="Guardar Informacion Basica" TextWrapping="Wrap" TextAlignment="Center" Width="110" Height="34"/>
-                            </Button.Content>
-                        </Button>
-                        <Button x:Name="btn_Guardar_InfoAcademica" HorizontalAlignment="Right" Margin="0,10,90,0" Width="125" Click="btn_Guardar_InfoAcademica_Click" Style="{StaticResource AccentedSquareButtonStyle}" Height="45" VerticalAlignment="Top" MinWidth="120" MinHeight="40">
-                            <Button.Content>
-                                <TextBlock Text="Guardar Informacion Acdemica" TextWrapping="Wrap" TextAlignment="Center"/>
-                            </Button.Content>
-                        </Button>
-                        <Button x:Name="btn_Guardar_InfoLaboral" HorizontalAlignment="Right" Margin="0,10,90,0" Width="116" Click="btn_Guardar_InfoLaboral_Click" Style="{StaticResource AccentedSquareButtonStyle}" Height="44" VerticalAlignment="Top" MinWidth="125" MinHeight="30">
-                            <Button.Content>
-                                <TextBlock Text="Guardar Informacion Laboral" TextWrapping="Wrap" TextAlignment="Center"/>
-                            </Button.Content>
-                        </Button>
-                        <Button x:Name="btn_Habilidades" HorizontalAlignment="Right"  Margin="0,10,90,0" Width="116" Click="btn_Habilidades_Click" Style="{StaticResource AccentedSquareButtonStyle}" MinWidth="125" MinHeight="30">
-                            <Button.Content>
-                                <TextBlock Text="Guardar Habilidades" TextWrapping="Wrap" TextAlignment="Center" Margin="0,10,0,0"/>
-                            </Button.Content>
-                        </Button>
-                        <Button x:Name="btn_Certificaciones" HorizontalAlignment="Right" Margin="0,10,90,0" Width="125" Click="btn_Certificaciones_Click" Style="{StaticResource AccentedSquareButtonStyle}" MinWidth="125" MinHeight="30" Height="45" VerticalAlignment="Top">
-                            <Button.Content>
-                                <TextBlock Text="Guardar Cetificaciones" TextWrapping="Wrap" TextAlignment="Center"/>
-                            </Button.Content>
-                        </Button> 
-                        <Button x:Name="btn_Referencias" HorizontalAlignment="Right" Margin="0,10,90,0" Width="125" Click="btn_Referencias_Click" Style="{StaticResource AccentedSquareButtonStyle}" Height="49" VerticalAlignment="Top" MinWidth="125">
-                            <Button.Content>
-                                <TextBlock x:Name="btngGuardarTB" Text="Guardar Referencias" TextWrapping="Wrap" TextAlignment="Center"/>
-                            </Button.Content>
-                        </Button>
-                    </Grid>
+                        <Button Name="GuardarTodo" Content="SAVE REGISTRO" HorizontalAlignment="Left" Margin="849,27,0,0" VerticalAlignment="Top" Width="94" Click="GuardarTodo_Click"/>
 
+                    </Grid>
+ 
 
                     <StackPanel
                 Orientation="Horizontal" Margin="0,741,0,0"/>
