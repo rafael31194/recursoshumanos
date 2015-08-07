@@ -432,8 +432,8 @@ namespace WpfApplication3
         private void DataGrid_InfAcademica_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             nuevoInfoAca = false;
-            int dataRow = DataGrid_InfAcademica.SelectedIndex;
-            string[] datos = { "0", "No existe ese candidato" };
+            
+            
             
             foreach (DataRowView dr in DataGrid_InfAcademica.Items)
             {
@@ -523,7 +523,7 @@ namespace WpfApplication3
         {
 //            tableInfoAcad.Rows.Add(RowPivotInfoAca);
             RowPivotInfoAca = null;
-          
+            nuevoInfoAca = true;
             cb_tipoeducacion.SelectedValue = 0;
             txt_Tituloedu.Text = "";
             txt_institucionedu.Text = "";
@@ -540,30 +540,33 @@ namespace WpfApplication3
         private void DataGrid_Inf_Laboral_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
 
-            BTOAgregarInfLaboral.IsEnabled = true;
-            BTOCancelarIngresoInfLaboral.IsEnabled = true;
-            
 
-            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
-            {
+            nuevoExpe = false;
 
-                //error con la tabla inconsistencia de columnas
-
-                //entro a la linea que le di doble click
-                if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
                 {
-                    txt_NombreEmpresaLab.Text = dr[1].ToString();
-                    txt_CargoDespeLab.Text = dr[2].ToString();
-                    txt_DescripPuestoLab.Text = dr[3].ToString();
-                    txt_FechaInicioLab.Text = dr[4].ToString();
-                    //txt_FechaFinLab.Text = dr[5].ToString();
 
 
-                    RowPivotInfoAca = dr.Row;
+
+                    //entro a la linea que le di doble click
+                    if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                    {
+                        txt_NombreEmpresaLab.Text = dr[0].ToString();
+                        txt_CargoDespeLab.Text = dr[1].ToString();
+                        txt_DescripPuestoLab.Text = dr[2].ToString();
+                        txt_FechaInicioLab.Text = dr[3].ToString();
+                        txt_FechaFinLab.Text = dr[4].ToString();
+                        //txt_FechaFinLab.Text = dr[5].ToString();
 
 
+                        RowPivotInfoAca = dr.Row;
+
+
+                    }
                 }
-            }
+            
+              
+           
         }
 
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
@@ -573,41 +576,54 @@ namespace WpfApplication3
                     string.IsNullOrEmpty(txt_FechaFinLab.Text)))
 
             {
-                    tablaExperiencia.Rows.Remove(RowPivotInfoAca);
-                    RowPivotInfoAca = null;
+                    if (nuevoExpe == false)
+                    {
+                                tablaExperiencia.Rows.Remove(RowPivotInfoAca);
+                                RowPivotInfoAca = null;
 
-                    BTOAgregarInfLaboral.IsEnabled = false;
-                    BTOCancelarIngresoInfLaboral.IsEnabled = false;
+                                
 
-                    string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
-                    NombreEmpesa = txt_NombreEmpresaLab.Text;
-                    CargoDesempeñado = txt_CargoDespeLab.Text;
-                    DescripcionPuesto = txt_DescripPuestoLab.Text;
-                    FechaInicio = txt_FechaInicioLab.Text;
-                    fechaFin = txt_FechaFinLab.Text;
+                                string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
+                                NombreEmpesa = txt_NombreEmpresaLab.Text;
+                                CargoDesempeñado = txt_CargoDespeLab.Text;
+                                DescripcionPuesto = txt_DescripPuestoLab.Text;
+                                FechaInicio = txt_FechaInicioLab.Text;
+                                fechaFin = txt_FechaFinLab.Text;
 
-                    //ds.Tables.Add(dt);
+                                //ds.Tables.Add(dt);
      
 
-                    tablaExperiencia.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                                tablaExperiencia.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
 
             
 
-                    txt_NombreEmpresaLab.Text = string.Empty;
-                    txt_CargoDespeLab.Text = string.Empty;
-                    txt_DescripPuestoLab.Text = string.Empty;
-                    txt_FechaInicioLab.Text = string.Empty;
-                    txt_FechaFinLab.Text = string.Empty;
+                                txt_NombreEmpresaLab.Text = string.Empty;
+                                txt_CargoDespeLab.Text = string.Empty;
+                                txt_DescripPuestoLab.Text = string.Empty;
+                                txt_FechaInicioLab.Text = string.Empty;
+                                txt_FechaFinLab.Text = string.Empty;
 
-                    //DataGrid_InfAcademica.ItemsSource = dt;
+                                //DataGrid_InfAcademica.ItemsSource = dt;
+
+                                nuevoExpe = true;
+            
+                    }
+                    else
+                    {
+                        agregarExperiencia();
+                    }
+
+
             }
-
+            else
+            {
+                MessageBox.Show("Debe llenar todos los datos solicitados");
+            }
         }
 
         private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
         {
-            BTOAgregarInfLaboral.IsEnabled = false;
-            BTOCancelarIngresoInfLaboral.IsEnabled = false;
+            nuevoExpe = true;
 
             txt_NombreEmpresaLab.Text = string.Empty;
             txt_CargoDespeLab.Text = string.Empty;
@@ -619,9 +635,7 @@ namespace WpfApplication3
         //*****************************************CERTIFICACIONES******************************************
         private void DataGrid_Certificaciones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
-            btn_agragarcertificaciones.IsEnabled = true;
-            bt_cancerAcertificaciones.IsEnabled = true;
+            nuevoCerti = false;
             
             foreach (DataRowView dr in DataGrid_Certificaciones.Items)
             {
@@ -646,34 +660,44 @@ namespace WpfApplication3
         private void btn_agragarcertificaciones_Click(object sender, RoutedEventArgs e)
         {
 
-            if (string.IsNullOrEmpty(txt_TitutloCertificacion.Text) | string.IsNullOrEmpty(txt_InstCertiicacion.Text) | cb_añoFinCertificacion.SelectedIndex == 0)
+            if (!(string.IsNullOrEmpty(txt_TitutloCertificacion.Text) | string.IsNullOrEmpty(txt_InstCertiicacion.Text) | cb_añoFinCertificacion.SelectedIndex == 0))
             {
-                tablaCerti.Rows.Remove(RowPivotInfoAca);
-                RowPivotInfoAca = null;
+                if (nuevoCerti == false)
+                {
 
-                btn_agragarcertificaciones.IsEnabled = false;
-                bt_cancerAcertificaciones.IsEnabled = false;
+                    tablaCerti.Rows.Remove(RowPivotInfoAca);
+                    RowPivotInfoAca = null;
+                    string nombre, institutucion;
+                    int anio;
+                    nombre = txt_TitutloCertificacion.Text;
+                    institutucion = txt_InstCertiicacion.Text;
+                    anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
 
-                string nombre, institutucion;
-                int anio;
-                nombre = txt_TitutloCertificacion.Text;
-                institutucion = txt_InstCertiicacion.Text;
-                anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
 
+                    tablaCerti.Rows.Add(nombre, institutucion, anio);
 
-                tablaCerti.Rows.Add(nombre, institutucion, anio);
-
-                txt_TitutloCertificacion.Text = string.Empty;
-                txt_InstCertiicacion.Text = string.Empty;
-                cb_añoFinCertificacion.SelectedIndex = 0;
+                    txt_TitutloCertificacion.Text = string.Empty;
+                    txt_InstCertiicacion.Text = string.Empty;
+                    cb_añoFinCertificacion.SelectedIndex = 0;
+                    nuevoCerti = true;
+                }
+                else
+                {
+                    //falta metodo agregar certificacion
+                    agregarCertificacion();
+                    
+                }
+            }
+            else
+            {
+                MessageBox.Show("Inserte todos los datos solicitados");
             }
         }
 
         private void bt_cancerAcertificaciones_Click(object sender, RoutedEventArgs e)
         {
 
-            btn_agragarcertificaciones.IsEnabled = false;
-            bt_cancerAcertificaciones.IsEnabled = false;
+            nuevoCerti = true;
             txt_TitutloCertificacion.Text = string.Empty;
             txt_InstCertiicacion.Text = string.Empty;
             cb_añoFinCertificacion.SelectedIndex = 0;
@@ -686,16 +710,12 @@ namespace WpfApplication3
 
         private void DataGrid_Referencias_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            BTOAgregarTipoReferencia.IsEnabled = true;
-            BTOCancelaringreTipoReferencia.IsEnabled = true;
-
-
-
+            nuevoRefe = false;
             foreach (DataRowView dr in DataGrid_Referencias.Items)
             {
 
-            
-
+  
+              
                 //entro a la linea que le di doble click
                 if (dr == DataGrid_Referencias.SelectedItem)
                 {
@@ -716,34 +736,47 @@ namespace WpfApplication3
 
         private void BTOAgregarTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
-            BTOAgregarTipoReferencia.IsEnabled = false;
-            BTOCancelaringreTipoReferencia.IsEnabled =false;
 
-            tablaReference.Rows.Remove(RowPivotInfoAca);
+            if (!(string.IsNullOrEmpty(cb_tipoRef.Text) | string.IsNullOrEmpty(txt_nombreRef.Text) | string.IsNullOrEmpty(txt_telefonoRef.Text) |
+                string.IsNullOrEmpty(txt_descripcionREF.Text)))
+            {
+                if (nuevoRefe == false)
+                {
+                    tablaReference.Rows.Remove(RowPivotInfoAca);
 
-            RowPivotInfoAca = null;
-            string TipoReferencia, Nombre, Telefono, Descripcion;
-            int idReferencia;
+                    RowPivotInfoAca = null;
+                    string TipoReferencia, Nombre, Telefono, Descripcion;
+                    int idReferencia;
 
-            idReferencia = Convert.ToInt32(cb_tipoRef.SelectedValue);
-            TipoReferencia = cb_tipoRef.Text.ToString();
-            Nombre = txt_nombreRef.Text;
-            Telefono = txt_telefonoRef.Text;
-            Descripcion = txt_descripcionREF.Text;
-          
-          
-            tablaReference.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
-            
-            cb_tipoRef.Text = string.Empty;
-            txt_nombreRef.Text = string.Empty;
-            txt_telefonoRef.Text = string.Empty;
-            txt_descripcionREF.Text = string.Empty;
+                    idReferencia = Convert.ToInt32(cb_tipoRef.SelectedValue);
+                    TipoReferencia = cb_tipoRef.Text.ToString();
+                    Nombre = txt_nombreRef.Text;
+                    Telefono = txt_telefonoRef.Text;
+                    Descripcion = txt_descripcionREF.Text;
+
+
+                    tablaReference.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+                    cb_tipoRef.Text = string.Empty;
+                    txt_nombreRef.Text = string.Empty;
+                    txt_telefonoRef.Text = string.Empty;
+                    txt_descripcionREF.Text = string.Empty;
+                    nuevoRefe = true;
+                }
+                else
+                {
+                    agregarReferencia();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Inserte todos los datos solicitados");
+            }
         }
 
         private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
-            BTOAgregarTipoReferencia.IsEnabled = false;
-            BTOCancelaringreTipoReferencia.IsEnabled = false;
+            nuevoRefe = true;
             cb_tipoRef.Text = string.Empty;
             txt_nombreRef.Text = string.Empty;
             txt_telefonoRef.Text = string.Empty;
@@ -757,6 +790,7 @@ namespace WpfApplication3
         {
 
 
+            nuevoHabi = false;
             foreach (DataRowView dr in DataG_Habilidades.Items)
             {
 
@@ -784,47 +818,67 @@ namespace WpfApplication3
 
         private void BTOagregarHabTec_Click(object sender, RoutedEventArgs e)
         {
-            tablaHabilidades.Rows.Remove(RowPivotInfoAca);
 
-            RowPivotInfoAca = null;
-
-            if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
+            if (!(string.IsNullOrEmpty(cb_habtecnica.Text) | string.IsNullOrEmpty(cb_nivelhabapp.Text) | string.IsNullOrEmpty(cb_habilidadApp.Text)))
             {
-                MessageBox.Show("SELECCIONE EL NIVEL DE SU HABILIDAD TECNICA");
-            }
-            else if (string.IsNullOrEmpty(cb_habtecnica.Text))
-            {
-                MessageBox.Show("EL CAMPO DE HABILIDADA TECNICA NO PUEDE QUEDAR VACIO");
-            }
+
+                if (nuevoHabi == false)
+                {
+                    tablaHabilidades.Rows.Remove(RowPivotInfoAca);
+
+                    RowPivotInfoAca = null;
+
+                    if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
+                    {
+                        MessageBox.Show("SELECCIONE EL NIVEL DE SU HABILIDAD TECNICA");
+                    }
+                    else if (string.IsNullOrEmpty(cb_habtecnica.Text))
+                    {
+                        MessageBox.Show("EL CAMPO DE HABILIDADA TECNICA NO PUEDE QUEDAR VACIO");
+                    }
 
 
+                    else
+                    {
+                        string HabilidadTecnica, Nivel, HabilidadAplicacion;
+                        int id_habilidadTecnica, id_nivel, id_habilidadAplicacion;
+
+                        id_habilidadTecnica = Convert.ToInt32(cb_habtecnica.SelectedValue);
+                        HabilidadTecnica = cb_habtecnica.Text.ToString();
+                        id_nivel = Convert.ToInt32(cb_nivelhabapp.SelectedValue);
+                        Nivel = cb_nivelhabapp.Text.ToString();
+                        id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
+                        HabilidadAplicacion = cb_habilidadApp.Text.ToString();
+
+
+
+                        tablaHabilidades.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+
+
+                        cb_habtecnica.Text = string.Empty;
+                        cb_nivelhabapp.Text = string.Empty;
+                        cb_habilidadApp.Text = string.Empty;
+                        nuevoHabi = true;
+                    }
+                }
+                else
+                {
+                    agregarHabilidad();
+                }
+            }
             else
             {
-                string HabilidadTecnica, Nivel, HabilidadAplicacion;
-                int id_habilidadTecnica, id_nivel, id_habilidadAplicacion;
-
-                id_habilidadTecnica = Convert.ToInt32(cb_habtecnica.SelectedValue);
-                HabilidadTecnica = cb_habtecnica.Text.ToString();
-                id_nivel = Convert.ToInt32(cb_nivelhabapp.SelectedValue);
-                Nivel = cb_nivelhabapp.Text.ToString();
-                id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
-                HabilidadAplicacion = cb_habilidadApp.Text.ToString();
-
-               
-
-                tablaHabilidades.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
-                
-
-                cb_habtecnica.Text = string.Empty;
-                cb_nivelhabapp.Text = string.Empty;
-                cb_habilidadApp.Text = string.Empty;
+                MessageBox.Show("Inserte todos los datos solicitados");
             }
 
         }
 
         private void BTOcancelarHabTec_Click(object sender, RoutedEventArgs e)
         {
-
+            nuevoHabi = true;
+            cb_habilidadApp.SelectedIndex = -1;
+            cb_habtecnica.SelectedIndex = -1;
+            cb_nivelhabapp.SelectedIndex = -1;
         }
 
 //        **********************************************************************************************
@@ -980,6 +1034,25 @@ namespace WpfApplication3
 
            
         }
+
+        //*****************************************************************************************
+
+
+        public void agregarCertificacion(){
+
+            string nombre, institutucion;
+            int anio;
+            nombre = txt_TitutloCertificacion.Text;
+            institutucion = txt_InstCertiicacion.Text;
+            anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
+            tablaCerti.Rows.Add(nombre, institutucion, anio);
+
+            cb_añofinalizacionedu.SelectedIndex = -1;
+            txt_InstCertiicacion.Text=string.Empty;
+            txt_TitutloCertificacion.Text=string.Empty;
+            
+        }
+        //*****************************************************************************************
 
         private void cb_habtecnica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
