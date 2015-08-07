@@ -20,11 +20,10 @@
                         <RowDefinition />
                     </Grid.RowDefinitions>
 
-                    <Grid Grid.Row="0" Grid.Column="0" Margin="2,0,816,10" Height="731" VerticalAlignment="Bottom" >
+                    <Grid Grid.Row="0" Grid.Column="0" Margin="2,-30,816,40" Height="731" VerticalAlignment="Bottom" >
 
-                        <!--<Grid.Background>
-                            <ImageBrush ImageSource="Imagenes/fondocoen.png" Stretch="None" TileMode="FlipX"/>
-                        </Grid.Background>-->
+                        <Image Name="CerrarSesion" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Height="50" Margin="49,73,49,0" VerticalAlignment="Top" HorizontalAlignment="Center" MouseDown="CerrarSesion_MouseDown"/>
+                       
                     </Grid>
 
                     <Grid Grid.Row="0" Margin="211,2,-5,638" RenderTransformOrigin="0.5,0.5" Background="White" HorizontalAlignment="Left" Width="810" >
@@ -195,8 +194,8 @@
                                             <TextBox Name="txt_Tituloedu" Height="20" Margin="125,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                                             <TextBox Name="txt_institucionedu" Height="20" Margin="125,100,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                                             <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,140,0,0" VerticalAlignment="Top" Width="99" />
-                                                
-                                            
+
+
 
 
                                             <TextBlock HorizontalAlignment="Left" Margin="15,20,0,0" TextWrapping="Wrap" Text="Tipo de Educacion" VerticalAlignment="Top"/>
@@ -322,7 +321,7 @@
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_TitutloCertificacion" Height="23" Margin="160,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250" />
                                             <TextBox  HorizontalAlignment="Left"  Name="txt_InstCertiicacion" Height="23" Margin="160,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250"/>
                                             <ComboBox HorizontalAlignment="Left" Name="cb_añoFinCertificacion" Margin="160,140,0,0" VerticalAlignment="Top" Width="120"/>
-                                                
+
 
                                             <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click" />
                                             <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Width="75"/>
@@ -415,12 +414,17 @@
                                 <TextBlock  Text="Actualizar Referencias" TextWrapping="Wrap" TextAlignment="Center"/>
                             </Button.Content>
                         </Button>
+                        <Button x:Name="btnEliminar" HorizontalAlignment="Right" Margin="0,25,238,0" Width="125"  Style="{StaticResource AccentedSquareButtonStyle}" Height="49" VerticalAlignment="Top" MinWidth="125">
+                            <Button.Content>
+                                <TextBlock  Text="Eliminar Candidato" TextWrapping="Wrap" TextAlignment="Center"/>
+                            </Button.Content>
+                        </Button>
                     </Grid>
 
 
                     <StackPanel
                 Orientation="Horizontal" Margin="0,741,0,0"/>
-                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="0,150,0,0" Grid.Row="0" Grid.ColumnSpan="1" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="Red" Background="Gray" HorizontalAlignment="Left" Width="200" Height="254" VerticalAlignment="Top" >
+                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="0,150,0,0" Grid.Row="0" Grid.ColumnSpan="1" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="Red" Background="Gray" HorizontalAlignment="Left" Width="200" Height="269" VerticalAlignment="Top" >
                         <!--<ListBox.Resources>
                             <Style TargetType="{x:Type Expander}">
                                 <Setter Property="IsExpanded"
@@ -467,6 +471,7 @@
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
                             </WrapPanel>
                         </Expander>
+
 
                     </ListBox>
                 </Grid>

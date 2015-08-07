@@ -18,7 +18,7 @@
             </Grid.RowDefinitions>
 
 
-            <Grid Grid.Row="0"
+            <Grid Name="GridMenuBusqueda" Grid.Row="0"
           Grid.Column="0" Margin="0,9,812,85" VerticalAlignment="Top">
 
 
@@ -60,7 +60,7 @@
                     <Expander Background="#CC119EDA" Margin="0,76,0,-54" HorizontalAlignment="Left" Width="200">
                         <Expander.Header>
                             <BulletDecorator Height="48">
-                                <TextBlock Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
+                                <TextBlock Name="btnConfiguracion" Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
                             </BulletDecorator>
                         </Expander.Header>
                         <WrapPanel >
@@ -85,12 +85,13 @@
                     </Expander>
 
                 </ListBox>
+                <Image Name="CerrarSesion" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="77,73,77,387" HorizontalAlignment="Center" MouseDown="CerrarSesion_MouseDown"/>
 
             </Grid>
 
             <Grid Grid.Row="0" Margin="209,0,41,0" Height="151" VerticalAlignment="Top" >
 
-                <Label  Content="BUSQUEDA DE INFORMACION BASICA" Margin="0,98,68,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="43" VerticalAlignment="Top"/>
+                <Label  Content="BUSQUEDA DE INFORMACION BASICA" Margin="0,98,58,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="43" VerticalAlignment="Top"/>
             </Grid>
 
             <Grid

@@ -61,6 +61,19 @@ namespace WpfApplication3
 
             Title = Title + " Usuario: " + UserLogin.Nombre;
             
+           //***IF PARA LOS ROLES DE USUARIO, USUARIOS VISITANTE***//
+            if (UserLogin.RolID == 3)
+            {
+                
+                btn_CrearCandidato.Visibility = Visibility.Collapsed;
+                data_gridBusqueda.BringIntoView();
+                txt_UsuarioMenus.IsEnabled = false;
+                btnConfiguracion.IsEnabled = false;
+                lab_menuCreacionPerf.IsEnabled = false;
+                data_gridBusqueda.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            }
+                
+            
         }
 
         private void data_gridBusqueda_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -230,6 +243,14 @@ namespace WpfApplication3
 
                     mt.setearCampos(id,candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
 
+        }
+
+        private void CerrarSesion_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
         }
 
     }

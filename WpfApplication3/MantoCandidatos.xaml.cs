@@ -309,14 +309,14 @@ namespace WpfApplication3
                 tablaHabilidades.Columns.Add("ID HAB APP", typeof(Int32));
                 tablaHabilidades.Columns.Add("HABILIDAD APLICACION", typeof(string));
 
-                foreach (DataRow dr in candiHabili)
-                {
-                    tablaHabilidades.Rows.Add(dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString(), dr.ItemArray[7].ToString());  //puede dar error por la columna int y el dato string
-                }
-                DataGrid_Certificaciones.ItemsSource = tablaCerti.DefaultView;
+                //foreach (DataRow dr in candiHabili)
+                //{
+                //    tablaHabilidades.Rows.Add(dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString(), dr.ItemArray[7].ToString());  //puede dar error por la columna int y el dato string
+                //}
+                //DataGrid_Certificaciones.ItemsSource = tablaCerti.DefaultView;
 
 
-                DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
+                //DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
             }
             catch(Exception ex){
                 MessageBox.Show("Hubo un error al setear los datos de habilidad");
@@ -409,17 +409,17 @@ namespace WpfApplication3
             cb_tipoRef.SelectedValuePath = ds8.Tables[0].Columns[0].ToString();
             cb_tipoRef.SelectedIndex = 0;
 
-            DataSet dsAnio = new DataSet();
-            dsAnio = _anios.getAnios();
-            cb_añofinalizacionedu.ItemsSource = dsAnio.Tables[0].DefaultView;
-            cb_añofinalizacionedu.DisplayMemberPath =dsAnio.Tables[0].Columns[1].ToString();
-            cb_añofinalizacionedu.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
-            cb_añofinalizacionedu.SelectedIndex = 0;
+            //DataSet dsAnio = new DataSet();
+            //dsAnio = _anios.getAnios();
+            //cb_añofinalizacionedu.ItemsSource = dsAnio.Tables[0].DefaultView;
+            //cb_añofinalizacionedu.DisplayMemberPath =dsAnio.Tables[0].Columns[1].ToString();
+            //cb_añofinalizacionedu.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
+            //cb_añofinalizacionedu.SelectedIndex = 0;
 
-            cb_añoFinCertificacion.ItemsSource = dsAnio.Tables[0].DefaultView;
-            cb_añoFinCertificacion.DisplayMemberPath = dsAnio.Tables[0].Columns[1].ToString();
-            cb_añoFinCertificacion.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
-            cb_añoFinCertificacion.SelectedIndex = 0;
+            //cb_añoFinCertificacion.ItemsSource = dsAnio.Tables[0].DefaultView;
+            //cb_añoFinCertificacion.DisplayMemberPath = dsAnio.Tables[0].Columns[1].ToString();
+            //cb_añoFinCertificacion.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
+            //cb_añoFinCertificacion.SelectedIndex = 0;
 
 
 
@@ -999,6 +999,14 @@ namespace WpfApplication3
             cb_habilidadApp.DisplayMemberPath = ds5.Tables[0].Columns[1].ToString();
             cb_habilidadApp.SelectedValuePath = ds5.Tables[0].Columns[0].ToString();
             cb_habilidadApp.SelectedIndex = 0;
+        }
+
+        private void CerrarSesion_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio ();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
         }
 
         

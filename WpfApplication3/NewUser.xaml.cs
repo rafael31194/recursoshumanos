@@ -71,32 +71,42 @@ namespace WpfApplication3
 
         private void btn_guardarNuevoUsuario_Click(object sender, RoutedEventArgs e)
         {
+            //VARIABLE PARA GUARDAR 
+            int returGuargarLogin = 0; 
+
             //EVENTO PARA REGISTRAR UN NUEVO USUARIO
-
-            usuariosE _usuarioRegistro = new usuariosE();
-            _usuarioRegistro.userName = txt_NombreUsuario.Text;
-            _usuarioRegistro.contrasena = txt_constrasenaUsuario.Password.ToString();
-            _usuarioRegistro.name = txt_nombreDelUsuario.Text.ToUpper();
-            _usuarioRegistro.id_rol = new RolUsuarioE();
-            _usuarioRegistro.id_rol.id_rol = Convert.ToInt32(cb_tipoRol.SelectedValue);
-
-            string oerro = "";
-
-           
-
-            int returusuario = 0;
-            returusuario = _usuarioBLL.GuardarUsuarios(_usuarioRegistro, ref oerro);
-            if (returusuario > 0)
+            if (string.IsNullOrEmpty(txt_NombreUsuario.Text)|| string.IsNullOrEmpty(txt_constrasenaUsuario.Password))
             {
-                
+                MessageBox.Show("COMPLETE LOS CAMPOS");
+            }
 
-                MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+            else
+            {
+                usuariosE _usuarioRegistro = new usuariosE();
+                _usuarioRegistro.userName = txt_NombreUsuario.Text;
+                _usuarioRegistro.contrasena = txt_constrasenaUsuario.Password.ToString();
+                _usuarioRegistro.name = txt_nombreDelUsuario.Text.ToUpper();
+                _usuarioRegistro.id_rol = new RolUsuarioE();
+                _usuarioRegistro.id_rol.id_rol = Convert.ToInt32(cb_tipoRol.SelectedValue);
 
-                txt_NombreUsuario.Text = "";
-                txt_constrasenaUsuario.Password = "";
-                txt_nombreDelUsuario.Text = "";
-                cb_tipoRol.Text = "";
+                string oerro = "";
 
+
+
+                int returusuario = 0;
+                returusuario = _usuarioBLL.GuardarUsuarios(_usuarioRegistro, ref oerro);
+                if (returusuario > 0)
+                {
+
+
+                    MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    txt_NombreUsuario.Text = "";
+                    txt_constrasenaUsuario.Password = "";
+                    txt_nombreDelUsuario.Text = "";
+                    cb_tipoRol.Text = "";
+
+                }
             }
         }
 
@@ -123,6 +133,22 @@ namespace WpfApplication3
         private void cb_tipoRol_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void btn_guardarNuevoUsuario_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void CerrarSesion_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
         }
     }
 }

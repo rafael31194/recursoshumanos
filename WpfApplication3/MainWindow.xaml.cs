@@ -108,6 +108,8 @@ namespace WpfApplication3
             {
                 //***Esta linea de codigo es para que en el formulario en la parte superiro se vea que usuario esta en el sistema***///
                 Title = Title + " Usuario: " + UserLogin.Nombre + "ROL: " + UserLogin.RolID + " " + UserLogin.NRol;
+                
+                
                 //DATASET  PARA LLENAR LOS COMBOBOX 
                 DataSet ds = new DataSet();
                 ds = _DeptoBL.SelectdepSelectAll();
@@ -765,18 +767,26 @@ namespace WpfApplication3
 
 
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
+          
             int returVariable3 = 0;
 
+            string cadenaFaltanDatos = "";
+            if (DataG_Habilidades.Items.Count == 0 | DataGrid_InfAcademica.Items.Count == 0 | DataGrid_Inf_Laboral.Items.Count == 0 | DataGrid_Certificaciones.Items.Count == 0 | DataGrid_Referencias.Items.Count == 0)
+            {
+                cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
+            }
 
-            MessageBoxResult result = MessageBox.Show("ESTA SEGURO DE GUARDAR LOS CAMBIOS", "My Title", MessageBoxButton.YesNo);
+            MessageBoxResult result = MessageBox.Show("ESTA SEGURO DE GUARDAR LOS CAMBIOS" + cadenaFaltanDatos, "MENSAJE DE CONFIRMACION", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            
             if (result == MessageBoxResult.Yes)
             {
                 // Do this
             }
 
             if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
-                (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
-                || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) || (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text)))
+                (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text))|| (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) ||
+                (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text) )
+                )
             {
                 MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
             }
@@ -917,6 +927,25 @@ namespace WpfApplication3
                 }
             }
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        
+
 
     }
 
