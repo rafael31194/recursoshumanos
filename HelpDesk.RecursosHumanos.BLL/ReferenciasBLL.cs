@@ -25,5 +25,18 @@ namespace HelpDesk.RecursosHumanos.BEL
             }
         }
 
+
+        public int AgregarReferencias(RefecenciasE refE, int id, ref string oerro)
+        {
+            try
+            {
+                return _referenciasDAL.AgregarReferencias(refE, id,ref oerro);
+            }
+            catch (Exception)
+            {
+                oerro = "Ocurrio un error al ingresar  los datos";
+                throw;
+            }
+        }
     }
 }

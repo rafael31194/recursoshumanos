@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using HelpDesk.RecursosHumanos.BEL;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
+
 
 namespace HelpDesk.RecursosHumanos.DAL
 {
@@ -79,7 +81,38 @@ namespace HelpDesk.RecursosHumanos.DAL
                 return ds;
             }
         }
+
+        public void borrarCandidato(int id)
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    try
+                    {
+                        SqlCommand Comando = new SqlCommand();
+                        Comando.Connection = _conn;
+                        Comando.CommandType = System.Data.CommandType.StoredProcedure;
+                        Comando.CommandText = "SP_delete_EliminarCandidato";
+                        Comando.Parameters.AddWithValue("@Id", id);
+                        Comando.ExecuteNonQuery();
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("Ocurrio un error al momento de eliminar este candidato");
+                        throw ex;
+                    }
+
+                }
+                
+                    
+             
+            }
+        }
     }
+
+    
+
 
 }
 

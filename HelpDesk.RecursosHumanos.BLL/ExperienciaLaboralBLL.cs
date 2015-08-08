@@ -23,5 +23,20 @@ namespace HelpDesk.RecursosHumanos.BEL
                  throw;
              }
          }
+
+         public int AgregarexperienciaLab(ExpLaboralE refExpL,int id, ref string oerro)
+         {
+             try
+             {
+                 return _experienciaLabDAL.AgregarExpLaboral(refExpL,id, ref oerro);
+             }
+             catch (Exception)
+             {
+                 oerro = "Ocurrio un error al ingresar sus datos";
+                 throw;
+             }
+         }
+
+        
     }
 }

@@ -32,6 +32,33 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
             return resultado;
         }
-             
+
+
+        public int AgregarCertificaciones(CertificacionesE pCertificaciones, int id, ref string oerro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    SqlCommand comando = new SqlCommand();
+                    comando.Connection = _conn;
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.CommandText = "SP_insertar_CertificacionesConId";
+                    comando.Parameters.AddWithValue("@id",id);
+                    comando.Parameters.AddWithValue("@id_certificaciones", pCertificaciones.id_candidato);
+                    comando.Parameters.AddWithValue("@nombre", pCertificaciones.nombre);
+                    comando.Parameters.AddWithValue("@insititucion", pCertificaciones.institucion);
+                    comando.Parameters.AddWithValue("@anio", pCertificaciones.anio);
+
+                    resultado = comando.ExecuteNonQuery();
+
+                }
+                else
+                    resultado = 0;
+                oerro = "";
+            }
+            return resultado;
+        }
     }
 }

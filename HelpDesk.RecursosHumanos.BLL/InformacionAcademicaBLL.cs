@@ -24,5 +24,18 @@ namespace HelpDesk.RecursosHumanos.BEL
                 throw;
             }
         }
+
+        public int AgregarInfomacionAcademica(InformacionAcademicaE pinformacionAcademica,int id, ref string oerro)
+        {
+            try
+            {
+                return _informacionAcademicaDALL.AgregarInformacionAcademica(pinformacionAcademica, id, ref oerro);
+            }
+            catch (Exception)
+            {
+                oerro = "ocurrio un problema al guardar los datos";
+                throw;
+            }
+        }
     }
 }

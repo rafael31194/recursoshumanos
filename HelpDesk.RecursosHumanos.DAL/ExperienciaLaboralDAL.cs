@@ -39,5 +39,37 @@ namespace HelpDesk.RecursosHumanos.DAL
            }
            return resultado;
        }
+
+       public int AgregarExpLaboral(ExpLaboralE pexpeLaboral, int id, ref string oerro)
+       {
+           int resultado = 0;
+           using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+           {
+               if (!(_conn == null))
+               {
+                   SqlCommand comando = new SqlCommand();
+                   comando.Connection = _conn;
+                   comando.CommandType = System.Data.CommandType.StoredProcedure;
+                   comando.CommandText = "SP_insertar_ExperienciaLaboralConId";
+                   comando.Parameters.AddWithValue("@id", id);
+                   comando.Parameters.AddWithValue("@id_experienciaLaboral", pexpeLaboral.id_experienciaLaboral);
+                   comando.Parameters.AddWithValue("@nombreEmpresa", pexpeLaboral.nombreEmpresa);
+                   comando.Parameters.AddWithValue("@cargoDesempe", pexpeLaboral.cargoDesp);
+                   comando.Parameters.AddWithValue("@descripcionPuesto", pexpeLaboral.descripPuesto);
+                   comando.Parameters.AddWithValue("@fechaIncio", pexpeLaboral.fechaInicio);
+                   comando.Parameters.AddWithValue("@fechaFin", pexpeLaboral.fechaFin);
+
+                   resultado = comando.ExecuteNonQuery();
+
+               }
+
+               else
+                   resultado = 0;
+               oerro = "";
+           }
+           return resultado;
+       }
+
+       
     }
 }
