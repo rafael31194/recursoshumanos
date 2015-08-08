@@ -12,6 +12,7 @@ namespace HelpDesk.RecursosHumanos.DAL
 {
     public class UsuariosDAL
     {
+        //METODO PARA GUARDAR USUARIO/////////////////////////////////////////////////////////
         public int GuardarUsuarios(usuariosE pusuario, ref string oError)
         {
             int resultado = 0;
@@ -109,5 +110,57 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
             return _UsuarioRetorna;
         }
+        //METODO PARA update USUARIO////////////////////////////////////////////////
+        public int UpdateUsuarios(usuariosE pUsuarios, ref string oErro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    SqlCommand comando = new SqlCommand();
+                    comando.Connection = _conn;
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.CommandText = "SP_UPDATE_USUARIO";
+                    comando.Parameters.AddWithValue("@ID", pUsuarios.id_usuario);
+                    comando.Parameters.AddWithValue("@pasword", pUsuarios.contrasena);
+                    comando.Parameters.AddWithValue("@name", pUsuarios.name);
+                    comando.Parameters.AddWithValue("@id_rol", pUsuarios.id_rol.id_rol);
+
+
+                    resultado = comando.ExecuteNonQuery();
+                }
+                else
+                    resultado = 0;
+                oErro = "";
+            }
+            return resultado;
+        }
+
+     //METODO PARA ELIMINAR UN USUARIO
+        public int DeleteUsuario (usuariosE pUsuarios, ref string oErro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    SqlCommand comando = new SqlCommand();
+                    comando.Connection = _conn;
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.CommandText = "SP_delete_usuarioLogin";
+                    comando.Parameters.AddWithValue("@IDUSUARIO", pUsuarios.id_usuario);
+                   
+                    resultado = comando.ExecuteNonQuery();
+                }
+                else
+                    resultado = 0;
+                oErro = "";
+            }
+            return resultado;
+        }
+
+     
     }
+
 }

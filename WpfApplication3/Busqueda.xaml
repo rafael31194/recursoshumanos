@@ -100,16 +100,16 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <DataGrid Height="232" Margin="70,162,73,0" 
+                <DataGrid Height="232" Margin="70,162,70,0" 
         		x:Name="data_gridBusqueda" VerticalAlignment="Top" RowHeight="15" 
         		ColumnHeaderHeight="30"  HeadersVisibility="Column"
         		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusqueda_SelectionChanged" MouseDoubleClick="data_gridBusqueda_MouseDoubleClick" >
 
                     <DataGrid.Columns >
-                        <DataGridTemplateColumn>
+                        <DataGridTemplateColumn Visibility="Hidden">
 
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
+                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" Visibility="Hidden" >
                             <DataGridTemplateColumn.CellTemplate>
                                 <ItemContainerTemplate>
                                     <DockPanel>
@@ -119,7 +119,7 @@
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
 
-                        <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR">
+                        <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR" Visibility="Hidden">
                             <DataGridTemplateColumn.CellTemplate>
                                 <ItemContainerTemplate>
                                     <DockPanel>
