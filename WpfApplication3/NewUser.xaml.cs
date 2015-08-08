@@ -98,8 +98,13 @@ namespace WpfApplication3
                 if (returusuario > 0)
                 {
 
-
                     MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                    Login _bw = new Login();
+                    _bw.InitializeComponent();
+                    this.Close();
+                    _bw.ShowDialog();
+
+                    
 
                     txt_NombreUsuario.Text = "";
                     txt_constrasenaUsuario.Password = "";
@@ -112,7 +117,7 @@ namespace WpfApplication3
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         { 
-            //EVENTO PARA LLENAR EL COMBOBOX
+            // PARA LLENAR EL COMBOBOX
             try
             {
                 DataSet ds11 = new DataSet();
@@ -135,13 +140,7 @@ namespace WpfApplication3
 
         }
 
-        private void btn_guardarNuevoUsuario_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
+       
 
         private void CerrarSesion_MouseDown(object sender, MouseButtonEventArgs e)
         {

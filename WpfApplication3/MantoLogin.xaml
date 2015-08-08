@@ -55,12 +55,8 @@
 
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles" RenderTransformOrigin="0.824,0.348" Width="88"/>
-                            <Label Margin="35,5,5,5" Foreground="Black" Content="Roles usuarios" RenderTransformOrigin="0.824,0.348" Width="88"/>
-
-
-
+                            <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88" MouseDown="Label_MouseDown_1"/>
+                        
                         </WrapPanel>
                     </Expander>
 
@@ -86,13 +82,13 @@
                     </DockPanel>
                 </Border>
             </Button>
-            <DataGrid Height="232" Margin="279,225,73,0" 
+            <DataGrid Height="232" Margin="345,224,132,0" 
             	x:Name="DataGrid_Usiarioslogin" VerticalAlignment="Top" RowHeight="15" 
             	ColumnHeaderHeight="30"  HeadersVisibility="Column"
-            	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Usiarioslogin_SelectionChanged" Loaded="DataGrid_Usiarioslogin_Loaded" >
+            	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Usiarioslogin_SelectionChanged" Loaded="DataGrid_Usiarioslogin_Loaded" MouseDoubleClick="DataGrid_Usiarioslogin_MouseDoubleClick" >
 
                 <DataGrid.Columns>
-                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" >
+                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" Visibility="Hidden" >
                         <DataGridTemplateColumn.CellTemplate>
                             <ItemContainerTemplate>
                                 <DockPanel>
@@ -102,11 +98,31 @@
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR">
+                    <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR" Visibility="Hidden">
                         <DataGridTemplateColumn.CellTemplate>
                             <ItemContainerTemplate>
                                 <DockPanel>
                                     <Image Source="Imagenes/EDG.png" Width="18"  />
+                                </DockPanel>
+                            </ItemContainerTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Elim."  >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <ItemContainerTemplate>
+                                <DockPanel>
+
+                                    <Button Visibility="Visible" Opacity="3" MaxWidth="25" Click="Button_Click"  >
+                                        <Button.Background>
+                                            <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                            </LinearGradientBrush>
+                                        </Button.Background>
+                                        <DockPanel>
+                                            <Image Source="Imagenes\eliminar.png" Width="15" />
+
+                                        </DockPanel>
+                                    </Button>
                                 </DockPanel>
                             </ItemContainerTemplate>
                         </DataGridTemplateColumn.CellTemplate>
@@ -116,6 +132,7 @@
                     <DataGridTextColumn Header="USARNAME" Binding="{Binding NOMBRE DE USUARIO}" />
                     <DataGridTextColumn Header="NOMBRE DEL  USUARIO" Binding="{Binding NOMBRE }" />
                     <DataGridTextColumn Header="ROL DEL USUARIO" Binding="{Binding ROL }" />
+                    <DataGridTextColumn Header="CONTRASEÑA" Binding="{Binding CONTRASENA}" />
 
                 </DataGrid.Columns>
 

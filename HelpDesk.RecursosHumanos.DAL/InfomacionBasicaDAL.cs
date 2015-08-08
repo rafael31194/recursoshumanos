@@ -66,6 +66,7 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
         }
 
+
         public DataSet BusquedaInfoBasicaLLenar(int valorFiltro, ref string oError)
         {
             using (SqlConnection _conn = CommonDb.ObtenerConnSql())
