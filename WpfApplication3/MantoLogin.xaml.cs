@@ -22,6 +22,7 @@ using System.Data.SqlClient;
 using MahApps.Metro.Controls;
 
 
+
 namespace WpfApplication3
 {
     /// <summary>
@@ -121,11 +122,12 @@ namespace WpfApplication3
                 }
 
                 listData.Add(us[0].ToString());
-                listData.Add(us[2].ToString());
+                listData.Add(us[1].ToString());
                 listData.Add(us[3].ToString());
                 listData.Add(us[4].ToString());
 
                 ModificarUsuario modUser = new ModificarUsuario();
+                
                 modUser.listData = listData;
                 this.Close();
                 modUser.Show();
@@ -150,20 +152,33 @@ namespace WpfApplication3
 
             usuariosE _deleteUsuario = new usuariosE();
 
-                    //entro a la linea que le di doble click
-                    id_Usuario = int.Parse (currentRow.Row.ItemArray[0].ToString());
-                    string oError = "";
-                    
-            
-            MessageBox.Show("Esta seguro de eliminar el usuario: " + currentRow[2].ToString(), "ELIMINAR UN USUARIO", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            //entro a la linea que le di doble click
 
-            _deleteUsuario.id_usuario = id_Usuario;
-            usuariobl.DeleteUsuario(_deleteUsuario, ref oError);
-            
+            MessageBoxResult resultMB = MessageBox.Show("Esta seguro de eliminar el usuario: " + currentRow[2].ToString(), "ELIMINAR UN USUARIO", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
-            dsUsuarioLogin = usuariobl.Selecusuarios("", ref oError);
-            DataGrid_Usiarioslogin.ItemsSource = dsUsuarioLogin.Tables[0].DefaultView;
-          
+
+            if (resultMB == MessageBoxResult.Yes)
+
+            {
+                id_Usuario = int.Parse(currentRow.Row.ItemArray[0].ToString());
+                string oError = "";
+
+
+
+                _deleteUsuario.id_usuario = id_Usuario;
+                if (usuariobl.DeleteUsuario(_deleteUsuario, ref oError) > 0)
+                {
+                    MessageBox.Show("El usuario fue eliminado con exito"); 
+                }
+             
+
+                //actualiza la grid
+                dsUsuarioLogin = usuariobl.Selecusuarios("", ref oError);
+                DataGrid_Usiarioslogin.ItemsSource = dsUsuarioLogin.Tables[0].DefaultView;
+
+                
+            }
+           
         }
     }
 }

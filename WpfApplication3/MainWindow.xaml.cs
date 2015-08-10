@@ -202,63 +202,7 @@ namespace WpfApplication3
 
         }
 
-        //private void btn_GuardarInfoBasica_Click(object sender, RoutedEventArgs e)
-
-        //    //VALIDACION DE MAINWIND
-        ////VALIDACION DE CAMPOS VACIOS EN INFORMACION_BASICA
-        //{
-        //    if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
-        //        (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text)) || (string.IsNullOrEmpty(txtTelefonoCasaInfBasica.Text))
-        //        || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) || (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text)))
-        //    {
-        //        MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
-        //    }
-
-        //    else
-        //    {
-        //        //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
-        //        InfoBasicaE _InfoBasicaE = new InfoBasicaE();
-        //        DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
-        //        _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
-        //        _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
-        //        _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
-        //        _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
-        //        //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
-        //        _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-        //        _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
-        //        _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
-        //        _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-        //        if (rbsexoM.IsChecked == true)
-        //        {
-        //            _InfoBasicaE.id_genero = 1;
-        //        }
-        //        else if (rbsexoF.IsChecked == true)
-        //        {
-        //            _InfoBasicaE.id_genero = 2;
-        //        }
-
-        //        _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
-        //        _InfoBasicaE.NIT = txtNnitInfBasica.Text;
-        //        _InfoBasicaE.AFP = txtNafpInfBasica.Text;
-        //        _InfoBasicaE.ISSS = txtNiss.Text;
-        //        _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
-        //        _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
-
-        //        string oerro = "";
-
-        //        int returinfoacademica = 0;
-        //        returinfoacademica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
-
-        //        if (returinfoacademica > 0)
-        //        {
-        //            MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-        //            tcPrincipal.SelectedIndex = 1;
-        //            tab1.IsEnabled = false;
-        //        }
-
-        //    }
-
-        //}
+       
         //OTRAS VALIDACIONES SOLO LESTRAS SOLO NUMEROS EN LOS EVENTOS
         private void txtNombreInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -272,15 +216,7 @@ namespace WpfApplication3
             else e.Handled = true;
         }
 
-        private void txtNacionalidadInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        {
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-            if (ascci >= 65 && ascci <= 90 || ascci >= 97 && ascci <= 122 || ascci <= 164 && ascci >= 165)
-                e.Handled = false;
-            else e.Handled = true;
-
-        }
-
+      
         private void txtProfesioInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -295,13 +231,7 @@ namespace WpfApplication3
 
         }
 
-        private void txtTelefonoCasaInfBasica_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9 || e.Key == Key.Decimal)
-                e.Handled = false;
-            else
-                e.Handled = true;
-        }
+       
 
         private void txtNacionalidadInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -319,64 +249,6 @@ namespace WpfApplication3
         }
 
 
-        //private void btn_Guardar_InfoAcademica_Click(object sender, RoutedEventArgs e)
-        //{   //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
-        //    int returVariable3 = 0;
-
-
-        //    // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
-        //    string oerror = "";
-        //    InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
-        //    foreach (DataRowView row in DataGrid_InfAcademica.Items)
-        //    {
-        //        refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
-        //        refinfoAcademica.titulo = Convert.ToString(row[2]);
-        //        refinfoAcademica.institucion = Convert.ToString(row[3]);
-        //        refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
-        //        refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
-
-        //        returVariable3 = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerror);
-        //    }
-        //    if (returVariable3 > 0)
-        //    {
-        //        MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-        //        tcPrincipal.SelectedIndex = 2;
-        //        tab2.IsEnabled = false;
-        //    }
-        //}
-
-
-        //private void btn_Referencias_Click(object sender, RoutedEventArgs e)
-        //{
-        //    //VARIABLE PARA MANDAR MENSAJE PARA GUARDAR REFERENCIA 
-        //    int returVariable4 = 0;
-
-        //    //    BOTON PARA GUARDAR REFERECNCIASS  (EVENTO)
-        //    string oerror = "";
-        //    RefecenciasE refE = new RefecenciasE();
-        //    foreach (DataRowView row in DataGrid_Referencias.Items)
-        //    {
-        //        refE.id_tipoReferencias = Convert.ToInt32(row[0]);
-        //        refE.nombre = Convert.ToString(row[2]);
-        //        refE.telefono = Convert.ToString(row[3]);
-        //        refE.descripcion = Convert.ToString(row[4]);
-
-
-        //        returVariable4 = _referenciasBL.GuardarReferencias(refE, ref oerror);
-        //    }
-        //    if (returVariable4 > 0)
-        //    {
-        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
-        //        tcPrincipal.SelectedIndex = 6;
-        //        tab6.IsEnabled = false;
-
-        //        Busqueda _bw = new Busqueda();
-        //        _bw.InitializeComponent();
-        //        this.Close();
-        //        _bw.Show();
-
-        //    }
-        //}
         DataTable dt2 = new DataTable();
         private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
         {
@@ -943,6 +815,21 @@ namespace WpfApplication3
             this.Close();
             _Li.ShowDialog();
         }
+
+        private void txtNoduiInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+                int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+                if (ascci >= 48 && ascci <= 57) e.Handled = false;
+                else e.Handled = true;
+        }
+        
 
         
 
