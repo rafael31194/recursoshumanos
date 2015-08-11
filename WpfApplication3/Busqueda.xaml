@@ -107,13 +107,24 @@
 
                     <DataGrid.Columns >
                         <DataGridTemplateColumn Visibility="Hidden">
-
                         </DataGridTemplateColumn>
-                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" Visibility="Hidden" >
+
+                        <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Ver."  >
                             <DataGridTemplateColumn.CellTemplate>
                                 <ItemContainerTemplate>
                                     <DockPanel>
-                                        <Image Source="Imagenes\helpdesBusqueda.png" Width="18" />
+
+                                        <Button Visibility="Visible" Opacity="3" MaxWidth="25" >
+                                            <Button.Background>
+                                                <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                                </LinearGradientBrush>
+                                            </Button.Background>
+                                            <DockPanel>
+                                                <Image Source="Imagenes\view.png" Width="15" />
+
+                                            </DockPanel>
+                                        </Button>
                                     </DockPanel>
                                 </ItemContainerTemplate>
                             </DataGridTemplateColumn.CellTemplate>

@@ -156,15 +156,13 @@
 
                                 <Grid Margin="10,0,-5,-17" HorizontalAlignment="Left" Width="795">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="499*"/>
-                                        <ColumnDefinition Width="19*"/>
-                                        <ColumnDefinition Width="277*"/>
+                                        <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <!--<TextBox Name="TBInfAcademicaStatusSecuandaria" HorizontalAlignment="Left" Height="22" Margin="500,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
 
                                     <!--<TextBox HorizontalAlignment="Left" Height="24" Margin="500,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
 
-                                    <Grid Height="397" Width="507" Margin="48,80,239,34" Grid.ColumnSpan="3">
+                                    <Grid Height="397" Width="507" Margin="48,80,239,34">
 
 
 
@@ -184,8 +182,8 @@
                                         <Grid Margin="412,127,-158,53"/>
 
                                     </Grid>
-                                    <StackPanel Margin="0,0,96,398" Orientation="Vertical"/>
-                                    <GroupBox Header="Nivel Educativo Alcanzado" Margin="124,25,125,0" HorizontalAlignment="Center" Height="256" VerticalAlignment="Top" Grid.ColumnSpan="3">
+                                    <StackPanel Margin="0,0,392,398" Orientation="Vertical"/>
+                                    <GroupBox Header="Nivel Educativo Alcanzado" Margin="124,25,125,0" HorizontalAlignment="Center" Height="256" VerticalAlignment="Top">
                                         <Grid>
                                             <TextBlock HorizontalAlignment="Left" Margin="15,60,0,0" TextWrapping="Wrap" Text="Titulo" VerticalAlignment="Top" Height="14"/>
 
@@ -209,19 +207,17 @@
                                         </Grid>
                                     </GroupBox>
 
-                                    <Grid Grid.ColumnSpan="3"/>
-                                    <DataGrid   Style="{StaticResource AzureDataGrid}" Margin="50,306,50,53" 
+                                    <Grid/>
+                                    <DataGrid   AutoGenerateColumns="False" Style="{StaticResource AzureDataGrid}" Margin="50,306,50,53" 
                         	Name="DataGrid_InfAcademica" RowHeight="30" CanUserAddRows="False"
-                        	ColumnHeaderHeight="20" HeadersVisibility="Column"  IsReadOnly="True" SelectionChanged="DataGrid_InfAcademica_SelectionChanged" MouseDoubleClick="DataGrid_InfAcademica_MouseDoubleClick" Grid.ColumnSpan="3">
+                        	ColumnHeaderHeight="20" HeadersVisibility="Column"  IsReadOnly="True" SelectionChanged="DataGrid_InfAcademica_SelectionChanged" MouseDoubleClick="DataGrid_InfAcademica_MouseDoubleClick">
                                         <DataGrid.Columns>
-
-                                            <DataGridTextColumn Header="TIPO DE EDUCACION" Visibility="Visible" Binding="{Binding Path=''}"/>
-                                            <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Elim."  >
+                                            <DataGridTemplateColumn Header="Elim."  >
                                                 <DataGridTemplateColumn.CellTemplate>
                                                     <ItemContainerTemplate>
                                                         <DockPanel>
 
-                                                            <Button Click="Button_Click" Visibility="Visible" Opacity="3" MaxWidth="25"  >
+                                                            <Button Click="Button_Click" Opacity="3" MaxWidth="25"  >
                                                                 <Button.Background>
                                                                     <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
 
@@ -236,7 +232,15 @@
                                                     </ItemContainerTemplate>
                                                 </DataGridTemplateColumn.CellTemplate>
                                             </DataGridTemplateColumn>
-    
+                                            <DataGridTextColumn Header="idHabC" Visibility="Hidden" Binding="{Binding Path='ID INFOACADE'}"/>
+                                            <DataGridTextColumn Header="idTipoEdu" Visibility="Hidden" Binding="{Binding Path='IDTipoEduacion'}"/>
+                                            <DataGridTextColumn Header="TIPO DE EDUCACION" Visibility="Visible" Binding="{Binding Path='Tipo Educacion'}"/>
+                                            <DataGridTextColumn Header="TITULO ACAD." Visibility="Visible" Binding="{Binding Path='Titulo'}"/>
+                                            <DataGridTextColumn Header="INSTITUCION ACAD." Visibility="Visible" Binding="{Binding Path='Institucion'}"/>
+                                            <DataGridTextColumn Header="AÑO FIN" Visibility="Visible" Binding="{Binding Path='Año finalizacion'}"/>
+                                            <DataGridTextColumn Header="STATUS ACAD." Visibility="Visible" Binding="{Binding Path='Nombre status'}"/>
+                                            <DataGridTextColumn Header="idStatus" Visibility="Hidden" Binding="{Binding Path='status'}"/>
+
                                         </DataGrid.Columns>
                                     </DataGrid>
 
@@ -248,15 +252,15 @@
                             <TabItem Header="INFO.LABORAL"  Name="tab3" Margin="21,-1,-39,1" Controls:ControlsHelper.HeaderFontSize="15" >
                                 <Grid Margin="0,0,0,11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="797" Height="481">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="216*"/>
-                                        <ColumnDefinition Width="581*"/>
+
+                                        <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
 
                                     <!--AQUI TODO EddL CONTENIDO DE INFO LABORAL-->
 
                                     <!--OTROS CONTROLES-->
 
-                                    <GroupBox Header="Informacion Laboral" Margin="116,25,117,170" HorizontalAlignment="Center" Grid.ColumnSpan="2">
+                                    <GroupBox Header="Informacion Laboral" Margin="116,25,117,170" HorizontalAlignment="Center">
                                         <Grid Margin="0,10,-2,-8">
                                             <TextBlock HorizontalAlignment="Left" Margin="40,20 ,0,0" TextWrapping="Wrap" Text="Nombre de la empresa" VerticalAlignment="Top" Height="22" Cursor="ScrollS"/>
                                             <TextBlock HorizontalAlignment="Left" Margin="40,60,0,0" TextWrapping="Wrap" Text="Cargo Desempeñado" VerticalAlignment="Top" Height="15"/>
@@ -279,10 +283,42 @@
 
                                         </Grid>
                                     </GroupBox>
-                                    <Grid Margin="0,54,96,0" Grid.ColumnSpan="2"/>
-                                    <DataGrid  Height="145" Margin="50,0,50,10" 
-                        	Name="DataGrid_Inf_Laboral" RowHeight="25" ColumnWidth="150" 
-                        	ColumnHeaderHeight="25" HeadersVisibility="Column" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Inf_Laboral_MouseDoubleClick" VerticalAlignment="Bottom" Grid.ColumnSpan="2"/>
+                                    
+                                    <Grid Margin="0,54,96,0"/>
+                                    <DataGrid  Height="145" Margin="50,0,50,10"  Name="DataGrid_Inf_Laboral" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGrid_Inf_Laboral_MouseDoubleClick" VerticalAlignment="Bottom">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Elim."  >
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <ItemContainerTemplate>
+                                                        <DockPanel>
+
+                                                            <Button Click="Button_Click" Opacity="3" MaxWidth="25"  >
+                                                                <Button.Background>
+                                                                    <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                                                    </LinearGradientBrush>
+                                                                </Button.Background>
+                                                                <DockPanel>
+                                                                    <Image Source="Imagenes\eliminar.png" Width="15" />
+
+                                                                </DockPanel>
+                                                            </Button>
+                                                        </DockPanel>
+                                                    </ItemContainerTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+                                            
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTextColumn Header="idRefer" Visibility="Hidden" Binding="{Binding Path='Id ExpeLab'}"/>
+                                            <DataGridTextColumn Header="NOMBRE DE LA EMPRESA" Visibility="Visible" Binding="{Binding Path='Nombre de la empresa'}"/>
+                                            <DataGridTextColumn Header="CARGO DESEMP." Visibility="Visible" Binding="{Binding Path='Cargo Desempeñado'}"/>
+                                            <DataGridTextColumn Header="INSTITUCION ACAD." Visibility="Visible" Binding="{Binding Path='Descripcion del puesto'}"/>
+                                            <DataGridTextColumn Header="AÑO FIN" Visibility="Visible" Binding="{Binding Path='Fecha Inicio'}"/>
+                                            <DataGridTextColumn Header="AÑO FIN" Visibility="Visible" Binding="{Binding Path='Fecha Fin'}"/>
+                                        </DataGrid.Columns>
+                                    </DataGrid>
+
+
 
 
                                 </Grid>
@@ -333,8 +369,40 @@
                                     <DataGrid Height="142" Margin="50,0,50,70" 
                         	x:Name="DataGrid_Certificaciones" VerticalAlignment="Bottom" RowHeight="30" 
                         	ColumnHeaderHeight="20" HeadersVisibility="Column"  CanUserAddRows="False"
-                        	AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Certificaciones_MouseDoubleClick"
-                  />
+                        	AutoGenerateColumns="False" IsReadOnly="True"  MouseDoubleClick="DataGrid_Certificaciones_MouseDoubleClick">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Elim."  >
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <ItemContainerTemplate>
+                                                        <DockPanel>
+
+                                                            <Button Click="Button_Click" Opacity="3" MaxWidth="25"  >
+                                                                <Button.Background>
+                                                                    <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                                                    </LinearGradientBrush>
+                                                                </Button.Background>
+                                                                <DockPanel>
+                                                                    <Image Source="Imagenes\eliminar.png" Width="15" />
+
+                                                                </DockPanel>
+                                                            </Button>
+                                                        </DockPanel>
+                                                    </ItemContainerTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+
+                                            </DataGridTemplateColumn>
+
+                                            <DataGridTextColumn Header="IdCertifica" Visibility="Hidden" Binding="{Binding Path='ID Certi'}"/>
+                                            <DataGridTextColumn Header="CERTIFICACIONES" Visibility="Visible" Binding="{Binding Path='CERTIFICACION'}"/>
+                                            <DataGridTextColumn Header="INST. DE CERTIFICACION" Visibility="Visible" Binding="{Binding Path='INSTITUCION DE CERTIFICACION'}"/>
+                                            <DataGridTextColumn Header="AÑO DE FINALIZACION" Visibility="Visible" Binding="{Binding Path='AÑO DE FINALIZACION'}"/>
+
+
+
+                                        </DataGrid.Columns>
+                                        
+                                    </DataGrid>
                                     <GroupBox Name="grub_certificaciones" Header="Certificaciones" Margin="150,25,150,0" VerticalAlignment="Top" Height="216">
                                         <Grid>
                                             <TextBlock HorizontalAlignment="Left" Margin="40,20,0,0" TextWrapping="Wrap" Text="Titulo Certificacion" VerticalAlignment="Top"/>
@@ -383,7 +451,40 @@
                                     </GroupBox>
                                     <DataGrid Height="177"  Style="{StaticResource AzureDataGrid}" Margin="10,0,30,49" 
                         	Name="DataGrid_Referencias" VerticalAlignment="Bottom" RowHeight="30"  
-                        	ColumnHeaderHeight="25" HeadersVisibility="Column" CanUserAddRows="False" AutoGenerateColumns="True" IsReadOnly="True" MouseDoubleClick="DataGrid_Referencias_MouseDoubleClick"/>
+                        	ColumnHeaderHeight="25" HeadersVisibility="Column" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGrid_Referencias_MouseDoubleClick">
+                                        <DataGrid.Columns>
+                                            <DataGridTemplateColumn Header="Elim."  >
+                                                <DataGridTemplateColumn.CellTemplate>
+                                                    <ItemContainerTemplate>
+                                                        <DockPanel>
+
+                                                            <Button Click="Button_Click" Opacity="3" MaxWidth="25"  >
+                                                                <Button.Background>
+                                                                    <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                                                    </LinearGradientBrush>
+                                                                </Button.Background>
+                                                                <DockPanel>
+                                                                    <Image Source="Imagenes\eliminar.png" Width="15" />
+
+                                                                </DockPanel>
+                                                            </Button>
+                                                        </DockPanel>
+                                                    </ItemContainerTemplate>
+                                                </DataGridTemplateColumn.CellTemplate>
+
+                                            </DataGridTemplateColumn>
+
+
+                                            <DataGridTextColumn Header="IdRef" Visibility="Hidden" Binding="{Binding Path='ID REF'}"/>
+                                            <DataGridTextColumn Header="IdTipoRef" Visibility="Hidden" Binding="{Binding Path='IDTIPOREF'}"/>
+                                            <DataGridTextColumn Header="REFERENCIAS" Visibility="Visible" Binding="{Binding Path='TIPO DE REFERENCIA'}"/>
+                                            <DataGridTextColumn Header="NOMBRE" Visibility="Visible" Binding="{Binding Path='NOMBRE'}"/>
+                                            <DataGridTextColumn Header="TELEFONO" Visibility="Visible" Binding="{Binding Path='TELEFONO'}"/>
+                                            <DataGridTextColumn Header="DESCRIPCION" Visibility="Visible" Binding="{Binding Path='DESCRIPCION'}"/>
+
+                                        </DataGrid.Columns>
+                                    </DataGrid>
                                 </Grid>
                             </TabItem>
 
