@@ -37,5 +37,19 @@ namespace HelpDesk.RecursosHumanos.BEL
                throw;
            }
        }
+
+       public int ActualizarCertificacionesLAB(CertificacionesE certifi, int id, ref string oerro)
+       {
+           try
+           {
+               return _certificacionesDAL.ActualizarCertificaciones(certifi, id, ref oerro);
+
+           }
+           catch (Exception)
+           {
+               oerro = "ocurrio un error al ingresar sus datos";
+               throw;
+           }
+       }
     }
 }

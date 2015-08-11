@@ -110,6 +110,44 @@ namespace HelpDesk.RecursosHumanos.DAL
              
             }
         }
+
+        public int ActualizarInfBasica(InfoBasicaE pinfobasica, int id, ref string oerro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+             if (!(_conn == null))
+                {
+                    SqlCommand Comando = new SqlCommand();
+                    Comando.Connection = _conn;
+                    Comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    Comando.CommandText = "SP_update_infoBasica";
+                    Comando.Parameters.AddWithValue("@id_info", id);
+                    Comando.Parameters.AddWithValue("@nombre", pinfobasica.nombre);
+                    Comando.Parameters.AddWithValue("@nacionalidad", pinfobasica.nacionalidad);
+                    Comando.Parameters.AddWithValue("@telefono_celular", pinfobasica.telefono_celular);
+                    Comando.Parameters.AddWithValue("@telefono_fijo", pinfobasica.telefono_fijo);
+                    Comando.Parameters.AddWithValue("@correo", pinfobasica.correo);
+                    Comando.Parameters.AddWithValue("@fecha_nacimiento", pinfobasica.fecha_nacimiento);
+                    Comando.Parameters.AddWithValue("@direccion", pinfobasica.direccion);
+                    Comando.Parameters.AddWithValue("@DUI", pinfobasica.DUI);
+                    Comando.Parameters.AddWithValue("@NIT", pinfobasica.NIT);
+                    Comando.Parameters.AddWithValue("@AFP", pinfobasica.AFP);
+                    Comando.Parameters.AddWithValue("@ISSS", pinfobasica.ISSS);
+                    Comando.Parameters.AddWithValue("@idgenero", pinfobasica.id_genero);
+                    Comando.Parameters.AddWithValue("@idmunicipio", pinfobasica.id_municipio);
+                    Comando.Parameters.AddWithValue("@idsituacionprofesional", pinfobasica.id_situacionProfesional);
+                    Comando.Parameters.AddWithValue("@id_profesiones", pinfobasica.id_profesiones);
+
+                                        
+                        resultado = Comando.ExecuteNonQuery();
+                }
+                else
+                    resultado = 0;
+                oerro = "";
+            }
+            return resultado;
+        }
     }
 
     

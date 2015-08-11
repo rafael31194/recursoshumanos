@@ -507,9 +507,20 @@ namespace WpfApplication3
 
                                 }
 
+                                InformacionAcademicaE infoObjeto = new InformacionAcademicaE();
+                                infoObjeto.id_informacionAcademica = (int.Parse(idUpdateInfoAca));
+                                infoObjeto.id_statusAcademico = status;
+                                infoObjeto.id_tipoEducacion = id_tipoEducacion;
+                                infoObjeto.institucion = institucion;
+                                infoObjeto.titulo = titulo;
+                                infoObjeto.anio_de_finalizacion = finalizacion;
+
+                                InformacionAcademicaBLL infoBll = new InformacionAcademicaBLL();
+                                infoBll.ActualizarInfomacionAcademica(infoObjeto, int.Parse(idCandidato), ref oerro);
 
 
-                                tableInfoAcad.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+
+                                tableInfoAcad.Rows.Add(infoObjeto.id_informacionAcademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
 
                                 //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
                                 cb_tipoeducacion.Text = string.Empty;
@@ -605,9 +616,21 @@ namespace WpfApplication3
                                 fechaFin = txt_FechaFinLab.Text;
 
                                 //ds.Tables.Add(dt);
-     
 
-                                tablaExperiencia.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                                ExpLaboralE expeObj = new ExpLaboralE();
+                                expeObj.id_experienciaLaboral =Int32.Parse( idUpdateExpe);
+                                expeObj.nombreEmpresa = NombreEmpesa;
+                                expeObj.cargoDesp = CargoDesempeñado;
+                                expeObj.descripPuesto = DescripcionPuesto;
+                                expeObj.fechaInicio = FechaInicio;
+                                expeObj.fechaFin = fechaFin;
+
+                                ExperienciaLaboralBLL expeBll = new ExperienciaLaboralBLL();
+                                expeBll.ActualizarExperienciaLab(expeObj, Int32.Parse(idCandidato), ref oerro);
+
+
+
+                                tablaExperiencia.Rows.Add(idUpdateExpe,NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
 
             
 
@@ -675,7 +698,7 @@ namespace WpfApplication3
         private void btn_agragarcertificaciones_Click(object sender, RoutedEventArgs e)
         {
 
-            if (!(string.IsNullOrEmpty(txt_TitutloCertificacion.Text) | string.IsNullOrEmpty(txt_InstCertiicacion.Text) | cb_añoFinCertificacion.SelectedIndex == 0))
+            if (!(string.IsNullOrEmpty(txt_TitutloCertificacion.Text) | string.IsNullOrEmpty(txt_InstCertiicacion.Text) | cb_añoFinCertificacion.SelectedIndex == -1))
             {
                 if (nuevoCerti == false)
                 {
@@ -688,8 +711,20 @@ namespace WpfApplication3
                     institutucion = txt_InstCertiicacion.Text;
                     anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
 
+                    
+                    CertificacionesE certiObj = new CertificacionesE();
+                    certiObj.id_candidato = (int.Parse(idCandidato));
+                    certiObj.id_certificaciones = int.Parse(idUpdateCertifi);
+                    certiObj.institucion = institutucion;
+                    certiObj.nombre = nombre;
+                    certiObj.anio = anio;
 
-                    tablaCerti.Rows.Add(nombre, institutucion, anio);
+                    CertificacionesBLL certiBll = new CertificacionesBLL();
+                    certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
+
+
+
+                    tablaCerti.Rows.Add(certiObj.id_certificaciones,nombre, institutucion, anio);
 
                     txt_TitutloCertificacion.Text = string.Empty;
                     txt_InstCertiicacion.Text = string.Empty;
@@ -769,8 +804,18 @@ namespace WpfApplication3
                     Telefono = txt_telefonoRef.Text;
                     Descripcion = txt_descripcionREF.Text;
 
+                    RefecenciasE refeObj = new RefecenciasE();
+                    refeObj.id_referencias = int.Parse(idUpdateRefe);
+                    refeObj.id_tipoReferencias = idReferencia;
+                    refeObj.nombre = Nombre;
+                    refeObj.telefono = Telefono;
+                    refeObj.descripcion = Descripcion;
 
-                    tablaReference.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+                    ReferenciasBLL refeBll = new ReferenciasBLL();
+                    refeBll.ActualizarReferencias(refeObj, int.Parse(idCandidato), ref oerro);
+
+
+                    tablaReference.Rows.Add(refeObj.id_referencias,idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
 
                     cb_tipoRef.Text = string.Empty;
                     txt_nombreRef.Text = string.Empty;
@@ -866,8 +911,18 @@ namespace WpfApplication3
                         HabilidadAplicacion = cb_habilidadApp.Text.ToString();
 
 
+                        HabCandidatoE habObj = new HabCandidatoE();
+                        habObj.id_candidato = int.Parse(idCandidato);
+                        habObj.id_habilidadAplicacion = id_habilidadAplicacion;
+                        habObj.id_habilidadCandidato = int.Parse(idUpdateHabi);
+                        habObj.id_nivel = id_nivel;
+                        habObj.idhabilidadTecnica = id_habilidadTecnica;
 
-                        tablaHabilidades.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                        HabilidadCandidatoBLL habiBll = new HabilidadCandidatoBLL();
+                        habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
+
+
+                        tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato,id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
 
 
                         cb_habtecnica.Text = string.Empty;
@@ -965,7 +1020,7 @@ namespace WpfApplication3
                 int id = Int32.Parse(idCandidato);
                 returinfoacademica = _informacionAcademicaBL.AgregarInfomacionAcademica(refinfoAcademica, int.Parse(idCandidato),ref oerro);
 
-                tableInfoAcad.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                tableInfoAcad.Rows.Add(returinfoacademica,id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
             }
             catch (Exception ex) {
                 MessageBox.Show("Ocurrio un error al momento de actualizar la información.!","Error al Actualizar",MessageBoxButton.OK,MessageBoxImage.Error);
@@ -1004,7 +1059,7 @@ namespace WpfApplication3
             
             //************************************************
 
-            tablaExperiencia.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+            tablaExperiencia.Rows.Add(returinfoLaboral, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
 
             
             txt_NombreEmpresaLab.Text = string.Empty;
@@ -1044,7 +1099,7 @@ namespace WpfApplication3
 
             //************************************************************************
 
-            tablaReference.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+                    tablaReference.Rows.Add(returReferencias,idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
             
             cb_tipoRef.Text = string.Empty;
             txt_nombreRef.Text = string.Empty;
@@ -1095,9 +1150,9 @@ namespace WpfApplication3
 
 
                 //********************************************************
-          
 
-                tablaHabilidades.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+
+                    tablaHabilidades.Rows.Add(returnHabilidades,id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
                 DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
 
                 cb_habtecnica.Text = string.Empty;
@@ -1132,7 +1187,7 @@ namespace WpfApplication3
                     returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato),ref oerro); 
 
             //*****************************************************
-                    tablaCerti.Rows.Add(nombre, institutucion, anio);
+                    tablaCerti.Rows.Add(returnCertificaciones,nombre, institutucion, anio);
 
             cb_añofinalizacionedu.SelectedIndex = -1;
             txt_InstCertiicacion.Text=string.Empty;

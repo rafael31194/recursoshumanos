@@ -58,6 +58,35 @@ namespace HelpDesk.RecursosHumanos.DAL
                     comando.Parameters.AddWithValue("@id_statusAcademico", pinformacionAcademica.id_statusAcademico);
                     comando.Parameters.AddWithValue("@id_tipoEducacion", pinformacionAcademica.id_tipoEducacion);
 
+                    resultado = (int)comando.ExecuteScalar();
+
+                }
+                else
+                    resultado = 0;
+                oerro = "";
+            }
+            return resultado;
+        }
+
+        public int ActualizarInformacionAcademica(InformacionAcademicaE pinformacionAcademica, int id, ref string oerro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    SqlCommand comando = new SqlCommand();//debo agregar al objeto que se recibe el id de su informacion
+                    comando.Connection = _conn;
+                    comando.CommandType = System.Data.CommandType.StoredProcedure;
+                    comando.CommandText = "SP_update_InformacionAcademicaConId";
+                    comando.Parameters.AddWithValue("@id", id);
+                    comando.Parameters.AddWithValue("@id_informacionAcademica", pinformacionAcademica.id_informacionAcademica);
+                    comando.Parameters.AddWithValue("@titulo", pinformacionAcademica.titulo);
+                    comando.Parameters.AddWithValue("@institucion", pinformacionAcademica.institucion);
+                    comando.Parameters.AddWithValue("@anio_de_finalizacion", pinformacionAcademica.anio_de_finalizacion);
+                    comando.Parameters.AddWithValue("@id_statusAcademico", pinformacionAcademica.id_statusAcademico);
+                    comando.Parameters.AddWithValue("@id_tipoEducacion", pinformacionAcademica.id_tipoEducacion);
+
                     resultado = comando.ExecuteNonQuery();
 
                 }

@@ -39,5 +39,19 @@ namespace HelpDesk.RecursosHumanos.BEL
               throw;
           }
       }
+
+      public int ActualizarHabilidadCandidato(HabCandidatoE refHabCandidato, int id, ref string oerro)
+      {
+          try
+          {
+              return _habilidadCanidatoDAL.ActualizarHabilidadCandidato(refHabCandidato, id, ref oerro);
+
+          }
+          catch (Exception)
+          {
+              oerro = "Ocurrio un problema al ingresar los datos";
+              throw;
+          }
+      }
     }
 }

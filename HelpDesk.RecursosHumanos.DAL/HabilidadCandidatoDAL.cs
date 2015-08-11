@@ -51,6 +51,32 @@ namespace HelpDesk.RecursosHumanos.DAL
                     comado.Parameters.AddWithValue("@id_nivel", pHabilidadCandidato.id_nivel);
                     comado.Parameters.AddWithValue("@id_habilidadAplicacion", pHabilidadCandidato.id_habilidadAplicacion);
 
+                    resultado =(int) comado.ExecuteScalar();
+                }
+                else
+                    resultado = 0;
+                oerro = "";
+            }
+            return resultado;
+        }
+
+        public int ActualizarHabilidadCandidato(HabCandidatoE pHabilidadCandidato, int id, ref string oerro)
+        {
+            int resultado = 0;
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    SqlCommand comado = new SqlCommand();
+                    comado.Connection = _conn;
+                    comado.CommandType = System.Data.CommandType.StoredProcedure;
+                    comado.CommandText = "SP_update_HabilidadCandidatoConId";
+                    comado.Parameters.AddWithValue("@id", id);
+                    comado.Parameters.AddWithValue("@id_habilidadCandidato", pHabilidadCandidato.id_habilidadCandidato);
+                    comado.Parameters.AddWithValue("@id_habilidadTecnica", pHabilidadCandidato.idhabilidadTecnica);
+                    comado.Parameters.AddWithValue("@id_nivel", pHabilidadCandidato.id_nivel);
+                    comado.Parameters.AddWithValue("@id_habilidadAplicacion", pHabilidadCandidato.id_habilidadAplicacion);
+
                     resultado = comado.ExecuteNonQuery();
                 }
                 else

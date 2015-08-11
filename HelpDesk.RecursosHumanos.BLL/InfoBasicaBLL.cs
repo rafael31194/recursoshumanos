@@ -46,5 +46,22 @@ namespace HelpDesk.RecursosHumanos.BLL
 
 
         }
+
+        public int ActualizarInfBasica(InfoBasicaE pinfobasica,int id, ref string oerro)
+        {
+
+            try
+            {
+
+                return _infBasDal.ActualizarInfBasica(pinfobasica, id,ref oerro);
+            }
+            catch (Exception)
+            {
+                oerro = "Ocurrio un error al ingresar sus los datos. ";
+                throw;
+
+
+            }
+        }
     }
 }

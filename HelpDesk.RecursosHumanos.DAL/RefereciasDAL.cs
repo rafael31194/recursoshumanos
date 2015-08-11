@@ -56,6 +56,34 @@ namespace HelpDesk.RecursosHumanos.DAL
                    comando.Parameters.AddWithValue("@telefono", preferencias.telefono);
                    comando.Parameters.AddWithValue("@descripcion", preferencias.descripcion);
 
+                   resultado = (int)comando.ExecuteScalar();
+
+               }
+               else
+                   resultado = 0;
+               oerro = "";
+           }
+           return resultado;
+       }
+
+       public int ActualizarReferencias(RefecenciasE preferencias, int id, ref string oerro)
+       {
+           int resultado = 0;
+           using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+           {
+               if (!(_conn == null))
+               {
+                   SqlCommand comando = new SqlCommand();
+                   comando.Connection = _conn;
+                   comando.CommandType = System.Data.CommandType.StoredProcedure;
+                   comando.CommandText = "SP_update_referenciasConId";
+                   comando.Parameters.AddWithValue("@id", id);
+                   comando.Parameters.AddWithValue("@id_referencias", preferencias.id_referencias);
+                   comando.Parameters.AddWithValue("@id_tipoReferencias", preferencias.id_tipoReferencias);
+                   comando.Parameters.AddWithValue("@nombre", preferencias.nombre);
+                   comando.Parameters.AddWithValue("@telefono", preferencias.telefono);
+                   comando.Parameters.AddWithValue("@descripcion", preferencias.descripcion);
+
                    resultado = comando.ExecuteNonQuery();
 
                }
