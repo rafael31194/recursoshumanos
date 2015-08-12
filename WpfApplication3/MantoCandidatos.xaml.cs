@@ -248,7 +248,7 @@ namespace WpfApplication3
 
             
             DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
-            DataGrid_InfAcademica.Columns[0].Visibility=Visibility.Collapsed;
+            
             
 
             
@@ -1249,11 +1249,129 @@ namespace WpfApplication3
 
      
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBox.Show(currentRow[2].ToString());
+       
+       
 
+        private void Button_Click_DeleteInfoAcad(object sender, RoutedEventArgs e)
+        {
+
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar el registro de " + currentRow[3].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _informacionAcademicaBL.BorrarInfoAcade(int.Parse(currentRow[0].ToString()), ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tableInfoAcad.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+            }
+        }
+
+        private void Button_Click_DeleteExpeLab(object sender, RoutedEventArgs e)
+        {
+
+            DataRowView currentRow = (DataRowView)DataGrid_Inf_Laboral.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la informacion Laboral de " + currentRow[2].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _experienciaLabBL.BorrarExpLab(int.Parse(currentRow[0].ToString()), ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tablaExperiencia.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
+            }
+        }
+
+        private void Button_Click_DeleteCertificaciones(object sender, RoutedEventArgs e)
+        {
+            
+            DataRowView currentRow = (DataRowView)DataGrid_Certificaciones.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la Certificacion " + currentRow[1].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _certificanesBL.BorrarCertificacion(int.Parse(currentRow[0].ToString()), ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tablaCerti.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
+            }
+        }
+
+        private void Button_Click_DeleteHabili(object sender, RoutedEventArgs e)
+        {
+
+            DataRowView currentRow = (DataRowView)DataG_Habilidades.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la Habilidad de " + currentRow[6].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _habilidadCandidatoBL.BorrarHabilidad(int.Parse(currentRow[0].ToString()), ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tablaHabilidades.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
+            }
+        }
+
+        private void Button_Click_DeleteReferencia(object sender, RoutedEventArgs e)
+        {
+
+            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la referencia de " + currentRow[3].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                _referenciasBL.BorrarReferencia(int.Parse(currentRow[0].ToString()), ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tablaReference.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
+            }
+        }
+
+        private void btn_ActualizarInfoBasica_Click(object sender, RoutedEventArgs e)
+        {
+            if (!(string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
+                   (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) ||
+                   (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text))
+                   ))
+            {
+                InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+                DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+                _InfoBasicaE.id_candidato = int.Parse(idCandidato);
+                _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+                _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+                _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+                _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+                //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+                _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+                _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
+                _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+                _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+
+                if (rbsexoM.IsChecked == true)
+                {
+                    _InfoBasicaE.id_genero = 1;
+                }
+                else if (rbsexoF.IsChecked == true)
+                {
+                    _InfoBasicaE.id_genero = 2;
+                }
+
+                _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+                _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+                _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+                _InfoBasicaE.ISSS = txtNiss.Text;
+                _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+                _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+
+                string oerro = "";
+
+                int returinfobasica = 0;
+                returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE,_InfoBasicaE.id_candidato, ref oerro);
+                if (returinfobasica <= 0)
+                {
+                    MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else MessageBox.Show("El candidato "+_InfoBasicaE.nombre+ " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
+            }
+            else
+            {
+                MessageBox.Show("Asegurese de que los campos obligatorios no esten vacíos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         

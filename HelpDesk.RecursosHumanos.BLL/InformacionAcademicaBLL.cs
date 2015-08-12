@@ -50,5 +50,18 @@ namespace HelpDesk.RecursosHumanos.BEL
                 throw;
             }
         }
+
+        public int BorrarInfoAcade(int p, ref string oerro)
+        {
+            try
+            {
+                return _informacionAcademicaDALL.BorrarInfoAcade(p, ref oerro);
+            }
+            catch (Exception)
+            {
+                oerro = "ocurrio un problema al guardar los datos";
+                throw;
+            }
+        }
     }
 }

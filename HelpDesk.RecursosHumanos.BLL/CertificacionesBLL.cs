@@ -51,5 +51,10 @@ namespace HelpDesk.RecursosHumanos.BEL
                throw;
            }
        }
+
+       public int BorrarCertificacion(int certiId,ref string oerro){
+
+           return _certificacionesDAL.BorrarCertificacion(certiId, oerro);
+       }
     }
 }
