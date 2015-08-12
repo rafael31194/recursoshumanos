@@ -22,7 +22,8 @@
 
                     <Grid Grid.Row="0" Grid.Column="0" Margin="2,-30,816,40" Height="731" VerticalAlignment="Bottom" >
 
-                        <Image Name="CerrarSesion" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Height="50" Margin="49,73,49,0" VerticalAlignment="Top" HorizontalAlignment="Center" MouseDown="CerrarSesion_MouseDown"/>
+                        <Image Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,48,87,578"  RenderTransformOrigin="0.51,0.718" HorizontalAlignment="Center" Width="35" Height="50" MouseDown="CerrarSesionNuevoPerfil_MouseDown" />
+                        <Image Source="Imagenes/logoHelpdesk.png" Margin="10,75,10,507" Height="71" VerticalAlignment="Center" HorizontalAlignment="Center" MouseDown="Image_MouseDown"/>
 
                     </Grid>
 
@@ -512,7 +513,7 @@
                                 <TextBlock  Text="Actualizar Informacion Basica" TextWrapping="Wrap" TextAlignment="Center" Width="110" Height="34"/>
                             </Button.Content>
                         </Button>
-                        <Button x:Name="btn_ActualizarInfoAcademica" HorizontalAlignment="Right" Margin="0,30,90,0" Width="125"  Style="{StaticResource AccentedSquareButtonStyle}" Height="45" VerticalAlignment="Top" MinWidth="120" MinHeight="40">
+                        <!--<Button x:Name="btn_ActualizarInfoAcademica" HorizontalAlignment="Right" Margin="0,30,90,0" Width="125"  Style="{StaticResource AccentedSquareButtonStyle}" Height="45" VerticalAlignment="Top" MinWidth="120" MinHeight="40">
                             <Button.Content>
                                 <TextBlock Text="Actualizar Informacion Academica" TextWrapping="Wrap" TextAlignment="Center"/>
                             </Button.Content>
@@ -536,7 +537,7 @@
                             <Button.Content>
                                 <TextBlock  Text="Actualizar Referencias" TextWrapping="Wrap" TextAlignment="Center"/>
                             </Button.Content>
-                        </Button>
+                        </Button>-->
                         <Button x:Name="btnEliminar" HorizontalAlignment="Right" Margin="0,25,238,0" Width="125"  Style="{StaticResource AccentedSquareButtonStyle}" Height="49" VerticalAlignment="Top" MinWidth="125" Click="btnEliminar_Click">
                             <Button.Content>
                                 <TextBlock  Text="Eliminar Candidato" TextWrapping="Wrap" TextAlignment="Center"/>

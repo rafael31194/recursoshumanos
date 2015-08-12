@@ -655,7 +655,7 @@ namespace WpfApplication3
                     (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text))
                     )
                 {
-                    MessageBox.Show("COMPLETO TODOS LOS CAMPOS");
+                    MessageBox.Show("Este fomulario tiene campos obligatorios '*' ", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
                 else
                 {
@@ -663,7 +663,7 @@ namespace WpfApplication3
                     if (DataG_Habilidades.Items.Count == 0 || DataGrid_InfAcademica.Items.Count == 0)
                     {
                         cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
-                        MessageBox.Show("Ingrese info. de los otros TAB", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        MessageBox.Show("Ingrese informacion acdemica y habilidades ya que son formularios requeridos", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
                     
                     }
                     else
@@ -839,6 +839,32 @@ namespace WpfApplication3
                 int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
                 if (ascci >= 48 && ascci <= 57) e.Handled = false;
                 else e.Handled = true;
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _lo = new Login();
+            _lo.InitializeComponent();
+            this.Close();
+            _lo.ShowDialog();
         }
         
 
