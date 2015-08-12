@@ -53,5 +53,19 @@ namespace HelpDesk.RecursosHumanos.BEL
               throw;
           }
       }
+
+      public void BorrarHabilidad(int p, ref string oerro)
+      {
+          try
+          {
+               _habilidadCanidatoDAL.BorrarHabilidad(p, ref oerro);
+
+          }
+          catch (Exception)
+          {
+              oerro = "Ocurrio un problema al ingresar los datos";
+              throw;
+          }
+      }
     }
 }

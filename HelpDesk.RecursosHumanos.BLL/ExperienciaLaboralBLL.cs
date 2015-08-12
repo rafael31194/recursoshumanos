@@ -50,6 +50,19 @@ namespace HelpDesk.RecursosHumanos.BEL
              }
          }
 
-        
+
+
+         public int BorrarExpLab(int p, ref string oerro)
+         {
+             try
+             {
+                 return _experienciaLabDAL.BorrarExpLab(p, ref oerro);
+             }
+             catch (Exception)
+             {
+                 oerro = "ocurrio un problema al guardar los datos";
+                 throw;
+             }
+         }
     }
 }

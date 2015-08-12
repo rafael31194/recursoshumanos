@@ -51,5 +51,19 @@ namespace HelpDesk.RecursosHumanos.BEL
                 throw;
             }
         }
+
+        public void BorrarReferencia(int p, ref string oerro)
+        {
+            try
+            {
+                _referenciasDAL.BorrarReferencia(p, ref oerro);
+
+            }
+            catch (Exception)
+            {
+                oerro = "Ocurrio un problema al ingresar los datos";
+                throw;
+            }
+        }
     }
 }
