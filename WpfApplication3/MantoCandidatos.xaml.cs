@@ -94,59 +94,35 @@ namespace WpfApplication3
                 {
 
                     btn_ActualizarInfoBasica.Visibility = Visibility.Visible;
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Collapsed;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Collapsed;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Collapsed;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Collapsed;
-                    btn_ActualizarReferencias.Visibility = Visibility.Collapsed;
+                  
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 1)
                 {
-                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed; 
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Visible;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Collapsed;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Collapsed;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Collapsed;
-                    btn_ActualizarReferencias.Visibility = Visibility.Collapsed; 
+                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
+                   
                 }
 
                 else if (tcPrincipalModificar.SelectedIndex == 2)
                 {
-                    btn_ActualizarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Visible;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Hidden;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Hidden;
-                    btn_ActualizarReferencias.Visibility = Visibility.Hidden;
+                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
+                    
                 }
 
                 else if (tcPrincipalModificar.SelectedIndex == 3)
                 {
-                    btn_ActualizarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Hidden;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Visible;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Hidden;
-                    btn_ActualizarReferencias.Visibility = Visibility.Hidden;
+                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
+                
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 4)
                 {
-                    btn_ActualizarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Hidden;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Hidden;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Visible;
-                    btn_ActualizarReferencias.Visibility = Visibility.Hidden;
+                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
+                   
 
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 5)
                 {
-                    btn_ActualizarInfoBasica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoAcademica.Visibility = Visibility.Hidden;
-                    btn_ActualizarInfoLaboral.Visibility = Visibility.Hidden;
-                    btn_ActualizarHabilidades.Visibility = Visibility.Hidden;
-                    btn_ActualizarCertificaciones.Visibility = Visibility.Hidden;
-                    btn_ActualizarReferencias.Visibility = Visibility.Visible;
+                    btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
+                   
                 }
             }
         }
@@ -1216,13 +1192,7 @@ namespace WpfApplication3
             cb_habilidadApp.SelectedIndex = 0;
         }
 
-        private void CerrarSesion_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoginInicio _Li = new LoginInicio ();
-            _Li.InitializeComponent();
-            this.Close();
-            _Li.ShowDialog();
-        }
+        
 
         private void btn_ActualizarInfoBasica_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -1372,6 +1342,23 @@ namespace WpfApplication3
             {
                 MessageBox.Show("Asegurese de que los campos obligatorios no esten vacíos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
         }
 
         
