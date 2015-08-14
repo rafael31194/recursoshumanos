@@ -22,7 +22,7 @@
           Grid.Column="0" Margin="0,9,0,0" VerticalAlignment="Top" MaxWidth="203" MaxHeight="510" HorizontalAlignment="Left">
 
 
-                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,180,0,-30" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" VerticalContentAlignment="Top" HorizontalAlignment="Left" Width="203" HorizontalContentAlignment="Stretch" >
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,134,0,16" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" VerticalContentAlignment="Top" HorizontalAlignment="Left" Width="203" HorizontalContentAlignment="Stretch" >
                     <!--<ListBox.Resources>
                     <Style TargetType="{x:Type Expander}">
                         <Setter Property="IsExpanded"
@@ -196,8 +196,8 @@
             <StackPanel
            
             Orientation="Horizontal" Margin="0,741,0,0"/>
-            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,42,0,664"  RenderTransformOrigin="0.51,0.718" Width="52" MaxWidth="50" MaxHeight="35" HorizontalAlignment="Left" />
-            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,590" Width="189" HorizontalAlignment="Left" MouseDown="Image_MouseDown_1" MaxHeight="71" MaxWidth="200"/>
+            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,40,0,666"  RenderTransformOrigin="0.51,0.718" Width="52" MaxWidth="50" MaxHeight="35" HorizontalAlignment="Left" />
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,602" Width="189" HorizontalAlignment="Left" MouseDown="Image_MouseDown_1" MaxHeight="71" MaxWidth="200"/>
         </Grid>
 
     </Controls:MetroContentControl>

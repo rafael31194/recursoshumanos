@@ -13,7 +13,7 @@
             <Grid Grid.Row="0"
     		Grid.Column="0"  Margin="10,32,802,84">
 
-                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,150,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203" SelectionChanged="ListBox_SelectionChanged" Height="324" VerticalAlignment="Top" >
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,100,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203" SelectionChanged="ListBox_SelectionChanged" Height="324" VerticalAlignment="Top" >
                     <!--<ListBox.Resources>
                     <Style TargetType="{x:Type Expander}">
                         <Setter Property="IsExpanded"
@@ -62,7 +62,6 @@
                     </Expander>
 
                 </ListBox>
-                <Image Name="CerrarSesion" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Height="50" Margin="49,73,49,0" VerticalAlignment="Top" HorizontalAlignment="Center" MouseDown="CerrarSesion_MouseDown"/>
             </Grid>
             <Grid Grid.Row="0" Margin="229,32,0,0" Height="96" VerticalAlignment="Top" >
 
@@ -94,6 +93,8 @@
 
                 </Grid>
             </GroupBox>
+            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,37,0,0"  RenderTransformOrigin="0.51,0.718" VerticalAlignment="Top" Height="35" HorizontalAlignment="Left" Width="38" />
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="19,80,0,0" Height="50" Width="168" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Left"/>
 
         </Grid>
 
