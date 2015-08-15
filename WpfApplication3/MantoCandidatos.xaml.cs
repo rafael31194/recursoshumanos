@@ -182,6 +182,8 @@ namespace WpfApplication3
             tableInfoAcad.Columns.Add("Titulo", typeof(string));
             tableInfoAcad.Columns.Add("Institucion", typeof(string));
             tableInfoAcad.Columns.Add("Año finalizacion", typeof(Int32));
+            
+
             tableInfoAcad.Columns.Add("Nombre status", typeof(string));
             tableInfoAcad.Columns.Add("status", typeof(Int32));
 
@@ -1361,10 +1363,10 @@ namespace WpfApplication3
             _bw.ShowDialog();
         }
 
+        private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
         
-
-
-
+        }
        
       
        

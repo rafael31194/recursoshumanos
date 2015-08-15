@@ -48,6 +48,9 @@ namespace WpfApplication3
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
         RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
 
+
+       
+
         public MainWindow()
         {
             InitializeComponent();
@@ -866,12 +869,53 @@ namespace WpfApplication3
             this.Close();
             _lo.ShowDialog();
         }
-        
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
+             {
+                 DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+                 MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro " , "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                 if (result == MessageBoxResult.Yes)
+                 {
+                     dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+                 }
 
-        
+                       
+             }
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt1.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
+            }
 
+        }
 
+        private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt3.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
+            }
+        }
+
+        private void eliminarFilaCertifi_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt9.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
+            }
+        }
+
+        }
+      
     }
 
-}
+
 

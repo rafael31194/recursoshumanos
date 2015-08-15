@@ -12,7 +12,7 @@ namespace HelpDesk.RecursosHumanos.DAL
 {
     class CommonDb
     {
-        public const string _stringDeConexion = @"Data Source=EDUARDO_HP\SQLEXPRESS;Initial Catalog=RecursosHumanos;Integrated Security=True";
+        public const string _stringDeConexion = @"Data Source=HELPDESK13-PC;Initial Catalog=RecursosHumanos;Integrated Security=True";
 
         public static SqlConnection obtenerConexion()
         {

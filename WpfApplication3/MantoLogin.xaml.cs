@@ -180,5 +180,22 @@ namespace WpfApplication3
             }
            
         }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _lo = new Login();
+            _lo.InitializeComponent();
+            this.Close();
+            _lo.ShowDialog();
+        }
     }
 }
