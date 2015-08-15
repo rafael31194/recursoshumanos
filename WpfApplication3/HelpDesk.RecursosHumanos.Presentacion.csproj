@@ -44,8 +44,11 @@
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\MahApps.Metro.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MahApps.Metro.1.1.2.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -58,9 +61,11 @@
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
     </Reference>
+    <Reference Include="UIAutomationProvider" />
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -68,6 +73,55 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Class\UserLogin.cs" />
+    <Compile Include="Curriculum.xaml.cs">
+      <DependentUpon>Curriculum.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetCertifi.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCertifi.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetCurriculum.cs">
+      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetCurriculum.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetExpeLab.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetExpeLab.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetHabili.cs">
+      <DependentUpon>DataSetHabili.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetHabili.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHabili.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetInfoBasic.cs">
+      <DependentUpon>DataSetInfoBasic.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetInfoBasic.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetInfoBasic.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetRefe.cs">
+      <DependentUpon>DataSetRefe.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DataSets\DataSetRefe.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRefe.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LoginInicio.xaml.cs">
       <DependentUpon>LoginInicio.xaml</DependentUpon>
     </Compile>
@@ -80,6 +134,10 @@
     <Page Include="Busqueda.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Curriculum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginInicio.xaml">
       <SubType>Designer</SubType>
@@ -149,7 +207,74 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportCurriculum.rdlc" />
     <None Include="app.manifest" />
+    <None Include="DataSets\DataSetCertifi.xsc">
+      <DependentUpon>DataSetCertifi.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCertifi.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCertifi.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetCertifi.xss">
+      <DependentUpon>DataSetCertifi.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCurriculum.xsc">
+      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetCurriculum.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCurriculum.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetCurriculum.xss">
+      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetExpeLab.xsc">
+      <DependentUpon>DataSetExpeLab.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetExpeLab.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetExpeLab.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetExpeLab.xss">
+      <DependentUpon>DataSetExpeLab.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHabili.xsc">
+      <DependentUpon>DataSetHabili.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetHabili.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHabili.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetHabili.xss">
+      <DependentUpon>DataSetHabili.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetInfoBasic.xsc">
+      <DependentUpon>DataSetInfoBasic.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetInfoBasic.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetInfoBasic.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetInfoBasic.xss">
+      <DependentUpon>DataSetInfoBasic.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRefe.xsc">
+      <DependentUpon>DataSetRefe.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetRefe.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRefe.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetRefe.xss">
+      <DependentUpon>DataSetRefe.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -234,6 +359,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MS-Partner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\encabezadoHelpdesk.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

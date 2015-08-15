@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HelpDesk.RecursosHumanos.DAL;
 using HelpDesk.RecursosHumanos.BEL;
+using System.Data;
 
 
 namespace HelpDesk.RecursosHumanos.BEL
@@ -62,6 +63,11 @@ namespace HelpDesk.RecursosHumanos.BEL
                 oerro = "ocurrio un problema al guardar los datos";
                 throw;
             }
+        }
+
+        public DataTable selectInfoAca(int id, ref string oerro)
+        {
+            return _informacionAcademicaDALL.SelectInfoAcade(id, ref oerro);
         }
     }
 }

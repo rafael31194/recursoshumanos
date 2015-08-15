@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetHabili" targetNamespace="http://tempuri.org/DataSetHabili.xsd" xmlns:mstns="http://tempuri.org/DataSetHabili.xsd" xmlns="http://tempuri.org/DataSetHabili.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetHabili" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetHabili" msprop:Generator_UserDSName="DataSetHabili">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="HabilidadCandidato" msprop:Generator_TableClassName="HabilidadCandidatoDataTable" msprop:Generator_TableVarName="tableHabilidadCandidato" msprop:Generator_TablePropName="HabilidadCandidato" msprop:Generator_RowDeletingName="HabilidadCandidatoRowDeleting" msprop:Generator_RowChangingName="HabilidadCandidatoRowChanging" msprop:Generator_RowEvHandlerName="HabilidadCandidatoRowChangeEventHandler" msprop:Generator_RowDeletedName="HabilidadCandidatoRowDeleted" msprop:Generator_UserTableName="HabilidadCandidato" msprop:Generator_RowChangedName="HabilidadCandidatoRowChanged" msprop:Generator_RowEvArgName="HabilidadCandidatoRowChangeEvent" msprop:Generator_RowClassName="HabilidadCandidatoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="habilidadTecnica" msprop:Generator_ColumnVarNameInTable="columnhabilidadTecnica" msprop:Generator_ColumnPropNameInRow="habilidadTecnica" msprop:Generator_ColumnPropNameInTable="habilidadTecnicaColumn" msprop:Generator_UserColumnName="habilidadTecnica" type="xs:string" minOccurs="0" />
+              <xs:element name="nivel" msprop:Generator_ColumnVarNameInTable="columnnivel" msprop:Generator_ColumnPropNameInRow="nivel" msprop:Generator_ColumnPropNameInTable="nivelColumn" msprop:Generator_UserColumnName="nivel" type="xs:string" minOccurs="0" />
+              <xs:element name="habilidadAplicacion" msprop:Generator_ColumnVarNameInTable="columnhabilidadAplicacion" msprop:Generator_ColumnPropNameInRow="habilidadAplicacion" msprop:Generator_ColumnPropNameInTable="habilidadAplicacionColumn" msprop:Generator_UserColumnName="habilidadAplicacion" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

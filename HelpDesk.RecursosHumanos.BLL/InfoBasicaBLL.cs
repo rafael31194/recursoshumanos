@@ -63,5 +63,10 @@ namespace HelpDesk.RecursosHumanos.BLL
 
             }
         }
+
+        public DataTable selectInfBasic(int id, ref string oerro)
+        {
+            return _infBasDal.selectInfoBasic(id, ref oerro);
+        }
     }
 }

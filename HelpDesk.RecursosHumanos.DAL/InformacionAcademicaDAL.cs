@@ -135,5 +135,49 @@ namespace HelpDesk.RecursosHumanos.DAL
                 }
             }
         }
+
+        public DataTable SelectInfoAcade(int p, ref string oerro)
+        {
+            
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    string query=
+                        "SELECT        InformacionAcademica.institucion, TipoEducacion.descripcion as tipoEducacion, InformacionAcademica.titulo, InformacionAcademica.anio_de_finalizacion, StatusAcademico.descripcion AS estado"+
+                            " FROM            InformacionAcademica INNER JOIN"+
+                         " StatusAcademico ON InformacionAcademica.id_statusAcademico = StatusAcademico.id_statusAcademico INNER JOIN"+
+                         " TipoEducacion ON InformacionAcademica.id_tipoEducacion = TipoEducacion.id_tipoEducacion where id_candidato =";
+                    try
+                    {
+
+                        //Write Query For Delete Data From the Table using Creating Object Of SqlCommand...
+                        SqlCommand comm = new SqlCommand(query + p + "", _conn);
+                        SqlDataAdapter da = new SqlDataAdapter(comm);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                    catch (Exception ex)
+                    {
+                        //If Any Exception Will Occur then It Will Display That Message...
+                        MessageBox.Show("Ocurrion un error al recuperar los tados la informacion academica.");
+                        return null;
+                        throw ex;
+                    }
+                    finally
+                    {
+                        //Finally Close the Connection...
+                        _conn.Close();
+
+
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

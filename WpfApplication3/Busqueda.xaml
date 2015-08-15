@@ -114,7 +114,7 @@
                                     <ItemContainerTemplate>
                                         <DockPanel>
 
-                                            <Button Visibility="Visible" Opacity="3" MaxWidth="25" >
+                                            <Button Visibility="Visible" Opacity="3" MaxWidth="25" Click="Button_ClickVerCandidato">
                                                 <Button.Background>
                                                     <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
 
