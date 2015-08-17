@@ -82,10 +82,10 @@
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top"/>
 
-                                                            <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" ToolTip="Ingrese su DUI sin guiones"  controls:TextBoxHelper.Watermark="00000000"  Height="22" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12" PreviewTextInput="txtNoduiInfBasica_PreviewTextInput"/>
-                                                            <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13"/>
-                                                            <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14"/>
-                                                            <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15"/>
+                                                            <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" ToolTip="Ingrese su DUI sin guiones"  controls:TextBoxHelper.Watermark="00000000"  Height="22" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12" PreviewTextInput="txtNoduiInfBasica_PreviewTextInput" FontSize="10"/>
+                                                            <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13" FontSize="10"/>
+                                                            <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14" FontSize="10"/>
+                                                            <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15" FontSize="10"/>
 
                                                         </Grid>
                                                     </GroupBox>
@@ -103,11 +103,11 @@
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Sexo"/></TextBlock>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Fecha de Nacimiento" VerticalAlignment="Top"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Nacionalidad" VerticalAlignment="Top"/>
-                                                            <TextBox Name="txtNombreInfBasica"    ToolTip="Nombre del perfil" HorizontalAlignment="Left" Height="26" Margin="130,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" TextChanged="txtNombreInfBasica_TextChanged" PreviewTextInput="txtNombreInfBasica_PreviewTextInput" TabIndex="1"  />
+                                                            <TextBox Name="txtNombreInfBasica" ToolTip="Nombre del perfil" HorizontalAlignment="Left" Height="26" Margin="130,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250" TextChanged="txtNombreInfBasica_TextChanged" PreviewTextInput="txtNombreInfBasica_PreviewTextInput" TabIndex="1" FontSize="10"  />
                                                             <RadioButton Name="rbsexoM" Content="MASCULINO" HorizontalAlignment="Left" Margin="130,50,0,0" VerticalAlignment="Top" IsChecked="True" Height="26" Width="95" TabIndex="2"/>
                                                             <RadioButton Name="rbsexoF" Content="FEMENINO" HorizontalAlignment="Left" Margin="240,50,0,0" VerticalAlignment="Top" Height="26" Width="88" TabIndex="2"/>
                                                             <DatePicker Name="DateFechNacInfoBasica" HorizontalAlignment="Left" Margin="130,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,0.542" TabIndex="2"/>
-                                                            <TextBox Name="txtNacionalidadInfBasica" HorizontalAlignment="Left" Height="22" Margin="130,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="txtNacionalidadInfBasica_TextChanged" TabIndex="3"/>
+                                                            <TextBox Name="txtNacionalidadInfBasica" HorizontalAlignment="Left" Height="22" Margin="130,124,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TextChanged="txtNacionalidadInfBasica_TextChanged" TabIndex="3" FontSize="10"/>
 
                                                         </Grid>
                                                     </GroupBox>
@@ -121,9 +121,9 @@
                                                             <TextBlock HorizontalAlignment="Left" Margin="18,19,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Lugar de "/><Run Text="Residencia"/></TextBlock>
                                                             <TextBlock HorizontalAlignment="Left" Margin="18,63,0,0" TextWrapping="Wrap" Text="Departamento" VerticalAlignment="Top"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="18,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Municipio"/></TextBlock>
-                                                            <TextBox Name="txtLugarResidenciaInfBasica" HorizontalAlignment="Left" Height="40" Margin="127,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284" TabIndex="4"/>
-                                                            <ComboBox   Name="cbDeptos" Margin="127,63,145,0" VerticalAlignment="Top" SelectionChanged="cbDeptos_SelectionChanged" TabIndex="5"/>
-                                                            <ComboBox   Name="cbMunic" Margin="127,103,145,0" VerticalAlignment="Top" SelectionChanged="cbMunic_SelectionChanged" TabIndex="6"/>
+                                                            <TextBox Name="txtLugarResidenciaInfBasica" HorizontalAlignment="Left" Height="40" Margin="127,11,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="284" TabIndex="4" FontSize="10"/>
+                                                            <ComboBox   Name="cbDeptos" Margin="127,63,145,0" VerticalAlignment="Top" SelectionChanged="cbDeptos_SelectionChanged" TabIndex="5" FontSize="10"/>
+                                                            <ComboBox   Name="cbMunic" Margin="127,103,145,0" VerticalAlignment="Top" SelectionChanged="cbMunic_SelectionChanged" TabIndex="6" FontSize="10"/>
                                                         </Grid>
 
                                                     </GroupBox>
@@ -133,8 +133,8 @@
                                                         <Grid Margin="0,0,0,-2">
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Profesion"/></TextBlock>
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,40,0,0" TextWrapping="Wrap" Text="Situacion Laboral" VerticalAlignment="Top" Height="20"/>
-                                                            <ComboBox Name="cb_profesionesIB" Margin="127,6,145,0" VerticalAlignment="Top" TabIndex="7"/>
-                                                            <ComboBox Name="cbSitLab" Margin="127,40,145,0" VerticalAlignment="Top" SelectionChanged="cbSitLab_SelectionChanged" TabIndex="8"/>
+                                                            <ComboBox Name="cb_profesionesIB" Margin="127,6,145,0" VerticalAlignment="Top" TabIndex="7" FontSize="10"/>
+                                                            <ComboBox Name="cbSitLab" Margin="127,40,145,0" VerticalAlignment="Top" SelectionChanged="cbSitLab_SelectionChanged" TabIndex="8" FontSize="10"/>
 
                                                         </Grid>
                                                     </GroupBox>
@@ -145,10 +145,10 @@
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.Celular" VerticalAlignment="Top"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,83,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Correo"/></TextBlock>
 
-                                                            <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9" PreviewTextInput="txtTelefonoCasaInfBasica_PreviewTextInput" MaxHeight="23"/>
-                                                            <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10" />
-                                                            <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11"/>
-                                                            <TextBox Name="txtUsurioSkype" HorizontalAlignment="Left" Height="25" Margin="100,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11"/>
+                                                            <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9" PreviewTextInput="txtTelefonoCasaInfBasica_PreviewTextInput" MaxHeight="23" FontSize="10"/>
+                                                            <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10" FontSize="10" />
+                                                            <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
+                                                            <TextBox Name="txtUsurioSkype" HorizontalAlignment="Left" Height="25" Margin="100,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Usuario Skype" VerticalAlignment="Top"/>
 
                                                         </Grid>
@@ -561,7 +561,7 @@
                                                         <DataGridTextColumn Header="NOMBRE" Visibility="Visible" Binding="{Binding Path='NOMBRE'}"/>
                                                         <DataGridTextColumn Header="TELEFONO" Visibility="Visible" Binding="{Binding Path='TELEFONO'}"/>
                                                         <DataGridTextColumn Header="DESCRIPCION"  Visibility="Visible" Binding="{Binding Path='DESCRIPCION'}"/>
-                                                        
+
 
                                                     </DataGrid.Columns>
                                                 </DataGrid>
