@@ -128,5 +128,43 @@ namespace HelpDesk.RecursosHumanos.DAL
 
             }
         }
+
+        public DataTable selecCertifi(int idCandidato, ref string oerro)
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+                    string query="SELECT        nombre, institucion, anio FROM            Certificacion where id_candidato="+idCandidato;
+                    try
+                    {
+                        SqlCommand comm = new SqlCommand(query, _conn);
+
+                        SqlDataAdapter da = new SqlDataAdapter(comm);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                    catch (SqlException ex)
+                    {
+                        //If Any Exception Will Occur then It Will Display That Message...
+                        MessageBox.Show("Ocurrion un error al recuperar los datos de las certificaciones.");
+                        return null;
+                        throw ex;
+                    }
+                    finally
+                    {
+                        //Finally Close the Connection...
+                        _conn.Close();
+
+
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 }

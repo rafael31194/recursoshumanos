@@ -67,5 +67,10 @@ namespace HelpDesk.RecursosHumanos.BEL
               throw;
           }
       }
+
+      public System.Data.DataTable selectHabili(int idCandidato, ref string oerro)
+      {
+          return _habilidadCanidatoDAL.selectHabili(idCandidato, ref oerro);
+      }
     }
 }

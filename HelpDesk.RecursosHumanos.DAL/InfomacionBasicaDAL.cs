@@ -148,6 +148,55 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
             return resultado;
         }
+
+
+        public DataTable selectInfoBasic(int id, ref string oerro){
+
+            string query = "SELECT SituacionProfesional.descripcion as situacionProfesional, Profesiones.descripcion AS profesion, Municipio.descripcion AS municipio, Genero.descripcion AS sexo, InformacionBasica.nombre, InformacionBasica.nacionalidad," +
+                         " InformacionBasica.telefono_celular, InformacionBasica.telefono_fijo, InformacionBasica.correo, InformacionBasica.fecha_nacimiento, InformacionBasica.direccion, InformacionBasica.DUI, InformacionBasica.NIT, " +
+                         " InformacionBasica.AFP, InformacionBasica.ISSS" +
+                            " FROM            Genero INNER JOIN " +
+                                 " InformacionBasica ON Genero.id_genero = InformacionBasica.id_genero INNER JOIN" +
+                                 " Municipio ON InformacionBasica.id_municipio = Municipio.id_municipio INNER JOIN" +
+                                 " Profesiones ON InformacionBasica.id_profesiones = Profesiones.id_profesiones INNER JOIN" +
+                                 " SituacionProfesional ON InformacionBasica.id_situacionProfesional = SituacionProfesional.id_SituacionProfesional where id_candidato=" + id;
+
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                if (!(_conn == null))
+                {
+
+                    try
+                    {
+
+                        //Write Query For Delete Data From the Table using Creating Object Of SqlCommand...
+                        SqlCommand comm = new SqlCommand(query, _conn);
+                        SqlDataAdapter da = new SqlDataAdapter(comm);
+                        DataTable dt = new DataTable();
+                        da.Fill(dt);
+                        return dt;
+                    }
+                    catch (Exception ex)
+                    {
+                        //If Any Exception Will Occur then It Will Display That Message...
+                        MessageBox.Show("Ocurrion un error al recuperar los datos de la informacion basica.");
+                        return null;
+                        throw ex;
+                    }
+                    finally
+                    {
+                        //Finally Close the Connection...
+                        _conn.Close();
+
+
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+        }
     }
 
     

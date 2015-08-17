@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetExpeLab" targetNamespace="http://tempuri.org/DataSetExpeLab.xsd" xmlns:mstns="http://tempuri.org/DataSetExpeLab.xsd" xmlns="http://tempuri.org/DataSetExpeLab.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetExpeLab" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetExpeLab" msprop:Generator_UserDSName="DataSetExpeLab">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ExperienciaLaboral" msprop:Generator_TableClassName="ExperienciaLaboralDataTable" msprop:Generator_TableVarName="tableExperienciaLaboral" msprop:Generator_TablePropName="ExperienciaLaboral" msprop:Generator_RowDeletingName="ExperienciaLaboralRowDeleting" msprop:Generator_RowChangingName="ExperienciaLaboralRowChanging" msprop:Generator_RowEvHandlerName="ExperienciaLaboralRowChangeEventHandler" msprop:Generator_RowDeletedName="ExperienciaLaboralRowDeleted" msprop:Generator_UserTableName="ExperienciaLaboral" msprop:Generator_RowChangedName="ExperienciaLaboralRowChanged" msprop:Generator_RowEvArgName="ExperienciaLaboralRowChangeEvent" msprop:Generator_RowClassName="ExperienciaLaboralRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombreEmpresa" msprop:Generator_ColumnVarNameInTable="columnnombreEmpresa" msprop:Generator_ColumnPropNameInRow="nombreEmpresa" msprop:Generator_ColumnPropNameInTable="nombreEmpresaColumn" msprop:Generator_UserColumnName="nombreEmpresa" type="xs:string" minOccurs="0" />
+              <xs:element name="cargoDesempe" msprop:Generator_ColumnVarNameInTable="columncargoDesempe" msprop:Generator_ColumnPropNameInRow="cargoDesempe" msprop:Generator_ColumnPropNameInTable="cargoDesempeColumn" msprop:Generator_UserColumnName="cargoDesempe" type="xs:string" minOccurs="0" />
+              <xs:element name="descripcionPuesto" msprop:Generator_ColumnVarNameInTable="columndescripcionPuesto" msprop:Generator_ColumnPropNameInRow="descripcionPuesto" msprop:Generator_ColumnPropNameInTable="descripcionPuestoColumn" msprop:Generator_UserColumnName="descripcionPuesto" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaIncio" msprop:Generator_ColumnVarNameInTable="columnfechaIncio" msprop:Generator_ColumnPropNameInRow="fechaIncio" msprop:Generator_ColumnPropNameInTable="fechaIncioColumn" msprop:Generator_UserColumnName="fechaIncio" type="xs:string" minOccurs="0" />
+              <xs:element name="fechaFin" msprop:Generator_ColumnVarNameInTable="columnfechaFin" msprop:Generator_ColumnPropNameInRow="fechaFin" msprop:Generator_ColumnPropNameInTable="fechaFinColumn" msprop:Generator_UserColumnName="fechaFin" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

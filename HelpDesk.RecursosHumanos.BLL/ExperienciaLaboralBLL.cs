@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HelpDesk.RecursosHumanos.DAL;
 using HelpDesk.RecursosHumanos.BEL;
+using System.Data;
 
 namespace HelpDesk.RecursosHumanos.BEL
 {
@@ -61,6 +62,19 @@ namespace HelpDesk.RecursosHumanos.BEL
              catch (Exception)
              {
                  oerro = "ocurrio un problema al guardar los datos";
+                 throw;
+             }
+         }
+
+         public DataTable selectExpeLab(int id, ref string oerro)
+         {
+             try
+             {
+                 return _experienciaLabDAL.selectExpeLab(id, ref oerro);
+             }
+             catch (Exception)
+             {
+                 oerro = "ocurrio un problema al recuperar los datos de la Experiencia laboral";
                  throw;
              }
          }

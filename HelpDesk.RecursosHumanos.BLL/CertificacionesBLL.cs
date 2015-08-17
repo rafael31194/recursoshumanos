@@ -56,5 +56,10 @@ namespace HelpDesk.RecursosHumanos.BEL
 
            return _certificacionesDAL.BorrarCertificacion(certiId, oerro);
        }
+
+       public System.Data.DataTable selectCertifi(int idCandidato, ref string oerro)
+       {
+           return _certificacionesDAL.selecCertifi(idCandidato, ref  oerro);
+       }
     }
 }

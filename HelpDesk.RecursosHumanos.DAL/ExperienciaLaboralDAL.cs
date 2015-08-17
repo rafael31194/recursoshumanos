@@ -141,5 +141,49 @@ namespace HelpDesk.RecursosHumanos.DAL
                }
            }
        }
+
+       public DataTable selectExpeLab(int id, ref string oerro)
+       {
+
+           using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+           {
+               if (!(_conn == null))
+               {
+
+                   try
+                   {
+                       SqlCommand comm = new SqlCommand
+                           ("SELECT nombreEmpresa,cargoDesempe ,descripcionPuesto,fechaIncio, fechaFin  FROM ExperienciaLaboral where id_candidato=" +
+                           +id + " ", _conn);
+
+                       SqlDataAdapter da = new SqlDataAdapter(comm);
+                       DataTable dt = new DataTable();
+                       da.Fill(dt);
+                       return dt;
+                   }
+                   catch (SqlException ex)
+                   {
+                       //If Any Exception Will Occur then It Will Display That Message...
+                       MessageBox.Show("Ocurrion un error al recuperar los datos de la informacion laboral.");
+                       return null;
+                       throw ex;
+                   }
+                   finally
+                   {
+                       //Finally Close the Connection...
+                       _conn.Close();
+
+
+                   }
+               }
+               else
+               {
+                   return null;
+               }
+           }
+
+           
+       }
+
     }
 }

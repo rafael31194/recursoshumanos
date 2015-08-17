@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HelpDesk.RecursosHumanos.DAL;
 using HelpDesk.RecursosHumanos.BEL;
+using System.Data;
 
 
 namespace HelpDesk.RecursosHumanos.BEL
@@ -64,6 +65,11 @@ namespace HelpDesk.RecursosHumanos.BEL
                 oerro = "Ocurrio un problema al ingresar los datos";
                 throw;
             }
+        }
+
+        public DataTable selectReferencia(int idCandidato, ref string oerro)
+        {
+            return _referenciasDAL.selectReferencia(idCandidato,ref oerro);
         }
     }
 }

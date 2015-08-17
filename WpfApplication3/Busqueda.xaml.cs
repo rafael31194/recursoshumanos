@@ -253,5 +253,18 @@ namespace WpfApplication3
             _Li.ShowDialog();
         }
 
+       
+
+        private void Button_ClickVerCandidato(object sender, RoutedEventArgs e)
+        {
+
+            DataRowView dr =(DataRowView) data_gridBusqueda.SelectedItem;
+
+            Curriculum curri = new Curriculum(Int32.Parse(dr[0].ToString()));
+            
+            this.Close();
+            curri.Show();
+        }
+
     }
 }
