@@ -74,10 +74,10 @@
                                             <GroupBox Header="NO. DE DOCUMENTOS PERSONALES" Margin="450,203,0,0" VerticalAlignment="Top" Height="226" HorizontalAlignment="Left" Width="327">
                                                 <Grid>
 
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="No.DUI" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="No.DUI" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top" FontSize="13"/>
 
                                                     <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12"/>
                                                     <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13"/>
@@ -96,52 +96,52 @@
                                             <GroupBox Header="DATOS PERSONALES" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="186" Width="433">
                                                 <Grid Margin="0,0,-2,-18">
 
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Nombre"/></TextBlock>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Sexo"/></TextBlock>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Fecha de Nacimiento" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Nacionalidad" VerticalAlignment="Top"/>
-                                                    <TextBox Name="txtNombreInfBasica"  HorizontalAlignment="Left" Height="26" Margin="130,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"  TabIndex="1"  />
-                                                    <RadioButton Name="rbsexoM" Content="MASCULINO" HorizontalAlignment="Left" Margin="130,50,0,0" VerticalAlignment="Top" IsChecked="True" Height="26" Width="95" TabIndex="2"/>
-                                                    <RadioButton Name="rbsexoF" Content="FEMENINO" HorizontalAlignment="Left" Margin="240,50,0,0" VerticalAlignment="Top" Height="26" Width="88" TabIndex="2"/>
-                                                    <DatePicker Name="DateFechNacInfoBasica" HorizontalAlignment="Left" Margin="130,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,0.542" TabIndex="2"/>
-                                                    <TextBox Name="txtNacionalidadInfBasica" HorizontalAlignment="Left" Height="22" Margin="130,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" />
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Nombre"/></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Sexo"/></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Fecha de Nacimiento" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Nacionalidad" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBox Name="txtNombreInfBasica"  HorizontalAlignment="Left" Height="26" Margin="136,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"  TabIndex="1" FontSize="10"  />
+                                                    <RadioButton Name="rbsexoM" Content="MASCULINO" HorizontalAlignment="Left" Margin="136,50,0,0" VerticalAlignment="Top" IsChecked="True" Height="26" Width="95" TabIndex="2"/>
+                                                    <RadioButton Name="rbsexoF" Content="FEMENINO" HorizontalAlignment="Left" Margin="246,50,0,0" VerticalAlignment="Top" Height="26" Width="88" TabIndex="2"/>
+                                                    <DatePicker Name="DateFechNacInfoBasica" HorizontalAlignment="Left" Margin="136,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,0.542" TabIndex="2"/>
+                                                    <TextBox Name="txtNacionalidadInfBasica" HorizontalAlignment="Left" Height="22" Margin="136,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" FontSize="10" />
 
                                                 </Grid>
                                             </GroupBox>
 
                                             <!--</Expander>-->
-                                            <GroupBox Header="DIRECCION" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Height="160" Width="433">
+                                            <GroupBox Header="DIRECCION" HorizontalAlignment="Left" Margin="10,205,0,0" VerticalAlignment="Top" Height="175" Width="433">
                                                 <Grid>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="18,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Lugar de "/><Run Text="Residencia"/></TextBlock>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="18,50,0,0" TextWrapping="Wrap" Text="Departamento" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="18,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Municipio"/></TextBlock>
-                                                    <TextBox Name="txtLugarResidenciaInfBasica" HorizontalAlignment="Left" Height="22" Margin="140,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="216" TabIndex="4"/>
-                                                    <ComboBox   Name="cbDeptos" Margin="140,50,130,0" VerticalAlignment="Top"  TabIndex="5"/>
-                                                    <ComboBox   Name="cbMunic" Margin="140,90,130,-1" VerticalAlignment="Top" TabIndex="6"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="18,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Lugar de "/><Run Text="Residencia"/></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="18,68,0,0" TextWrapping="Wrap" Text="Departamento" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="18,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Municipio"/></TextBlock>
+                                                    <TextBox Name="txtLugarResidenciaInfBasica" HorizontalAlignment="Left" Height="38" Margin="146,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="265" TabIndex="4"/>
+                                                    <ComboBox   Name="cbDeptos" Margin="146,68,124,0" VerticalAlignment="Top"  TabIndex="5"/>
+                                                    <ComboBox   Name="cbMunic" Margin="146,104,124,0" VerticalAlignment="Top" TabIndex="6"/>
                                                 </Grid>
 
                                             </GroupBox>
 
 
-                                            <GroupBox Header="DATOS PROFESIONALES" VerticalAlignment="Top" Margin="10,375,0,0" Width="433" HorizontalAlignment="Left">
+                                            <GroupBox Header="DATOS PROFESIONALES" VerticalAlignment="Top" Margin="10,385,0,-1" Width="433" HorizontalAlignment="Left">
                                                 <Grid>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Profesion"/></TextBlock>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="20,40,0,0" TextWrapping="Wrap" Text="Situacion Laboral" VerticalAlignment="Top" Height="20"/>
-                                                    <ComboBox Name="cb_profesionesIB" HorizontalAlignment="Left" Margin="146,0,0,0" VerticalAlignment="Top" Width="120" TabIndex="7"/>
-                                                    <ComboBox Name="cbSitLab" HorizontalAlignment="Left" Margin="146,37,0,0" VerticalAlignment="Top" Width="120" TabIndex="8"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="20,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Profesion"/></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="20,40,0,0" TextWrapping="Wrap" Text="Situacion Laboral" VerticalAlignment="Top" Height="20" FontSize="13"/>
+                                                    <ComboBox Name="cb_profesionesIB" HorizontalAlignment="Left" Margin="152,0,0,0" VerticalAlignment="Top" Width="120" TabIndex="7"/>
+                                                    <ComboBox Name="cbSitLab" HorizontalAlignment="Left" Margin="152,37,0,0" VerticalAlignment="Top" Width="120" TabIndex="8"/>
 
                                                 </Grid>
                                             </GroupBox>
 
                                             <GroupBox Header="DATOS DE CONTACTO" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Height="186" Width="324">
                                                 <Grid>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Telefono casa" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.Celular" VerticalAlignment="Top"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Correo"/></TextBlock>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Telefono casa" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.Celular" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="13"><Run Text="Correo"/></TextBlock>
 
-                                                    <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9"/>
-                                                    <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10"/>
-                                                    <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11"/>
+                                                    <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9" FontSize="10"/>
+                                                    <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10" FontSize="10"/>
+                                                    <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
 
                                                 </Grid>
                                             </GroupBox>
