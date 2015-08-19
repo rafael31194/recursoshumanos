@@ -9,7 +9,7 @@
     <Controls:MetroContentControl>
 
         <Grid Background="#FFFAFDFD" Margin="0,0,0,10">
-            <WindowsFormsHost HorizontalAlignment="Center" Height="630" Margin="26,65,10,0" VerticalAlignment="Top" Width="980">
+            <WindowsFormsHost HorizontalAlignment="Center" Height="630" Margin="120,60,120,0" VerticalAlignment="Top" Width="752" ChildChanged="WindowsFormsHost_ChildChanged">
                 <rv:ReportViewer x:Name="ReportViewerCurriculum"/>
             </WindowsFormsHost>
             <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="931,23,0,0" VerticalAlignment="Top" Width="75" Click="btnRegresar_Click"/>

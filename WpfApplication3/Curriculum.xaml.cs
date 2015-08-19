@@ -44,6 +44,7 @@ namespace WpfApplication3
             DataTable dtCerti = datosCertificaciones(idCandidato);
             DataTable dtRefe = datosRefe(idCandidato);
             
+            
 
             ReportDataSource dsInfoAcade = new ReportDataSource("DataSetCurriculum", dtAcademicos);
             ReportDataSource dsExpeLab = new ReportDataSource("DataSetExpeLab", dtExpe);
@@ -124,6 +125,11 @@ namespace WpfApplication3
             bus.InitializeComponent();
             bus.Show();
             this.Close();
+        }
+
+        private void WindowsFormsHost_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
+        {
+
         }
 
       
