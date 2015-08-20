@@ -15,6 +15,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApplication3.Class;
+using HelpDesk.RecursosHumanos.DAL;
+using HelpDesk.RecursosHumanos.BEL;
 
 namespace WpfApplication3
 {
@@ -24,42 +26,27 @@ namespace WpfApplication3
     public partial class BusquedaEmpleados : MetroWindow 
     {
 
-        InfoBasicaBLL infoBl = new InfoBasicaBLL();
+        EmpleadosBLL pEmpleadoBLL = new EmpleadosBLL();
         public BusquedaEmpleados()
         {
             
         }
 
-        private void Window_Loaded_1(object sender, RoutedEventArgs e)
+         private void btn_buscarEmpleado_1Click(object sender, RoutedEventArgs e)
         {
 
-            string oError = "";
-            DataSet ds = infoBl.SelectInfoBusqueda("", ref oError);
-            data_gridBusquedaEmpleado.ItemsSource = ds.Tables[0].DefaultView;
-
-            Title = Title + " Usuario: " + UserLogin.Nombre;
-
-            //***IF PARA LOS ROLES DE USUARIO, USUARIOS VISITANTE***//
-            if (UserLogin.RolID == 3)
-            {
-
-                
-                data_gridBusquedaEmpleado.BringIntoView();
-                txt_UsuarioMenus.IsEnabled = false;
-                btnConfiguracion.IsEnabled = false;
-                
-                data_gridBusquedaEmpleado.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
-            }
-
-
+            BusuqedaEmpleado();
 
         }
 
+         public void BusuqedaEmpleado()
+         {
 
-        private void btn_buscarEmpleado_1Click(object sender, RoutedEventArgs e)
-        {
+             string oError = "";
+             DataSet ds = pEmpleadoBLL.SeleccionarInfoBusquedaEmpledosLLenar(txtBusquedaEmpleado.Text, ref oError);
+             data_gridBusquedaEmpleado.ItemsSource = ds.Tables[0].DefaultView;
 
-        }
+         }
 
         private void data_gridBusquedaEmpleado_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -94,6 +81,33 @@ namespace WpfApplication3
         private void lab_menuCandidatos_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
+        }
+
+        private void Window_Loaded_empleados(object sender, RoutedEventArgs e)
+        {
+
+            string oError = "";
+            DataSet ds = pEmpleadoBLL.SeleccionarInfoBusquedaEmpledosLLenar(txtBusquedaEmpleado.Text, ref oError);
+            data_gridBusquedaEmpleado.ItemsSource = ds.Tables[0].DefaultView;
+
+            Title = Title + " Usuario: " + UserLogin.Nombre;
+
+            //***IF PARA LOS ROLES DE USUARIO, USUARIOS VISITANTE***//
+            if (UserLogin.RolID == 3)
+            {
+
+
+                data_gridBusquedaEmpleado.BringIntoView();
+                txt_UsuarioMenus.IsEnabled = false;
+                btnConfiguracion.IsEnabled = false;
+
+                data_gridBusquedaEmpleado.HorizontalAlignment = System.Windows.HorizontalAlignment.Center;
+            }
+        }
+
+        private void txtBusquedaEmpleado_KeyDown(object sender, KeyEventArgs e)
+        {
+            BusuqedaEmpleado();
         }
     }
 }

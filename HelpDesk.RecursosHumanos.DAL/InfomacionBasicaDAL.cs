@@ -65,7 +65,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                 return ds;
             }
         }
-
+             
 
         public DataSet BusquedaInfoBasicaLLenar(int valorFiltro, ref string oError)
         {

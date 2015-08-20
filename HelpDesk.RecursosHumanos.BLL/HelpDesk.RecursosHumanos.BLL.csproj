@@ -43,6 +43,7 @@
     <Compile Include="AnioBLL.cs" />
     <Compile Include="CertificacionesBLL.cs" />
     <Compile Include="DepartamentosBL.cs" />
+    <Compile Include="EmpleadosBLL.cs" />
     <Compile Include="ExperienciaLaboralBLL.cs" />
     <Compile Include="HabilidadAplicacionBLL.cs" />
     <Compile Include="HabilidadCandidatoBLL.cs" />

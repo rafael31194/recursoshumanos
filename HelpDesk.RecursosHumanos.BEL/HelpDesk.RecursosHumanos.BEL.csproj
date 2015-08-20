@@ -42,6 +42,7 @@
     <Compile Include="AnioE.cs" />
     <Compile Include="CertificacionesE.cs" />
     <Compile Include="DepartamentoE.cs" />
+    <Compile Include="EmpleadoE.cs" />
     <Compile Include="ExpLaboralE.cs" />
     <Compile Include="GeneroE.cs" />
     <Compile Include="HabAplicacion.cs" />

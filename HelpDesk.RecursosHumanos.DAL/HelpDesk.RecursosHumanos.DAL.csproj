@@ -46,6 +46,7 @@
     <Compile Include="CertificacionesDAL.cs" />
     <Compile Include="CommonDb.cs" />
     <Compile Include="DepartamentoDAL.cs" />
+    <Compile Include="EmpleadosDAL.cs" />
     <Compile Include="ExperienciaLaboralDAL.cs" />
     <Compile Include="HabilidadAplicacionDAL.cs" />
     <Compile Include="HabilidadCandidatoDAL.cs" />

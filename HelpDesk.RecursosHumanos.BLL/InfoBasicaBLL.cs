@@ -46,7 +46,7 @@ namespace HelpDesk.RecursosHumanos.BLL
 
 
         }
-
+       
         public int ActualizarInfBasica(InfoBasicaE pinfobasica,int id, ref string oerro)
         {
 
