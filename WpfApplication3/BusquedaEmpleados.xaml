@@ -1,0 +1,190 @@
+﻿<Controls:MetroWindow x:Class="WpfApplication3.BusquedaEmpleados"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Busqueda" Height="768" Width="1024" Loaded="Window_Loaded_1"  WindowState="Maximized">
+
+
+    <Controls:MetroContentControl>
+
+        <Grid Height="741" VerticalAlignment="Bottom">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition />
+            </Grid.RowDefinitions>
+
+
+            <Grid Name="GridMenuBusqueda"  Grid.Row="0" Width="203" Height="510"
+          Grid.Column="0" Margin="0,9,0,0" VerticalAlignment="Top" MaxWidth="203" MaxHeight="510" HorizontalAlignment="Left">
+
+
+                <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,134,0,16" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" VerticalContentAlignment="Top" HorizontalAlignment="Left" Width="203" HorizontalContentAlignment="Stretch" >
+                    <!--<ListBox.Resources>
+                    <Style TargetType="{x:Type Expander}">
+                        <Setter Property="IsExpanded"
+    					Value="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListBoxItem}}}"/>
+                    </Style>
+                </ListBox.Resources>-->
+                    <ListBox.Template>
+                        <ControlTemplate TargetType="{x:Type ListBox}">
+                            <ItemsPresenter/>
+                        </ControlTemplate>
+                    </ListBox.Template>
+                    <ListBox.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListBoxItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                                        <ContentPresenter Content="{TemplateBinding Content}"/>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </ListBox.ItemContainerStyle>
+                    <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="201" >
+                        <Expander.Header>
+                            <BulletDecorator  Height="48">
+
+                                <TextBlock Margin="0,10,-4,0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="153" Height="44" FontWeight="Bold" FontSize="15" MaxWidth="153" MaxHeight="44" ><Run Language="es-sv" Text="Mantenimiento"/><LineBreak/><Run Language="es-sv" Text="Perfiles"/></TextBlock>
+                            </BulletDecorator>
+                        </Expander.Header>
+                        <WrapPanel>
+                            <Label x:Name="lab_menuCandidatos"  Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="lab_menuCandidatos_MouseDown"/>
+                            <Label x:Name="lab_menuEmpleado" Margin="20,5,5,5" Foreground="Black" Content="Empleados" MouseDown="lab_menuEmpleados_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        </WrapPanel>
+                    </Expander>
+                    <Expander Background="#CC119EDA" Margin="0,76,0,-54" HorizontalAlignment="Left" Height="107" Width="200" MaxHeight="107" MaxWidth="200">
+                        <Expander.Header>
+                            <BulletDecorator Height="48">
+                                <TextBlock Name="btnConfiguracion" Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
+                            </BulletDecorator>
+                        </Expander.Header>
+                        <WrapPanel >
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                            <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="74" MouseDown="LabelUsuarios_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+                            <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+                        </WrapPanel>
+                    </Expander>
+
+                </ListBox>
+
+            </Grid>
+            <DockPanel VerticalAlignment="Top" HorizontalAlignment="Center"></DockPanel>
+            <Grid Grid.Row="0" Margin="209,10,41,0" Height="75" VerticalAlignment="Top" >
+
+                <Label  Content="EMPLEADOS" Margin="0,32,58,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="43" VerticalAlignment="Top"/>
+            </Grid>
+
+            <Grid
+          Background="White" VerticalAlignment="Bottom" Margin="204,0,5,146" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel HorizontalAlignment="Center" VerticalAlignment="Top">
+                    <DataGrid Height="232" Margin="70,138,70,0" 
+        		x:Name="data_gridBusquedaEmpleado" VerticalAlignment="Top" RowHeight="15" 
+        		ColumnHeaderHeight="30"  HeadersVisibility="Column"
+        		 AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="data_gridBusquedaEmpleado_SelectionChanged" MouseDoubleClick="data_gridBusquedaEmpleado_MouseDoubleClick" HorizontalContentAlignment="Center" >
+
+                        <DataGrid.Columns >
+                            <DataGridTemplateColumn Visibility="Hidden">
+                            </DataGridTemplateColumn>
+
+                            <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Ver."  >
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <ItemContainerTemplate>
+                                        <DockPanel>
+
+                                            <Button Visibility="Visible" Opacity="3" MaxWidth="25" Click="Button_ClickVerEmpleado">
+                                                <Button.Background>
+                                                    <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+
+                                                    </LinearGradientBrush>
+                                                </Button.Background>
+                                                <DockPanel>
+                                                    <Image Source="Imagenes\view.png" Width="15" />
+
+                                                </DockPanel>
+                                            </Button>
+                                        </DockPanel>
+                                    </ItemContainerTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+
+
+
+
+                            <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRES}" />
+                            <DataGridTextColumn Header="ASIGNADO A" Binding="{Binding ASIGNADO }" />
+                            <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}" />
+                            <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding TELEFONO CELULAR }" />
+                            
+
+
+
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </DockPanel>
+
+
+
+                
+
+                <!--</Border>-->
+
+
+                <StackPanel HorizontalAlignment="Left" Margin="16,0,0,0" Width="552">
+                    <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusquedaEmpleado" Controls:TextBoxHelper.Watermark="Nombre de empleado"    Margin="193,91,10,0" TextWrapping="Wrap"   TextChanged="TextBox_TextChanged_1" />
+                </StackPanel>
+                <StackPanel HorizontalAlignment="Left">
+                    <Button Name="btn_buscarEmpleado"  HorizontalAlignment="Left" Margin="588,86,5,0" VerticalAlignment="Top" Width="132" Height="32" Click="btn_buscarEmpleado_1Click">
+                        <DockPanel>
+                            <Image Source="Imagenes\helpdesBusqueda.png" Width="32" />
+                            <TextBlock Height="24"  Width="63" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="BUSCAR"/></TextBlock>
+                        </DockPanel>
+
+                    </Button>
+                </StackPanel  >
+
+                <StackPanel HorizontalAlignment="Left">
+                    <TextBlock Margin="112,95,619,389" TextWrapping="Wrap" Text="BUSQUEDA"/>
+                </StackPanel>
+
+
+
+            </Grid>
+            <Border
+        	Grid.Column="0" Margin="-2,651,0,0" />
+
+
+            <StackPanel
+           
+            Orientation="Horizontal" Margin="0,741,0,0"/>
+            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,40,0,666"  RenderTransformOrigin="0.51,0.718" Width="52" MaxWidth="50" MaxHeight="35" HorizontalAlignment="Left" />
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,602" Width="189" HorizontalAlignment="Left"  MaxHeight="71" MaxWidth="200"/>
+        </Grid>
+
+    </Controls:MetroContentControl>
+</Controls:MetroWindow>
+
