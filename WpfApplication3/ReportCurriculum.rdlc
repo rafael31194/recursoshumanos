@@ -1278,7 +1278,7 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>EXEDIENTE ACADÉMICO</Value>
+                <Value>EXPEDIENTE ACADÉMICO</Value>
                 <Style>
                   <FontWeight>Bold</FontWeight>
                   <Color>White</Color>
@@ -1827,6 +1827,7 @@
                             <TextRun>
                               <Value>Institución</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1860,6 +1861,7 @@
                             <TextRun>
                               <Value>Titulo de Certificación</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1893,6 +1895,7 @@
                             <TextRun>
                               <Value>Año</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -1930,7 +1933,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!institucion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1960,7 +1965,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -1990,7 +1997,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!anio.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>8pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2123,6 +2132,7 @@
                             <TextRun>
                               <Value>Nombre</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2156,6 +2166,7 @@
                             <TextRun>
                               <Value>Telefono de Contacto</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2189,6 +2200,7 @@
                             <TextRun>
                               <Value>Razon de Referencia</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2222,6 +2234,7 @@
                             <TextRun>
                               <Value>Tipo de Referencia</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -2259,7 +2272,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nombre.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2289,7 +2304,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!telefono.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2319,7 +2336,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!descripcion.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
@@ -2349,7 +2368,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!tipoReferencia.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
