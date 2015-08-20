@@ -128,6 +128,9 @@
     <Compile Include="LoginInicio.xaml.cs">
       <DependentUpon>LoginInicio.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MantoEmpleados.xaml.cs">
+      <DependentUpon>MantoEmpleados.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MantoLogin.xaml.cs">
       <DependentUpon>MantoLogin.xaml</DependentUpon>
     </Compile>
@@ -147,6 +150,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="LoginInicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MantoEmpleados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
