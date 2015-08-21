@@ -179,7 +179,7 @@ namespace WpfApplication3
             }
         }
 
-        public void recuperarMostrarDatosCandidato(string id,DataSet ds,MantoCandidatos mt)
+        public void recuperarMostrarDatosCandidato(string id,DataSet ds,object mt)
         {
 
             //***************Recuperar Datos********************************
@@ -241,7 +241,14 @@ namespace WpfApplication3
             //**********************************************
             //*******************Setear datos*******************
 
-                    mt.setearCampos(id,candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
+                    if (mt is MantoCandidatos)
+                    {
+                        ((MantoCandidatos)mt).setearCampos(id, candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
+                    }
+                    else
+                    {
+                        ((MantoEmpleados)mt).setearCampos(id, candidatoInfo, candiInfoAca, candiInfoExpe, candiHabili, candiCeriti, candiRefe);
+                    }
 
         }
 

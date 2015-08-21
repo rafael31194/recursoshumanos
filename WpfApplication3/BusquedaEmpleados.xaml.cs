@@ -27,6 +27,7 @@ namespace WpfApplication3
     {
 
         EmpleadosBLL pEmpleadoBLL = new EmpleadosBLL();
+        InfoBasicaBLL infoBl = new InfoBasicaBLL();
         public BusquedaEmpleados()
         {
             
@@ -55,8 +56,36 @@ namespace WpfApplication3
 
         private void data_gridBusquedaEmpleado_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            int dataRow = data_gridBusquedaEmpleado.SelectedIndex;
+            string[] nombre = { "0", "No existe ese candidato" };
+            foreach (DataRowView dr in data_gridBusquedaEmpleado.Items)
+            {
+                //entro a la linea que le di doble click
+                if (dr == data_gridBusquedaEmpleado.SelectedItem)
+                {
+                    nombre[0] = dr[0].ToString();
+                    nombre[1] = dr[1].ToString();
+                    int id = Int32.Parse(nombre[0]);
+                    String oError = "";
+                    DataSet ds = infoBl.SelectInfoBusquedaLLenar(id, ref oError);
+                    //DataTables recuperados
 
+                    MantoEmpleados _mt = new MantoEmpleados();
+
+                    Busqueda bus = new Busqueda();
+                    bus.recuperarMostrarDatosCandidato(id.ToString(), ds, _mt);
+                    //recuperarMostrarDatosCandidato(id.ToString(), ds, _mt);
+
+
+                    this.Close();
+                    _mt.ShowDialog();
+                }
+
+            }
+        
         }
+
+        
 
         private void Button_ClickVerEmpleado(object sender, RoutedEventArgs e)
         {

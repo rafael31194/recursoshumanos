@@ -22,7 +22,7 @@ namespace WpfApplication3
     /// <summary>
     /// Lógica de interacción para MantoEmpleados.xaml
     /// </summary>
-    public partial class MantoEmpleados : MetroWindow
+    public partial class MantoEmpleados : MetroWindow 
     {
         public MantoEmpleados()
         {
