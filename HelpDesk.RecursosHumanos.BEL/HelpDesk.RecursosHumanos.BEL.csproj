@@ -43,6 +43,7 @@
     <Compile Include="CertificacionesE.cs" />
     <Compile Include="DepartamentoE.cs" />
     <Compile Include="EmpleadoE.cs" />
+    <Compile Include="EstadoProyectoE.cs" />
     <Compile Include="ExpLaboralE.cs" />
     <Compile Include="GeneroE.cs" />
     <Compile Include="HabAplicacion.cs" />
@@ -50,10 +51,14 @@
     <Compile Include="HabilidadTecnicaE.cs" />
     <Compile Include="InfoBasicaE.cs" />
     <Compile Include="InformacionAcademicaE.cs" />
+    <Compile Include="MonedaE.cs" />
     <Compile Include="MunicipoE.cs" />
     <Compile Include="NivelE.cs" />
+    <Compile Include="PaisE.cs" />
     <Compile Include="ProfesionesE.cs" />
+    <Compile Include="ProyectoEmpleadosE.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectoE.cs" />
     <Compile Include="RefecenciasE.cs" />
     <Compile Include="RolUsuarioE.cs" />
     <Compile Include="SituacionProfesionalE.cs" />
