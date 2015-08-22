@@ -252,7 +252,7 @@
 
                                 </TabItem>
 
-                                <TabItem Header="INFO.LABORAL"  Name="tab3" Margin="124,0,-124,0" Controls:ControlsHelper.HeaderFontSize="15" >
+                                <TabItem Header="INFO.LABORAL"  Name="tab3" Margin="115,0,-115,0" Controls:ControlsHelper.HeaderFontSize="15" >
                                     <Grid Margin="0,0,0,11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="797" Height="481">
                                         <Grid.ColumnDefinitions>
 
@@ -328,7 +328,8 @@
 
                                 </TabItem>
 
-                                <TabItem  Header="HABILIDADES" Name="tab4" Margin="0,0,-113,0" Controls:ControlsHelper.HeaderFontSize="15" HorizontalAlignment="Right" Width="108" Height="29" VerticalAlignment="Bottom">
+
+                                <TabItem  Header="HABILIDADES" Name="tab4" Margin="0,0,-112,0" Controls:ControlsHelper.HeaderFontSize="15" HorizontalAlignment="Right" Width="108" Height="29" VerticalAlignment="Bottom">
                                     <Grid Margin="16,10,-1,26">
 
                                         <GroupBox Header="Habilidades Tecnicas del perfil" VerticalAlignment="Top" Height="156" Margin="16,20,16,0">
@@ -509,6 +510,79 @@
                                             </DataGrid.Columns>
                                         </DataGrid>
                                     </Grid>
+                                </TabItem>
+                                <TabItem Header="EMPLEADO"  x:Name="tab3_Copy" Margin="-430,0,430,0" controls:ControlsHelper.HeaderFontSize="15" >
+                                    <Grid Margin="0,0,0,11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="797" Height="481">
+                                        <Grid.ColumnDefinitions>
+
+                                            <ColumnDefinition/>
+                                        </Grid.ColumnDefinitions>
+
+                                        <!--AQUI TODO EddL CONTENIDO DE INFO LABORAL-->
+                                        
+                                        <!--OTROS CONTROLES-->
+
+                                        <GroupBox Header="Informacion Laboral" Margin="116,25,117,170" HorizontalAlignment="Center">
+                                            <Grid Margin="0,10,-2,-8">
+                                                <TextBlock HorizontalAlignment="Left" Margin="40,20 ,0,0" TextWrapping="Wrap" Text="Fecha de contratacion" VerticalAlignment="Top" Height="22" Cursor="ScrollS"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="40,60,0,0" TextWrapping="Wrap" Text="D" VerticalAlignment="Top" Height="15"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="40,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="14"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="43,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                                <TextBlock HorizontalAlignment="Left" Margin="43,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                                <TextBox x:Name="txt_NombreEmpresaLab1" HorizontalAlignment="Left" Height="22" Margin="213,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" />
+                                                <TextBox x:Name="txt_CargoDespeLab1" HorizontalAlignment="Left" Height="23" Margin="213,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"/>
+                                                <TextBox x:Name="txt_DescripPuestoLab1" HorizontalAlignment="Left" Height="35" Margin="213,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="300"/>
+                                                <TextBox x:Name="txt_FechaInicioLab1" HorizontalAlignment="Left" Height="23" Margin="213,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                                                <TextBox x:Name="txt_FechaFinLab1" HorizontalAlignment="Left" Height="24" Margin="213,188,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                </Grid>
+                                                <Button x:Name="BTOAgregarInfLaboral1" Content="Agregar" HorizontalAlignment="Left" Margin="388,204,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarInfLaboral_Click" />
+                                                <Button x:Name="BTOCancelarIngresoInfLaboral1"  Content="Cancelar" HorizontalAlignment="Left" Margin="479,204,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelarIngresoInfLaboral_Click" />
+
+                                            </Grid>
+                                        </GroupBox>
+
+                                        <Grid Margin="0,54,96,0"/>
+                                        <DataGrid  Height="145" Margin="50,0,50,10"  x:Name="DataGrid_Inf_Laboral1" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGrid_Inf_Laboral_MouseDoubleClick" VerticalAlignment="Bottom">
+                                            <DataGrid.Columns>
+                                                <DataGridTemplateColumn Header="Elim."  >
+                                                    <DataGridTemplateColumn.CellTemplate>
+                                                        <ItemContainerTemplate>
+                                                            <DockPanel>
+
+                                                                <Button Click="Button_Click_DeleteExpeLab"  Opacity="3" MaxWidth="25"  >
+                                                                    <Button.Background>
+                                                                        <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0"/>
+                                                                    </Button.Background>
+                                                                    <DockPanel>
+                                                                        <Image Source="Imagenes/eliminar.png" Width="15" />
+
+                                                                    </DockPanel>
+                                                                </Button>
+                                                            </DockPanel>
+                                                        </ItemContainerTemplate>
+                                                    </DataGridTemplateColumn.CellTemplate>
+
+                                                </DataGridTemplateColumn>
+
+                                                <DataGridTextColumn Header="idRefer" Visibility="Hidden" Binding="{Binding Id ExpeLab}"/>
+                                                <DataGridTextColumn Header="NOMBRE DE LA EMPRESA" Visibility="Visible" Binding="{Binding Nombre de la empresa}"/>
+                                                <DataGridTextColumn Header="CARGO DESEMP." Visibility="Visible" Binding="{Binding Cargo Desempeñado}"/>
+                                                <DataGridTextColumn Header="INSTITUCION ACAD." Visibility="Visible" Binding="{Binding Descripcion del puesto}"/>
+                                                <DataGridTextColumn Header="AÑO FIN" Visibility="Visible" Binding="{Binding Fecha Inicio}"/>
+                                                <DataGridTextColumn Header="AÑO FIN" Visibility="Visible" Binding="{Binding Fecha Fin}"/>
+                                            </DataGrid.Columns>
+                                        </DataGrid>
+
+
+
+
+                                    </Grid>
+
                                 </TabItem>
 
 
