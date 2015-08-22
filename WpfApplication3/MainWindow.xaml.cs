@@ -621,10 +621,10 @@ namespace WpfApplication3
         private void Label_MouseDown_2(object sender, MouseButtonEventArgs e)
         {
             //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE MAINWINDOW
-            MainWindow _mw = new MainWindow();
-            _mw.InitializeComponent();
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
             this.Close();
-            _mw.ShowDialog();
+            _busEmple.Show(); ;
         }
 
 

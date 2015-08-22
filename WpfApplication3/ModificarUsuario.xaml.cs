@@ -112,10 +112,10 @@ namespace WpfApplication3
 
         private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow _mw = new MainWindow();
-            _mw.InitializeComponent();
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
             this.Close();
-            _mw.ShowDialog();
+            _busEmple.Show();
 
         }
 

@@ -604,7 +604,7 @@
                             </Expander.Header>
                             <WrapPanel>
                                 <Label x:Name="buscarPerfil" Margin="20,5,5,5" Foreground="Black" Content="Buscar pefil" MouseDown="buscarPerfil_MouseDown" />
-                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Nuevo Perfil" MouseDown="Label_MouseDown_1" />
+                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Busqueda Empleados" MouseDown="Label_MouseDown_1" />
                             </WrapPanel>
                         </Expander>
                         <Expander Background="#CC119EDA" Margin="0,76,0,-54" HorizontalAlignment="Left" Width="190">

@@ -103,12 +103,13 @@ namespace WpfApplication3
             _mw.Show();
         }
 
-        
+        //**direccionar al formulario de busqueda empledo**//
         private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            MainWindow _mw = new MainWindow();
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
             this.Close();
-            _mw.ShowDialog();
+            _busEmple.Show();
         }
 
         private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
