@@ -43,6 +43,7 @@
     <Compile Include="CertificacionesE.cs" />
     <Compile Include="DepartamentoE.cs" />
     <Compile Include="EmpleadoE.cs" />
+    <Compile Include="EmpresaE.cs" />
     <Compile Include="EstadoProyectoE.cs" />
     <Compile Include="ExpLaboralE.cs" />
     <Compile Include="GeneroE.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="RolUsuarioE.cs" />
     <Compile Include="SituacionProfesionalE.cs" />
     <Compile Include="StatusAcademicoE.cs" />
+    <Compile Include="TipoContrato.cs" />
     <Compile Include="TipoEducacionE.cs" />
     <Compile Include="TipoReferenciaE.cs" />
     <Compile Include="usuariosE.cs" />

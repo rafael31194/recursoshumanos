@@ -47,6 +47,8 @@
     <Compile Include="CommonDb.cs" />
     <Compile Include="DepartamentoDAL.cs" />
     <Compile Include="EmpleadosDAL.cs" />
+    <Compile Include="EmpresaDAL.cs" />
+    <Compile Include="EstadoProyectoDAL.cs" />
     <Compile Include="ExperienciaLaboralDAL.cs" />
     <Compile Include="HabilidadAplicacionDAL.cs" />
     <Compile Include="HabilidadCandidatoDAL.cs" />
@@ -55,8 +57,10 @@
     <Compile Include="InformacionAcademicaDAL.cs" />
     <Compile Include="MunicipioDAL.cs" />
     <Compile Include="NivelDAL.cs" />
+    <Compile Include="PaisDAL.cs" />
     <Compile Include="ProfesionesDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectoDAL.cs" />
     <Compile Include="RefereciasDAL.cs" />
     <Compile Include="RolUsuarioDAL.cs" />
     <Compile Include="SituacionProfesionalDAL.cs" />
