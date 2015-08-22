@@ -142,7 +142,7 @@ namespace WpfApplication3
             _bw.ShowDialog();
         }
 
-        public void setearCampos(string idCandi,DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
+        public void setearCampos(string idCandi,int idEmpleado, DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
         {
 
             //Seteando Info Basica Tab*******************************
@@ -312,7 +312,9 @@ namespace WpfApplication3
 
 
             //**********************seteando los datos de proyectos *********************
-
+            ProyectoDAL proyectoDal = new ProyectoDAL();
+             DataSet dataSetProyectos=proyectoDal.SelectProyectoALL(idEmpleado);
+             
             tablaProyectos.Columns.Add("ID Proyecto", typeof(Int32));
             tablaProyectos.Columns.Add("proyecto", typeof(Int32));
             tablaProyectos.Columns.Add("idEmpresa", typeof(string));
@@ -320,6 +322,8 @@ namespace WpfApplication3
             tablaProyectos.Columns.Add("fechaInicio", typeof(string));
             tablaProyectos.Columns.Add("IDEstado", typeof(Int32));
             tablaProyectos.Columns.Add("TipoContrato", typeof(Int32));
+
+            tablaProyectos = dataSetProyectos.Tables[0];
 
             DataGrid_Proyectos.ItemsSource = tablaProyectos.DefaultView;
 
@@ -1198,8 +1202,16 @@ namespace WpfApplication3
             idEstadoProyecto = 4;// Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
             fechaInicioPro = Date_FechProyecto.Text;
 
+            
+            ////Procedimiento para agregar el proyecto  a la base
 
-            ////Procedimiento para agregar Certificacion a la base
+            ProyectoE project = new ProyectoE();
+            project.id_empresa = idEmpresaProyecto;
+            project.nombre_proyecto = nombre;
+            project.id_pais = idPaisProyecto;
+            project.id_tipoContrato = idTipoContrato;
+            project.id_estadoProyecto = idEstadoProyecto;
+            project.fecha_inicio = DateTime.Parse(fechaInicioPro);
 
             //CertificacionesE certifi = new CertificacionesE();
             //int returnCertificaciones = 0;

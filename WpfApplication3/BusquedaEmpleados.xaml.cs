@@ -66,6 +66,7 @@ namespace WpfApplication3
                     nombre[0] = dr[0].ToString();
                     nombre[1] = dr[1].ToString();
                     int id = Int32.Parse(nombre[0]);
+                    int idEmpleado = Int32.Parse(nombre[1]);
                     String oError = "";
                     DataSet ds = infoBl.SelectInfoBusquedaLLenar(id, ref oError);
                     //DataTables recuperados
@@ -73,7 +74,7 @@ namespace WpfApplication3
                     MantoEmpleados _mt = new MantoEmpleados();
 
                     Busqueda bus = new Busqueda();
-                    bus.recuperarMostrarDatosCandidato(id.ToString(), ds, _mt);
+                    bus.recuperarMostrarDatosCandidato(id.ToString(),idEmpleado, ds, _mt);
                     //recuperarMostrarDatosCandidato(id.ToString(), ds, _mt);
 
 
