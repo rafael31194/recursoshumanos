@@ -41,23 +41,22 @@ namespace HelpDesk.RecursosHumanos.DAL
             return resultado;
         }
         //para seleccionar proyecto 
-        public DataSet SelectProyectoALL()
+        public DataSet SelectProyectoALL(int id_proyecto)
         {
             using (SqlConnection _conn = CommonDb.ObtenerConnSql())
             {
                 SqlConnection oConn = CommonDb.ObtenerConnSql();
-                SqlCommand oCmd = new SqlCommand("sp_select_proyecto", oConn);
+                SqlCommand oCmd = new SqlCommand("SP_select_ProyectosPorEmpleado", oConn);
                 oCmd.CommandType = CommandType.StoredProcedure;
-                SqlDataAdapter da = new SqlDataAdapter(oCmd);
+                SqlParameter idProyecto = new SqlParameter ("@empleado", id_proyecto);
+                oCmd.Parameters.Add(idProyecto);
+                SqlDataAdapter da = new SqlDataAdapter (oCmd);
                 DataSet dsProyecto = new DataSet();
                 da.Fill(dsProyecto);
                 return dsProyecto;
-
+            
             }
         }
-        public List<ProyectoE> obtenerProyecto()
-        {
-            throw new NotImplementedException();
-        }
+       
     }
 }

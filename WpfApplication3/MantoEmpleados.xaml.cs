@@ -22,14 +22,14 @@ namespace WpfApplication3
     /// <summary>
     /// Lógica de interacción para MantoEmpleados.xaml
     /// </summary>
-    public partial class MantoEmpleados : MetroWindow 
+    public partial class MantoEmpleados : MetroWindow
     {
         public MantoEmpleados()
         {
             InitializeComponent();
         }
 
-      DepartamentosBL _DeptoBL = new DepartamentosBL();
+        DepartamentosBL _DeptoBL = new DepartamentosBL();
         MunicipioBLL _MunicBL = new MunicipioBLL();
         SituacionProfesionalBLL _SituacionpBL = new SituacionProfesionalBLL();
         TipoEducacionBLL _TipoEducacion = new TipoEducacionBLL();
@@ -45,7 +45,12 @@ namespace WpfApplication3
         ProfesionesBLL _profesionesBL = new ProfesionesBLL();
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
         AnioBLL _anios = new AnioBLL();
-        
+        EmpresaBLL _empresa = new EmpresaBLL();
+        PaisBLL _paisProyecto = new PaisBLL();
+        tipoContratoBEL _tipoContrato = new tipoContratoBEL();
+        EstadoProyectoBLL _estdoProyecto = new EstadoProyectoBLL();
+
+
         //***************TABLAS DE INFORMACION DEL CANDIDATO*****************
 
         DataTable tablaReference = new DataTable();
@@ -67,20 +72,20 @@ namespace WpfApplication3
         string idMunicipio;
         string idSituProfe;
         string idGenero;
-        string idStatusAcad,idTipoEduca,idTipoRef,idHabiTec,idNivel,idHabiApli;
+        string idStatusAcad, idTipoEduca, idTipoRef, idHabiTec, idNivel, idHabiApli, idProyecto;
         string oerro = "";
 
         //****************id for updates in the database
 
-        string idUpdateInfoAca, idUpdateCertifi, idUpdateExpe, idUpdateRefe, idUpdateHabi;
+        string idUpdateInfoAca, idUpdateCertifi, idUpdateExpe, idUpdateRefe, idUpdateHabi, idUpdateProyecto;
 
-        bool nuevoInfoAca = true, nuevoExpe = true, nuevoRefe = true, nuevoCerti = true, nuevoHabi = true, nuevoProyecto=true;
+        bool nuevoInfoAca = true, nuevoExpe = true, nuevoRefe = true, nuevoCerti = true, nuevoHabi = true, nuevoProyecto = true;
 
-      
+
 
         private void btn_Referencias_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
 
@@ -88,39 +93,39 @@ namespace WpfApplication3
         {
             if (e.Source is TabControl)
             {
-               if (tcPrincipalModificar.SelectedIndex == 0)
+                if (tcPrincipalModificar.SelectedIndex == 0)
                 {
 
                     btn_ActualizarInfoBasica.Visibility = Visibility.Visible;
-                  
+
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 1)
                 {
                     btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
-                   
+
                 }
 
                 else if (tcPrincipalModificar.SelectedIndex == 2)
                 {
                     btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
-                    
+
                 }
 
                 else if (tcPrincipalModificar.SelectedIndex == 3)
                 {
                     btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
-                
+
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 4)
                 {
                     btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
-                   
+
 
                 }
                 else if (tcPrincipalModificar.SelectedIndex == 5)
                 {
                     btn_ActualizarInfoBasica.Visibility = Visibility.Collapsed;
-                   
+
                 }
             }
         }
@@ -142,7 +147,7 @@ namespace WpfApplication3
             _bw.ShowDialog();
         }
 
-        public void setearCampos(string idCandi,int idEmpleado, DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
+        public void setearCampos(string idCandi, int idEmpleado, DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
         {
 
             //Seteando Info Basica Tab*******************************
@@ -152,7 +157,8 @@ namespace WpfApplication3
             {
                 rbsexoM.IsChecked = true;
             }
-            else {
+            else
+            {
                 rbsexoF.IsChecked = false;
             }
 
@@ -169,29 +175,30 @@ namespace WpfApplication3
             txtNiss.Text = datos.ItemArray[14].ToString();
             idSituProfe = datos.ItemArray[15].ToString();
 
-            
+
             //Seteando Info Academica Tab*******************************
 
 
             tableInfoAcad.Columns.Add("ID InfoAcade", typeof(Int32));
             tableInfoAcad.Columns.Add("IDTipoEduacion cs", typeof(Int32));
-            
+
             tableInfoAcad.Columns.Add("Tipo Educacion", typeof(string));
             tableInfoAcad.Columns.Add("Titulo", typeof(string));
             tableInfoAcad.Columns.Add("Institucion", typeof(string));
             tableInfoAcad.Columns.Add("Año finalizacion", typeof(Int32));
-            
+
 
             tableInfoAcad.Columns.Add("Nombre status", typeof(string));
             tableInfoAcad.Columns.Add("status", typeof(Int32));
 
-            
-            string tipoEduca="";
-            string statusName="";
-            foreach(DataRow dr in candiInfoAca){
+
+            string tipoEduca = "";
+            string statusName = "";
+            foreach (DataRow dr in candiInfoAca)
+            {
 
                 idTipoEduca = dr.ItemArray[5].ToString();
-                statusName=dr.ItemArray[4].ToString();
+                statusName = dr.ItemArray[4].ToString();
                 if (idTipoEduca == "1")
                 {
                     tipoEduca = "SECUNDARIA";
@@ -217,17 +224,17 @@ namespace WpfApplication3
 
 
 
-                tableInfoAcad.Rows.Add(dr.ItemArray[0],idTipoEduca,tipoEduca, dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), statusName, Convert.ToInt32(dr.ItemArray[4].ToString()));
+                tableInfoAcad.Rows.Add(dr.ItemArray[0], idTipoEduca, tipoEduca, dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), statusName, Convert.ToInt32(dr.ItemArray[4].ToString()));
 
-                
+
             }
 
-            
-            DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
-            
-            
 
-            
+            DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
+
+
+
+
             //Seteando Info experiencia laboral Tab*******************************
 
 
@@ -239,7 +246,7 @@ namespace WpfApplication3
             tablaExperiencia.Columns.Add("Fecha Fin", typeof(string));
             foreach (DataRow dr in candiInfoExpe)
             {
-                tablaExperiencia.Rows.Add(dr.ItemArray[0],dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString());
+                tablaExperiencia.Rows.Add(dr.ItemArray[0], dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString());
             }
 
             DataGrid_Inf_Laboral.ItemsSource = tablaExperiencia.DefaultView;
@@ -260,10 +267,10 @@ namespace WpfApplication3
                 if (dr.ItemArray[1].ToString() == "1") tipoRef = "PERSONAL";
                 else tipoRef = "LABORAL";
 
-                tablaReference.Rows.Add(dr.ItemArray[0],dr.ItemArray[1].ToString(), tipoRef, dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString());
-                
+                tablaReference.Rows.Add(dr.ItemArray[0], dr.ItemArray[1].ToString(), tipoRef, dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString());
+
             }
-            
+
 
             DataGrid_Referencias.ItemsSource = tablaReference.DefaultView;
             //Seteando Info Certificaciones Tab*******************************
@@ -275,11 +282,11 @@ namespace WpfApplication3
 
             foreach (DataRow dr in candiCeriti)
             {
-                tablaCerti.Rows.Add(dr.ItemArray[0],dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString()); //puede dar error por la columna int y el dato string
+                tablaCerti.Rows.Add(dr.ItemArray[0], dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString()); //puede dar error por la columna int y el dato string
             }
             DataGrid_Certificaciones.ItemsSource = tablaCerti.DefaultView;
 
-            setearComboBox(idMunicipio, idProfesion,idSituProfe);
+            setearComboBox(idMunicipio, idProfesion, idSituProfe);
 
 
 
@@ -297,24 +304,25 @@ namespace WpfApplication3
 
                 foreach (DataRow dr in candiHabili)
                 {
-                    tablaHabilidades.Rows.Add(dr.ItemArray[0],dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString(), dr.ItemArray[7].ToString());  //puede dar error por la columna int y el dato string
+                    tablaHabilidades.Rows.Add(dr.ItemArray[0], dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), dr.ItemArray[4].ToString(), dr.ItemArray[5].ToString(), dr.ItemArray[6].ToString(), dr.ItemArray[7].ToString());  //puede dar error por la columna int y el dato string
                 }
-              
+
 
 
                 DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
             }
-            catch(Exception ex){
+            catch (Exception ex)
+            {
                 MessageBox.Show("Hubo un error al setear los datos de habilidad");
                 throw ex;
-               
+
             }
 
 
             //**********************seteando los datos de proyectos *********************
             ProyectoDAL proyectoDal = new ProyectoDAL();
-             DataSet dataSetProyectos=proyectoDal.SelectProyectoALL(idEmpleado);
-             
+            DataSet dataSetProyectos = proyectoDal.SelectProyectoALL(idEmpleado);
+
             tablaProyectos.Columns.Add("ID Proyecto", typeof(Int32));
             tablaProyectos.Columns.Add("proyecto", typeof(Int32));
             tablaProyectos.Columns.Add("idEmpresa", typeof(string));
@@ -333,7 +341,7 @@ namespace WpfApplication3
         }
 
 
-        public void setearComboBox(string idMuni, string idProfesion,string idSituacion)
+        public void setearComboBox(string idMuni, string idProfesion, string idSituacion)
         {
 
 
@@ -341,7 +349,7 @@ namespace WpfApplication3
             DataSet dsIdDpto = new DataSet();
             dsIdDpto = _MunicBL.SelectDptoPorMunicipio(Int32.Parse(idMuni));
 
-            string id_departamentoGet=(dsIdDpto.Tables[0].Rows[0][0].ToString());
+            string id_departamentoGet = (dsIdDpto.Tables[0].Rows[0][0].ToString());
             int id_departamento = Convert.ToInt32(id_departamentoGet);
             DataSet ds = new DataSet();
             ds = _DeptoBL.SelectdepSelectAll();
@@ -349,7 +357,7 @@ namespace WpfApplication3
             cbDeptos.ItemsSource = ds.Tables[0].DefaultView;
             cbDeptos.DisplayMemberPath = ds.Tables[0].Columns[1].ToString();
             cbDeptos.SelectedValuePath = ds.Tables[0].Columns[0].ToString();
-            cbDeptos.SelectedValue=id_departamento.ToString(); 
+            cbDeptos.SelectedValue = id_departamento.ToString();
 
             DataSet dsMuni = new DataSet();
             dsMuni = _MunicBL.SelectmunicipioALL();
@@ -378,7 +386,7 @@ namespace WpfApplication3
             cb_profesionesIB.ItemsSource = ds10.Tables[0].DefaultView;
             cb_profesionesIB.DisplayMemberPath = ds10.Tables[0].Columns[1].ToString();
             cb_profesionesIB.SelectedValuePath = ds10.Tables[0].Columns[0].ToString();
-            cb_profesionesIB.SelectedIndex = Int32.Parse(idProfesion)-1;
+            cb_profesionesIB.SelectedIndex = Int32.Parse(idProfesion) - 1;
 
             DataSet ds4 = new DataSet();
             ds4 = _NivelBL.SelectnivelALL();
@@ -402,7 +410,7 @@ namespace WpfApplication3
             cbSitLab.ItemsSource = dss.Tables[0].DefaultView;
             cbSitLab.DisplayMemberPath = dss.Tables[0].Columns[1].ToString();
             cbSitLab.SelectedValuePath = dss.Tables[0].Columns[0].ToString();
-            cbSitLab.SelectedIndex = Int32.Parse(idSituacion)-1;
+            cbSitLab.SelectedIndex = Int32.Parse(idSituacion) - 1;
 
             DataSet ds8 = new DataSet();
             ds8 = _TipoRefereniaBL.SelecttipoReferenciaALL();
@@ -425,24 +433,56 @@ namespace WpfApplication3
             cb_añoFinCertificacion.SelectedIndex = 0;
 
 
+            DataSet dsEmpresa = new DataSet();
+            dsEmpresa = _empresa.SelectEmpresaALL();
+
+            cb_EmpresaProyecto.ItemsSource = dsEmpresa.Tables[0].DefaultView;
+            cb_EmpresaProyecto.DisplayMemberPath = dsEmpresa.Tables[0].Columns[1].ToString();
+            cb_EmpresaProyecto.SelectedValuePath = dsEmpresa.Tables[0].Columns[0].ToString();
+            cb_EmpresaProyecto.SelectedIndex = 0;
+
+            DataSet dspaisProyecto = new DataSet();
+            dspaisProyecto = _paisProyecto.SelectpaisALL();
+
+            cb_PaisProyecto.ItemsSource = dspaisProyecto.Tables[0].DefaultView;
+            cb_PaisProyecto.DisplayMemberPath = dspaisProyecto.Tables[0].Columns[1].ToString();
+            cb_PaisProyecto.SelectedValuePath = dspaisProyecto.Tables[0].Columns[0].ToString();
+            cb_PaisProyecto.SelectedIndex = 0;
+
+            DataSet dsTipoContrato = new DataSet();
+            dsTipoContrato = _tipoContrato.selectTipoContratoALL();
+
+            cb_tipoContratoProyecto.ItemsSource = dsTipoContrato.Tables[0].DefaultView;
+            cb_tipoContratoProyecto.DisplayMemberPath = dsTipoContrato.Tables[0].Columns[1].ToString();
+            cb_tipoContratoProyecto.SelectedValuePath = dsTipoContrato.Tables[0].Columns[0].ToString();
+            cb_tipoContratoProyecto.SelectedIndex = 0;
+
+
+            DataSet dsestadoProyecto = new DataSet();
+            dsestadoProyecto = _estdoProyecto.SelectEstadoProyectoALL();
+
+            cb_EstadoProyecto.ItemsSource = dsestadoProyecto.Tables[0].DefaultView;
+            cb_EstadoProyecto.DisplayMemberPath = dsestadoProyecto.Tables[0].Columns[1].ToString();
+            cb_EstadoProyecto.SelectedValuePath = dsestadoProyecto.Tables[0].Columns[0].ToString();
+            cb_EstadoProyecto.SelectedIndex = 0;
 
         }
 
         //**************************************************************************************************
 
-        //************************************INFORMACION ACADEMICA*************************************
+        //************************************INFORMACION ACADEMICA*****************************************
 
         //ERROR a CORREGIR: al insertar una actualizacion (agregar) debo de retornar el id de la nueva fila generada y eso mandarselo en el metodo Add a la datatable.
 
         private void DataGrid_InfAcademica_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             nuevoInfoAca = false;
-            
-            
-            
+
+
+
             foreach (DataRowView dr in DataGrid_InfAcademica.Items)
             {
-                
+
                 //entro a la linea que le di doble click
                 if (dr == DataGrid_InfAcademica.SelectedItem)
                 {
@@ -454,17 +494,17 @@ namespace WpfApplication3
                     if (dr[7].ToString() == "1") rb_InfoAcompleto.IsChecked = true;
                     else rb_InfoIncompleto.IsChecked = true;
 
-                    
+
                     RowPivotInfoAca = dr.Row;
-                           
-                   
+
+
                 }
 
             }
-            
+
             //tableInfoAcad.Rows.Remove(RowPivot);
             //DataGrid_InfAcademica.ItemsSource = tableInfoAcad.DefaultView;
-//            DataGrid_InfAcademica.Items.RemoveAt(dataRow);
+            //            DataGrid_InfAcademica.Items.RemoveAt(dataRow);
 
 
         }
@@ -473,72 +513,72 @@ namespace WpfApplication3
         {
 
 
-                        if ( !(string.IsNullOrEmpty(cb_tipoeducacion.Text) | string.IsNullOrEmpty(txt_Tituloedu.Text) |
-                        string.IsNullOrEmpty(txt_institucionedu.Text) | string.IsNullOrEmpty(cb_añofinalizacionedu.Text)))
-                        {
-                            if (nuevoInfoAca == false)
-                            {
-                                tableInfoAcad.Rows.Remove(RowPivotInfoAca);
-                                RowPivotInfoAca = null;
-                                string tipoEducacion, titulo, institucion, StatusName;
-                                int id_tipoEducacion, status, finalizacion;
+            if (!(string.IsNullOrEmpty(cb_tipoeducacion.Text) | string.IsNullOrEmpty(txt_Tituloedu.Text) |
+            string.IsNullOrEmpty(txt_institucionedu.Text) | string.IsNullOrEmpty(cb_añofinalizacionedu.Text)))
+            {
+                if (nuevoInfoAca == false)
+                {
+                    tableInfoAcad.Rows.Remove(RowPivotInfoAca);
+                    RowPivotInfoAca = null;
+                    string tipoEducacion, titulo, institucion, StatusName;
+                    int id_tipoEducacion, status, finalizacion;
 
-                                id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
-                                tipoEducacion = cb_tipoeducacion.Text.ToString();
-                                titulo = txt_Tituloedu.Text;
-                                institucion = txt_institucionedu.Text;
-                                finalizacion = Convert.ToInt32(cb_añofinalizacionedu.SelectedValue);
-                                if (rb_InfoAcompleto.IsChecked == true)
-                                {
-                                    status = 1;
-                                    StatusName = "Completo";
-                                }
-                                else
-                                {
-                                    status = 2;
-                                    StatusName = "Incompleto";
+                    id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
+                    tipoEducacion = cb_tipoeducacion.Text.ToString();
+                    titulo = txt_Tituloedu.Text;
+                    institucion = txt_institucionedu.Text;
+                    finalizacion = Convert.ToInt32(cb_añofinalizacionedu.SelectedValue);
+                    if (rb_InfoAcompleto.IsChecked == true)
+                    {
+                        status = 1;
+                        StatusName = "Completo";
+                    }
+                    else
+                    {
+                        status = 2;
+                        StatusName = "Incompleto";
 
-                                }
+                    }
 
-                                InformacionAcademicaE infoObjeto = new InformacionAcademicaE();
-                                infoObjeto.id_informacionAcademica = (int.Parse(idUpdateInfoAca));
-                                infoObjeto.id_statusAcademico = status;
-                                infoObjeto.id_tipoEducacion = id_tipoEducacion;
-                                infoObjeto.institucion = institucion;
-                                infoObjeto.titulo = titulo;
-                                infoObjeto.anio_de_finalizacion = finalizacion;
+                    InformacionAcademicaE infoObjeto = new InformacionAcademicaE();
+                    infoObjeto.id_informacionAcademica = (int.Parse(idUpdateInfoAca));
+                    infoObjeto.id_statusAcademico = status;
+                    infoObjeto.id_tipoEducacion = id_tipoEducacion;
+                    infoObjeto.institucion = institucion;
+                    infoObjeto.titulo = titulo;
+                    infoObjeto.anio_de_finalizacion = finalizacion;
 
-                                InformacionAcademicaBLL infoBll = new InformacionAcademicaBLL();
-                                infoBll.ActualizarInfomacionAcademica(infoObjeto, int.Parse(idCandidato), ref oerro);
+                    InformacionAcademicaBLL infoBll = new InformacionAcademicaBLL();
+                    infoBll.ActualizarInfomacionAcademica(infoObjeto, int.Parse(idCandidato), ref oerro);
 
 
 
-                                tableInfoAcad.Rows.Add(infoObjeto.id_informacionAcademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                    tableInfoAcad.Rows.Add(infoObjeto.id_informacionAcademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
 
-                                //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
-                                cb_tipoeducacion.Text = string.Empty;
-                                txt_Tituloedu.Text = string.Empty;
-                                txt_institucionedu.Text = string.Empty;
-                                cb_añofinalizacionedu.Text = string.Empty;
-                                nuevoInfoAca = true;
-                            }
-                            else
-                            {
-                                agregarInfoAcade();
-                            }
-                            
-                        }
+                    //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
+                    cb_tipoeducacion.Text = string.Empty;
+                    txt_Tituloedu.Text = string.Empty;
+                    txt_institucionedu.Text = string.Empty;
+                    cb_añofinalizacionedu.Text = string.Empty;
+                    nuevoInfoAca = true;
+                }
+                else
+                {
+                    agregarInfoAcade();
+                }
 
-                        else
-                        {
-                            MessageBox.Show("Inserte todos los datos solicitados");
-                        }
+            }
+
+            else
+            {
+                MessageBox.Show("Inserte todos los datos solicitados");
+            }
 
         }
 
         private void BTOCancelarIngresoInfAcademica_Click(object sender, RoutedEventArgs e)
         {
-//            tableInfoAcad.Rows.Add(RowPivotInfoAca);
+            //            tableInfoAcad.Rows.Add(RowPivotInfoAca);
             RowPivotInfoAca = null;
             nuevoInfoAca = true;
             cb_tipoeducacion.SelectedValue = 0;
@@ -552,6 +592,28 @@ namespace WpfApplication3
 
         //**************************************************************************************************
 
+        //************************************INFORMACION EMPLEADO*****************************************
+        //ERROR a CORREGIR: al insertar una actualizacion (agregar) debo de retornar el id de la nueva fila generada y eso mandarselo en el metodo Add a la datatable.
+        
+        private void DataGrid_Proyectos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            nuevoProyecto = false;
+
+            foreach (DataRowView dr DataGrid_Proyectos.Items)
+
+                //entrar a la linea al dar doble click 
+                if (dr == DataGrid_Proyectos.SelectedItem)
+                {
+                idUpdateProyecto = dr[0].ToString();
+                txt_nombreProyecto.Text = dr[1].ToString();
+                
+                }
+
+
+        }
+
+        //**************************************************************************************************
+
         //**************************INFORMACION LABORAL O EXPERIENCIA*************************************
 
         private void DataGrid_Inf_Laboral_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -560,88 +622,87 @@ namespace WpfApplication3
 
             nuevoExpe = false;
 
-                foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            {
+
+
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Inf_Laboral.SelectedItem)
                 {
+                    idUpdateExpe = dr[0].ToString();
+                    txt_NombreEmpresaLab.Text = dr[1].ToString();
+                    txt_CargoDespeLab.Text = dr[2].ToString();
+                    txt_DescripPuestoLab.Text = dr[3].ToString();
+                    txt_FechaInicioLab.Text = dr[4].ToString();
+                    txt_FechaFinLab.Text = dr[5].ToString();
+                    //txt_FechaFinLab.Text = dr[5].ToString();
 
 
-
-                    //entro a la linea que le di doble click
-                    if (dr == DataGrid_Inf_Laboral.SelectedItem)
-                    {
-                        idUpdateExpe = dr[0].ToString();
-                        txt_NombreEmpresaLab.Text = dr[1].ToString();
-                        txt_CargoDespeLab.Text = dr[2].ToString();
-                        txt_DescripPuestoLab.Text = dr[3].ToString();
-                        txt_FechaInicioLab.Text = dr[4].ToString();
-                        txt_FechaFinLab.Text = dr[5].ToString();
-                        //txt_FechaFinLab.Text = dr[5].ToString();
+                    RowPivotInfoAca = dr.Row;
 
 
-                        RowPivotInfoAca = dr.Row;
-
-
-                    }
                 }
-            
-              
-           
+            }
+
+
+
         }
 
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
         {
-            if(!( string.IsNullOrEmpty(txt_NombreEmpresaLab.Text)|string.IsNullOrEmpty(txt_CargoDespeLab.Text)|
-                    string.IsNullOrEmpty(txt_DescripPuestoLab.Text)| string.IsNullOrEmpty(  txt_FechaInicioLab.Text )|
+            if (!(string.IsNullOrEmpty(txt_NombreEmpresaLab.Text) | string.IsNullOrEmpty(txt_CargoDespeLab.Text) |
+                    string.IsNullOrEmpty(txt_DescripPuestoLab.Text) | string.IsNullOrEmpty(txt_FechaInicioLab.Text) |
                     string.IsNullOrEmpty(txt_FechaFinLab.Text)))
-
             {
-                    if (nuevoExpe == false)
-                    {
-                                tablaExperiencia.Rows.Remove(RowPivotInfoAca);
-                                RowPivotInfoAca = null;
-
-                                
-
-                                string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
-                                NombreEmpesa = txt_NombreEmpresaLab.Text;
-                                CargoDesempeñado = txt_CargoDespeLab.Text;
-                                DescripcionPuesto = txt_DescripPuestoLab.Text;
-                                FechaInicio = txt_FechaInicioLab.Text;
-                                fechaFin = txt_FechaFinLab.Text;
-
-                                //ds.Tables.Add(dt);
-
-                                ExpLaboralE expeObj = new ExpLaboralE();
-                                expeObj.id_experienciaLaboral =Int32.Parse( idUpdateExpe);
-                                expeObj.nombreEmpresa = NombreEmpesa;
-                                expeObj.cargoDesp = CargoDesempeñado;
-                                expeObj.descripPuesto = DescripcionPuesto;
-                                expeObj.fechaInicio = FechaInicio;
-                                expeObj.fechaFin = fechaFin;
-
-                                ExperienciaLaboralBLL expeBll = new ExperienciaLaboralBLL();
-                                expeBll.ActualizarExperienciaLab(expeObj, Int32.Parse(idCandidato), ref oerro);
+                if (nuevoExpe == false)
+                {
+                    tablaExperiencia.Rows.Remove(RowPivotInfoAca);
+                    RowPivotInfoAca = null;
 
 
 
-                                tablaExperiencia.Rows.Add(idUpdateExpe,NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                    string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
+                    NombreEmpesa = txt_NombreEmpresaLab.Text;
+                    CargoDesempeñado = txt_CargoDespeLab.Text;
+                    DescripcionPuesto = txt_DescripPuestoLab.Text;
+                    FechaInicio = txt_FechaInicioLab.Text;
+                    fechaFin = txt_FechaFinLab.Text;
 
-            
+                    //ds.Tables.Add(dt);
 
-                                txt_NombreEmpresaLab.Text = string.Empty;
-                                txt_CargoDespeLab.Text = string.Empty;
-                                txt_DescripPuestoLab.Text = string.Empty;
-                                txt_FechaInicioLab.Text = string.Empty;
-                                txt_FechaFinLab.Text = string.Empty;
+                    ExpLaboralE expeObj = new ExpLaboralE();
+                    expeObj.id_experienciaLaboral = Int32.Parse(idUpdateExpe);
+                    expeObj.nombreEmpresa = NombreEmpesa;
+                    expeObj.cargoDesp = CargoDesempeñado;
+                    expeObj.descripPuesto = DescripcionPuesto;
+                    expeObj.fechaInicio = FechaInicio;
+                    expeObj.fechaFin = fechaFin;
 
-                                //DataGrid_InfAcademica.ItemsSource = dt;
+                    ExperienciaLaboralBLL expeBll = new ExperienciaLaboralBLL();
+                    expeBll.ActualizarExperienciaLab(expeObj, Int32.Parse(idCandidato), ref oerro);
 
-                                nuevoExpe = true;
-            
-                    }
-                    else
-                    {
-                        agregarExperiencia();
-                    }
+
+
+                    tablaExperiencia.Rows.Add(idUpdateExpe, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+
+
+
+                    txt_NombreEmpresaLab.Text = string.Empty;
+                    txt_CargoDespeLab.Text = string.Empty;
+                    txt_DescripPuestoLab.Text = string.Empty;
+                    txt_FechaInicioLab.Text = string.Empty;
+                    txt_FechaFinLab.Text = string.Empty;
+
+                    //DataGrid_InfAcademica.ItemsSource = dt;
+
+                    nuevoExpe = true;
+
+                }
+                else
+                {
+                    agregarExperiencia();
+                }
 
 
             }
@@ -666,7 +727,7 @@ namespace WpfApplication3
         private void DataGrid_Certificaciones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             nuevoCerti = false;
-            
+
             foreach (DataRowView dr in DataGrid_Certificaciones.Items)
             {
 
@@ -679,7 +740,7 @@ namespace WpfApplication3
                     txt_TitutloCertificacion.Text = dr[1].ToString();
                     txt_InstCertiicacion.Text = dr[2].ToString();
                     cb_añoFinCertificacion.SelectedValue = dr[3].ToString();
-                    
+
 
 
                     RowPivotInfoAca = dr.Row;
@@ -746,7 +807,7 @@ namespace WpfApplication3
             cb_añoFinCertificacion.SelectedIndex = 0;
         }
 
-        
+
         //**************************************************************************************************
         //*****************************************REFERENCIAS******************************************
 
@@ -757,8 +818,8 @@ namespace WpfApplication3
             foreach (DataRowView dr in DataGrid_Referencias.Items)
             {
 
-  
-              
+
+
                 //entro a la linea que le di doble click
                 if (dr == DataGrid_Referencias.SelectedItem)
                 {
@@ -767,7 +828,7 @@ namespace WpfApplication3
                     txt_nombreRef.Text = dr[3].ToString();
                     txt_telefonoRef.Text = dr[4].ToString();
                     txt_descripcionREF.Text = dr[5].ToString();
-                    
+
 
 
                     RowPivotInfoAca = dr.Row;
@@ -808,7 +869,7 @@ namespace WpfApplication3
                     refeBll.ActualizarReferencias(refeObj, int.Parse(idCandidato), ref oerro);
 
 
-                    tablaReference.Rows.Add(refeObj.id_referencias,idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+                    tablaReference.Rows.Add(refeObj.id_referencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
 
                     cb_tipoRef.Text = string.Empty;
                     txt_nombreRef.Text = string.Empty;
@@ -854,10 +915,10 @@ namespace WpfApplication3
                 {
                     idUpdateHabi = dr[0].ToString();
                     cb_habtecnica.SelectedValue = dr[1].ToString();
-                    cb_nivelhabapp.SelectedValue= dr[3].ToString();
+                    cb_nivelhabapp.SelectedValue = dr[3].ToString();
                     llenarHabilidadApp();
                     cb_habilidadApp.SelectedValue = dr[5].ToString();
-                    
+
 
 
 
@@ -915,7 +976,7 @@ namespace WpfApplication3
                         habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
 
 
-                        tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato,id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                        tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
 
 
                         cb_habtecnica.Text = string.Empty;
@@ -944,7 +1005,7 @@ namespace WpfApplication3
             cb_nivelhabapp.SelectedIndex = -1;
         }
 
-//        **********************************************************************************************
+        //        **********************************************************************************************
         private void DataGrid_InfAcademica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
@@ -959,7 +1020,7 @@ namespace WpfApplication3
         }
 
         private void buscarPerfil_MouseDown(object sender, MouseButtonEventArgs e)
-        {  
+        {
             //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
             Busqueda _bw = new Busqueda();
             _bw.InitializeComponent();
@@ -1001,7 +1062,7 @@ namespace WpfApplication3
             }
             try
             {
-                
+
                 InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
                 refinfoAcademica.id_tipoEducacion = id_tipoEducacion;
                 refinfoAcademica.titulo = titulo;
@@ -1011,20 +1072,21 @@ namespace WpfApplication3
                 int returinfoacademica = 0;
 
                 int id = Int32.Parse(idCandidato);
-                returinfoacademica = _informacionAcademicaBL.AgregarInfomacionAcademica(refinfoAcademica, int.Parse(idCandidato),ref oerro);
+                returinfoacademica = _informacionAcademicaBL.AgregarInfomacionAcademica(refinfoAcademica, int.Parse(idCandidato), ref oerro);
 
-                tableInfoAcad.Rows.Add(returinfoacademica,id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                tableInfoAcad.Rows.Add(returinfoacademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
             }
-            catch (Exception ex) {
-                MessageBox.Show("Ocurrio un error al momento de actualizar la información.!","Error al Actualizar",MessageBoxButton.OK,MessageBoxImage.Error);
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al momento de actualizar la información.!", "Error al Actualizar", MessageBoxButton.OK, MessageBoxImage.Error);
                 throw ex;
             }
 
-            
+
             cb_tipoeducacion.Text = string.Empty;
             txt_Tituloedu.Text = string.Empty;
             txt_institucionedu.Text = string.Empty;
-            cb_añofinalizacionedu.Text = string.Empty;             
+            cb_añofinalizacionedu.Text = string.Empty;
 
         }
 
@@ -1048,13 +1110,13 @@ namespace WpfApplication3
             refExpL.fechaInicio = FechaInicio;
             refExpL.fechaFin = fechaFin;
 
-            returinfoLaboral = _experienciaLabBL.AgregarexperienciaLab(refExpL,int.Parse(idCandidato), ref oerro); 
-            
+            returinfoLaboral = _experienciaLabBL.AgregarexperienciaLab(refExpL, int.Parse(idCandidato), ref oerro);
+
             //************************************************
 
             tablaExperiencia.Rows.Add(returinfoLaboral, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
 
-            
+
             txt_NombreEmpresaLab.Text = string.Empty;
             txt_CargoDespeLab.Text = string.Empty;
             txt_DescripPuestoLab.Text = string.Empty;
@@ -1062,7 +1124,7 @@ namespace WpfApplication3
             txt_FechaFinLab.Text = string.Empty;
 
 
-            
+
         }
 
         //************************************************************************
@@ -1079,21 +1141,21 @@ namespace WpfApplication3
 
             //Procedimiento para agregar referencia a la base
 
-             RefecenciasE refE = new RefecenciasE();
-                int returReferencias = 0;
+            RefecenciasE refE = new RefecenciasE();
+            int returReferencias = 0;
 
-                refE.id_tipoReferencias = idReferencia;
-                refE.nombre = Nombre;
-                refE.telefono = Telefono;
-                refE.descripcion = Descripcion;
+            refE.id_tipoReferencias = idReferencia;
+            refE.nombre = Nombre;
+            refE.telefono = Telefono;
+            refE.descripcion = Descripcion;
 
-                    returReferencias = _referenciasBL.AgregarReferencias(refE,Int32.Parse(idCandidato), ref oerro);
+            returReferencias = _referenciasBL.AgregarReferencias(refE, Int32.Parse(idCandidato), ref oerro);
 
 
             //************************************************************************
 
-                    tablaReference.Rows.Add(returReferencias,idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
-            
+            tablaReference.Rows.Add(returReferencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
             cb_tipoRef.Text = string.Empty;
             txt_nombreRef.Text = string.Empty;
             txt_telefonoRef.Text = string.Empty;
@@ -1130,22 +1192,22 @@ namespace WpfApplication3
 
                 //Procedimiento para agregar las habilidades a la base
 
-                 HabCandidatoE refHabCandidato = new HabCandidatoE();
+                HabCandidatoE refHabCandidato = new HabCandidatoE();
                 int returnHabilidades = 0;
 
 
 
                 refHabCandidato.idhabilidadTecnica = id_habilidadTecnica;
-                    refHabCandidato.id_nivel = id_nivel;
-                    refHabCandidato.id_habilidadAplicacion = id_habilidadAplicacion;
+                refHabCandidato.id_nivel = id_nivel;
+                refHabCandidato.id_habilidadAplicacion = id_habilidadAplicacion;
 
-                    returnHabilidades = _habilidadCandidatoBL.AgregarHabilidadCandidato(refHabCandidato,int.Parse(idCandidato), ref oerro);
+                returnHabilidades = _habilidadCandidatoBL.AgregarHabilidadCandidato(refHabCandidato, int.Parse(idCandidato), ref oerro);
 
 
                 //********************************************************
 
 
-                    tablaHabilidades.Rows.Add(returnHabilidades,id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                tablaHabilidades.Rows.Add(returnHabilidades, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
                 DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
 
                 cb_habtecnica.Text = string.Empty;
@@ -1153,39 +1215,40 @@ namespace WpfApplication3
                 cb_habilidadApp.Text = string.Empty;
             }
 
-           
+
         }
 
         //*****************************************************************************************
 
 
-        public void agregarCertificacion(){
+        public void agregarCertificacion()
+        {
 
             string nombre, institutucion;
             int anio;
             nombre = txt_TitutloCertificacion.Text;
             institutucion = txt_InstCertiicacion.Text;
             anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
-            
+
 
             //Procedimiento para agregar Certificacion a la base
 
-              CertificacionesE certifi = new CertificacionesE();
-                int returnCertificaciones = 0;
+            CertificacionesE certifi = new CertificacionesE();
+            int returnCertificaciones = 0;
 
-                    certifi.nombre = nombre;
-                    certifi.institucion =institutucion;
-                    certifi.anio =anio;
+            certifi.nombre = nombre;
+            certifi.institucion = institutucion;
+            certifi.anio = anio;
 
-                    returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato),ref oerro); 
+            returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato), ref oerro);
 
             //*****************************************************
-                    tablaCerti.Rows.Add(returnCertificaciones,nombre, institutucion, anio);
+            tablaCerti.Rows.Add(returnCertificaciones, nombre, institutucion, anio);
 
             cb_añofinalizacionedu.SelectedIndex = -1;
-            txt_InstCertiicacion.Text=string.Empty;
-            txt_TitutloCertificacion.Text=string.Empty;
-            
+            txt_InstCertiicacion.Text = string.Empty;
+            txt_TitutloCertificacion.Text = string.Empty;
+
         }
 
 
@@ -1202,7 +1265,7 @@ namespace WpfApplication3
             idEstadoProyecto = 4;// Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
             fechaInicioPro = Date_FechProyecto.Text;
 
-            
+
             ////Procedimiento para agregar el proyecto  a la base
 
             ProyectoE project = new ProyectoE();
@@ -1224,17 +1287,17 @@ namespace WpfApplication3
 
             //*****************************************************
             tablaProyectos.Rows.Add(1, nombre, idEmpresaProyecto, idPaisProyecto, fechaInicioPro, idEstadoProyecto, idTipoContrato);
-              //tablaProyectos.Rows.Add(1,nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text,Date_FechProyecto.Text,cb_EstadoProyecto.Text,cb_tipoContratoProyecto.Text);
+            //tablaProyectos.Rows.Add(1,nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text,Date_FechProyecto.Text,cb_EstadoProyecto.Text,cb_tipoContratoProyecto.Text);
 
-                    txt_nombreProyecto.Text = string.Empty;
-                    cb_PaisProyecto.SelectedIndex = -1;
-                    Date_FechProyecto.Text = string.Empty;
-                    cb_EstadoProyecto.SelectedIndex = -1;
-                    cb_tipoContratoProyecto.SelectedIndex = -1;
-                    cb_añoFinCertificacion.SelectedIndex = 0;
-                    nuevoProyecto = true;
-                
-            
+            txt_nombreProyecto.Text = string.Empty;
+            cb_PaisProyecto.SelectedIndex = -1;
+            Date_FechProyecto.Text = string.Empty;
+            cb_EstadoProyecto.SelectedIndex = -1;
+            cb_tipoContratoProyecto.SelectedIndex = -1;
+            cb_añoFinCertificacion.SelectedIndex = 0;
+            nuevoProyecto = true;
+
+
 
         }
 
@@ -1263,14 +1326,14 @@ namespace WpfApplication3
             cb_habilidadApp.SelectedIndex = 0;
         }
 
-        
+
 
         private void btn_ActualizarInfoBasica_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            
+
         }
 
-        
+
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
@@ -1288,10 +1351,10 @@ namespace WpfApplication3
 
         }
 
-     
 
-       
-       
+
+
+
 
         private void Button_Click_DeleteInfoAcad(object sender, RoutedEventArgs e)
         {
@@ -1323,7 +1386,7 @@ namespace WpfApplication3
 
         private void Button_Click_DeleteCertificaciones(object sender, RoutedEventArgs e)
         {
-            
+
             DataRowView currentRow = (DataRowView)DataGrid_Certificaciones.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la Certificacion " + currentRow[1].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
@@ -1402,12 +1465,12 @@ namespace WpfApplication3
                 string oerro = "";
 
                 int returinfobasica = 0;
-                returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE,_InfoBasicaE.id_candidato, ref oerro);
+                returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
                 if (returinfobasica <= 0)
                 {
                     MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else MessageBox.Show("El candidato "+_InfoBasicaE.nombre+ " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
+                else MessageBox.Show("El candidato " + _InfoBasicaE.nombre + " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
             }
             else
             {
@@ -1434,7 +1497,7 @@ namespace WpfApplication3
 
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        
+
         }
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
@@ -1442,10 +1505,7 @@ namespace WpfApplication3
 
         }
 
-        private void DataGrid_Proyectos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-
-        }
+       
 
         private void Button_Click_DeleteProyecto(object sender, RoutedEventArgs e)
         {
@@ -1456,50 +1516,50 @@ namespace WpfApplication3
         {
             //if (!(string.IsNullOrEmpty(txt_nombreProyecto.Text) | string.IsNullOrEmpty(Date_FechProyecto.Text) | cb_EmpresaProyecto.SelectedIndex == -1 | cb_EstadoProyecto.SelectedIndex == -1 | cb_PaisProyecto.SelectedIndex == -1 | cb_tipoContratoProyecto.SelectedIndex == -1))
             //{
-                if (nuevoProyecto == false)
-                {
+            if (nuevoProyecto == false)
+            {
 
-                    tablaProyectos.Rows.Remove(RowPivotInfoAca);
-                    RowPivotInfoAca = null;
-                    string nombre,fechaInicioPro;
-                    int idEmpresaProyecto, idPaisProyecto,idTipoContrato,idEstadoProyecto;
-                    nombre = txt_nombreProyecto.Text;
-                    idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValuePath);
-                    idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValuePath);
-                    idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValuePath);
-                    idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
-                    fechaInicioPro = Date_FechProyecto.Text;
+                tablaProyectos.Rows.Remove(RowPivotInfoAca);
+                RowPivotInfoAca = null;
+                string nombre, fechaInicioPro;
+                int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
+                nombre = txt_nombreProyecto.Text;
+                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValuePath);
+                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValuePath);
+                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValuePath);
+                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
+                fechaInicioPro = Date_FechProyecto.Text;
 
-                    //falta agregar el objeto proyecto y que se agregue a la base de datos hasta que definan las capas dal, bll 
+                //falta agregar el objeto proyecto y que se agregue a la base de datos hasta que definan las capas dal, bll 
 
-                    //CertificacionesE certiObj = new CertificacionesE();
-                    //certiObj.id_candidato = (int.Parse(idCandidato));
-                    //certiObj.id_certificaciones = int.Parse(idUpdateCertifi);
-                    //certiObj.institucion = institutucion;
-                    //certiObj.nombre = nombre;
-                    //certiObj.anio = anio;
+                //CertificacionesE certiObj = new CertificacionesE();
+                //certiObj.id_candidato = (int.Parse(idCandidato));
+                //certiObj.id_certificaciones = int.Parse(idUpdateCertifi);
+                //certiObj.institucion = institutucion;
+                //certiObj.nombre = nombre;
+                //certiObj.anio = anio;
 
-                    //CertificacionesBLL certiBll = new CertificacionesBLL();
-                    //certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
+                //CertificacionesBLL certiBll = new CertificacionesBLL();
+                //certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
 
 
 
-                    tablaProyectos.Rows.Add(nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text,Date_FechProyecto.Text,cb_EstadoProyecto.Text,cb_tipoContratoProyecto.Text);
+                tablaProyectos.Rows.Add(nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text, Date_FechProyecto.Text, cb_EstadoProyecto.Text, cb_tipoContratoProyecto.Text);
 
-                    txt_nombreProyecto.Text = string.Empty;
-                    cb_PaisProyecto.SelectedIndex = -1;
-                    Date_FechProyecto.Text = string.Empty;
-                    cb_EstadoProyecto.SelectedIndex = -1;
-                    cb_tipoContratoProyecto.SelectedIndex = -1;
-                    cb_añoFinCertificacion.SelectedIndex = 0;
-                    nuevoProyecto = true;
-                }
-                else
-                {
-                    //falta metodo agregar certificacion
-                    agregarProyecto();
+                txt_nombreProyecto.Text = string.Empty;
+                cb_PaisProyecto.SelectedIndex = -1;
+                Date_FechProyecto.Text = string.Empty;
+                cb_EstadoProyecto.SelectedIndex = -1;
+                cb_tipoContratoProyecto.SelectedIndex = -1;
+                cb_añoFinCertificacion.SelectedIndex = 0;
+                nuevoProyecto = true;
+            }
+            else
+            {
+                //falta metodo agregar certificacion
+                agregarProyecto();
 
-                }
+            }
             //}
             //else
             //{
@@ -1512,8 +1572,15 @@ namespace WpfApplication3
 
         }
 
+        private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+
        
        
-      
+
+
+
     }
 }

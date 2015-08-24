@@ -19,7 +19,7 @@ namespace HelpDesk.RecursosHumanos.DAL
            
                SqlConnection _oConn = CommonDb.ObtenerConnSql();
                 SqlConnection oConn = CommonDb.ObtenerConnSql();
-                   SqlCommand oCmd = new SqlCommand ("SP_select_nivel", oConn);
+                SqlCommand oCmd = new SqlCommand("SP_select_empresas", oConn);
                    oCmd.CommandType = CommandType.StoredProcedure;
                    SqlDataAdapter da = new SqlDataAdapter(oCmd);
                    DataSet dsEmpresa = new DataSet();
