@@ -64,6 +64,7 @@
     <Compile Include="RefereciasDAL.cs" />
     <Compile Include="RolUsuarioDAL.cs" />
     <Compile Include="SituacionProfesionalDAL.cs" />
+    <Compile Include="TipoContratoDAL.cs" />
     <Compile Include="TipoEducacionDAL.cs" />
     <Compile Include="tipoReferenciaDAL.cs" />
     <Compile Include="UsuariosDAL.cs" />

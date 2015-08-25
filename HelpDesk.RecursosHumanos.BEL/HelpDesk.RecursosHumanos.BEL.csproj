@@ -64,7 +64,7 @@
     <Compile Include="RolUsuarioE.cs" />
     <Compile Include="SituacionProfesionalE.cs" />
     <Compile Include="StatusAcademicoE.cs" />
-    <Compile Include="TipoContrato.cs" />
+    <Compile Include="TipoContratoE.cs" />
     <Compile Include="TipoEducacionE.cs" />
     <Compile Include="TipoReferenciaE.cs" />
     <Compile Include="usuariosE.cs" />
