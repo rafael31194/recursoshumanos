@@ -49,6 +49,7 @@ namespace WpfApplication3
         PaisBLL _paisProyecto = new PaisBLL();
         tipoContratoBEL _tipoContrato = new tipoContratoBEL();
         EstadoProyectoBLL _estdoProyecto = new EstadoProyectoBLL();
+        ProyectoBLL _proyectoBL = new ProyectoBLL();
 
 
         //***************TABLAS DE INFORMACION DEL CANDIDATO*****************
@@ -68,6 +69,7 @@ namespace WpfApplication3
         DataRow RowPivotInfoAca = null;
 
         string idCandidato;
+        int idEmpleado, idProyectoNuevo;
         string idProfesion;
         string idMunicipio;
         string idSituProfe;
@@ -149,7 +151,7 @@ namespace WpfApplication3
 
         public void setearCampos(string idCandi, int idEmpleado, DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
         {
-
+            this.idEmpleado = idEmpleado;
             //Seteando Info Basica Tab*******************************
             txtNombreInfBasica.Text = datos.ItemArray[1].ToString();
             txtNacionalidadInfBasica.Text = datos.ItemArray[2].ToString();
@@ -323,13 +325,18 @@ namespace WpfApplication3
             ProyectoDAL proyectoDal = new ProyectoDAL();
             DataSet dataSetProyectos = proyectoDal.SelectProyectoALL(idEmpleado);
 
+            tablaProyectos.Columns.Add("ID Empleado", typeof(Int32));
             tablaProyectos.Columns.Add("ID Proyecto", typeof(Int32));
-            tablaProyectos.Columns.Add("proyecto", typeof(Int32));
-            tablaProyectos.Columns.Add("idEmpresa", typeof(string));
+            tablaProyectos.Columns.Add("proyecto", typeof(string));
+            tablaProyectos.Columns.Add("idEmpresa", typeof(Int32));
+            tablaProyectos.Columns.Add("Empresa", typeof(string));
             tablaProyectos.Columns.Add("IDPais", typeof(Int32));
+            tablaProyectos.Columns.Add("Pais", typeof(string));
             tablaProyectos.Columns.Add("fechaInicio", typeof(string));
             tablaProyectos.Columns.Add("IDEstado", typeof(Int32));
-            tablaProyectos.Columns.Add("TipoContrato", typeof(Int32));
+            tablaProyectos.Columns.Add("Estado", typeof(string));
+            tablaProyectos.Columns.Add("IDTipoContrato", typeof(Int32));
+            tablaProyectos.Columns.Add("TipoContrato", typeof(string));
 
             tablaProyectos = dataSetProyectos.Tables[0];
 
@@ -592,7 +599,7 @@ namespace WpfApplication3
 
         //**************************************************************************************************
 
-        //************************************INFORMACION EMPLEADO*****************************************
+        //************************************PROYECTOS EMPLEADO*****************************************
         //ERROR a CORREGIR: al insertar una actualizacion (agregar) debo de retornar el id de la nueva fila generada y eso mandarselo en el metodo Add a la datatable.
         
         private void DataGrid_Proyectos_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -604,12 +611,108 @@ namespace WpfApplication3
                 //entrar a la linea al dar doble click 
                 if (dr == DataGrid_Proyectos.SelectedItem)
                 {
-                idUpdateProyecto = dr[0].ToString();
-                txt_nombreProyecto.Text = dr[1].ToString();
-                
+                    idUpdateProyecto = dr[1].ToString();
+                    txt_nombreProyecto.Text = dr[2].ToString();
+                    cb_EmpresaProyecto.SelectedValue=dr[3].ToString();
+                    cb_PaisProyecto.SelectedValue=dr[5].ToString();
+                    Date_FechProyecto.SelectedDate=DateTime.Parse(dr[7].ToString());
+                    cb_EstadoProyecto.SelectedValue=dr[8].ToString();
+                    cb_tipoContratoProyecto.SelectedValue=dr[10].ToString();
+
+                    RowPivotInfoAca=dr.Row;
+
                 }
 
 
+        }
+
+         private void BTOAgregarProyecto_Click(object sender, RoutedEventArgs e)
+        {
+            //if (!(string.IsNullOrEmpty(txt_nombreProyecto.Text) | string.IsNullOrEmpty(Date_FechProyecto.Text) | cb_EmpresaProyecto.SelectedIndex == -1 | cb_EstadoProyecto.SelectedIndex == -1 | cb_PaisProyecto.SelectedIndex == -1 | cb_tipoContratoProyecto.SelectedIndex == -1))
+            //{
+            if (nuevoProyecto == false)
+            {
+
+                string nombre;
+                DateTime fechaInicioPro;
+                int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
+                nombre = txt_nombreProyecto.Text;
+                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValue);
+                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValue);
+                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValue);
+                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValue);
+                fechaInicioPro = Date_FechProyecto.SelectedDate.Value;
+
+                ProyectoE proyectObj=new ProyectoE();
+                proyectObj.id_empresa=idEmpresaProyecto;
+                proyectObj.id_estadoProyecto=idEstadoProyecto;
+                proyectObj.id_pais=idPaisProyecto;
+                proyectObj.id_tipoContrato=idTipoContrato;
+                proyectObj.nombre_proyecto=nombre;
+                proyectObj.fecha_inicio = fechaInicioPro;
+                proyectObj.id_proyecto = Int32.Parse(idUpdateProyecto);
+
+
+                //falta agregar el objeto proyecto y que se agregue a la base de datos hasta que definan las capas dal, bll 
+
+                //CertificacionesE certiObj = new CertificacionesE();
+                //certiObj.id_candidato = (int.Parse(idCandidato));
+                //certiObj.id_certificaciones = int.Parse(idUpdateCertifi);
+                //certiObj.institucion = institutucion;
+                //certiObj.nombre = nombre;
+                //certiObj.anio = anio;
+
+                //CertificacionesBLL certiBll = new CertificacionesBLL();
+                //certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
+                int seActualizo = _proyectoBL.actualizarProyecto(proyectObj, ref oerro);
+                if (seActualizo <= 0)
+                {
+                    MessageBox.Show("Ocurrio un error al actualizar el proyecto");
+
+
+                }
+                else
+                {
+
+                    tablaProyectos.Rows.Remove(RowPivotInfoAca);
+                    RowPivotInfoAca = null;
+                    tablaProyectos.Rows.Add(idEmpleado, proyectObj.id_proyecto, nombre, cb_EmpresaProyecto.SelectedValue, cb_EmpresaProyecto.Text,
+                        cb_PaisProyecto.SelectedValue, cb_PaisProyecto.Text, Date_FechProyecto.Text, cb_EstadoProyecto.SelectedValue,
+                        cb_EstadoProyecto.Text, cb_tipoContratoProyecto.SelectedValue, cb_tipoContratoProyecto.Text);
+                }
+
+                txt_nombreProyecto.Text = string.Empty;
+                cb_PaisProyecto.SelectedIndex = -1;
+                Date_FechProyecto.Text = string.Empty;
+                cb_EstadoProyecto.SelectedIndex = -1;
+                cb_tipoContratoProyecto.SelectedIndex = -1;
+                cb_añoFinCertificacion.SelectedIndex = 0;
+                nuevoProyecto = true;
+            }
+            else
+            {
+                //falta metodo agregar certificacion
+                agregarProyecto();
+
+            }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Inserte todos los datos solicitados");
+            //}
+        }
+
+        private void BTOCancelarProyecto_Click(object sender, RoutedEventArgs e)
+        {
+            txt_nombreProyecto.Text = string.Empty;
+            cb_PaisProyecto.SelectedIndex = -1;
+            Date_FechProyecto.Text = string.Empty;
+            cb_EstadoProyecto.SelectedIndex = -1;
+            cb_tipoContratoProyecto.SelectedIndex = -1;
+            cb_añoFinCertificacion.SelectedIndex = 0;
+            nuevoProyecto = true;
+
+            
         }
 
         //**************************************************************************************************
@@ -1255,49 +1358,70 @@ namespace WpfApplication3
         //*****************************************************************************************
         private void agregarProyecto()
         {
-
-            string nombre, fechaInicioPro;
-            int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
-            nombre = txt_nombreProyecto.Text;
-            idEmpresaProyecto = 1;// Convert.ToInt32(cb_EmpresaProyecto.SelectedValuePath);
-            idPaisProyecto = 2;//Convert.ToInt32(cb_PaisProyecto.SelectedValuePath);
-            idTipoContrato = 3;// Convert.ToInt32(cb_tipoContratoProyecto.SelectedValuePath);
-            idEstadoProyecto = 4;// Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
-            fechaInicioPro = Date_FechProyecto.Text;
-
-
-            ////Procedimiento para agregar el proyecto  a la base
-
-            ProyectoE project = new ProyectoE();
-            project.id_empresa = idEmpresaProyecto;
-            project.nombre_proyecto = nombre;
-            project.id_pais = idPaisProyecto;
-            project.id_tipoContrato = idTipoContrato;
-            project.id_estadoProyecto = idEstadoProyecto;
-            project.fecha_inicio = DateTime.Parse(fechaInicioPro);
-
-            //CertificacionesE certifi = new CertificacionesE();
-            //int returnCertificaciones = 0;
-
-            //certifi.nombre = nombre;
-            //certifi.institucion = institutucion;
-            //certifi.anio = anio;
-
-            //returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato), ref oerro);
-
-            //*****************************************************
-            tablaProyectos.Rows.Add(1, nombre, idEmpresaProyecto, idPaisProyecto, fechaInicioPro, idEstadoProyecto, idTipoContrato);
-            //tablaProyectos.Rows.Add(1,nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text,Date_FechProyecto.Text,cb_EstadoProyecto.Text,cb_tipoContratoProyecto.Text);
-
-            txt_nombreProyecto.Text = string.Empty;
-            cb_PaisProyecto.SelectedIndex = -1;
-            Date_FechProyecto.Text = string.Empty;
-            cb_EstadoProyecto.SelectedIndex = -1;
-            cb_tipoContratoProyecto.SelectedIndex = -1;
-            cb_añoFinCertificacion.SelectedIndex = 0;
-            nuevoProyecto = true;
+            try
+            {
+                //ME FALTA INSERTAR EN LA TABLA EMPLEADO PROYECTOS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                string nombre;
+                DateTime fechaInicioPro;
+                int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
+                nombre = txt_nombreProyecto.Text;
+                string prueb = cb_EmpresaProyecto.SelectedValuePath;
+                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValue);
+                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValue);
+                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValue);
+                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValue);
+                fechaInicioPro = Date_FechProyecto.SelectedDate.Value;
 
 
+                ////Procedimiento para agregar el proyecto  a la base
+
+                ProyectoE project = new ProyectoE();
+                project.id_empresa = idEmpresaProyecto;
+                project.nombre_proyecto = nombre;
+                project.id_pais = idPaisProyecto;
+                project.id_tipoContrato = idTipoContrato;
+                project.id_estadoProyecto = idEstadoProyecto;
+                project.fecha_inicio = (fechaInicioPro);
+
+
+
+                //CertificacionesE certifi = new CertificacionesE();
+                //int returnCertificaciones = 0;
+
+                //certifi.nombre = nombre;
+                //certifi.institucion = institutucion;
+                //certifi.anio = anio;
+
+                //returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato), ref oerro);
+
+                //*****************************************************
+                int idProyectoReturn = _proyectoBL.agregarProyecto(project, idEmpleado, ref oerro);
+
+                ProyectoEmpleadosE proyecto = new ProyectoEmpleadosE();
+                proyecto.id_empleado = idEmpleado;
+                proyecto.id_proyectos = idProyectoReturn;
+
+                ProyectoEmpleadoBLL ProyectoEmpleado = new ProyectoEmpleadoBLL();
+                ProyectoEmpleado.insertarProyectoEmpleado(proyecto, ref oerro);
+
+                tablaProyectos.Rows.Add(idEmpleado, idProyectoReturn, nombre, cb_EmpresaProyecto.SelectedValue, cb_EmpresaProyecto.Text,
+                       cb_PaisProyecto.SelectedValue, cb_PaisProyecto.Text, Date_FechProyecto.Text, cb_EstadoProyecto.SelectedValue,
+                       cb_EstadoProyecto.Text, cb_tipoContratoProyecto.SelectedValue, cb_tipoContratoProyecto.Text);
+                //tablaProyectos.Rows.Add(1,nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text,Date_FechProyecto.Text,cb_EstadoProyecto.Text,cb_tipoContratoProyecto.Text);
+
+                txt_nombreProyecto.Text = string.Empty;
+                cb_PaisProyecto.SelectedIndex = -1;
+                Date_FechProyecto.Text = string.Empty;
+                cb_EstadoProyecto.SelectedIndex = -1;
+                cb_tipoContratoProyecto.SelectedIndex = -1;
+                cb_añoFinCertificacion.SelectedIndex = 0;
+                nuevoProyecto = true;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al agregar el proyecto " + txt_nombreProyecto.Text+ ".");
+            }
 
         }
 
@@ -1509,68 +1633,23 @@ namespace WpfApplication3
 
         private void Button_Click_DeleteProyecto(object sender, RoutedEventArgs e)
         {
+            DataRowView currentRow = (DataRowView)DataGrid_Proyectos.SelectedItem;
 
-        }
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar el proyecto " + currentRow[2].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
-        private void BTOAgregarProyecto_Click(object sender, RoutedEventArgs e)
-        {
-            //if (!(string.IsNullOrEmpty(txt_nombreProyecto.Text) | string.IsNullOrEmpty(Date_FechProyecto.Text) | cb_EmpresaProyecto.SelectedIndex == -1 | cb_EstadoProyecto.SelectedIndex == -1 | cb_PaisProyecto.SelectedIndex == -1 | cb_tipoContratoProyecto.SelectedIndex == -1))
-            //{
-            if (nuevoProyecto == false)
+            if (result == MessageBoxResult.Yes)
             {
 
-                tablaProyectos.Rows.Remove(RowPivotInfoAca);
-                RowPivotInfoAca = null;
-                string nombre, fechaInicioPro;
-                int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
-                nombre = txt_nombreProyecto.Text;
-                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValuePath);
-                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValuePath);
-                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValuePath);
-                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
-                fechaInicioPro = Date_FechProyecto.Text;
+                int idProyecDelete = Int32.Parse(currentRow[1].ToString());
 
-                //falta agregar el objeto proyecto y que se agregue a la base de datos hasta que definan las capas dal, bll 
-
-                //CertificacionesE certiObj = new CertificacionesE();
-                //certiObj.id_candidato = (int.Parse(idCandidato));
-                //certiObj.id_certificaciones = int.Parse(idUpdateCertifi);
-                //certiObj.institucion = institutucion;
-                //certiObj.nombre = nombre;
-                //certiObj.anio = anio;
-
-                //CertificacionesBLL certiBll = new CertificacionesBLL();
-                //certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
-
-
-
-                tablaProyectos.Rows.Add(nombre, cb_EmpresaProyecto.Text, cb_PaisProyecto.Text, Date_FechProyecto.Text, cb_EstadoProyecto.Text, cb_tipoContratoProyecto.Text);
-
-                txt_nombreProyecto.Text = string.Empty;
-                cb_PaisProyecto.SelectedIndex = -1;
-                Date_FechProyecto.Text = string.Empty;
-                cb_EstadoProyecto.SelectedIndex = -1;
-                cb_tipoContratoProyecto.SelectedIndex = -1;
-                cb_añoFinCertificacion.SelectedIndex = 0;
-                nuevoProyecto = true;
+                _proyectoBL.eliminarProyecto(idProyecDelete,idEmpleado, ref oerro);
+                //DataGrid_Certificaciones.Items.Remove(currentRow);
+                tablaProyectos.Rows.Remove(((DataRowView)DataGrid_Proyectos.SelectedItem).Row);
             }
-            else
-            {
-                //falta metodo agregar certificacion
-                agregarProyecto();
-
-            }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Inserte todos los datos solicitados");
-            //}
         }
 
-        private void BTOCancelarProyecto_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+       
+        
 
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {

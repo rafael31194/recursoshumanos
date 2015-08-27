@@ -575,13 +575,17 @@
 
                                                 </DataGridTemplateColumn>
 
-                                                <DataGridTextColumn Header="COD.EPLEADO" Visibility="Visible" Binding="{Binding CODIGO EMPLEADO }"/>
-                                                <DataGridTextColumn Header="COD.PROYECTO" Visibility="Visible" Binding="{Binding CODIGO PROYECTO}"/>
+                                                <DataGridTextColumn Header="COD.EPLEADO" Visibility="Hidden" Binding="{Binding CODIGO EMPLEADO }"/>
+                                                <DataGridTextColumn Header="COD.PROYECTO" Visibility="Hidden" Binding="{Binding CODIGO PROYECTO}"/>
                                                 <DataGridTextColumn Header="NOMPRE PROYECTO" Visibility="Visible" Binding="{Binding NOMBRE PROYECTO}"/>
-                                                <DataGridTextColumn Header="NOMBRE EMPRESA" Visibility="Visible" Binding="{Binding NOMBRE EMPRESA}"/>
+                                                <DataGridTextColumn Header="IDEMPRESA" Visibility="Hidden" Binding="{Binding IDEMPRESA}"/>
+                                                <DataGridTextColumn Header="NOMBRE EMPRESA" Visibility="Visible" Binding="{Binding NOMBRE EMPRESA}"/>                                                
+                                                <DataGridTextColumn Header="IDPAIS" Visibility="Hidden" Binding="{Binding IDPAIS}"/>
                                                 <DataGridTextColumn Header="PAIS" Visibility="Visible" Binding="{Binding PAIS}"/>
                                                 <DataGridTextColumn Header="FECHA INICIO" Visibility="Visible" Binding="{Binding FECHA INICIO}"/>
+                                                <DataGridTextColumn Header="IDESTADO" Visibility="Hidden" Binding="{Binding IDESTADOPROYECTO}"/>
                                                 <DataGridTextColumn Header="ESTADO.PROYECTO" Visibility="Visible" Binding="{Binding ESTADO PROYECTO}"/>
+                                                <DataGridTextColumn Header="IDTIPO" Visibility="Hidden" Binding="{Binding IDTIPOCONTRATO}"/>
                                                 <DataGridTextColumn Header="TIPO.CONTRATO" Visibility="Visible" Binding="{Binding TIPO CONTRATO}"/>
 
                                             </DataGrid.Columns>
