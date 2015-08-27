@@ -61,6 +61,7 @@
     <Compile Include="ProfesionesDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProyectoDAL.cs" />
+    <Compile Include="ProyectoEmpleadoDAL.cs" />
     <Compile Include="RefereciasDAL.cs" />
     <Compile Include="RolUsuarioDAL.cs" />
     <Compile Include="SituacionProfesionalDAL.cs" />
