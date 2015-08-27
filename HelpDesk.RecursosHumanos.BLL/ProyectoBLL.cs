@@ -28,8 +28,9 @@ namespace HelpDesk.RecursosHumanos.BEL
                 return _proyecto.actualizarProyecto(pro, ref oerro);
 
             }
-            catch{
+            catch(Exception Exception){
                 return 0;
+                throw (Exception);
                 }
         }
 

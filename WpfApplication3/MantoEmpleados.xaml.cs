@@ -611,7 +611,7 @@ namespace WpfApplication3
                 //entrar a la linea al dar doble click 
                 if (dr == DataGrid_Proyectos.SelectedItem)
                 {
-                    idUpdateProyecto = dr[0].ToString();
+                    idUpdateProyecto = dr[1].ToString();
                     txt_nombreProyecto.Text = dr[2].ToString();
                     cb_EmpresaProyecto.SelectedValue=dr[3].ToString();
                     cb_PaisProyecto.SelectedValue=dr[5].ToString();
@@ -633,14 +633,15 @@ namespace WpfApplication3
             if (nuevoProyecto == false)
             {
 
-                string nombre, fechaInicioPro;
+                string nombre;
+                DateTime fechaInicioPro;
                 int idEmpresaProyecto, idPaisProyecto, idTipoContrato, idEstadoProyecto;
                 nombre = txt_nombreProyecto.Text;
-                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValuePath);
-                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValuePath);
-                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValuePath);
-                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValuePath);
-                fechaInicioPro = Date_FechProyecto.Text;
+                idEmpresaProyecto = Convert.ToInt32(cb_EmpresaProyecto.SelectedValue);
+                idPaisProyecto = Convert.ToInt32(cb_PaisProyecto.SelectedValue);
+                idTipoContrato = Convert.ToInt32(cb_tipoContratoProyecto.SelectedValue);
+                idEstadoProyecto = Convert.ToInt32(cb_EstadoProyecto.SelectedValue);
+                fechaInicioPro = Date_FechProyecto.SelectedDate.Value;
 
                 ProyectoE proyectObj=new ProyectoE();
                 proyectObj.id_empresa=idEmpresaProyecto;
@@ -648,6 +649,7 @@ namespace WpfApplication3
                 proyectObj.id_pais=idPaisProyecto;
                 proyectObj.id_tipoContrato=idTipoContrato;
                 proyectObj.nombre_proyecto=nombre;
+                proyectObj.fecha_inicio = fechaInicioPro;
                 proyectObj.id_proyecto = Int32.Parse(idUpdateProyecto);
 
 
