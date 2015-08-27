@@ -76,6 +76,8 @@ namespace WpfApplication3
             else
             {
                 //PARAMETROS PARA ACUTUALIZAR 
+
+
                 usuariosE _ActualizarUsuarioE = new usuariosE();
                 _ActualizarUsuarioE.id_usuario = Convert.ToInt32(listData[0]);
                 _ActualizarUsuarioE.contrasena = txt_update_constrasenaUsuario.Password.ToString();
@@ -91,7 +93,7 @@ namespace WpfApplication3
                 {
                     MessageBox.Show("Registro fue actualizado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                    Login _bw = new Login();
+                    BusquedaEmpleados _bw = new BusquedaEmpleados();
                     _bw.InitializeComponent();
                     this.Close();
                     _bw.ShowDialog();

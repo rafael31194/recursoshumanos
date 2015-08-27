@@ -12,17 +12,17 @@ namespace HelpDesk.RecursosHumanos.BEL
         public string nombre    { get; set; }
         public string direccion { get; set; }
         public string telefono  { get; set; }
-        public int    id_pais   { get; set; }
+        public PaisE    id_pais   { get; set; }
 
          public  EmpresaE() { }
          public EmpresaE(int pId_empresa, string pNombre, string pDireccion,
-                           string pTelefono, int pId_pais)
+                           string pTelefono)
          { 
           id_empresa = pId_empresa;
           nombre    = pNombre;
           direccion = pDireccion;
           telefono  = pTelefono;
-          id_pais = pId_pais;
+        
          }             
     }
 }

@@ -54,11 +54,11 @@ namespace WpfApplication3
 
         private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE CREACION DE PERFIL
-            MainWindow _mw = new MainWindow();
-            _mw.InitializeComponent();
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE EMPLEADO
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
             this.Close();
-            _mw.ShowDialog();
+            _busEmple.Show();
         }
 
         private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)

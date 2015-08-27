@@ -143,7 +143,7 @@ namespace WpfApplication3
             _lo.ShowDialog();
         }
 
-
+        //***BOTON PARA ELIMINAR USUARIO EN EL MANTENIMIENTO DE USUARIO**//
         private void Button_Click(object sender, RoutedEventArgs e)
         {
            

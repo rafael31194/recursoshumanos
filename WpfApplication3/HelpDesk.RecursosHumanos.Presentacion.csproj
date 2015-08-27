@@ -131,6 +131,9 @@
     <Compile Include="MantoEmpleados.xaml.cs">
       <DependentUpon>MantoEmpleados.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MantoEmpresa.xaml.cs">
+      <DependentUpon>MantoEmpresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MantoLogin.xaml.cs">
       <DependentUpon>MantoLogin.xaml</DependentUpon>
     </Compile>
@@ -154,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="MantoEmpleados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MantoEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -181,11 +188,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ModificarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModificarUsuario.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NewUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NuevaEmpresa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -198,11 +213,17 @@
     <Compile Include="MantoCandidatos.xaml.cs">
       <DependentUpon>MantoCandidatos.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ModificarEmpresa.xaml.cs">
+      <DependentUpon>ModificarEmpresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModificarUsuario.xaml.cs">
       <DependentUpon>ModificarUsuario.xaml</DependentUpon>
     </Compile>
     <Compile Include="NewUser.xaml.cs">
       <DependentUpon>NewUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NuevaEmpresa.xaml.cs">
+      <DependentUpon>NuevaEmpresa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

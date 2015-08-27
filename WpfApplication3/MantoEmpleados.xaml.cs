@@ -599,7 +599,7 @@ namespace WpfApplication3
         {
             nuevoProyecto = false;
 
-            foreach (DataRowView dr DataGrid_Proyectos.Items)
+            foreach (DataRowView dr in DataGrid_Proyectos.Items)
 
                 //entrar a la linea al dar doble click 
                 if (dr == DataGrid_Proyectos.SelectedItem)

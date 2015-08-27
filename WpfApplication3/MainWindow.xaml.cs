@@ -699,19 +699,12 @@ namespace WpfApplication3
                         _InfoBasicaE.ISSS = txtNiss.Text;
                         _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
                         _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
-
                         string oerro = "";
 
                         int returinfobasica = 0;
                         returinfobasica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
 
-
-
-
                         // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
-
-
-
 
                         InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
                         int returinfoacademica = 0;
@@ -726,9 +719,6 @@ namespace WpfApplication3
                             returinfoacademica = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerro);
                         }
 
-
-
-
                         //BOTON PARA GUARDAR INFORMACION LABORAL
 
 
@@ -736,7 +726,6 @@ namespace WpfApplication3
                         int returinfoLaboral = 0;
                         foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
                         {
-
                             refExpL.nombreEmpresa = Convert.ToString(row1[0]);
                             refExpL.cargoDesp = Convert.ToString(row1[1]);
                             refExpL.descripPuesto = Convert.ToString(row1[2]);

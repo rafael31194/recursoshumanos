@@ -56,6 +56,7 @@ namespace WpfApplication3
         {
 
             string oError = "";
+            GC.Collect();
             DataSet ds = infoBl.SelectInfoBusqueda("", ref oError);
             data_gridBusqueda.ItemsSource = ds.Tables[0].DefaultView;
 

@@ -26,16 +26,19 @@ namespace HelpDesk.RecursosHumanos.BLL
             }
 
         }
+
         //METODO PARA SELCIONAR USUARIO
         public DataSet Selecusuarios(string valorFiltro, ref string oError)
         {
             return _usuarioDAL.BusquedaUsuarios(valorFiltro, ref oError);
         }
+
         //METODO PARA AUTENTICAR USUARIO
         public usuariosE AutentificacionUser(usuariosE pUsuario)
         {
             return _usuarioDAL.AutentificarUsuario(pUsuario);
         }
+
         //METODO PARA MODIFICAR USUARIO
         public int UpdateUsuarios(usuariosE pUsuario, ref string oerro)
         {
