@@ -64,7 +64,7 @@
 
             <Label  Content="MODIFICAR DE EMPRESA " Margin="0,0,48,8" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Bottom"/>
         </Grid>
-        <GroupBox Header="REGISTRO DE UNA NUEVA EMPRESA" Margin="369,150,139,0" VerticalAlignment="Top" Height="362" FontWeight="Bold">
+        <GroupBox Header="MODIFICAR UNA EMPRESA" Margin="369,150,139,0" VerticalAlignment="Top" Height="362" FontWeight="Bold">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
