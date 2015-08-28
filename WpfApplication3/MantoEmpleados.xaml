@@ -523,8 +523,8 @@
                                         <!--OTROS CONTROLES-->
                                         <TextBlock HorizontalAlignment="Left" Margin="40,20 ,0,0" TextWrapping="Wrap" Text="Fecha de contratacion" VerticalAlignment="Top" Height="22" Cursor="ScrollS"/>
                                         <TextBlock HorizontalAlignment="Left" Margin="393,20,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="15"><Run  Text="Disponible"/></TextBlock>
-                                        <TextBox x:Name="txt_NombreEmpresaLab1" HorizontalAlignment="Left" Height="22" Margin="213,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" />
-                                        <TextBox x:Name="txt_CargoDespeLab1" HorizontalAlignment="Left" Height="23" Margin="496,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
+                                        <TextBox x:Name="txt_fechaDeContratacion" HorizontalAlignment="Left" Height="22" Margin="213,16,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" />
+                                        <TextBox x:Name="txt_EstadoEmpleado" HorizontalAlignment="Left" Height="23" Margin="496,16,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="143"/>
                                         <GroupBox Header="Proyectos Asignados" Margin="61,54,66,189" HorizontalAlignment="Center" Width="670">
                                             <Grid Margin="0,10,-2,-8">
 
