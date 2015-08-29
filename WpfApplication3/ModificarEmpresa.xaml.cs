@@ -97,5 +97,35 @@ namespace WpfApplication3
             }
            
         }
+
+        private void UsuariosLabel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+
+        }
+
+        private void labelPaises_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void btn_regresarUsuario(object sender, RoutedEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
     }
 }

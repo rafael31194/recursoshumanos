@@ -3,8 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="ModificarUsuario" Height="768" Width="1024" Loaded="Window_Loaded">
     <Grid>
-        <GroupBox Header="MODIFICAR USUARIO"  Margin="331,151,169,0" VerticalAlignment="Top" Height="277" FontWeight="Bold">
-            <Grid>
+        <GroupBox Header="MODIFICAR USUARIO"  Margin="271,153,86,0" VerticalAlignment="Top" Height="349" FontWeight="Bold">
+            <Grid Margin="0,0,-115,-39">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="97*"/>
                     <ColumnDefinition Width="29*"/>
@@ -17,10 +17,16 @@
                 <TextBlock HorizontalAlignment="Left" Margin="84,151,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
                 <ComboBox x:Name="cb_update_tipoRol" HorizontalAlignment="Left" Margin="204,141,0,0" VerticalAlignment="Top" Width="142" />
 
-                <Button x:Name="btn_UPDATE_Usuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="43"  Margin="300,192,0,0" Grid.ColumnSpan="2" Click="btn_UPDATE_Usuario_Click" >
+                <Button x:Name="btn_UPDATE_Usuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="43"  Margin="398,226,0,0" Click="btn_UPDATE_Usuario_Click" >
                     <DockPanel Height="31" >
                         <Image Source="Imagenes/update.png" Width="27" RenderTransformOrigin="1.524,0.629"  />
                         <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,2,5,-3" FontSize="15" FontWeight="Bold"><Run Text="ACTUALIZAR"/></TextBlock>
+                    </DockPanel>
+                </Button>
+                <Button x:Name="btn_Regresar_Usuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="43"  Margin="53,226,0,0" Click="btn_regresarUsuario" >
+                    <DockPanel Height="31" >
+
+                        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,2,5,-3" FontSize="15" FontWeight="Bold"><Run Text="Regresar"/></TextBlock>
                     </DockPanel>
                 </Button>
                 <TextBlock HorizontalAlignment="Left" Margin="94,93,0,0" TextWrapping="Wrap" Text="Nombre usuario" VerticalAlignment="Top"/>
@@ -67,8 +73,8 @@
                         </BulletDecorator>
                     </Expander.Header>
                     <WrapPanel>
-                        <Label Name="MenusCandidato" Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusCandidato_MouseDown" />
-                        <Label x:Name="MenusEmpreado" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusEmpreado_MouseDown"/>
+                        <Label Name="MenusCandidato" Margin="20,5,5,5" Foreground="Black" Content="Candidatos          " HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusCandidato_MouseDown" />
+                        <Label x:Name="MenusEmpreado" Margin="20,5,5,5" Foreground="Black" Content="Empleados         " HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusEmpreado_MouseDown"/>
                     </WrapPanel>
                 </Expander>
                 <Expander Background="#CC119EDA" Margin="0,76,0,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">

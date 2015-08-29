@@ -53,8 +53,8 @@
                             </BulletDecorator>
                         </Expander.Header>
                         <WrapPanel>
-                            <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="Label_MouseDown_1"/>
-                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado" MouseDown="lab_menuCreacionPerf_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Margin="20,5,5,5" Foreground="Black" Content="Candidatos                     " HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="Label_MouseDown_1"/>
+                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Empleados         " MouseDown="lab_menuCreacionPerf_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                         </WrapPanel>
                     </Expander>
                     <Expander Background="#CC119EDA" Margin="0,76,0,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
@@ -66,9 +66,9 @@
                         <WrapPanel >
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                            <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" MouseDown="Label_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <Label Margin="20,5,5,5" Foreground="Black" Content="Empresa" Name="menu_MantoEmpresa" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="menu_MantoEmpresa_MouseDown" Width="116"/>
-                            <Label x:Name="lab_menuCreacionPerf1" Margin="20,5,5,5" Foreground="Black" Content="Pais" MouseDown="lab_menuCreacionPerf_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" MouseDown="UsuariosLabel_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label Margin="20,5,5,5" Foreground="Black" Content="Empresas" Name="menu_MantoEmpresa" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="menu_MantoEmpresa_MouseDown" Width="116"/>
+                            <Label x:Name="lab_menuCreacionPerf1" Margin="20,5,5,5" Foreground="Black" Content="Paises" MouseDown="labelPaises_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>

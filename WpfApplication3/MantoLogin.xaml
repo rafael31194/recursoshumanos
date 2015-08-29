@@ -41,8 +41,8 @@
                             </BulletDecorator>
                         </Expander.Header>
                         <WrapPanel>
-                            <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" MouseDown="Label_MouseDown"/>
-                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado " MouseDown="lab_menuCreacionPerf_MouseDown"/>
+                            <Label Margin="20,5,5,5" Foreground="Black" Content="Candidatos         " MouseDown="LabelCandidatos_MouseDown"/>
+                            <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Empleados     " MouseDown="LabelEmpleados_MouseDown"/>
                         </WrapPanel>
                     </Expander>
                     <Expander Background="#CC119EDA" Margin="0,76,0,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
@@ -68,7 +68,7 @@
 
                             <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                            <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" MouseDown="Label_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" MouseDown="LabelUsuarios_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                             <Label Margin="20,5,5,5" Foreground="Black" Content="Empresa" x:Name="menu_MantoEmpresa" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="menu_MantoEmpresa_MouseDown" Width="116"/>
                             <Label x:Name="lab_menuCreacionPerf1" Margin="20,5,5,5" Foreground="Black" Content="Pais" MouseDown="lab_menuCreacionPerf_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 

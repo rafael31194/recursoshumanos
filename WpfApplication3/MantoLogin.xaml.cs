@@ -45,20 +45,11 @@ namespace WpfApplication3
             _nu.ShowDialog();
         }
 
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
+      
 
         private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
-            _busEmple.InitializeComponent();
-            this.Close();
-            _busEmple.Show();
+           
         }
 
 
@@ -206,5 +197,31 @@ namespace WpfApplication3
             _menuEmpresa.ShowDialog();
 
         }
+
+        private void LabelEmpleados_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
+        }
+
+        private void LabelCandidatos_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void LabelUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        
     }
 }

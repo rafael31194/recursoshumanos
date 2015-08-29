@@ -69,7 +69,7 @@
             </Grid>
             <Border
         	Grid.Column="0" Margin="10,539,-12,0"  Height="116" VerticalAlignment="Top" />
-            <GroupBox Header="CREAR NUEVO USUARIO" Margin="369,151,149,0" VerticalAlignment="Top" Height="362" FontWeight="Bold">
+            <GroupBox Header="CREAR NUEVO USUARIO" Margin="345,151,46,0" VerticalAlignment="Top" Height="388" FontWeight="Bold">
                 <Grid>
                     <TextBlock HorizontalAlignment="Left" Margin="62,30,0,0" TextWrapping="Wrap" Text="Usuario" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Margin="50,30,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red"/>
@@ -82,7 +82,7 @@
                     <TextBlock HorizontalAlignment="Left" Margin="52,205,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
                     <ComboBox Name="cb_tipoRol" HorizontalAlignment="Left" Margin="172,195,0,0" VerticalAlignment="Top" Width="142" SelectionChanged="cb_tipoRol_SelectionChanged"></ComboBox>
 
-                    <Button x:Name="btn_guardarNuevoUsuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="32"  Margin="300,256,0,0" Click="btn_guardarNuevoUsuario_Click">
+                    <Button x:Name="btn_guardarNuevoUsuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="166" Height="32"  Margin="363,277,0,0" Click="btn_guardarNuevoUsuario_Click">
                         <DockPanel Height="22" Width="156">
                             <Image Source="Imagenes/Save_Icon.png" Width="32" />
                             <TextBlock Height="23"  Width="80" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="GUARDAR"/></TextBlock>
@@ -90,6 +90,12 @@
                     </Button>
                     <TextBlock HorizontalAlignment="Left" Margin="62,147,0,0" TextWrapping="Wrap" Text="Nombre usuario" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Margin="50,147,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
+                    <Button x:Name="btn_Regresar_Usuario"  VerticalAlignment="Top" Width="166" Height="32" Margin="29,277,428,0" Click="btn_regresarUsuario" >
+                        <DockPanel Height="31" >
+
+                            <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,0,5,3" FontSize="15" FontWeight="Bold" Height="28"><Run Text="Regresar"/></TextBlock>
+                        </DockPanel>
+                    </Button>
 
                 </Grid>
             </GroupBox>

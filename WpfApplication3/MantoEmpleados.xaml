@@ -659,7 +659,7 @@
 
                     <StackPanel
                 Orientation="Horizontal" Margin="0,741,0,0"/>
-                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="0,150,0,0" Grid.Row="0" Grid.ColumnSpan="1" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="Red" Background="Gray" HorizontalAlignment="Left" Width="195" Height="231" VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged" >
+                    <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="0,150,0,0" Grid.Row="0" Grid.ColumnSpan="1" OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionBrushKey}}" BorderBrush="Red" Background="Gray" HorizontalAlignment="Left" Width="195" Height="459" VerticalAlignment="Top" SelectionChanged="ListBox_SelectionChanged" >
                         <!--<ListBox.Resources>
                             <Style TargetType="{x:Type Expander}">
                                 <Setter Property="IsExpanded"
@@ -690,8 +690,8 @@
                                 </BulletDecorator>
                             </Expander.Header>
                             <WrapPanel>
-                                <Label x:Name="buscarPerfil" Margin="20,5,5,5" Foreground="Black" Content="Buscar Pefil" MouseDown="buscarPerfil_MouseDown" />
-                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado" MouseDown="Label_MouseDown_1" />
+                                <Label x:Name="buscarPerfil" Margin="20,5,5,5" Foreground="Black" Content="Candidatos          " MouseDown="buscarPerfil_MouseDown" />
+                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Empleados       " MouseDown="Label_MouseDown_1" />
                             </WrapPanel>
                         </Expander>
                         <Expander Background="#CC119EDA" Margin="0,76,-5,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
@@ -703,17 +703,27 @@
                             <WrapPanel >
                                 <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
-                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
-                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
 
                                 <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
 
                                 <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->

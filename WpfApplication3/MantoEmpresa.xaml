@@ -38,8 +38,8 @@
                         </BulletDecorator>
                     </Expander.Header>
                     <WrapPanel>
-                        <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" MouseDown="Label_MouseDown"/>
-                        <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado " MouseDown="lab_menuCreacionPerf_MouseDown"/>
+                        <Label Margin="20,5,5,5" Foreground="Black" Content="Candidatos       " MouseDown="LabelCandidatos_MouseDown"/>
+                        <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Empleados       " MouseDown="lab_menuCreacionPerf_MouseDown"/>
                     </WrapPanel>
                 </Expander>
                 <Expander Background="#CC119EDA" Margin="0,76,0,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
@@ -89,7 +89,7 @@
                 <TextBlock Height="24"  Width="63" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="BUSCAR"/></TextBlock>
             </DockPanel>
         </Button>
-        <Button x:Name="btn_nuevaEmpresas" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="229,164,0,0" VerticalAlignment="Top" Width="257" Height="40" MouseDown="btn_nuevaEmpresas_MouseDown" >
+        <Button x:Name="btn_nuevaEmpresas" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="229,164,0,0" VerticalAlignment="Top" Width="257" Height="40" MouseDown="btn_nuevaEmpresas_MouseDown" Click="btn_nuevaEmpresas_MouseClick">
             <Border BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="15">
                 <DockPanel>
                     <Image Source="Imagenes/New_candidato.png" Width="35" RenderTransformOrigin="0.506,-0.758" />

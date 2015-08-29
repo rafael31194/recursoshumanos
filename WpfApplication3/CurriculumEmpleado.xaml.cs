@@ -35,7 +35,7 @@ namespace WpfApplication3
 
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsempleado);
 
-            ReportViewerCurriculumEmp.LocalReport.ReportEmbeddedResource = "WpfApplication3.ReportViewerCurriculumEmp.rdlc";
+            ReportViewerCurriculumEmp.LocalReport.ReportEmbeddedResource = "WpfApplication3.ReporteEmpleado.rdlc";
             
             ReportViewerCurriculumEmp.RefreshReport();
 

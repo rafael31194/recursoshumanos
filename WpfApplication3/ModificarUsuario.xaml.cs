@@ -147,5 +147,13 @@ namespace WpfApplication3
             this.Close();
             _menusBusqueda.Show();
         }
+
+        private void btn_regresarUsuario(object sender, RoutedEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
     }
 }

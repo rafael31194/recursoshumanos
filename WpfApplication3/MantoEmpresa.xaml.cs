@@ -118,7 +118,10 @@ namespace WpfApplication3
 
         private void btn_nuevaEmpresas_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            NuevaEmpresa nuEmpre = new NuevaEmpresa();
+            nuEmpre.InitializeComponent();
+            this.Close();
+            nuEmpre.Show();
         }
 
         private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
@@ -145,6 +148,22 @@ namespace WpfApplication3
             this.Close();
             _busEmple.Show();
 
+        }
+
+        private void LabelCandidatos_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }
+
+        private void btn_nuevaEmpresas_MouseClick(object sender, RoutedEventArgs e)
+        {
+            NuevaEmpresa nuEmpre = new NuevaEmpresa();
+            nuEmpre.InitializeComponent();
+            this.Close();
+            nuEmpre.Show();
         }
 
     }

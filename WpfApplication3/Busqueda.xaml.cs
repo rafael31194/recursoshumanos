@@ -291,6 +291,21 @@ namespace WpfApplication3
             _menusBusqueda.InitializeComponent();
             this.Close();
             _menusBusqueda.Show();
+        }
+
+        private void UsuariosLabel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login MantoUsuarios = new Login();
+            MantoUsuarios.InitializeComponent();
+            MantoUsuarios.Show();
+            this.Close();
+
+
+        }
+
+        private void labelPaises_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+                
         }       
 
     }

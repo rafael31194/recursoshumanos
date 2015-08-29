@@ -293,7 +293,7 @@
             <Setter.Value>
                 <ControlTemplate x:Name="tmpltButton">
                     <Grid>
-                        <Border x:Name="BaseRectangle" 
+                        <!--<Border x:Name="BaseRectangle" 
                                     Background="{StaticResource BaseColor}" 
                                     CornerRadius="10,0,10,0">
                         </Border>
@@ -305,7 +305,7 @@
                                     Background="{StaticResource GlowFX}" 
                                     CornerRadius="10,0,10,0" 
                                     Opacity="0">
-                        </Border>
+                        </Border>-->
                         <Border x:Name="ButtonBorder" 
                                     CornerRadius="10,0,10,0" 
                                     BorderBrush="Black" 
@@ -341,13 +341,13 @@
                             </EventTrigger.Actions>
                         </EventTrigger>
                         <Trigger Property="Button.IsPressed" Value="True">
-                            <Setter Property="Background" TargetName="GlowRectangle" Value="{StaticResource GlowFXPressed}"></Setter>
+                            <!--<Setter Property="Background" TargetName="GlowRectangle" Value="{StaticResource GlowFXPressed}"></Setter>-->
                             <Setter Property="Opacity" TargetName="ButtonContent" Value="1"></Setter>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter Property="Opacity" TargetName="ButtonContent" Value=".3"></Setter>
                             <Setter Property="Opacity" TargetName="ButtonBorder" Value=".5"></Setter>
-                            <Setter Property="Background" TargetName="GlassRectangle" Value="{StaticResource GlassFXDisabled}"></Setter>
+                            <!--<Setter Property="Background" TargetName="GlassRectangle" Value="{StaticResource GlassFXDisabled}"></Setter>-->
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

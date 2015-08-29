@@ -107,6 +107,10 @@ namespace WpfApplication3
 
         private void lab_menuEmpleados_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
 
         }
 
@@ -117,7 +121,10 @@ namespace WpfApplication3
 
         private void lab_menuCandidatos_MouseDown(object sender, MouseButtonEventArgs e)
         {
-
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
         }
 
         private void Window_Loaded_empleados(object sender, RoutedEventArgs e)
@@ -145,6 +152,32 @@ namespace WpfApplication3
         private void txtBusquedaEmpleado_KeyDown(object sender, KeyEventArgs e)
         {
             BusuqedaEmpleado();
+        }
+
+        private void UsuariosLabel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void paisesLabel_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+
+        private void labelPaises_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
         }
     }
 }
