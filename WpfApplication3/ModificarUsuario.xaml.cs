@@ -104,15 +104,17 @@ namespace WpfApplication3
 
         }
 
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+       
+
+        private void MenusCandidato_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
             this.Close();
-            _bw.ShowDialog();
+            _menusBusqueda.Show();
         }
 
-        private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
+        private void MenusEmpreado_MouseDown(object sender, MouseButtonEventArgs e)
         {
             BusquedaEmpleados _busEmple = new BusquedaEmpleados();
             _busEmple.InitializeComponent();
@@ -121,12 +123,29 @@ namespace WpfApplication3
 
         }
 
-        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
+        private void menusUsuario_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Login _lo = new Login();
-            _lo.InitializeComponent();
+            Login _mt = new Login();
+            _mt.InitializeComponent();
             this.Close();
-            _lo.ShowDialog();
+            _mt.ShowDialog();
+        }
+
+        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+
+        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
         }
     }
 }

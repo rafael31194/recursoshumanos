@@ -79,6 +79,9 @@
     <Compile Include="Curriculum.xaml.cs">
       <DependentUpon>Curriculum.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CurriculumEmpleado.xaml.cs">
+      <DependentUpon>CurriculumEmpleado.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetCertifi.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +143,11 @@
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="RecursosHumanosDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </Compile>
     <Page Include="Busqueda.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -149,6 +157,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Curriculum.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CurriculumEmpleado.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -243,6 +255,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportCurriculum.rdlc" />
+    <EmbeddedResource Include="ReporteEmpleado.rdlc" />
     <None Include="app.manifest" />
     <None Include="DataSets\DataSetCertifi.xsc">
       <DependentUpon>DataSetCertifi.xsd</DependentUpon>
@@ -316,6 +329,17 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="RecursosHumanosDataSet.xsc">
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet.xss">
+      <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </None>
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>
   <ItemGroup>

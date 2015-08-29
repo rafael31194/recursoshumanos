@@ -116,5 +116,36 @@ namespace WpfApplication3
             }
         }
 
+        private void btn_nuevaEmpresas_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void lab_menuCreacionPerf_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
+
+        }
+
     }
 }

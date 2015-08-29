@@ -1310,7 +1310,7 @@ namespace WpfApplication3
                 _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
                 //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
                 _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
+                _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                 _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
 
@@ -1366,6 +1366,22 @@ namespace WpfApplication3
         private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
         
+        }
+
+        private void txt_UsuarioMenus_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
         }
        
       

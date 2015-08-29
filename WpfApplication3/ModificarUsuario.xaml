@@ -28,10 +28,15 @@
 
             </Grid>
         </GroupBox>
-        <Grid Grid.Row="0"
-        	Grid.Column="0"  Margin="0,0,802,88">
+        <Grid Grid.Row="0" Margin="229,32,-10,0" Height="96" VerticalAlignment="Top" >
 
-            <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,150,0,0" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" HorizontalAlignment="Left" Width="203"  VerticalAlignment="Top" >
+            <Label  Content="MODIFICAR USUARIOS" Margin="51,0,0,10" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Left" Width="698" Height="51" VerticalAlignment="Bottom"/>
+        </Grid>
+        <Grid x:Name="GridMenuBusqueda"  Grid.Row="0" Width="203" Height="510"
+        	Grid.Column="0" Margin="0,9,0,0" VerticalAlignment="Top" MaxWidth="203" MaxHeight="510" HorizontalAlignment="Left">
+
+
+            <ListBox ScrollViewer.VerticalScrollBarVisibility="Auto"  Grid.Column="0" Grid.RowSpan="1" Margin="-2,134,0,16" Grid.Row="0" Grid.ColumnSpan="1"  Background="Gray" VerticalContentAlignment="Top" HorizontalAlignment="Left" Width="203" HorizontalContentAlignment="Stretch" >
                 <!--<ListBox.Resources>
                     <Style TargetType="{x:Type Expander}">
                         <Setter Property="IsExpanded"
@@ -54,38 +59,53 @@
                         </Setter>
                     </Style>
                 </ListBox.ItemContainerStyle>
-                <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="201">
+                <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="201" >
                     <Expander.Header>
-                        <BulletDecorator Width="133" Height="36">
+                        <BulletDecorator  Height="48">
 
-                            <TextBlock Margin="10,0,-15,-8" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="138" Height="44" FontWeight="Bold" FontSize="15" ><Run Language="es-sv" Text="Perfiles"/><LineBreak/><Run Language="es-sv" Text="Profesionales"/></TextBlock>
+                            <TextBlock Margin="0,10,-4,0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="153" Height="44" FontWeight="Bold" FontSize="15" MaxWidth="153" MaxHeight="44" ><Run Language="es-sv" Text="Mantenimiento"/><LineBreak/><Run Language="es-sv" Text="Perfiles"/></TextBlock>
                         </BulletDecorator>
                     </Expander.Header>
                     <WrapPanel>
-                        <Label Margin="20,5,5,5" Foreground="Black" Content="Buscar Candiato" Width="88" MouseDown="Label_MouseDown" />
-                        <Label x:Name="lab_menuCreacionPerf" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleados" Width="88" MouseDown="lab_menuCreacionPerf_MouseDown"/>
+                        <Label Name="MenusCandidato" Margin="20,5,5,5" Foreground="Black" Content="Buscar Perfil" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusCandidato_MouseDown" />
+                        <Label x:Name="MenusEmpreado" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="MenusEmpreado_MouseDown"/>
                     </WrapPanel>
                 </Expander>
-                <Expander Background="#CC119EDA" Margin="0,76,0,-81" HorizontalAlignment="Left" Width="203">
+                <Expander Background="#CC119EDA" Margin="0,76,0,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
                     <Expander.Header>
                         <BulletDecorator Height="48">
-                            <TextBlock Margin="10,10,0,0" Text="Configuraciones" VerticalAlignment="Top" HorizontalAlignment="Center" Foreground="White" FontSize="14" Height="38" FontWeight="Bold" Width="142" />
+                            <TextBlock x:Name="btnConfiguracion" Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
                         </BulletDecorator>
                     </Expander.Header>
-                    <WrapPanel Height="115">
+                    <WrapPanel >
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
 
-                        <Label Margin="35,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88" MouseDown="Label_MouseDown_1" />
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+                        <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                        <Label x:Name="menusUsuario" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" HorizontalAlignment="Left" VerticalAlignment="Center" MouseDown="menusUsuario_MouseDown"/>
+                        <Label Margin="20,5,5,5" Foreground="Black" Content="Empresa" x:Name="MenusEmpresa" HorizontalAlignment="Left" VerticalAlignment="Center"  Width="116" MouseDown="MenusEmpresa_MouseDown"/>
+                        <Label x:Name="MenusPais" Margin="20,5,5,5" Foreground="Black" Content="Pais" HorizontalAlignment="Left" VerticalAlignment="Center"/>
 
                     </WrapPanel>
                 </Expander>
 
             </ListBox>
-            <Image x:Name="CerrarSesion" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Height="50" Margin="49,73,49,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
-        </Grid>
-        <Grid Grid.Row="0" Margin="229,32,-10,0" Height="96" VerticalAlignment="Top" >
 
-            <Label  Content="MODIFICAR USUARIOS" Margin="51,0,0,10" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Left" Width="698" Height="51" VerticalAlignment="Bottom"/>
         </Grid>
+        <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,40,0,663"  RenderTransformOrigin="0.51,0.718" Width="52" MaxWidth="50" MaxHeight="35" HorizontalAlignment="Left" />
+        <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,599" Width="189" HorizontalAlignment="Left" MouseDown="Image_MouseDown_1" MaxHeight="71" MaxWidth="200"/>
 
     </Grid>
 </Window>

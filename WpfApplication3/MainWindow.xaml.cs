@@ -49,7 +49,7 @@ namespace WpfApplication3
         RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
 
 
-       
+
 
         public MainWindow()
         {
@@ -111,8 +111,8 @@ namespace WpfApplication3
             {
                 //***Esta linea de codigo es para que en el formulario en la parte superiro se vea que usuario esta en el sistema***///
                 Title = Title + " Usuario: " + UserLogin.Nombre + "ROL: " + UserLogin.RolID + " " + UserLogin.NRol;
-                
-                
+
+
                 //DATASET  PARA LLENAR LOS COMBOBOX 
                 DataSet ds = new DataSet();
                 ds = _DeptoBL.SelectdepSelectAll();
@@ -205,7 +205,7 @@ namespace WpfApplication3
 
         }
 
-       
+
         //OTRAS VALIDACIONES SOLO LESTRAS SOLO NUMEROS EN LOS EVENTOS
         private void txtNombreInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -219,7 +219,7 @@ namespace WpfApplication3
             else e.Handled = true;
         }
 
-      
+
         private void txtProfesioInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
@@ -234,7 +234,7 @@ namespace WpfApplication3
 
         }
 
-       
+
 
         private void txtNacionalidadInfBasica_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -642,165 +642,165 @@ namespace WpfApplication3
 
 
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
-          
+
             int returVariable3 = 0;
             int variable1 = 2;
             int variable2 = 0;
-            if(variable1 != returVariable3 && variable2 !=returVariable3)
-            {}
-            else if(variable1 != returVariable3 || variable2 !=returVariable3){}
+            if (variable1 != returVariable3 && variable2 != returVariable3)
+            { }
+            else if (variable1 != returVariable3 || variable2 != returVariable3) { }
             string cadenaFaltanDatos = "";
-            
-                ///////////////////////////////***FIN DEL IF*** //////////////////////////////
-                //VALIDA LOS CAMPOS OBLIGATORIOS DEL TAB 1
-                if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
-                    (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) ||
-                    (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text))
-                    )
+
+            ///////////////////////////////***FIN DEL IF*** //////////////////////////////
+            //VALIDA LOS CAMPOS OBLIGATORIOS DEL TAB 1
+            if (string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
+                (string.IsNullOrEmpty(cbMunic.Text)) || (string.IsNullOrEmpty(cb_profesionesIB.Text)) || (string.IsNullOrEmpty(cbSitLab.Text)) || (string.IsNullOrEmpty(txtTeNocelularInfBasica.Text)) ||
+                (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text))
+                )
+            {
+                MessageBox.Show("Este fomulario tiene campos obligatorios '*' ", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                //SE VALIDAN QUE LOS DEMAS GRID CONTENGAN DATOS, SE RECOMIENDA AGREGAR AQUELLOS GRID QUE CONSIDEREN SEAN NECESARIOS.
+                if (DataG_Habilidades.Items.Count == 0 || DataGrid_InfAcademica.Items.Count == 0)
                 {
-                    MessageBox.Show("Este fomulario tiene campos obligatorios '*' ", "Informacion", MessageBoxButton.OK, MessageBoxImage.Error);
+                    cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
+                    MessageBox.Show("Ingrese informacion acdemica y habilidades ya que son formularios requeridos", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+
                 }
                 else
                 {
-                    //SE VALIDAN QUE LOS DEMAS GRID CONTENGAN DATOS, SE RECOMIENDA AGREGAR AQUELLOS GRID QUE CONSIDEREN SEAN NECESARIOS.
-                    if (DataG_Habilidades.Items.Count == 0 || DataGrid_InfAcademica.Items.Count == 0)
+                    //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
+                    InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+                    DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+                    _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+                    _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+                    _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+                    _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+                    //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+                    _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+                    _InfoBasicaE.correo = txtCorreoInfBasica.Text;
+                    _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+                    _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+
+                    if (rbsexoM.IsChecked == true)
                     {
-                        cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
-                        MessageBox.Show("Ingrese informacion acdemica y habilidades ya que son formularios requeridos", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                    
+                        _InfoBasicaE.id_genero = 1;
                     }
+                    else if (rbsexoF.IsChecked == true)
+                    {
+                        _InfoBasicaE.id_genero = 2;
+                    }
+
+                    _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+                    _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+                    _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+                    _InfoBasicaE.ISSS = txtNiss.Text;
+                    _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+                    _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+                    string oerro = "";
+
+                    int returinfobasica = 0;
+                    returinfobasica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
+
+                    // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
+
+                    InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
+                    int returinfoacademica = 0;
+                    foreach (DataRowView row in DataGrid_InfAcademica.Items)
+                    {
+                        refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
+                        refinfoAcademica.titulo = Convert.ToString(row[2]);
+                        refinfoAcademica.institucion = Convert.ToString(row[3]);
+                        refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
+                        refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
+
+                        returinfoacademica = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerro);
+                    }
+
+                    //BOTON PARA GUARDAR INFORMACION LABORAL
+
+
+                    ExpLaboralE refExpL = new ExpLaboralE();
+                    int returinfoLaboral = 0;
+                    foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
+                    {
+                        refExpL.nombreEmpresa = Convert.ToString(row1[0]);
+                        refExpL.cargoDesp = Convert.ToString(row1[1]);
+                        refExpL.descripPuesto = Convert.ToString(row1[2]);
+                        refExpL.fechaInicio = Convert.ToString(row1[3]);
+                        refExpL.fechaFin = Convert.ToString(row1[4]);
+
+                        returinfoLaboral = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerro);
+
+                    }
+
+                    // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
+
+                    HabCandidatoE refHabCandidato = new HabCandidatoE();
+                    int returnHabilidades = 0;
+                    foreach (DataRowView row3 in DataG_Habilidades.Items)
+                    {
+
+
+                        refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row3[0]);
+                        refHabCandidato.id_nivel = Convert.ToInt32(row3[2]);
+                        refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row3[4]);
+
+                        returnHabilidades = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerro);
+
+                    }
+
+                    //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
+
+                    CertificacionesE certifi = new CertificacionesE();
+                    int returnCertificaciones = 0;
+
+                    foreach (DataRowView row2 in DataGrid_Certificaciones.Items)
+                    {
+                        certifi.nombre = Convert.ToString(row2[0]);
+                        certifi.institucion = Convert.ToString(row2[1]);
+                        certifi.anio = Convert.ToInt16(row2[2]);
+
+                        returnCertificaciones = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerro);
+
+                    }
+
+                    //BOTON PARA INGRESAR REFERENCIAS A
+                    RefecenciasE refE = new RefecenciasE();
+                    int returReferencias = 0;
+                    foreach (DataRowView row5 in DataGrid_Referencias.Items)
+                    {
+                        refE.id_tipoReferencias = Convert.ToInt32(row5[0]);
+                        refE.nombre = Convert.ToString(row5[2]);
+                        refE.telefono = Convert.ToString(row5[3]);
+                        refE.descripcion = Convert.ToString(row5[4]);
+
+                        returReferencias = _referenciasBL.GuardarReferencias(refE, ref oerro);
+
+
+
+                    }
+                    if (oerro == "")
+                    {
+                        MessageBoxResult mbr = MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+                        if (mbr == MessageBoxResult.OK)
+                        {
+                            LoginInicio _Li = new LoginInicio();
+                            _Li.InitializeComponent();
+                            this.Close();
+                            _Li.ShowDialog();
+                        }
+                    }
+
                     else
                     {
-                        //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
-                        InfoBasicaE _InfoBasicaE = new InfoBasicaE();
-                        DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
-                        _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
-                        _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
-                        _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
-                        _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
-                        //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
-                        _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                        _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
-                        _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
-                        _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+                        MessageBoxResult mbr = MessageBox.Show("OCURRIO UN ERROR AL GUARDAR SUS DATOS... ERROR: " + oerro, "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
 
-                        if (rbsexoM.IsChecked == true)
-                        {
-                            _InfoBasicaE.id_genero = 1;
-                        }
-                        else if (rbsexoF.IsChecked == true)
-                        {
-                            _InfoBasicaE.id_genero = 2;
-                        }
-
-                        _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
-                        _InfoBasicaE.NIT = txtNnitInfBasica.Text;
-                        _InfoBasicaE.AFP = txtNafpInfBasica.Text;
-                        _InfoBasicaE.ISSS = txtNiss.Text;
-                        _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
-                        _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
-                        string oerro = "";
-
-                        int returinfobasica = 0;
-                        returinfobasica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
-
-                        // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
-
-                        InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
-                        int returinfoacademica = 0;
-                        foreach (DataRowView row in DataGrid_InfAcademica.Items)
-                        {
-                            refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
-                            refinfoAcademica.titulo = Convert.ToString(row[2]);
-                            refinfoAcademica.institucion = Convert.ToString(row[3]);
-                            refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
-                            refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
-
-                            returinfoacademica = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerro);
-                        }
-
-                        //BOTON PARA GUARDAR INFORMACION LABORAL
-
-
-                        ExpLaboralE refExpL = new ExpLaboralE();
-                        int returinfoLaboral = 0;
-                        foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
-                        {
-                            refExpL.nombreEmpresa = Convert.ToString(row1[0]);
-                            refExpL.cargoDesp = Convert.ToString(row1[1]);
-                            refExpL.descripPuesto = Convert.ToString(row1[2]);
-                            refExpL.fechaInicio = Convert.ToString(row1[3]);
-                            refExpL.fechaFin = Convert.ToString(row1[4]);
-
-                            returinfoLaboral = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerro);
-
-                        }
-
-                        // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
-
-                        HabCandidatoE refHabCandidato = new HabCandidatoE();
-                        int returnHabilidades = 0;
-                        foreach (DataRowView row3 in DataG_Habilidades.Items)
-                        {
-
-
-                            refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row3[0]);
-                            refHabCandidato.id_nivel = Convert.ToInt32(row3[2]);
-                            refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row3[4]);
-
-                            returnHabilidades = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerro);
-
-                        }
-
-                        //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
-
-                        CertificacionesE certifi = new CertificacionesE();
-                        int returnCertificaciones = 0;
-
-                        foreach (DataRowView row2 in DataGrid_Certificaciones.Items)
-                        {
-                            certifi.nombre = Convert.ToString(row2[0]);
-                            certifi.institucion = Convert.ToString(row2[1]);
-                            certifi.anio = Convert.ToInt16(row2[2]);
-
-                            returnCertificaciones = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerro);
-
-                        }
-
-                        //BOTON PARA INGRESAR REFERENCIAS A
-                        RefecenciasE refE = new RefecenciasE();
-                        int returReferencias = 0;
-                        foreach (DataRowView row5 in DataGrid_Referencias.Items)
-                        {
-                            refE.id_tipoReferencias = Convert.ToInt32(row5[0]);
-                            refE.nombre = Convert.ToString(row5[2]);
-                            refE.telefono = Convert.ToString(row5[3]);
-                            refE.descripcion = Convert.ToString(row5[4]);
-
-                            returReferencias = _referenciasBL.GuardarReferencias(refE, ref oerro);
-
-                           
-                           
-                        }
-                        if (oerro == "")
-                        {
-                            MessageBoxResult mbr = MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                            if (mbr == MessageBoxResult.OK)
-                            {
-                                LoginInicio _Li = new LoginInicio();
-                                _Li.InitializeComponent();
-                                this.Close();
-                                _Li.ShowDialog();
-                            }
-                        }
-
-                        else
-                        {
-                            MessageBoxResult mbr = MessageBox.Show("OCURRIO UN ERROR AL GUARDAR SUS DATOS... ERROR: " + oerro, "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                        }
                     }
                 }
+            }
         }
 
         private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
@@ -828,9 +828,9 @@ namespace WpfApplication3
 
         private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
         { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
-                int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-                if (ascci >= 48 && ascci <= 57) e.Handled = false;
-                else e.Handled = true;
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
         }
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
@@ -860,16 +860,16 @@ namespace WpfApplication3
         }
         //*******Elimina la fila de un registro en la grid sin afecta la base*****///
         private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
-             {
-                 DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-                 MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro " , "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                 if (result == MessageBoxResult.Yes)
-                 {
-                     dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
-                 }
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+            }
 
-                       
-             }
+
+        }
         //*******Elimina la fila de un registro en la grid sin afecta la base*****///
         private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
         {
@@ -902,9 +902,48 @@ namespace WpfApplication3
             }
         }
 
+        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
         }
-      
+
+        private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }
+
+        private void menuEmpleado_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
+
+        }
+
+        private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+
+        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+
     }
+
+}
 
 
 

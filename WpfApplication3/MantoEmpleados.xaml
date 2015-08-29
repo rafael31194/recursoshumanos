@@ -690,20 +690,37 @@
                                 </BulletDecorator>
                             </Expander.Header>
                             <WrapPanel>
-                                <Label x:Name="buscarPerfil" Margin="20,5,5,5" Foreground="Black" Content="Buscar pefil" MouseDown="buscarPerfil_MouseDown" />
-                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Nuevo Perfil" MouseDown="Label_MouseDown_1" />
+                                <Label x:Name="buscarPerfil" Margin="20,5,5,5" Foreground="Black" Content="Buscar Pefil" MouseDown="buscarPerfil_MouseDown" />
+                                <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Buscar Empleado" MouseDown="Label_MouseDown_1" />
                             </WrapPanel>
                         </Expander>
-                        <Expander Background="#CC119EDA" Margin="0,76,0,-54" HorizontalAlignment="Left" Width="190">
+                        <Expander Background="#CC119EDA" Margin="0,76,-5,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
                             <Expander.Header>
                                 <BulletDecorator Height="48">
-                                    <TextBlock Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142"  />
+                                    <TextBlock x:Name="btnConfiguracion" Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
                                 </BulletDecorator>
                             </Expander.Header>
-                            <WrapPanel Height="44">
-                                <Label Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="88" MouseDown="Label_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                            <WrapPanel >
                                 <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
                     <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+
+                                <!--<Label Margin="20,5,5,5" Foreground="white" Content="Consultar Remitos"/>
+                    <Label Margin="20,5,5,5" Foreground="white" Content="Remitos Pendientes de Facturar"/>-->
+                                <Label x:Name="txt_UsuarioMenus" Margin="20,5,5,5" Foreground="Black" Content="Usuarios" RenderTransformOrigin="0.824,0.348" Width="86" MouseDown="Label_MouseDown" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <Label Margin="20,5,5,5" Foreground="Black" Content="Empresa" x:Name="menu_MantoEmpresa" HorizontalAlignment="Left" VerticalAlignment="Center" Width="116" MouseDown="menu_MantoEmpresa_MouseDown"/>
+                                <Label x:Name="lab_menuCreacionPerf1" Margin="20,5,5,5" Foreground="Black" Content="Pais"  HorizontalAlignment="Left" VerticalAlignment="Center"/>
+
                             </WrapPanel>
                         </Expander>
 

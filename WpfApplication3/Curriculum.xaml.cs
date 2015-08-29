@@ -43,8 +43,7 @@ namespace WpfApplication3
             DataTable dtHabil = datosHabilidades(idCandidato);
             DataTable dtCerti = datosCertificaciones(idCandidato);
             DataTable dtRefe = datosRefe(idCandidato);
-            
-            
+
 
             ReportDataSource dsInfoAcade = new ReportDataSource("DataSetCurriculum", dtAcademicos);
             ReportDataSource dsExpeLab = new ReportDataSource("DataSetExpeLab", dtExpe);

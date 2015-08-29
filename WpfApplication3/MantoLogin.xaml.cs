@@ -197,5 +197,14 @@ namespace WpfApplication3
             this.Close();
             _lo.ShowDialog();
         }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+
+        }
     }
 }

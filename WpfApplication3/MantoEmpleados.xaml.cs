@@ -143,10 +143,12 @@ namespace WpfApplication3
 
         private void lab_buscarPerfil_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
             this.Close();
-            _bw.ShowDialog();
+            _busEmple.Show();
+
+
         }
 
         public void setearCampos(string idCandi, int idEmpleado, DataRow datos, List<DataRow> candiInfoAca, List<DataRow> candiInfoExpe, List<DataRow> candiHabili, List<DataRow> candiCeriti, List<DataRow> candiRefe)
@@ -1654,6 +1656,14 @@ namespace WpfApplication3
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
         }
 
        

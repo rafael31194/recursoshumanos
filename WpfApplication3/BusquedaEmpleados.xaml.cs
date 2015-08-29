@@ -90,7 +90,12 @@ namespace WpfApplication3
 
         private void Button_ClickVerEmpleado(object sender, RoutedEventArgs e)
         {
+            DataRowView dr = (DataRowView)data_gridBusquedaEmpleado.SelectedItem;
 
+            CurriculumEmpleado curri = new CurriculumEmpleado ();
+
+            this.Close();
+            curri.Show();
         }
         
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)

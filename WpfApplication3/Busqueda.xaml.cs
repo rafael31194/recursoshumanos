@@ -276,5 +276,22 @@ namespace WpfApplication3
             curri.Show();
         }
 
+       
+        private void menu_MantoEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+
+        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }       
+
     }
 }
