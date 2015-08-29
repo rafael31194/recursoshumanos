@@ -73,6 +73,8 @@ namespace WpfApplication3
 
                     MantoEmpleados _mt = new MantoEmpleados();
 
+                    _mt.txt_fechaDeContratacion.Text = dr[4].ToString();
+                    _mt.txt_EstadoEmpleado.Text = dr[5].ToString();
                     Busqueda bus = new Busqueda();
                     bus.recuperarMostrarDatosCandidato(id.ToString(),idEmpleado, ds, _mt);
                     //recuperarMostrarDatosCandidato(id.ToString(), ds, _mt);
