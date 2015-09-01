@@ -5,12 +5,14 @@
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         
-                       Title="Curriculum" Height="768" Width="1024" WindowState="Maximized" Loaded="MetroWindow_Loaded">
+                       Title="CurriculumEmpleado" Height="768" Width="1024" WindowState="Maximized" Loaded="MetroWindow_Loaded">
     <Controls:MetroContentControl>
+
         <Grid Background="#FFFAFDFD" Margin="0,0,0,10">
-            <WindowsFormsHost HorizontalAlignment="Center" Height="630" Margin="120,60,120,0" VerticalAlignment="Top" Width="752" >
+            <WindowsFormsHost Height="630" Margin="132,60,132,0"   Width="752" >
                 <rv:ReportViewer x:Name="ReportViewerCurriculumEmp"/>
             </WindowsFormsHost>
+
             <Button Name="btn_regresar" Content="Button" HorizontalAlignment="Left" Margin="931,23,0,0" VerticalAlignment="Top" Width="75"/>
         </Grid>
     </Controls:MetroContentControl>

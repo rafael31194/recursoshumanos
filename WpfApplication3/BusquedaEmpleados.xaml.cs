@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using WpfApplication3.Class;
 using HelpDesk.RecursosHumanos.DAL;
 using HelpDesk.RecursosHumanos.BEL;
+using Microsoft.Reporting.WinForms;
 
 namespace WpfApplication3
 {
@@ -28,6 +29,7 @@ namespace WpfApplication3
 
         EmpleadosBLL pEmpleadoBLL = new EmpleadosBLL();
         InfoBasicaBLL infoBl = new InfoBasicaBLL();
+
         public BusquedaEmpleados()
         {
             
@@ -94,10 +96,12 @@ namespace WpfApplication3
         {
             DataRowView dr = (DataRowView)data_gridBusquedaEmpleado.SelectedItem;
 
-            CurriculumEmpleado curri = new CurriculumEmpleado ();
+            CurriculumEmpleado curri = new CurriculumEmpleado (Int32.Parse(dr[0].ToString()));
 
             this.Close();
             curri.Show();
+
+
         }
         
         private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)

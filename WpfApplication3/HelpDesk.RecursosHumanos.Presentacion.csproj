@@ -87,15 +87,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetCertifi.xsd</DependentUpon>
     </Compile>
-    <Compile Include="DataSets\DataSetCurriculum.cs">
-      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="DataSets\DataSetCurriculum.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
-    </Compile>
     <Compile Include="DataSets\DataSetExpeLab.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -147,6 +138,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RecursosHumanosDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
     </Compile>
     <Page Include="Busqueda.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -268,17 +264,6 @@
     <None Include="DataSets\DataSetCertifi.xss">
       <DependentUpon>DataSetCertifi.xsd</DependentUpon>
     </None>
-    <None Include="DataSets\DataSetCurriculum.xsc">
-      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
-    </None>
-    <None Include="DataSets\DataSetCurriculum.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetCurriculum.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSets\DataSetCurriculum.xss">
-      <DependentUpon>DataSetCurriculum.xsd</DependentUpon>
-    </None>
     <None Include="DataSets\DataSetExpeLab.xsc">
       <DependentUpon>DataSetExpeLab.xsd</DependentUpon>
     </None>
@@ -339,6 +324,17 @@
     </None>
     <None Include="RecursosHumanosDataSet.xss">
       <DependentUpon>RecursosHumanosDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xsc">
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RecursosHumanosDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RecursosHumanosDataSet1.xss">
+      <DependentUpon>RecursosHumanosDataSet1.xsd</DependentUpon>
     </None>
     <Resource Include="Resources\Entypo.ttf" />
   </ItemGroup>

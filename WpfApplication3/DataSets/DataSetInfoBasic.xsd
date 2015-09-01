@@ -3,7 +3,9 @@
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-        <Connections />
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="RecursosHumanosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="RecursosHumanosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WpfApplication3.Properties.Settings.GlobalReference.Default.RecursosHumanosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
         <Tables />
         <Sources />
       </DataSource>
@@ -12,7 +14,7 @@
   <xs:element name="DataSetInfoBasic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetInfoBasic" msprop:Generator_UserDSName="DataSetInfoBasic">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="InformacionBasica" msprop:Generator_TableClassName="InformacionBasicaDataTable" msprop:Generator_TableVarName="tableInformacionBasica" msprop:Generator_TablePropName="InformacionBasica" msprop:Generator_RowDeletingName="InformacionBasicaRowDeleting" msprop:Generator_RowChangingName="InformacionBasicaRowChanging" msprop:Generator_RowEvHandlerName="InformacionBasicaRowChangeEventHandler" msprop:Generator_RowDeletedName="InformacionBasicaRowDeleted" msprop:Generator_UserTableName="InformacionBasica" msprop:Generator_RowChangedName="InformacionBasicaRowChanged" msprop:Generator_RowEvArgName="InformacionBasicaRowChangeEvent" msprop:Generator_RowClassName="InformacionBasicaRow">
+        <xs:element name="InformacionBasica" msprop:Generator_TableClassName="InformacionBasicaDataTable" msprop:Generator_TableVarName="tableInformacionBasica" msprop:Generator_RowChangedName="InformacionBasicaRowChanged" msprop:Generator_TablePropName="InformacionBasica" msprop:Generator_RowDeletingName="InformacionBasicaRowDeleting" msprop:Generator_RowChangingName="InformacionBasicaRowChanging" msprop:Generator_RowEvHandlerName="InformacionBasicaRowChangeEventHandler" msprop:Generator_RowDeletedName="InformacionBasicaRowDeleted" msprop:Generator_RowClassName="InformacionBasicaRow" msprop:Generator_UserTableName="InformacionBasica" msprop:Generator_RowEvArgName="InformacionBasicaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="situacionProfesional" msprop:Generator_ColumnVarNameInTable="columnsituacionProfesional" msprop:Generator_ColumnPropNameInRow="situacionProfesional" msprop:Generator_ColumnPropNameInTable="situacionProfesionalColumn" msprop:Generator_UserColumnName="situacionProfesional" type="xs:string" minOccurs="0" />
