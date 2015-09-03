@@ -16,6 +16,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfApplication3.Utilerias;
+
 
 namespace WpfApplication3
 {
@@ -51,6 +53,8 @@ namespace WpfApplication3
         EstadoProyectoBLL _estdoProyecto = new EstadoProyectoBLL();
         ProyectoBLL _proyectoBL = new ProyectoBLL();
 
+        static Imagenes _Imagen = new Imagenes();    
+
 
         //***************TABLAS DE INFORMACION DEL CANDIDATO*****************
 
@@ -61,9 +65,7 @@ namespace WpfApplication3
         DataTable tablaHabilidades = new DataTable();
         DataTable tablaProyectos = new DataTable();
 
-
-
-
+ 
         //**************Pivotes tables for tabs
 
         DataRow RowPivotInfoAca = null;
@@ -179,6 +181,9 @@ namespace WpfApplication3
             txtNiss.Text = datos.ItemArray[14].ToString();
             idSituProfe = datos.ItemArray[15].ToString();
 
+            _Imagen.OnlyName = datos.ItemArray[18].ToString();
+            _Imagen.Psexo = datos.ItemArray[3].ToString();
+            imgFotoMantenimiento.Source = ControlImagen.ObtenerImagenEnObjetoUri(_Imagen);
 
             //Seteando Info Academica Tab*******************************
 
@@ -1571,7 +1576,7 @@ namespace WpfApplication3
                 _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
                 _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-
+                _InfoBasicaE.FotoCandidato = _Imagen.OnlyName; 
                 if (rbsexoM.IsChecked == true)
                 {
                     _InfoBasicaE.id_genero = 1;
@@ -1664,6 +1669,16 @@ namespace WpfApplication3
             _menuEmpresa.InitializeComponent();
             this.Close();
             _menuEmpresa.ShowDialog();
+        }
+
+        private void btnCargarImagenModificar_Click(object sender, RoutedEventArgs e)
+        {
+            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
+            if (_Imagen.ImagenEnObjeto !=null)
+            {
+                imgFotoMantenimiento.Source = _Imagen.ImagenEnObjeto;
+                lbimagenMantenimiento.Content = _Imagen.RutaImagen;
+            }
         }
 
        

@@ -435,8 +435,10 @@
   <ItemGroup>
     <Resource Include="Imagenes\pie de Pagina Helpdesk.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Imagenes\Fotos\" />
+    <Resource Include="Imagenes\Fotos\User_default\Userman.png" />
+    <Resource Include="Imagenes\Fotos\User_default\userwoman.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

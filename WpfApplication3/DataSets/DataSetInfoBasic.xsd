@@ -14,7 +14,7 @@
   <xs:element name="DataSetInfoBasic" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetInfoBasic" msprop:Generator_UserDSName="DataSetInfoBasic">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="InformacionBasica" msprop:Generator_TableClassName="InformacionBasicaDataTable" msprop:Generator_TableVarName="tableInformacionBasica" msprop:Generator_RowChangedName="InformacionBasicaRowChanged" msprop:Generator_TablePropName="InformacionBasica" msprop:Generator_RowDeletingName="InformacionBasicaRowDeleting" msprop:Generator_RowChangingName="InformacionBasicaRowChanging" msprop:Generator_RowEvHandlerName="InformacionBasicaRowChangeEventHandler" msprop:Generator_RowDeletedName="InformacionBasicaRowDeleted" msprop:Generator_RowClassName="InformacionBasicaRow" msprop:Generator_UserTableName="InformacionBasica" msprop:Generator_RowEvArgName="InformacionBasicaRowChangeEvent">
+        <xs:element name="InformacionBasica" msprop:Generator_TableClassName="InformacionBasicaDataTable" msprop:Generator_TableVarName="tableInformacionBasica" msprop:Generator_TablePropName="InformacionBasica" msprop:Generator_RowDeletingName="InformacionBasicaRowDeleting" msprop:Generator_RowChangingName="InformacionBasicaRowChanging" msprop:Generator_RowEvHandlerName="InformacionBasicaRowChangeEventHandler" msprop:Generator_RowDeletedName="InformacionBasicaRowDeleted" msprop:Generator_UserTableName="InformacionBasica" msprop:Generator_RowChangedName="InformacionBasicaRowChanged" msprop:Generator_RowEvArgName="InformacionBasicaRowChangeEvent" msprop:Generator_RowClassName="InformacionBasicaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="situacionProfesional" msprop:Generator_ColumnVarNameInTable="columnsituacionProfesional" msprop:Generator_ColumnPropNameInRow="situacionProfesional" msprop:Generator_ColumnPropNameInTable="situacionProfesionalColumn" msprop:Generator_UserColumnName="situacionProfesional" type="xs:string" minOccurs="0" />
@@ -32,7 +32,7 @@
               <xs:element name="NIT" msprop:Generator_ColumnVarNameInTable="columnNIT" msprop:Generator_ColumnPropNameInRow="NIT" msprop:Generator_ColumnPropNameInTable="NITColumn" msprop:Generator_UserColumnName="NIT" type="xs:string" minOccurs="0" />
               <xs:element name="AFP" msprop:Generator_ColumnVarNameInTable="columnAFP" msprop:Generator_ColumnPropNameInRow="AFP" msprop:Generator_ColumnPropNameInTable="AFPColumn" msprop:Generator_UserColumnName="AFP" type="xs:string" minOccurs="0" />
               <xs:element name="ISSS" msprop:Generator_ColumnVarNameInTable="columnISSS" msprop:Generator_ColumnPropNameInRow="ISSS" msprop:Generator_ColumnPropNameInTable="ISSSColumn" msprop:Generator_UserColumnName="ISSS" type="xs:string" minOccurs="0" />
-              <xs:element name="Foto" msprop:Generator_ColumnVarNameInTable="columnFoto" msprop:Generator_ColumnPropNameInRow="Foto" msprop:Generator_ColumnPropNameInTable="FotoColumn" msprop:Generator_UserColumnName="Foto" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="Foto" msprop:Generator_ColumnVarNameInTable="columnFoto" msprop:Generator_ColumnPropNameInRow="Foto" msprop:Generator_ColumnPropNameInTable="FotoColumn" msprop:Generator_UserColumnName="Foto" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

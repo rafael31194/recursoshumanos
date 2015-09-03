@@ -70,18 +70,21 @@
 
                                             <!--TEXTBLOCK DE INFORMACION BASICA-->
 
-                                            <GroupBox Header="NO. DE DOCUMENTOS PERSONALES" Margin="450,203,0,0" VerticalAlignment="Top" Height="226" HorizontalAlignment="Left" Width="327">
+                                            <GroupBox Header="NO. DE DOCUMENTOS PERSONALES" Margin="450,178,0,-1" VerticalAlignment="Top" Height="309" HorizontalAlignment="Left" Width="327">
                                                 <Grid>
 
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="No.DUI" VerticalAlignment="Top" FontSize="13"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top" FontSize="13"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top" FontSize="13"/>
-                                                    <TextBlock HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,7,0,0" TextWrapping="Wrap" Text="No.DUI" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,37,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,69,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top" FontSize="13"/>
+                                                    <TextBlock HorizontalAlignment="Left" Margin="10,100,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top" FontSize="13"/>
 
-                                                    <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12"/>
-                                                    <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13"/>
-                                                    <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14"/>
-                                                    <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15"/>
+                                                    <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,7,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12"/>
+                                                    <TextBox Name="txtNnitInfBasica" Height="22" Margin="100,37,65,0" TextWrapping="Wrap" Text="" TabIndex="13" VerticalAlignment="Top"/>
+                                                    <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14"/>
+                                                    <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,100,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15"/>
+                                                    <Image x:Name="imgFotoMantenimiento" HorizontalAlignment="Left" Height="125"  VerticalAlignment="Top" Width="142" Margin="106,134,0,0" Stretch="Fill"/>
+                                                    <Button Content=". . ." x:Name="btnCargarImagenModificar" HorizontalAlignment="Left" BorderBrush="Black" Margin="10,134,0,0" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.511,-1.12" Click="btnCargarImagenModificar_Click"/>
+                                                    <Label Content="" x:Name="lbimagenMantenimiento" HorizontalAlignment="Left" Margin="24,294,0,-28" VerticalAlignment="Top" Width="274"/>
 
                                                 </Grid>
                                             </GroupBox>
@@ -132,7 +135,7 @@
                                                 </Grid>
                                             </GroupBox>
 
-                                            <GroupBox Header="DATOS DE CONTACTO" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Height="186" Width="324">
+                                            <GroupBox Header="DATOS DE CONTACTO" HorizontalAlignment="Left" Margin="450,10,0,0" VerticalAlignment="Top" Height="163" Width="324">
                                                 <Grid>
                                                     <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Telefono casa" VerticalAlignment="Top" FontSize="13"/>
                                                     <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.Celular" VerticalAlignment="Top" FontSize="13"/>
@@ -140,7 +143,7 @@
 
                                                     <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9" FontSize="10"/>
                                                     <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10" FontSize="10"/>
-                                                    <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
+                                                    <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TabIndex="11" FontSize="10"/>
 
                                                 </Grid>
                                             </GroupBox>
@@ -579,7 +582,7 @@
                                                 <DataGridTextColumn Header="COD.PROYECTO" Visibility="Hidden" Binding="{Binding CODIGO PROYECTO}"/>
                                                 <DataGridTextColumn Header="NOMPRE PROYECTO" Visibility="Visible" Binding="{Binding NOMBRE PROYECTO}"/>
                                                 <DataGridTextColumn Header="IDEMPRESA" Visibility="Hidden" Binding="{Binding IDEMPRESA}"/>
-                                                <DataGridTextColumn Header="NOMBRE EMPRESA" Visibility="Visible" Binding="{Binding NOMBRE EMPRESA}"/>                                                
+                                                <DataGridTextColumn Header="NOMBRE EMPRESA" Visibility="Visible" Binding="{Binding NOMBRE EMPRESA}"/>
                                                 <DataGridTextColumn Header="IDPAIS" Visibility="Hidden" Binding="{Binding IDPAIS}"/>
                                                 <DataGridTextColumn Header="PAIS" Visibility="Visible" Binding="{Binding PAIS}"/>
                                                 <DataGridTextColumn Header="FECHA INICIO" Visibility="Visible" Binding="{Binding FECHA INICIO}"/>

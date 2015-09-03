@@ -175,10 +175,9 @@ namespace WpfApplication3
             txtNafpInfBasica.Text = datos.ItemArray[13].ToString();
             txtNiss.Text = datos.ItemArray[14].ToString();
             idSituProfe = datos.ItemArray[15].ToString();
-            byte[] pimage = null;
-            pimage = (byte[])datos.ItemArray[18];
+            _Imagen.OnlyName = datos.ItemArray[18].ToString();
             _Imagen.Psexo = datos.ItemArray[3].ToString();
-            imgFotoModificar.Source = ControlImagen.ObtenerImagenEnObjecto2(pimage);
+            imgFotoModificar.Source = ControlImagen.ObtenerImagenEnObjetoUri(_Imagen);
             lbobtenerrnameImage.Content = datos.ItemArray[18].ToString();
             //Seteando Info Academica Tab*******************************
 
@@ -223,7 +222,7 @@ namespace WpfApplication3
                 }
                 else statusName = "INCOMPLETO";
 
-
+                
 
 
                 tableInfoAcad.Rows.Add(dr.ItemArray[0],idTipoEduca,tipoEduca, dr.ItemArray[1].ToString(), dr.ItemArray[2].ToString(), dr.ItemArray[3].ToString(), statusName, Convert.ToInt32(dr.ItemArray[4].ToString()));
@@ -1315,8 +1314,8 @@ namespace WpfApplication3
                 _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                 _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-                _Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.RutaImagen);
-                _InfoBasicaE.FotoCandidato = _Imagen.ImagenEnBinario;
+                //_Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.OnlyName);
+                _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
                 if (rbsexoM.IsChecked == true)
                 {
                     _InfoBasicaE.id_genero = 1;
@@ -1342,7 +1341,7 @@ namespace WpfApplication3
                 {
                     //_Imagen.Deleteimagen = Convert.ToString(lbobtenerrnameImage.Content);
                     //ControlImagen.EliminarImagenEnRuta(_Imagen);
-                    //ControlImagen.GuardarImagenEnRuta(_Imagen);
+                    ControlImagen.GuardarImagenEnRuta(_Imagen);
                     //
                     returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
                 }

@@ -525,7 +525,7 @@ namespace WpfApplication3.DataSets {
                         string NIT, 
                         string AFP, 
                         string ISSS, 
-                        byte[] Foto) {
+                        string Foto) {
                 InformacionBasicaRow rowInformacionBasicaRow = ((InformacionBasicaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         situacionProfesional,
@@ -617,7 +617,7 @@ namespace WpfApplication3.DataSets {
                 base.Columns.Add(this.columnAFP);
                 this.columnISSS = new global::System.Data.DataColumn("ISSS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnISSS);
-                this.columnFoto = new global::System.Data.DataColumn("Foto", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                this.columnFoto = new global::System.Data.DataColumn("Foto", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFoto);
             }
             
@@ -1005,10 +1005,10 @@ namespace WpfApplication3.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public byte[] Foto {
+            public string Foto {
                 get {
                     try {
-                        return ((byte[])(this[this.tableInformacionBasica.FotoColumn]));
+                        return ((string)(this[this.tableInformacionBasica.FotoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("El valor de la columna \'Foto\' de la tabla \'InformacionBasica\' es DBNull.", e);

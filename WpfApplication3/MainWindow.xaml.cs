@@ -683,8 +683,8 @@ namespace WpfApplication3
                     _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                     _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                     _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-                    _Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.RutaImagen);
-                    _InfoBasicaE.FotoCandidato = _Imagen.ImagenEnBinario;
+                    //_Imagen = ControlImagen.ObtenerImagenEnObjecto(_Imagen.RutaImagen);
+                    _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
                     if (rbsexoM.IsChecked == true)
                     {
                         _InfoBasicaE.id_genero = 1;

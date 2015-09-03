@@ -460,9 +460,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>3.84211cm</Top>
+        <Top>2.57211cm</Top>
         <Left>1.90006cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>2.5cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
@@ -491,9 +491,9 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <Top>3.84211cm</Top>
+        <Top>2.57211cm</Top>
         <Left>6.96546cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>7.47417cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
@@ -538,9 +538,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>4.54794cm</Top>
+        <Top>3.27794cm</Top>
         <Left>1.90006cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>3.21438cm</Width>
         <ZIndex>6</ZIndex>
         <Style>
@@ -569,9 +569,9 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <Top>4.54794cm</Top>
+        <Top>3.27794cm</Top>
         <Left>6.96546cm</Left>
-        <Height>0.63528cm</Height>
+        <Height>0.02646cm</Height>
         <Width>7.47417cm</Width>
         <ZIndex>7</ZIndex>
         <Style>
@@ -602,9 +602,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>5.99488cm</Top>
+        <Top>4.72488cm</Top>
         <Left>1.90006cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>3.21438cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
@@ -634,9 +634,9 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <Top>5.99488cm</Top>
+        <Top>4.72488cm</Top>
         <Left>6.96546cm</Left>
-        <Height>0.63528cm</Height>
+        <Height>0.02646cm</Height>
         <Width>7.47417cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
@@ -667,9 +667,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>6.77127cm</Top>
+        <Top>5.50127cm</Top>
         <Left>1.90006cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>3.21438cm</Width>
         <ZIndex>10</ZIndex>
         <Style>
@@ -699,10 +699,10 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox104</rd:DefaultName>
-        <Top>6.77127cm</Top>
+        <Top>5.50127cm</Top>
         <Left>6.96546cm</Left>
-        <Height>1.42021cm</Height>
-        <Width>10.27875cm</Width>
+        <Height>0.02646cm</Height>
+        <Width>7.47417cm</Width>
         <ZIndex>11</ZIndex>
         <Style>
           <Border>
@@ -992,9 +992,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox95</rd:DefaultName>
-        <Top>5.28905cm</Top>
+        <Top>4.01905cm</Top>
         <Left>1.90006cm</Left>
-        <Height>0.6cm</Height>
+        <Height>0.02646cm</Height>
         <Width>4.56375cm</Width>
         <ZIndex>20</ZIndex>
         <Style>
@@ -1027,9 +1027,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox115</rd:DefaultName>
-        <Top>5.28905cm</Top>
+        <Top>4.01905cm</Top>
         <Left>6.96546cm</Left>
-        <Height>0.63528cm</Height>
+        <Height>0.02646cm</Height>
         <Width>7.47417cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
@@ -2675,14 +2675,14 @@
         </Style>
       </Tablix>
       <Image Name="Image4">
-        <Source>Database</Source>
-        <Value>=First(Fields!Foto.Value, "DataSetInfoBasic")</Value>
+        <Source>External</Source>
+        <Value>="file:///C:\Imagenes\Fotos\"&amp; First(Fields!Foto.Value, "DataSetInfoBasic")</Value>
         <MIMEType>image/jpeg</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>2.78625cm</Top>
-        <Left>16.71849cm</Left>
-        <Height>1.5cm</Height>
-        <Width>1.5cm</Width>
+        <Top>2.75097cm</Top>
+        <Left>15.00793cm</Left>
+        <Height>3.17336cm</Height>
+        <Width>3.55523cm</Width>
         <ZIndex>41</ZIndex>
         <Style>
           <Border>
@@ -2937,7 +2937,7 @@
         </Field>
         <Field Name="Foto">
           <DataField>Foto</DataField>
-          <rd:TypeName>System.Byte[]</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>

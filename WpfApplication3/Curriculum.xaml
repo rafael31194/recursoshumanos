@@ -5,7 +5,7 @@
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
         
-        Title="Curriculum" Height="768" Width="1024" WindowState="Maximized" Loaded="MetroWindow_Loaded">
+        Title="Curriculum" Height="768" Width="1024"  WindowState="Maximized" Loaded="MetroWindow_Loaded" AllowsTransparency="True" WindowStyle="None">
     <Controls:MetroContentControl>
 
         <Grid Background="#FFFAFDFD" Margin="0,0,0,10">
