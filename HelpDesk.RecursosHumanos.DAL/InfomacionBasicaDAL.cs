@@ -90,7 +90,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                 if (!(_conn == null))
                 {
                     try
-                    {
+                    {     
                         SqlCommand Comando = new SqlCommand();
                         Comando.Connection = _conn;
                         Comando.CommandType = System.Data.CommandType.StoredProcedure;
