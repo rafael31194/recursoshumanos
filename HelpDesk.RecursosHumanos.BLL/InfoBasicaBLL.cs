@@ -44,7 +44,6 @@ namespace HelpDesk.RecursosHumanos.BLL
         {
             return _infBasDal.BusquedaInfoBasicaLLenar(valorFiltro, ref oError);
 
-
         }
        
         public int ActualizarInfBasica(InfoBasicaE pinfobasica,int id, ref string oerro)
@@ -59,8 +58,6 @@ namespace HelpDesk.RecursosHumanos.BLL
             {
                 oerro = "Ocurrio un error al ingresar sus los datos. ";
                 throw;
-
-
             }
         }
 

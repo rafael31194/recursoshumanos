@@ -39,7 +39,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     Comando.Parameters.AddWithValue("@idmunicipio", pinfobasica.id_municipio);
                     Comando.Parameters.AddWithValue("@idsituacionprofesional", pinfobasica.id_situacionProfesional);
                     Comando.Parameters.AddWithValue("@id_profesiones", pinfobasica.id_profesiones);
-
+                    Comando.Parameters.AddWithValue("@foto", pinfobasica.FotoCandidato);
                                         
                         resultado = Comando.ExecuteNonQuery();
                 }
@@ -104,13 +104,9 @@ namespace HelpDesk.RecursosHumanos.DAL
                         throw ex;
                     }
 
-                }
-                
-                    
-             
+                }         
             }
         }
-
         public int ActualizarInfBasica(InfoBasicaE pinfobasica, int id, ref string oerro)
         {
             int resultado = 0;
@@ -138,7 +134,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     Comando.Parameters.AddWithValue("@idmunicipio", pinfobasica.id_municipio);
                     Comando.Parameters.AddWithValue("@idsituacionprofesional", pinfobasica.id_situacionProfesional);
                     Comando.Parameters.AddWithValue("@id_profesiones", pinfobasica.id_profesiones);
-
+                    Comando.Parameters.AddWithValue("@foto", pinfobasica.FotoCandidato);
                                         
                         resultado = Comando.ExecuteNonQuery();
                 }
@@ -149,12 +145,11 @@ namespace HelpDesk.RecursosHumanos.DAL
             return resultado;
         }
 
-
         public DataTable selectInfoBasic(int id, ref string oerro){
 
             string query = "SELECT SituacionProfesional.descripcion as situacionProfesional, Profesiones.descripcion AS profesion, Municipio.descripcion AS municipio, Genero.descripcion AS sexo, InformacionBasica.nombre, InformacionBasica.nacionalidad," +
                          " InformacionBasica.telefono_celular, InformacionBasica.telefono_fijo, InformacionBasica.correo, InformacionBasica.fecha_nacimiento, InformacionBasica.direccion, InformacionBasica.DUI, InformacionBasica.NIT, " +
-                         " InformacionBasica.AFP, InformacionBasica.ISSS" +
+                         " InformacionBasica.AFP, InformacionBasica.ISSS, InformacionBasica.Foto" +
                             " FROM            Genero INNER JOIN " +
                                  " InformacionBasica ON Genero.id_genero = InformacionBasica.id_genero INNER JOIN" +
                                  " Municipio ON InformacionBasica.id_municipio = Municipio.id_municipio INNER JOIN" +
@@ -187,8 +182,6 @@ namespace HelpDesk.RecursosHumanos.DAL
                     {
                         //Finally Close the Connection...
                         _conn.Close();
-
-
                     }
                 }
                 else

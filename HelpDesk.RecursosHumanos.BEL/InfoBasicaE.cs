@@ -27,10 +27,11 @@ namespace HelpDesk.RecursosHumanos.BEL
         public string ISSS { get; set; }
         public int id_situacionProfesional { get; set; }
         public int edad { get; set; }
+        public byte[] FotoCandidato { get; set; }
         public InfoBasicaE() { }
         public InfoBasicaE(int pId_candidato, string pNombre, string pNacionalidad, int pId_genero , string pTelefono_celular, string pTelefono_fijo, int pProfesiones,
                     string pCorreo, DateTime pFecha_nacimiento,int pId_municipio ,string pDireccion, string pDUI, string pNIT, string pAFP,
-                    string PISSS,  int pId_situacionProfesional,int PEdad)
+                    string PISSS, int pId_situacionProfesional, int PEdad, byte[] pFotoCandidato)
         {
 
             id_candidato = pId_candidato;
@@ -49,9 +50,8 @@ namespace HelpDesk.RecursosHumanos.BEL
             AFP = pAFP;
             ISSS = PISSS;
             id_situacionProfesional = pId_situacionProfesional;
-            edad = PEdad; 
-        
-
+            edad = PEdad;
+            FotoCandidato = pFotoCandidato;
         }
     }
 }
