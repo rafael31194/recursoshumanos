@@ -309,6 +309,8 @@ namespace WpfApplication3.DataSets {
             
             private global::System.Data.DataColumn columnISSS;
             
+            private global::System.Data.DataColumn columnFoto;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public InformacionBasicaDataTable() {
@@ -464,6 +466,14 @@ namespace WpfApplication3.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FotoColumn {
+                get {
+                    return this.columnFoto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -499,7 +509,23 @@ namespace WpfApplication3.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public InformacionBasicaRow AddInformacionBasicaRow(string situacionProfesional, string profesion, string municipio, string sexo, string nombre, string nacionalidad, string telefono_celular, string telefono_fijo, string correo, string fecha_nacimiento, string direccion, string DUI, string NIT, string AFP, string ISSS) {
+            public InformacionBasicaRow AddInformacionBasicaRow(
+                        string situacionProfesional, 
+                        string profesion, 
+                        string municipio, 
+                        string sexo, 
+                        string nombre, 
+                        string nacionalidad, 
+                        string telefono_celular, 
+                        string telefono_fijo, 
+                        string correo, 
+                        string fecha_nacimiento, 
+                        string direccion, 
+                        string DUI, 
+                        string NIT, 
+                        string AFP, 
+                        string ISSS, 
+                        byte[] Foto) {
                 InformacionBasicaRow rowInformacionBasicaRow = ((InformacionBasicaRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         situacionProfesional,
@@ -516,7 +542,8 @@ namespace WpfApplication3.DataSets {
                         DUI,
                         NIT,
                         AFP,
-                        ISSS};
+                        ISSS,
+                        Foto};
                 rowInformacionBasicaRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowInformacionBasicaRow);
                 return rowInformacionBasicaRow;
@@ -554,6 +581,7 @@ namespace WpfApplication3.DataSets {
                 this.columnNIT = base.Columns["NIT"];
                 this.columnAFP = base.Columns["AFP"];
                 this.columnISSS = base.Columns["ISSS"];
+                this.columnFoto = base.Columns["Foto"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -589,6 +617,8 @@ namespace WpfApplication3.DataSets {
                 base.Columns.Add(this.columnAFP);
                 this.columnISSS = new global::System.Data.DataColumn("ISSS", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnISSS);
+                this.columnFoto = new global::System.Data.DataColumn("Foto", typeof(byte[]), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFoto);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -975,6 +1005,22 @@ namespace WpfApplication3.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public byte[] Foto {
+                get {
+                    try {
+                        return ((byte[])(this[this.tableInformacionBasica.FotoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Foto\' de la tabla \'InformacionBasica\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableInformacionBasica.FotoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public bool IssituacionProfesionalNull() {
                 return this.IsNull(this.tableInformacionBasica.situacionProfesionalColumn);
             }
@@ -1151,6 +1197,18 @@ namespace WpfApplication3.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetISSSNull() {
                 this[this.tableInformacionBasica.ISSSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsFotoNull() {
+                return this.IsNull(this.tableInformacionBasica.FotoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetFotoNull() {
+                this[this.tableInformacionBasica.FotoColumn] = global::System.Convert.DBNull;
             }
         }
         

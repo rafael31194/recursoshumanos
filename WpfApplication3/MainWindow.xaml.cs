@@ -20,7 +20,8 @@ using HelpDesk.RecursosHumanos.DAL;
 using System.Data;
 using System.Data.SqlClient;
 using MahApps.Metro.Controls;
-using WpfApplication3.Class;
+using WpfApplication3.Utilerias;
+
 
 namespace WpfApplication3
 {
@@ -49,7 +50,7 @@ namespace WpfApplication3
         RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
 
 
-
+        static Imagenes _Imagen = new Imagenes();
 
         public MainWindow()
         {
@@ -639,8 +640,7 @@ namespace WpfApplication3
         //***BOTON PARA GUARDAR TODA LA INFORMACION DE UN NUEVO PERFIL***/// 
         private void GuardarTodo_Click(object sender, RoutedEventArgs e)
         {
-
-
+            
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
 
             int returVariable3 = 0;
@@ -683,7 +683,8 @@ namespace WpfApplication3
                     _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                     _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                     _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-
+                    _Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.RutaImagen);
+                    _InfoBasicaE.FotoCandidato = _Imagen.ImagenEnBinario;
                     if (rbsexoM.IsChecked == true)
                     {
                         _InfoBasicaE.id_genero = 1;
@@ -879,7 +880,6 @@ namespace WpfApplication3
             {
                 dt1.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
             }
-
         }
 
         private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
@@ -901,12 +901,10 @@ namespace WpfApplication3
                 dt9.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
             }
         }
-
         private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
         {
 
         }
-
         private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
         {
 
@@ -924,7 +922,6 @@ namespace WpfApplication3
             _busEmple.Show();
 
         }
-
         private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
         {
             Login _mt = new Login();
@@ -932,7 +929,6 @@ namespace WpfApplication3
             this.Close();
             _mt.ShowDialog();
         }
-
         private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
         {
             MantoEmpresa _menuEmpresa = new MantoEmpresa();
@@ -940,7 +936,16 @@ namespace WpfApplication3
             this.Close();
             _menuEmpresa.ShowDialog();
         }
-
+        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
+        {
+             //_Imagen.OnlyName = imgFoto.Source.ToString();
+             _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
+             if (_Imagen.ImagenEnObjeto != null)
+             {
+                 imgFoto.Source = _Imagen.ImagenEnObjeto;
+                 lbimagen.Content = _Imagen.RutaImagen;
+             }
+        }
     }
 
 }

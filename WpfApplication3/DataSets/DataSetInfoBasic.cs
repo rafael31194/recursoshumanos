@@ -2,5 +2,8 @@
     
     
     public partial class DataSetInfoBasic {
+        partial class InformacionBasicaDataTable
+        {
+        }
     }
 }

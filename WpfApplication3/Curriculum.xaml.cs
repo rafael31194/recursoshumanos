@@ -17,7 +17,7 @@ using Microsoft.Reporting.WinForms;
 using MahApps.Metro.Controls;
 using HelpDesk.RecursosHumanos.BEL;
 using System.Collections;
-
+using WpfApplication3.Utilerias;
 
 namespace WpfApplication3
 {
@@ -26,6 +26,7 @@ namespace WpfApplication3
     /// </summary>
     public partial class Curriculum : MetroWindow
     {
+        static Imagenes _Imagen = new Imagenes();
         string oerro = "";
         int idCandidato;
         public Curriculum(int id)
@@ -44,7 +45,6 @@ namespace WpfApplication3
             DataTable dtCerti = datosCertificaciones(idCandidato);
             DataTable dtRefe = datosRefe(idCandidato);
 
-
             ReportDataSource dsInfoAcade = new ReportDataSource("DataSetCurriculum", dtAcademicos);
             ReportDataSource dsExpeLab = new ReportDataSource("DataSetExpeLab", dtExpe);
             ReportDataSource dsInfoBasic = new ReportDataSource("DataSetInfoBasic", dtInfoB);
@@ -57,8 +57,8 @@ namespace WpfApplication3
             ReportViewerCurriculum.LocalReport.DataSources.Add(dsHabi);
             ReportViewerCurriculum.LocalReport.DataSources.Add(dsCerti);
             ReportViewerCurriculum.LocalReport.DataSources.Add(dsRefe);
-
-
+            ReportViewerCurriculum.LocalReport.EnableExternalImages = true;
+           
             ReportViewerCurriculum.LocalReport.ReportEmbeddedResource = "WpfApplication3.ReportCurriculum.rdlc";
 
           
@@ -83,8 +83,6 @@ namespace WpfApplication3
             HabilidadCandidatoBLL habi = new HabilidadCandidatoBLL();
             return habi.selectHabili(idCandidato, ref oerro);
         }
-
-
         
         public DataTable datosAcademicos(int id)
         {
@@ -93,9 +91,7 @@ namespace WpfApplication3
 
 
             try { return info.selectInfoAca(id, ref oerro); }
-            catch { return null; }
-            
-            
+            catch { return null; }          
         }
 
         public DataTable datosExperiencia(int id)
@@ -103,8 +99,7 @@ namespace WpfApplication3
             ExperienciaLaboralBLL expe = new ExperienciaLaboralBLL();
 
             try { return expe.selectExpeLab(id, ref  oerro); }
-            catch { return null; }
-            
+            catch { return null; }           
             
         }
 
@@ -113,10 +108,7 @@ namespace WpfApplication3
 
             InfoBasicaBLL infoBa = new InfoBasicaBLL();
             return infoBa.selectInfBasic(id, ref oerro);
-        }
-
-
-        
+        }       
 
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
@@ -130,7 +122,6 @@ namespace WpfApplication3
         {
 
         }
-
       
     }
 }

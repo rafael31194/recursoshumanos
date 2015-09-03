@@ -66,18 +66,21 @@
 
                                                     <!--TEXTBLOCK DE INFORMACION BASICA-->
 
-                                                    <GroupBox Header="NO. DE DOCUMENTOS PERSONALES" Margin="452,205,0,0" VerticalAlignment="Top" Height="226" HorizontalAlignment="Left" Width="324">
-                                                        <Grid>
+                                                    <GroupBox Header="NO. DE DOCUMENTOS PERSONALES" Margin="452,205,0,0" VerticalAlignment="Top" Height="299" HorizontalAlignment="Left" Width="324">
+                                                        <Grid Margin="0,0,0,-29">
 
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="No.DUI" VerticalAlignment="Top"/>
-                                                            <TextBlock HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top"/>
-                                                            <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top"/>
-                                                            <TextBlock HorizontalAlignment="Left" Margin="10,140,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top"/>
+                                                            <TextBlock HorizontalAlignment="Left" Margin="10,40,0,0" TextWrapping="Wrap" Text="No.NIT" VerticalAlignment="Top"/>
+                                                            <TextBlock HorizontalAlignment="Left" Margin="8,76,0,0" TextWrapping="Wrap" Text="No.AFP" VerticalAlignment="Top"/>
+                                                            <TextBlock HorizontalAlignment="Left" Margin="10,110,0,0" TextWrapping="Wrap" Text="No.ISSS" VerticalAlignment="Top"/>
 
                                                             <TextBox Name="txtNoduiInfBasica" HorizontalAlignment="Left" ToolTip="Ingrese su DUI sin guiones"  controls:TextBoxHelper.Watermark="00000000"  Height="22" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="12" PreviewTextInput="txtNoduiInfBasica_PreviewTextInput" FontSize="10"/>
-                                                            <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13" FontSize="10"/>
-                                                            <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14" FontSize="10"/>
-                                                            <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,140,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15" FontSize="10"/>
+                                                            <TextBox Name="txtNnitInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,40,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="13" FontSize="10"/>
+                                                            <TextBox Name="txtNafpInfBasica" HorizontalAlignment="Left" Height="23" Margin="98,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="14" FontSize="10"/>
+                                                            <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15" FontSize="10"/>
+                                                            <Image x:Name="imgFoto" HorizontalAlignment="Left" Height="125"  VerticalAlignment="Top" Width="142" Margin="106,134,0,0" Stretch="Fill"/>
+                                                            <Button Content=". . ." x:Name="btnCargarImagen" HorizontalAlignment="Left" BorderBrush="Black" Margin="10,134,0,0" VerticalAlignment="Top" Width="44" Click="btnCargarImagen_Click" RenderTransformOrigin="0.511,-1.12"/>
+                                                            <Label Content="" x:Name="lbimagen" HorizontalAlignment="Left" Margin="24,294,0,-28" VerticalAlignment="Top" Width="274"/>
 
                                                         </Grid>
                                                     </GroupBox>
@@ -121,7 +124,7 @@
                                                     </GroupBox>
 
 
-                                                    <GroupBox Header="DATOS PROFESIONALES" HorizontalAlignment="Left" Margin="10,391,0,-8" VerticalAlignment="Top" Height="113" Width="433">
+                                                    <GroupBox Header="DATOS PROFESIONALES" HorizontalAlignment="Left" Margin="14,386,0,0" VerticalAlignment="Top" Height="113" Width="433">
                                                         <Grid Margin="0,0,0,-2">
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Profesion"/></TextBlock>
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,40,0,0" TextWrapping="Wrap" Text="Situacion Laboral" VerticalAlignment="Top" Height="20"/>
@@ -566,7 +569,7 @@
                             </Grid>
                         </Grid>
                         <Grid
-        	Grid.Column="0" Height="62" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="2,650,-4,0" HorizontalAlignment="Left" Width="1018" >
+        	Grid.Column="0" Height="62" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Margin="6,650,-8,0" HorizontalAlignment="Left" Width="1018" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -578,7 +581,7 @@
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Grid.RenderTransform>
-                            <Button Name="GuardarTodo"  Style = "{DynamicResource SquareButtonStyle}"   HorizontalAlignment="Center" Margin="810,10,0,0" VerticalAlignment="Top" Width="131" Click="GuardarTodo_Click" Height="42" Content="GUARDAR TODO"/>
+                            <Button Name="GuardarTodo"  Style = "{DynamicResource SquareButtonStyle}"   HorizontalAlignment="Center" Margin="534,0,353,0" VerticalAlignment="Top" Width="131" Click="GuardarTodo_Click" Height="42" Content="GUARDAR TODO"/>
 
                         </Grid>
 

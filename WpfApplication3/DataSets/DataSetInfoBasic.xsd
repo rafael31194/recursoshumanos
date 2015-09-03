@@ -32,6 +32,7 @@
               <xs:element name="NIT" msprop:Generator_ColumnVarNameInTable="columnNIT" msprop:Generator_ColumnPropNameInRow="NIT" msprop:Generator_ColumnPropNameInTable="NITColumn" msprop:Generator_UserColumnName="NIT" type="xs:string" minOccurs="0" />
               <xs:element name="AFP" msprop:Generator_ColumnVarNameInTable="columnAFP" msprop:Generator_ColumnPropNameInRow="AFP" msprop:Generator_ColumnPropNameInTable="AFPColumn" msprop:Generator_UserColumnName="AFP" type="xs:string" minOccurs="0" />
               <xs:element name="ISSS" msprop:Generator_ColumnVarNameInTable="columnISSS" msprop:Generator_ColumnPropNameInRow="ISSS" msprop:Generator_ColumnPropNameInTable="ISSSColumn" msprop:Generator_UserColumnName="ISSS" type="xs:string" minOccurs="0" />
+              <xs:element name="Foto" msprop:Generator_ColumnVarNameInTable="columnFoto" msprop:Generator_ColumnPropNameInRow="Foto" msprop:Generator_ColumnPropNameInTable="FotoColumn" msprop:Generator_UserColumnName="Foto" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

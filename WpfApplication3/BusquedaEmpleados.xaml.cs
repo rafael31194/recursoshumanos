@@ -14,7 +14,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using WpfApplication3.Class;
+using WpfApplication3.Utilerias;
 using HelpDesk.RecursosHumanos.DAL;
 using HelpDesk.RecursosHumanos.BEL;
 using Microsoft.Reporting.WinForms;

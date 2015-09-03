@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using HelpDesk.RecursosHumanos.BEL;
 using HelpDesk.RecursosHumanos.BLL;
-using WpfApplication3.Class;
+using WpfApplication3.Utilerias;
 
 namespace WpfApplication3
 {

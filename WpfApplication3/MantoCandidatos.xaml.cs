@@ -20,6 +20,7 @@ using HelpDesk.RecursosHumanos.DAL;
 using System.Data;
 using System.Data.SqlClient;
 using MahApps.Metro.Controls;
+using WpfApplication3.Utilerias;
 
 namespace WpfApplication3
 {
@@ -28,6 +29,10 @@ namespace WpfApplication3
     /// </summary>
     public partial class MantoCandidatos : MetroWindow
     {
+        static Imagenes _Imagen = new Imagenes();
+
+        bool pCapturaImagen = false;
+        
         DepartamentosBL _DeptoBL = new DepartamentosBL();
         MunicipioBLL _MunicBL = new MunicipioBLL();
         SituacionProfesionalBLL _SituacionpBL = new SituacionProfesionalBLL();
@@ -170,10 +175,12 @@ namespace WpfApplication3
             txtNafpInfBasica.Text = datos.ItemArray[13].ToString();
             txtNiss.Text = datos.ItemArray[14].ToString();
             idSituProfe = datos.ItemArray[15].ToString();
-
-            
+            byte[] pimage = null;
+            pimage = (byte[])datos.ItemArray[18];
+            _Imagen.Psexo = datos.ItemArray[3].ToString();
+            imgFotoModificar.Source = ControlImagen.ObtenerImagenEnObjecto2(pimage);
+            lbobtenerrnameImage.Content = datos.ItemArray[18].ToString();
             //Seteando Info Academica Tab*******************************
-
 
             tableInfoAcad.Columns.Add("ID InfoAcade", typeof(Int32));
             tableInfoAcad.Columns.Add("IDTipoEduacion cs", typeof(Int32));
@@ -1200,9 +1207,6 @@ namespace WpfApplication3
         {
             
         }
-
-        
-
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
             MessageBoxResult result = MessageBox.Show("¿ESTÁ SEGURO DE ELIMINAR A ESTE CANDIDATO?\n \n Una vez eliminado no se podrá recuperar...\n \n", "MENSAJE DE CONFIRMACION", MessageBoxButton.YesNo, MessageBoxImage.Warning);
@@ -1282,7 +1286,6 @@ namespace WpfApplication3
 
         private void Button_Click_DeleteReferencia(object sender, RoutedEventArgs e)
         {
-
             DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
             MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar la referencia de " + currentRow[3].ToString(), "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
@@ -1293,7 +1296,6 @@ namespace WpfApplication3
                 tablaReference.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
             }
         }
-
         private void btn_ActualizarInfoBasica_Click(object sender, RoutedEventArgs e)
         {
             if (!(string.IsNullOrEmpty(txtNombreInfBasica.Text) || string.IsNullOrEmpty(DateFechNacInfoBasica.Text) || string.IsNullOrEmpty(txtNombreInfBasica.Text) || (string.IsNullOrEmpty(cbDeptos.Text)) ||
@@ -1313,7 +1315,8 @@ namespace WpfApplication3
                 _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                 _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-
+                _Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.RutaImagen);
+                _InfoBasicaE.FotoCandidato = _Imagen.ImagenEnBinario;
                 if (rbsexoM.IsChecked == true)
                 {
                     _InfoBasicaE.id_genero = 1;
@@ -1333,7 +1336,20 @@ namespace WpfApplication3
                 string oerro = "";
 
                 int returinfobasica = 0;
-                returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE,_InfoBasicaE.id_candidato, ref oerro);
+
+                /*proceso de eliminacion de imagen*/
+                if (pCapturaImagen == true)
+                {
+                    //_Imagen.Deleteimagen = Convert.ToString(lbobtenerrnameImage.Content);
+                    //ControlImagen.EliminarImagenEnRuta(_Imagen);
+                    //ControlImagen.GuardarImagenEnRuta(_Imagen);
+                    //
+                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                }
+                else
+                {
+                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                }
                 if (returinfobasica <= 0)
                 {
                     MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
@@ -1383,8 +1399,17 @@ namespace WpfApplication3
             this.Close();
             _menuEmpresa.ShowDialog();
         }
-       
-      
+        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
+        {
+            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);          
+            imgFotoModificar.Source = _Imagen.ImagenEnObjeto;
+            pCapturaImagen = true;            
+        }
+
+        private void imgFotoModificar_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            btnCargarImagen_Click(null, null);
+        }
        
     }
 }

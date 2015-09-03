@@ -15,7 +15,7 @@ using HelpDesk.RecursosHumanos.BLL;
 using System.Data;
 using MahApps.Metro.Controls;
 using System.Collections;
-using WpfApplication3.Class;
+using WpfApplication3.Utilerias;
 
 namespace WpfApplication3
 {

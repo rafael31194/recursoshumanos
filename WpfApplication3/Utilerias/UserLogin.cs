@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WpfApplication3.Class
+namespace WpfApplication3.Utilerias
 {
     public class UserLogin
     {
