@@ -1468,12 +1468,13 @@ namespace WpfApplication3
 
         private void btnEliminar_Click(object sender, RoutedEventArgs e)
         {
-            MessageBoxResult result = MessageBox.Show("¿ESTÁ SEGURO DE ELIMINAR A ESTE CANDIDATO?\n \n Una vez eliminado no se podrá recuperar...\n \n", "MENSAJE DE CONFIRMACION", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            MessageBoxResult result = MessageBox.Show("¿ESTÁ SEGURO DE ELIMINAR A ESTE EMPLEADO?\n \n Una vez eliminado no se podrá recuperar...\n \n", "MENSAJE DE CONFIRMACION", MessageBoxButton.YesNo, MessageBoxImage.Warning);
 
             if (result == MessageBoxResult.Yes)
             {
-                InfomacionBasicaDAL infoEliminar = new InfomacionBasicaDAL();
-                infoEliminar.borrarCandidato(Convert.ToInt16(idCandidato));
+              
+                EmpleadosBLL emple=new EmpleadosBLL();
+                emple.BorrarEmpleado(Convert.ToInt16(idCandidato), Convert.ToInt16(idEmpleado), ref oerro);
                 Busqueda busqueda = new Busqueda();
                 busqueda.InitializeComponent();
                 busqueda.Show();
