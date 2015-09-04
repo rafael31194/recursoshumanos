@@ -92,11 +92,23 @@ namespace WpfApplication3
 
         
 
+        //private void Button_ClickVerEmpleado(object sender, RoutedEventArgs e)
+        //{
+        //    DataRowView dr = (DataRowView)data_gridBusquedaEmpleado.SelectedItem;
+
+        //    CurriculumEmpleado curri = new CurriculumEmpleado (Int32.Parse(dr[0].ToString()));
+
+        //    this.Close();
+        //    curri.Show();
+
+
+        //}
+
         private void Button_ClickVerEmpleado(object sender, RoutedEventArgs e)
         {
             DataRowView dr = (DataRowView)data_gridBusquedaEmpleado.SelectedItem;
 
-            CurriculumEmpleado curri = new CurriculumEmpleado (Int32.Parse(dr[0].ToString()));
+            CurriculumEmpleado curri = new CurriculumEmpleado(Int32.Parse(dr[0].ToString()), Int32.Parse(dr[1].ToString()));
 
             this.Close();
             curri.Show();

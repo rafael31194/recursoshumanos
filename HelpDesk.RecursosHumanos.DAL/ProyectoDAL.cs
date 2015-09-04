@@ -113,5 +113,25 @@ namespace HelpDesk.RecursosHumanos.DAL
                 throw (ex);
             }
         }
+
+        public DataTable SelectProyectoALLDataTable(int id_proyecto)
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+            {
+                SqlConnection oConn = CommonDb.ObtenerConnSql();
+                SqlCommand oCmd = new SqlCommand("SP_select_ProyectosPorEmpleadoReporte", oConn);
+                oCmd.CommandType = CommandType.StoredProcedure;
+                SqlParameter idProyecto = new SqlParameter("@empleado", id_proyecto);
+                oCmd.Parameters.Add(idProyecto);
+                SqlDataAdapter da = new SqlDataAdapter(oCmd);
+                DataTable dsProyecto = new DataTable();
+                da.Fill(dsProyecto);
+                return dsProyecto;
+
+            }
+        }
+
+
     }
+
 }

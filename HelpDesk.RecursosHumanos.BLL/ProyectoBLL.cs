@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HelpDesk.RecursosHumanos.DAL;
+using System.Data;
 
 namespace HelpDesk.RecursosHumanos.BEL
 {
@@ -39,5 +40,18 @@ namespace HelpDesk.RecursosHumanos.BEL
         {
             _proyecto.eliminarProyecto(idProyecDelete,idEmpleado, ref oerro);
         }
+
+
+        public DataTable selectProyectosDataTable(int idEmpleado, ref string oerro)
+        {
+            return _proyecto.SelectProyectoALLDataTable(idEmpleado);
+        }
+
+
+        public DataSet selectProyectos(int idEmpleado, ref string oerro)
+        {
+            return _proyecto.SelectProyectoALL(idEmpleado);
+        }
+
     }
 }
