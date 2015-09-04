@@ -27,10 +27,19 @@ namespace WpfApplication3
     {
         string oerro = "";
         int idCandidato;
+        private int idEmpleado;
         public CurriculumEmpleado(int id)
         {
             InitializeComponent();
             idCandidato = id;
+        }
+
+        public CurriculumEmpleado(int p1, int p2)
+        {
+            // TODO: Complete member initialization
+            InitializeComponent();
+            this.idCandidato = p1;
+            this.idEmpleado = p2;
         }
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
@@ -40,6 +49,7 @@ namespace WpfApplication3
             DataTable dtHabil = datosHabilidades(idCandidato);
             DataTable dtCerti = datosCertificaciones(idCandidato);
             DataTable dtRefe = datosRefe(idCandidato);
+            DataTable dtProyect = datosProyectos(idEmpleado);
 
 
             ReportDataSource dsInfoAcade = new ReportDataSource("DataSetCurriculum", dtAcademicos);
@@ -48,21 +58,34 @@ namespace WpfApplication3
             ReportDataSource dsHabi = new ReportDataSource("DataSetHabili", dtHabil);
             ReportDataSource dsCerti = new ReportDataSource("DataSetCertifi", dtCerti);
             ReportDataSource dsRefe = new ReportDataSource("DataSetRefe", dtRefe);
+            ReportDataSource dsProyectos = new ReportDataSource("DataSetProyectos", dtProyect);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsInfoAcade);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsExpeLab);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsInfoBasic);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsHabi);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsCerti);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsRefe);
+            ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsProyectos);
 
 
             ReportViewerCurriculumEmp.LocalReport.ReportEmbeddedResource = "WpfApplication3.ReporteEmpleado.rdlc";
 
-          
+
 
             ReportViewerCurriculumEmp.RefreshReport();
         }
 
+
+
+        public DataTable datosProyectos(int id)
+        {
+
+            ProyectoBLL proyect = new ProyectoBLL();
+            DataTable dt = proyect.selectProyectosDataTable(id, ref oerro);
+
+            return dt;
+
+        }
         private DataTable datosRefe(int idCandidato)
         {
             ReferenciasBLL refe = new ReferenciasBLL();

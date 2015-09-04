@@ -81,6 +81,11 @@
     <Compile Include="BusquedaEmpleados.xaml.cs">
       <DependentUpon>BusquedaEmpleados.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DataSets\DataSetProyectos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProyectos.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Utilerias\ControlImagen.cs" />
     <Compile Include="Utilerias\Imagenes.cs" />
     <Compile Include="Utilerias\UserLogin.cs" />
@@ -305,6 +310,17 @@
     <None Include="DataSets\DataSetInfoBasic.xss">
       <DependentUpon>DataSetInfoBasic.xsd</DependentUpon>
     </None>
+    <None Include="DataSets\DataSetProyectos.xsc">
+      <DependentUpon>DataSetProyectos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetProyectos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProyectos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetProyectos.xss">
+      <DependentUpon>DataSetProyectos.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\DataSetRefe.xsc">
       <DependentUpon>DataSetRefe.xsd</DependentUpon>
     </None>
@@ -388,12 +404,6 @@
     <Resource Include="Imagenes\New_candidato.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\WindowsIcons-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\Entypo-license.txt" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\Save_Icon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -435,10 +445,15 @@
   <ItemGroup>
     <Resource Include="Imagenes\pie de Pagina Helpdesk.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Resources\WindowsIcons-license.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Imagenes\Fotos\User_default\Userman.png" />
     <Resource Include="Imagenes\Fotos\User_default\userwoman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
