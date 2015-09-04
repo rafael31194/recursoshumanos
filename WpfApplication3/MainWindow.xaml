@@ -80,7 +80,7 @@
                                                             <TextBox Name="txtNiss" HorizontalAlignment="Left" Height="23" Margin="100,103,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="15" FontSize="10"/>
                                                             <Image x:Name="imgFoto" HorizontalAlignment="Left" Height="125"  VerticalAlignment="Top" Width="142" Margin="106,134,0,0" Stretch="Fill"/>
                                                             <Button Content=". . ." x:Name="btnCargarImagen" HorizontalAlignment="Left" BorderBrush="Black" Margin="10,134,0,0" VerticalAlignment="Top" Width="44" Click="btnCargarImagen_Click" RenderTransformOrigin="0.511,-1.12"/>
-                                                            <Label Content="" x:Name="lbimagen" HorizontalAlignment="Left" Margin="24,294,0,-28" VerticalAlignment="Top" Width="274"/>
+                                                            <Label Content="" x:Name="lbimagen" HorizontalAlignment="Left" Margin="24,294,0,-28" Visibility="Hidden" VerticalAlignment="Top" Width="274"/>
 
                                                         </Grid>
                                                     </GroupBox>

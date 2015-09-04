@@ -118,7 +118,7 @@
                                                     <TextBlock HorizontalAlignment="Left" Margin="18,68,0,0" TextWrapping="Wrap" Text="Departamento" VerticalAlignment="Top" FontSize="14"/>
                                                     <TextBlock HorizontalAlignment="Left" Margin="18,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="14"><Run Text="Municipio"/></TextBlock>
                                                     <TextBox Name="txtLugarResidenciaInfBasica" HorizontalAlignment="Left" Height="38" Margin="146,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="265" TabIndex="4" FontSize="11"/>
-                                                    <ComboBox   Name="cbDeptos" Margin="146,68,124,0" VerticalAlignment="Top"  TabIndex="5" FontSize="11"/>
+                                                    <ComboBox   Name="cbDeptos" Margin="146,68,124,0" VerticalAlignment="Top"  TabIndex="5" FontSize="11" SelectionChanged="cbDeptos_SelectionChanged"/>
                                                     <ComboBox   Name="cbMunic" Margin="146,104,124,0" VerticalAlignment="Top" TabIndex="6" FontSize="11"/>
                                                 </Grid>
 
