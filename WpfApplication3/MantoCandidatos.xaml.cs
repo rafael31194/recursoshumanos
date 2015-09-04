@@ -343,9 +343,9 @@ namespace WpfApplication3
             cbDeptos.SelectedValue=id_departamento.ToString(); 
 
             DataSet dsMuni = new DataSet();
-            dsMuni = _MunicBL.SelectmunicipioALL();
+            dsMuni = _MunicBL.SelectmunicipioALL(id_departamento);
 
-
+            //revisar 
             //cbMunic.Items.Clear();
             cbMunic.ItemsSource = dsMuni.Tables[0].DefaultView;
             cbMunic.DisplayMemberPath = dsMuni.Tables[0].Columns[1].ToString();
@@ -1408,6 +1408,20 @@ namespace WpfApplication3
         private void imgFotoModificar_MouseDown(object sender, MouseButtonEventArgs e)
         {
             btnCargarImagen_Click(null, null);
+        }
+
+        private void cbDeptos_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            int id_departamento = Convert.ToInt32(cbDeptos.SelectedValue);
+            DataSet ds = new DataSet();
+            ds = _MunicBL.SelectmunicipioALL(id_departamento);
+
+
+            //cbMunic.Items.Clear();
+            cbMunic.ItemsSource = ds.Tables[0].DefaultView;
+            cbMunic.DisplayMemberPath = ds.Tables[0].Columns[1].ToString();
+            cbMunic.SelectedValuePath = ds.Tables[0].Columns[0].ToString();
+            cbMunic.SelectedIndex = 0;
         }
        
     }
