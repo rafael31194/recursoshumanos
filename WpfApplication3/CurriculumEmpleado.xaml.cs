@@ -66,7 +66,7 @@ namespace WpfApplication3
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsCerti);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsRefe);
             ReportViewerCurriculumEmp.LocalReport.DataSources.Add(dsProyectos);
-
+            ReportViewerCurriculumEmp.LocalReport.EnableExternalImages = true;
 
             ReportViewerCurriculumEmp.LocalReport.ReportEmbeddedResource = "WpfApplication3.ReporteEmpleado.rdlc";
 

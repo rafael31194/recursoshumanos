@@ -404,7 +404,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetExpeLab</DataSetName>
-        <Top>13.4812cm</Top>
+        <Top>10.9412cm</Top>
         <Left>0.97581cm</Left>
         <Height>1.14708cm</Height>
         <Width>17.58735cm</Width>
@@ -435,9 +435,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox77</rd:DefaultName>
         <Top>1.26683cm</Top>
-        <Left>1.39911cm</Left>
+        <Left>0.97584cm</Left>
         <Height>0.57355cm</Height>
-        <Width>17.16408cm</Width>
+        <Width>17.58738cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -529,7 +529,7 @@
         </Style>
       </Textbox>
       <Line Name="Line2">
-        <Top>8.01688cm</Top>
+        <Top>5.79438cm</Top>
         <Left>0.97581cm</Left>
         <Height>0cm</Height>
         <Width>17.58738cm</Width>
@@ -1279,7 +1279,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>8.66938cm</Top>
+        <Top>6.12938cm</Top>
         <Left>0.97578cm</Left>
         <Height>0.52063cm</Height>
         <Width>17.58741cm</Width>
@@ -1697,7 +1697,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCurriculum</DataSetName>
-        <Top>9.7864cm</Top>
+        <Top>7.2464cm</Top>
         <Left>0.97578cm</Left>
         <Height>1.25292cm</Height>
         <Width>17.5874cm</Width>
@@ -1709,7 +1709,7 @@
         </Style>
       </Tablix>
       <Line Name="Line3">
-        <Top>11.79668cm</Top>
+        <Top>9.25668cm</Top>
         <Left>0.97578cm</Left>
         <Height>0cm</Height>
         <Width>17.58741cm</Width>
@@ -1742,7 +1742,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>12.34709cm</Top>
+        <Top>9.80709cm</Top>
         <Left>0.97581cm</Left>
         <Height>0.57354cm</Height>
         <Width>17.58738cm</Width>
@@ -1759,7 +1759,7 @@
         </Style>
       </Textbox>
       <Line Name="Line4">
-        <Top>15.00188cm</Top>
+        <Top>12.46188cm</Top>
         <Left>0.97581cm</Left>
         <Height>0cm</Height>
         <Width>17.58738cm</Width>
@@ -1792,7 +1792,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>15.83959cm</Top>
+        <Top>12.98209cm</Top>
         <Left>0.97581cm</Left>
         <Height>0.57354cm</Height>
         <Width>17.58738cm</Width>
@@ -2050,8 +2050,8 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetCertifi</DataSetName>
-        <Top>17.2212cm</Top>
-        <Left>0.97581cm</Left>
+        <Top>14.0462cm</Top>
+        <Left>0.97584cm</Left>
         <Height>1.2cm</Height>
         <Width>17.58738cm</Width>
         <ZIndex>34</ZIndex>
@@ -2062,7 +2062,7 @@
         </Style>
       </Tablix>
       <Line Name="Line5">
-        <Top>18.94417cm</Top>
+        <Top>15.76917cm</Top>
         <Left>0.97578cm</Left>
         <Height>0cm</Height>
         <Width>17.58741cm</Width>
@@ -2095,7 +2095,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>20.73438cm</Top>
+        <Top>16.28938cm</Top>
         <Left>0.9758cm</Left>
         <Height>0.54708cm</Height>
         <Width>17.58739cm</Width>
@@ -2423,7 +2423,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetRefe</DataSetName>
-        <Top>21.90432cm</Top>
+        <Top>17.45932cm</Top>
         <Left>0.97581cm</Left>
         <Height>1.2cm</Height>
         <Width>17.55989cm</Width>
@@ -2435,7 +2435,7 @@
         </Style>
       </Tablix>
       <Line Name="Line6">
-        <Top>23.71851cm</Top>
+        <Top>19.27351cm</Top>
         <Left>0.94829cm</Left>
         <Height>0cm</Height>
         <Width>17.58741cm</Width>
@@ -2455,9 +2455,8 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Habilidades </Value>
+                <Value>HABILIDADES</Value>
                 <Style>
-                  <FontSize>11pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                   <Color>White</Color>
                 </Style>
@@ -2469,9 +2468,9 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox94</rd:DefaultName>
-        <Top>24.87372cm</Top>
+        <Top>19.79372cm</Top>
         <Left>0.94831cm</Left>
-        <Height>0.75875cm</Height>
+        <Height>0.57354cm</Height>
         <Width>17.58739cm</Width>
         <ZIndex>39</ZIndex>
         <Style>
@@ -2511,11 +2510,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>habilidad Tecnica</Value>
-                              <Style />
+                              <Value>Habilidad Tecnica</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox24</rd:DefaultName>
@@ -2524,6 +2527,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2541,11 +2545,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>nivel</Value>
-                              <Style />
+                              <Value>Nivel</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox26</rd:DefaultName>
@@ -2554,6 +2562,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2571,11 +2580,15 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>habilidad Aplicacion</Value>
-                              <Style />
+                              <Value>Habilidad Aplicacion</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox28</rd:DefaultName>
@@ -2584,6 +2597,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -2610,7 +2624,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>habilidadTecnica</rd:DefaultName>
@@ -2640,7 +2656,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>nivel</rd:DefaultName>
@@ -2670,7 +2688,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>habilidadAplicacion</rd:DefaultName>
@@ -2709,7 +2729,7 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSetHabili</DataSetName>
-        <Top>26.1225cm</Top>
+        <Top>21.0425cm</Top>
         <Left>0.94829cm</Left>
         <Height>1.2cm</Height>
         <Width>17.58741cm</Width>
@@ -2725,10 +2745,10 @@
         <Value>="file:///C:\Imagenes\Fotos\"&amp; First(Fields!Foto.Value, "DataSetInfoBasic")</Value>
         <MIMEType>image/jpeg</MIMEType>
         <Sizing>FitProportional</Sizing>
-        <Top>2.75097cm</Top>
-        <Left>15.00793cm</Left>
-        <Height>3.73947cm</Height>
-        <Width>3.55523cm</Width>
+        <Top>2.57211cm</Top>
+        <Left>15.84836cm</Left>
+        <Height>2.94572cm</Height>
+        <Width>2.68734cm</Width>
         <ZIndex>41</ZIndex>
         <Style>
           <Border>
@@ -2737,7 +2757,7 @@
         </Style>
       </Image>
     </ReportItems>
-    <Height>11.33577in</Height>
+    <Height>8.86702in</Height>
     <Style />
   </Body>
   <Width>7.74342in</Width>
@@ -2752,8 +2772,9 @@
           <Value>encabezadoHelpdesk</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.40569cm</Top>
+          <Left>0.94829cm</Left>
           <Height>1.8937cm</Height>
-          <Width>19.48404cm</Width>
+          <Width>17.61493cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -2767,20 +2788,6 @@
         </Border>
       </Style>
     </PageHeader>
-    <PageFooter>
-      <Height>2.54cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-        <BackgroundImage>
-          <Source>Embedded</Source>
-          <Value>piedePaginaHelpdesk</Value>
-        </BackgroundImage>
-      </Style>
-    </PageFooter>
     <PageHeight>27.94cm</PageHeight>
     <PageWidth>21.59cm</PageWidth>
     <LeftMargin>1cm</LeftMargin>

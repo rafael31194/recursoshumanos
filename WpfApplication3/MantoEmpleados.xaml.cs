@@ -1574,7 +1574,7 @@ namespace WpfApplication3
                 _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
                 //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
                 _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                _InfoBasicaE.correo = txtCorreoInfBasica.Text.ToUpper();
+                _InfoBasicaE.correo = txtCorreoInfBasica.Text;
                 _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
                 _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
                 _InfoBasicaE.FotoCandidato = _Imagen.OnlyName; 

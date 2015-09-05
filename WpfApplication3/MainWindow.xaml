@@ -124,7 +124,7 @@
                                                     </GroupBox>
 
 
-                                                    <GroupBox Header="DATOS PROFESIONALES" HorizontalAlignment="Left" Margin="14,386,0,0" VerticalAlignment="Top" Height="113" Width="433">
+                                                    <GroupBox Header="DATOS PROFESIONALES" HorizontalAlignment="Left" Margin="10,390,0,0" VerticalAlignment="Top" Height="113" Width="433">
                                                         <Grid Margin="0,0,0,-2">
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,6,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Profesion"/></TextBlock>
                                                             <TextBlock HorizontalAlignment="Left" Margin="20,40,0,0" TextWrapping="Wrap" Text="Situacion Laboral" VerticalAlignment="Top" Height="20"/>
@@ -142,7 +142,7 @@
 
                                                             <TextBox Name="txtTelefonoCasaInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="9" PreviewTextInput="txtTelefonoCasaInfBasica_PreviewTextInput" MaxHeight="23" FontSize="10"/>
                                                             <TextBox Name="txtTeNocelularInfBasica" HorizontalAlignment="Left" Height="23" Margin="100,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TabIndex="10" FontSize="10" />
-                                                            <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
+                                                            <TextBox Name="txtCorreoInfBasica" HorizontalAlignment="Left" Height="22" Margin="100,83,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="202" TabIndex="11" FontSize="10"/>
                                                             <TextBox Name="txtUsurioSkype" HorizontalAlignment="Left" Height="25" Margin="100,116,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" TabIndex="11" FontSize="10"/>
                                                             <TextBlock HorizontalAlignment="Left" Margin="10,120,0,0" TextWrapping="Wrap" Text="Usuario Skype" VerticalAlignment="Top"/>
 
@@ -190,17 +190,17 @@
 
                                                 </Grid>
                                                 <StackPanel Margin="0,0,392,398" Orientation="Vertical" Grid.ColumnSpan="2"/>
-                                                <GroupBox Header="Nivel Educativo Alcanzado" Margin="60,25,119,0" VerticalAlignment="Top" Height="256" Grid.Column="1">
+                                                <GroupBox Header="Nivel Educativo Alcanzado" Margin="60,25,119,0" VerticalAlignment="Top" Height="277" Grid.Column="1">
                                                     <Grid>
                                                         <TextBlock HorizontalAlignment="Left" Margin="15,60,0,0" TextWrapping="Wrap" Text="Titulo" VerticalAlignment="Top" Height="14"/>
 
-                                                        <TextBlock HorizontalAlignment="Left" Margin="15,100,0,0" TextWrapping="Wrap" Text="Institucion" VerticalAlignment="Top" Height="13"/>
-                                                        <TextBlock HorizontalAlignment="Left" Margin="15,140,0,0" TextWrapping="Wrap" Text="Año Finalizacion" VerticalAlignment="Top" Height="14"/>
-                                                        <TextBlock HorizontalAlignment="Left" Margin="15,180,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Height="14"/>
+                                                        <TextBlock HorizontalAlignment="Left" Margin="15,105,0,0" TextWrapping="Wrap" Text="Institucion" VerticalAlignment="Top" Height="13"/>
+                                                        <TextBlock HorizontalAlignment="Left" Margin="15,155,0,0" TextWrapping="Wrap" Text="Año Finalizacion" VerticalAlignment="Top" Height="14"/>
+                                                        <TextBlock HorizontalAlignment="Left" Margin="15,197,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" Height="14"/>
                                                         <ComboBox  Name="cb_tipoeducacion" HorizontalAlignment="Left" Margin="125,20,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="cb_tipoeducacion_SelectionChanged"/>
-                                                        <TextBox Name="txt_Tituloedu" Height="20" Margin="125,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                                                        <TextBox Name="txt_institucionedu" Height="20" Margin="125,100,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-                                                        <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,140,0,0" VerticalAlignment="Top" Width="99" >
+                                                        <TextBox Name="txt_Tituloedu"  Height="35" MaxLength="50" Margin="125,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                                        <TextBox Name="txt_institucionedu" Height="35" Margin="125,105,30,0"  MaxLength="100" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+                                                        <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,155,0,0" VerticalAlignment="Top" Width="99" >
                                                             <ComboBoxItem Content="1986"/>
                                                             <ComboBoxItem Content="1987"/>
                                                             <ComboBoxItem Content="1988"/>
@@ -235,10 +235,10 @@
 
 
                                                         <TextBlock HorizontalAlignment="Left" Margin="15,20,0,0" TextWrapping="Wrap" Text="Tipo de Educacion" VerticalAlignment="Top"/>
-                                                        <RadioButton Name="rb_InfoAcompleto" Content="Completo" HorizontalAlignment="Left" Margin="129,180,0,0" VerticalAlignment="Top"/>
-                                                        <RadioButton Name="rb_InfoIncompleto" Content="Incompleto" HorizontalAlignment="Left" Margin="225,180,0,0" VerticalAlignment="Top"/>
-                                                        <Button Name="BTOAgregarInfAcademica" Content="Agregar" HorizontalAlignment="Left" Margin="360,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarInfAcademica_Click"/>
-                                                        <Button Name="BTOCancelarIngresoInfAcademica" Content="Cancelar" HorizontalAlignment="Left" Margin="460,180,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelarIngresoInfAcademica_Click"/>
+                                                        <RadioButton Name="rb_InfoAcompleto" Content="Completo" HorizontalAlignment="Left" Margin="129,197,0,0" VerticalAlignment="Top"/>
+                                                        <RadioButton Name="rb_InfoIncompleto" Content="Incompleto" HorizontalAlignment="Left" Margin="225,197,0,0" VerticalAlignment="Top"/>
+                                                        <Button Name="BTOAgregarInfAcademica" Content="Agregar" HorizontalAlignment="Left" Margin="360,187,0,0" VerticalAlignment="Top" Width="75" Click="BTOAgregarInfAcademica_Click"/>
+                                                        <Button Name="BTOCancelarIngresoInfAcademica" Content="Cancelar" HorizontalAlignment="Left" Margin="460,197,0,0" VerticalAlignment="Top" Width="75" Click="BTOCancelarIngresoInfAcademica_Click"/>
 
                                                     </Grid>
                                                 </GroupBox>

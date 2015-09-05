@@ -320,7 +320,7 @@
         <Top>3.30177cm</Top>
         <Left>2.28513cm</Left>
         <Height>0.12375cm</Height>
-        <Width>4.56375cm</Width>
+        <Width>3.77cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -450,7 +450,7 @@
         <Top>2.47219cm</Top>
         <Left>7.4866cm</Left>
         <Height>0.12375cm</Height>
-        <Width>10.27875cm</Width>
+        <Width>5.00663cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -481,7 +481,7 @@
         <Top>2.86052cm</Top>
         <Left>7.4866cm</Left>
         <Height>0.12375cm</Height>
-        <Width>10.27875cm</Width>
+        <Width>5.00663cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -513,7 +513,7 @@
         <Top>3.67246cm</Top>
         <Left>7.50615cm</Left>
         <Height>0.12375cm</Height>
-        <Width>10.27875cm</Width>
+        <Width>5.00663cm</Width>
         <ZIndex>15</ZIndex>
         <Style>
           <Border>
@@ -545,7 +545,7 @@
         <Top>3.9726cm</Top>
         <Left>7.50615cm</Left>
         <Height>0.14139cm</Height>
-        <Width>10.27875cm</Width>
+        <Width>5.00663cm</Width>
         <ZIndex>16</ZIndex>
         <Style>
           <Border>
@@ -647,7 +647,7 @@
         <Top>5.79079cm</Top>
         <Left>7.50615cm</Left>
         <Height>0.12375cm</Height>
-        <Width>5.381cm</Width>
+        <Width>4.96753cm</Width>
         <ZIndex>19</ZIndex>
         <Style>
           <Border>
@@ -714,7 +714,7 @@
         <Top>3.30177cm</Top>
         <Left>7.50615cm</Left>
         <Height>0.12375cm</Height>
-        <Width>10.27875cm</Width>
+        <Width>5.00663cm</Width>
         <ZIndex>21</ZIndex>
         <Style>
           <Border>
@@ -746,7 +746,7 @@
         <Top>6.09093cm</Top>
         <Left>7.48515cm</Left>
         <Height>0.12375cm</Height>
-        <Width>5.78083cm</Width>
+        <Width>4.98853cm</Width>
         <ZIndex>22</ZIndex>
         <Style>
           <Border>
@@ -2287,8 +2287,8 @@
         <DataSetName>DataSetProyectos</DataSetName>
         <Top>14.66605cm</Top>
         <Left>1.56856cm</Left>
-        <Height>1.01479cm</Height>
-        <Width>17.55989cm</Width>
+        <Height>1.0148cm</Height>
+        <Width>17.5599cm</Width>
         <ZIndex>36</ZIndex>
         <Style>
           <Border>
@@ -2296,6 +2296,22 @@
           </Border>
         </Style>
       </Tablix>
+      <Image Name="Image3">
+        <Source>External</Source>
+        <Value>="file:///C:\Imagenes\Fotos\"&amp; First(Fields!Foto.Value, "DataSetInfoBasic")</Value>
+        <MIMEType>="file:///C:\Imagenes\Fotos\"&amp; First(Fields!Foto.Value, "DataSetInfoBasic")</MIMEType>
+        <Sizing>FitProportional</Sizing>
+        <Top>2.48983cm</Top>
+        <Left>15.61648cm</Left>
+        <Height>3.0893cm</Height>
+        <Width>2.54482cm</Width>
+        <ZIndex>37</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Image>
     </ReportItems>
     <Height>10.48256in</Height>
     <Style />
@@ -2500,6 +2516,10 @@
         </Field>
         <Field Name="ISSS">
           <DataField>ISSS</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="Foto">
+          <DataField>Foto</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
