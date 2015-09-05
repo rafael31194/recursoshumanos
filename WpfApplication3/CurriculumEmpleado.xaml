@@ -12,8 +12,8 @@
             <WindowsFormsHost Height="630" Margin="132,60,132,0"   Width="752" >
                 <rv:ReportViewer x:Name="ReportViewerCurriculumEmp"/>
             </WindowsFormsHost>
-
-            <Button Name="btn_regresar" Content="Button" HorizontalAlignment="Left" Margin="931,23,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button Name="btn_enviarCorreo" Content="ENVIAR POR CORREO" HorizontalAlignment="Left" Margin="132,23,0,0" VerticalAlignment="Top" Width="168" Click="EnviarCorreo_Click"/>
+            <Button Name="btn_regresar" Content="REGRESAR" HorizontalAlignment="Left" Margin="809,23,0,0" VerticalAlignment="Top" Width="75" Click="btnRegresar_Click"/>
         </Grid>
     </Controls:MetroContentControl>
 </Controls:MetroWindow>

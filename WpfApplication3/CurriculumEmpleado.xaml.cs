@@ -17,6 +17,9 @@ using Microsoft.Reporting.WinForms;
 using MahApps.Metro.Controls;
 using HelpDesk.RecursosHumanos.BEL;
 using System.Collections;
+using System.Net.Mail;
+using System.Net;
+using System.IO;
 
 namespace WpfApplication3
 {
@@ -148,6 +151,110 @@ namespace WpfApplication3
 
         }
 
-      
+        private void EnviarCorreo_Click(object sender, RoutedEventArgs e)
+        {
+            NuevoCorreo nuevoEmail = new NuevoCorreo(this);
+            nuevoEmail.Show();
+        }
+
+
+
+        internal void EnviarDatosCorreo(string destinatario, string subject, string message)
+        {
+            try
+            {
+                Warning[] warnings;
+                string[] streamids;
+                string mimeType;
+                string encoding;
+                string extension;
+
+                byte[] bytes = ReportViewerCurriculumEmp.LocalReport.Render(
+                   "PDF", null, out mimeType, out encoding,
+                    out extension,
+                   out streamids, out warnings);
+
+
+                // add the attachment from a stream
+                System.IO.MemoryStream memStream = new System.IO.MemoryStream(bytes);
+
+                System.IO.StreamWriter streamWriter = new System.IO.StreamWriter(memStream);
+                streamWriter.Flush();
+
+                // this is quite important
+                memStream.Position = 0;
+
+                System.Net.Mail.Attachment thisAttachment = new System.Net.Mail.Attachment(memStream, "aplication/pdf");
+                thisAttachment.ContentDisposition.FileName = "Curriculum.pdf";
+
+
+
+
+                //Configurando el cliente SMTP
+                SmtpClient client = new SmtpClient();
+                client.Host = "smtp.gmail.com";
+                client.Port = 587;
+                client.EnableSsl = true;
+                client.DeliveryMethod = SmtpDeliveryMethod.Network;
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential("helpdesk.enviar@gmail.com", "contraenviar");
+                //Preparando archivo adjunto
+
+
+                //Enviando correo
+                MailMessage mail = new MailMessage();
+                mail.From = new MailAddress("helpdesk.enviar@gmail.com");
+                mail.To.Add(new MailAddress(destinatario));
+                mail.Subject = subject;
+                mail.IsBodyHtml = false;
+                mail.Body = message;
+                mail.Attachments.Add(thisAttachment);
+                client.Send(mail);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrio un error al adjuntar y enviar el correo");
+            }
+        }
+
+        //protected void GenerarEnviarPdf(int idOrden)
+        //{
+        //    try
+        //    {
+        //        Int32 IdOrdenCompra = idOrden;
+
+               
+        //        if (Session["Empresa"].ToString().Trim() == "10")
+        //        {
+        //            ReportViewer1.LocalReport.ReportPath = "Reportes/ReporteCompraTEnvio.rdlc";
+        //            ReportViewer1.LocalReport.DataSources.Clear();
+        //            ReportDataSource datasource = new ReportDataSource("OrdenCompraDataSet", (DataTable)tabla);
+        //            ReportViewer1.LocalReport.DataSources.Add(datasource);
+
+        //            this.ReportViewer1.LocalReport.EnableExternalImages = true;
+        //        }
+        //        else
+        //        {
+        //            //***********************************************************************
+        //            ReportViewer1.LocalReport.ReportPath = "Reportes/ReporteCompraAEnvio.rdlc";
+        //            ReportViewer1.LocalReport.DataSources.Clear();
+        //            ReportDataSource datasource = new ReportDataSource("OrdenCompraDataSet", (DataTable)tabla);
+        //            ReportViewer1.LocalReport.DataSources.Add(datasource);
+
+        //            this.ReportViewer1.LocalReport.EnableExternalImages = true;
+
+        //        }
+
+        //        //Refrescar reporte para que aparezca tambien en pantalla
+        //        ReportViewer1.LocalReport.Refresh();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        lblMsj.InnerText = "SE HA PRODUCIDO UN ERROR AL GENERAR ARCHIVO PDF";
+        //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Modal", "mostrarModalMsj();", true);
+        //        return;
+        //    }
+
+        //}
     }
 }
