@@ -32,6 +32,7 @@ namespace WpfApplication3
         {
             ventanaCurriculum.EnviarDatosCorreo(txt_destinatario.Text, txt_subject.Text, txt_message.Text);
             this.Close();
+            ventanaCurriculum.Show();
         }
     }
 }
