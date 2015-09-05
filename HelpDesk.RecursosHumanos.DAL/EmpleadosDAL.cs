@@ -28,7 +28,7 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
         }
 
-        public int borrarEmpleado(int id, ref string oerror)
+        public int borrarEmpleado(int id,int idEmpleado, ref string oerror)
         {
             int resultado = 0;
             using (SqlConnection _conn = CommonDb.ObtenerConnSql())
@@ -41,7 +41,7 @@ namespace HelpDesk.RecursosHumanos.DAL
 
                         //Write Query For Delete Data From the Table using Creating Object Of SqlCommand...
                         SqlCommand comm = new SqlCommand("DELETE FROM [Empleado] WHERE [id_candidato]=" +
-                       id + "", _conn);
+                       id + "\n DELETE FROM ProyectoEmpleados WHERE [id_empleado]= "+idEmpleado, _conn);
                         return comm.ExecuteNonQuery();
                     }
                     catch (Exception ex)

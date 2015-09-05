@@ -20,9 +20,9 @@ namespace HelpDesk.RecursosHumanos.BEL
             return _empleadosDAL.BusquedaInfoEmpleados(valorFiltro, ref oErro);
         }
 
-        public int BorrarEmpleado(int id, ref string oerror)
+        public int BorrarEmpleado(int id, int idEmpleado, ref string oerror)
         {
-            return _empleadosDAL.borrarEmpleado(id, ref oerror);
+            return _empleadosDAL.borrarEmpleado(id,idEmpleado, ref oerror);
         }
 
     }
