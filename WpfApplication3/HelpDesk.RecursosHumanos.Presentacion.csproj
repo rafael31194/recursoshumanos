@@ -86,6 +86,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetProyectos.xsd</DependentUpon>
     </Compile>
+    <Compile Include="NuevoCorreo.xaml.cs">
+      <DependentUpon>NuevoCorreo.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Utilerias\ControlImagen.cs" />
     <Compile Include="Utilerias\Imagenes.cs" />
     <Compile Include="Utilerias\UserLogin.cs" />
@@ -222,6 +225,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NuevaEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="NuevoCorreo.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
