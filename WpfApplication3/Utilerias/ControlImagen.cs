@@ -80,18 +80,18 @@ namespace WpfApplication3.Utilerias
         public static Imagenes GuardarImagenEnRuta(Imagenes pimagen)
         {
             string archivoOrigen = pimagen.RutaImagen;
-            string rutaDestino = @"C:\\Imagenes\\Fotos\\";
+            string rutaDestino = @"C:\\Imagenes\\Fotos\\User_default\\";
             if (!Directory.Exists(rutaDestino))
                 Directory.CreateDirectory(rutaDestino);
-            if (!Directory.Exists(rutaDestino + @"User_default\Userman.png"))
+            if (!Directory.Exists(rutaDestino + "Userman.png"))
             {
                 string rutaOrigenDefaultMan = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\User_default\\Userman.png";
-                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + @"\User_default\Userman.png", true);
+                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + "Userman.png", true);
             }
-            if (!Directory.Exists(rutaDestino + @"User_default\userwoman.png"))
+            if (!Directory.Exists(rutaDestino + "userwoman.png"))
             {
                 string rutaOrigenDefaultMan = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\User_default\\userwoman.png";
-                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + @"\User_default\userwoman.png", true);
+                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + "userwoman.png", true);
             }
             string archivoDestino = System.IO.Path.Combine(rutaDestino, pimagen.OnlyName);
             System.IO.File.Copy(archivoOrigen, archivoDestino, true);
