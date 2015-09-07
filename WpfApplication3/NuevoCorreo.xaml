@@ -4,8 +4,8 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
-         Title="NuevoCorreo" Height="500" Width="600" BorderBrush="DarkCyan">
-    <Grid Background="Azure">
+         Title="NuevoCorreo" Height="500" Width="600">
+    <Grid>
         <TextBox Name="txt_destinatario"  HorizontalAlignment="Left" Height="23" Margin="127,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
         <Label Content="Enviar a:" HorizontalAlignment="Left" Margin="28,41,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
         <Label Content="Asunto:" HorizontalAlignment="Left" Margin="28,98,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
@@ -13,7 +13,7 @@
         <TextBox Name="txt_subject" HorizontalAlignment="Left" Height="23" Margin="127,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
         <Label Content="Mensaje:" HorizontalAlignment="Left" Margin="28,164,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
         <TextBox Name="txt_message" HorizontalAlignment="Left" Height="178" Margin="127,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361"/>
-        <Button Content="Enviar" HorizontalAlignment="Left" Margin="483,376,0,0" VerticalAlignment="Top" Width="75" FontSize="14" FontWeight="Normal" Click="Button_Click"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Margin="482,376,0,0" VerticalAlignment="Top" Width="75" FontSize="14" FontWeight="Normal" Click="Button_Click"/>
 
     </Grid>
 </Controls:MetroWindow>

@@ -143,10 +143,7 @@ namespace WpfApplication3
 
         private void btnRegresar_Click(object sender, RoutedEventArgs e)
         {
-            BusquedaEmpleados busqueda = new BusquedaEmpleados();
-            busqueda.InitializeComponent();
-            busqueda.Show();
-            this.Close();
+         
         }
 
         private void WindowsFormsHost_ChildChanged(object sender, System.Windows.Forms.Integration.ChildChangedEventArgs e)
@@ -158,7 +155,6 @@ namespace WpfApplication3
         {
             NuevoCorreo nuevoEmail = new NuevoCorreo(this);
             nuevoEmail.Show();
-            
         }
 
 
