@@ -91,6 +91,7 @@
     </Compile>
     <Compile Include="Utilerias\ControlImagen.cs" />
     <Compile Include="Utilerias\Imagenes.cs" />
+    <Compile Include="Utilerias\sendEmail.cs" />
     <Compile Include="Utilerias\UserLogin.cs" />
     <Compile Include="Curriculum.xaml.cs">
       <DependentUpon>Curriculum.xaml</DependentUpon>
