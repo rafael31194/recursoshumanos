@@ -62,8 +62,8 @@ namespace WpfApplication3
                         _menusBusqueda.InitializeComponent();
                         this.Close();
                         _menusBusqueda.Show();
-                    }
-                }
+                    } 
+                }      
             }
             else
             {
