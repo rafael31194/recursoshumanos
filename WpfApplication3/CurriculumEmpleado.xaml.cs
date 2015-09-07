@@ -214,6 +214,8 @@ namespace WpfApplication3
                 mail.Body = message;
                 mail.Attachments.Add(thisAttachment);
                 client.Send(mail);
+
+                MessageBox.Show("CORREO ENVIADO EXITOSAMENTE","MENSAJE ENVIADO",MessageBoxButton.OK,MessageBoxImage.Asterisk);
             }
             catch(Exception ex)
             {
@@ -221,44 +223,6 @@ namespace WpfApplication3
             }
         }
 
-        //protected void GenerarEnviarPdf(int idOrden)
-        //{
-        //    try
-        //    {
-        //        Int32 IdOrdenCompra = idOrden;
-
-               
-        //        if (Session["Empresa"].ToString().Trim() == "10")
-        //        {
-        //            ReportViewer1.LocalReport.ReportPath = "Reportes/ReporteCompraTEnvio.rdlc";
-        //            ReportViewer1.LocalReport.DataSources.Clear();
-        //            ReportDataSource datasource = new ReportDataSource("OrdenCompraDataSet", (DataTable)tabla);
-        //            ReportViewer1.LocalReport.DataSources.Add(datasource);
-
-        //            this.ReportViewer1.LocalReport.EnableExternalImages = true;
-        //        }
-        //        else
-        //        {
-        //            //***********************************************************************
-        //            ReportViewer1.LocalReport.ReportPath = "Reportes/ReporteCompraAEnvio.rdlc";
-        //            ReportViewer1.LocalReport.DataSources.Clear();
-        //            ReportDataSource datasource = new ReportDataSource("OrdenCompraDataSet", (DataTable)tabla);
-        //            ReportViewer1.LocalReport.DataSources.Add(datasource);
-
-        //            this.ReportViewer1.LocalReport.EnableExternalImages = true;
-
-        //        }
-
-        //        //Refrescar reporte para que aparezca tambien en pantalla
-        //        ReportViewer1.LocalReport.Refresh();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        lblMsj.InnerText = "SE HA PRODUCIDO UN ERROR AL GENERAR ARCHIVO PDF";
-        //        ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "Modal", "mostrarModalMsj();", true);
-        //        return;
-        //    }
-
-        //}
+        
     }
 }
