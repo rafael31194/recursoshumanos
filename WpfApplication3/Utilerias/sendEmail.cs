@@ -11,7 +11,7 @@ namespace WpfApplication3.Utilerias
 {
    public class sendEmail
     {
-       public bool EnviarDatosCorreo(string destinatario, string subject, string message, ReportViewer ReportControl, ref string error)
+       public bool EnviarDatosCorreo(string destinatario, string subject, string message,string cc, ReportViewer ReportControl, ref string error)
        {
            bool result = false;
            try
@@ -58,10 +58,16 @@ namespace WpfApplication3.Utilerias
                MailMessage mail = new MailMessage();
                mail.From = new MailAddress("helpdesk.enviar@gmail.com");
                mail.To.Add(new MailAddress(destinatario));
+               if (!string.IsNullOrEmpty(cc))
+               {
+                   mail.CC.Add(cc);
+               }
                mail.Subject = subject;
                mail.IsBodyHtml = false;
                mail.Body = message;
                mail.Attachments.Add(thisAttachment);
+
+               
                client.Send(mail);
 
                result = true;
