@@ -788,10 +788,10 @@ namespace WpfApplication3
                         MessageBoxResult mbr = MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
                         if (mbr == MessageBoxResult.OK)
                         {
-                            LoginInicio _Li = new LoginInicio();
-                            _Li.InitializeComponent();
+                            Busqueda _menusBusqueda = new Busqueda();
+                            _menusBusqueda.InitializeComponent();
                             this.Close();
-                            _Li.ShowDialog();
+                            _menusBusqueda.Show();
                         }
                     }
 

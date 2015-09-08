@@ -18,6 +18,9 @@ using MahApps.Metro.Controls;
 using HelpDesk.RecursosHumanos.BEL;
 using System.Collections;
 using WpfApplication3.Utilerias;
+using System.Net.Mail;
+using System.Net;
+using System.IO;
 
 namespace WpfApplication3
 {
@@ -27,6 +30,7 @@ namespace WpfApplication3
     public partial class Curriculum : MetroWindow
     {
         static Imagenes _Imagen = new Imagenes();
+        ReportViewer reportControl;
         string oerro = "";
         int idCandidato;
         public Curriculum(int id)
@@ -122,6 +126,16 @@ namespace WpfApplication3
         {
 
         }
+
+        private void CORREO_Click(object sender, RoutedEventArgs e)
+       {
+            NuevoCorreo nuevoEmail = new NuevoCorreo(this);
+            nuevoEmail.Show();
+            this.Close();
+        }
+
+
+
       
     }
 }

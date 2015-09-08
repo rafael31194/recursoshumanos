@@ -2760,28 +2760,12 @@
     <Height>8.86702in</Height>
     <Style />
   </Body>
-  <Width>7.74342in</Width>
+  <Width>7.51425in</Width>
   <Page>
     <PageHeader>
       <Height>2.36995cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
-        <Image Name="encabezadoHelpdesk">
-          <Source>Embedded</Source>
-          <Value>encabezadoHelpdesk</Value>
-          <Sizing>FitProportional</Sizing>
-          <Top>0.40569cm</Top>
-          <Left>0.94829cm</Left>
-          <Height>1.8937cm</Height>
-          <Width>17.61493cm</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-          </Style>
-        </Image>
-      </ReportItems>
       <Style>
         <Border>
           <Style>None</Style>
