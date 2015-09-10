@@ -4,16 +4,20 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
-         Title="NuevoCorreo" Height="500" Width="600" BorderBrush="DarkCyan" HorizontalAlignment="Center" VerticalAlignment="Top" >
-    <Grid Background="Azure">
+         Title="NuevoCorreo" Height="500" Width="600" Background="Azure" BorderBrush="Blue">
+    <Grid>
         <TextBox Name="txt_destinatario"  HorizontalAlignment="Left" Height="23" Margin="127,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
         <Label Content="Enviar a:" HorizontalAlignment="Left" Margin="28,41,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
-        <Label Content="Asunto:" HorizontalAlignment="Left" Margin="28,98,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
+        <Label Name="lb_subject" Content="Asunto:" HorizontalAlignment="Left" Margin="28,92,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
 
-        <TextBox Name="txt_subject" HorizontalAlignment="Left" Height="23" Margin="127,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
+        <TextBox Name="txt_subject" HorizontalAlignment="Left" Height="23" Margin="127,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
         <Label Content="Mensaje:" HorizontalAlignment="Left" Margin="28,164,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
         <TextBox Name="txt_message" HorizontalAlignment="Left" Height="178" Margin="127,169,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="361"/>
-        <Button Content="Enviar" HorizontalAlignment="Left" Margin="483,376,0,0" VerticalAlignment="Top" Width="75" FontSize="14" FontWeight="Normal" Click="Button_Click"/>
+        <Button Content="Enviar" HorizontalAlignment="Left" Margin="362,376,0,0" VerticalAlignment="Top" Width="75" FontSize="14" FontWeight="Normal" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="469,376,0,0" VerticalAlignment="Top" Width="88" FontSize="14" FontWeight="Normal" Click="ButtonCancelar_Click"/>
+        <Label Name="lb_cc" Content="CC:"  Visibility="Hidden" HorizontalAlignment="Left" Margin="28,128,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>
+        <TextBox x:Name="txt_cc"   HorizontalAlignment="Left" Height="23" Margin="127,128,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340" Visibility="Hidden"/>
+        <Button Content="CC" HorizontalAlignment="Left" Margin="485,46,0,0" VerticalAlignment="Top" Width="44" FontSize="14" FontWeight="Normal" Click="ButtonCC_Click"/>
 
     </Grid>
 </Controls:MetroWindow>

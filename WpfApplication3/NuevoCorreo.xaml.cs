@@ -47,7 +47,7 @@ namespace WpfApplication3
             if (opcion == 1)
             {
 
-                bool result = enviarCorreo.EnviarDatosCorreo(txt_destinatario.Text, txt_subject.Text, txt_message.Text, ventanaCurriculum.ReportViewerCurriculumEmp, ref error);
+                bool result = enviarCorreo.EnviarDatosCorreo(txt_destinatario.Text, txt_subject.Text, txt_message.Text,txt_cc.Text, ventanaCurriculum.ReportViewerCurriculumEmp, ref error);
 
                 if (!result)
                 {
@@ -68,7 +68,7 @@ namespace WpfApplication3
             else
             {
 
-                bool result = enviarCorreo.EnviarDatosCorreo(txt_destinatario.Text, txt_subject.Text, txt_message.Text, ventanaCurruculumCandidatos.ReportViewerCurriculum, ref error);
+                bool result = enviarCorreo.EnviarDatosCorreo(txt_destinatario.Text, txt_subject.Text, txt_message.Text,txt_cc.Text, ventanaCurruculumCandidatos.ReportViewerCurriculum, ref error);
 
                 if (!result)
                 {
@@ -76,7 +76,7 @@ namespace WpfApplication3
                 }
                 else
                 {
-                    MessageBoxResult MsCorreo = MessageBox.Show("EL CURRICULUM DEL CANDIDATO FUE ENVIADO CON EXITO..", "MENSAJE DE CONFIRMACION", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBoxResult MsCorreo = MessageBox.Show("El curriculum fue enviado con éxito.", "MENSAJE DE CONFIRMACION", MessageBoxButton.OK, MessageBoxImage.Asterisk);
                     if (MsCorreo == MessageBoxResult.OK)
                     {
                         Busqueda _menusBusqueda = new Busqueda();
@@ -86,6 +86,18 @@ namespace WpfApplication3
                     }
                }
             }
+        }
+
+        private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ButtonCC_Click(object sender, RoutedEventArgs e)
+        {
+            txt_cc.Visibility = Visibility.Visible;
+            lb_cc.Visibility = Visibility.Visible;
+            
         }
     }
 }

@@ -158,7 +158,7 @@ namespace WpfApplication3
         {
             NuevoCorreo nuevoEmail = new NuevoCorreo(this);
             nuevoEmail.Show();
-            this.Close();
+            
         }
 
 
