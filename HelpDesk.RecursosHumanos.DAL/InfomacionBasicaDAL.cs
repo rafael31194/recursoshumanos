@@ -167,7 +167,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                         SELECT SituacionProfesional.descripcion as situacionProfesional, Profesiones.descripcion AS profesion, Municipio.descripcion AS municipio, Genero.descripcion AS sexo, InformacionBasica.nombre, InformacionBasica.nacionalidad,
                                                   InformacionBasica.telefono_celular, InformacionBasica.telefono_fijo, InformacionBasica.correo, InformacionBasica.fecha_nacimiento, InformacionBasica.direccion, InformacionBasica.DUI, InformacionBasica.NIT,
                                                  InformacionBasica.AFP, InformacionBasica.ISSS,
-						                         CASE when InformacionBasica.Foto is null
+						                         CASE when  (InformacionBasica.Foto is null) or (InformacionBasica.Foto =' ')
 						                         then @nsexo else InformacionBasica.Foto end as Foto
                                                      FROM            Genero INNER JOIN 
                                                           InformacionBasica ON Genero.id_genero = InformacionBasica.id_genero INNER JOIN

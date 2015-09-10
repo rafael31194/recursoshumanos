@@ -172,8 +172,8 @@ namespace WpfApplication3
 
                     MantoCandidatos _mt = new MantoCandidatos();
                     recuperarMostrarDatosCandidato(id.ToString(),-1,ds, _mt);
-                    
-                    
+
+
                     this.Close();
                     _mt.ShowDialog(); 
                 }

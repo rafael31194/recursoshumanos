@@ -79,7 +79,7 @@
 
             <Label  Content="MODIFICAR DE EMPRESA " Margin="0,0,48,8" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Bottom"/>
         </Grid>
-        <GroupBox Header="MODIFICAR  UNA EMPRESA" Margin="255,155,181,0" VerticalAlignment="Top" Height="380" FontWeight="Bold">
+        <GroupBox Header="MODIFICAR  UNA EMPRESA" Margin="295,186,141,0" VerticalAlignment="Top" Height="380" FontWeight="Bold">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -87,13 +87,18 @@
                 <TextBlock HorizontalAlignment="Left" Margin="43,32,0,0" TextWrapping="Wrap" Text="Nombre empresa" VerticalAlignment="Top" FontSize="16"/>
                 <TextBlock HorizontalAlignment="Left" Margin="31,32,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red"/>
                 <TextBlock HorizontalAlignment="Left" Margin="43,79,0,0" TextWrapping="Wrap" Text="Direccion" VerticalAlignment="Top" FontSize="16"/>
-                <TextBlock HorizontalAlignment="Left" Margin="31,79,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red"/>
+                <TextBlock HorizontalAlignment="Left" Margin="43,129,0,0" TextWrapping="Wrap" Text="correo" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="1.965,0.752"/>
+                <TextBlock HorizontalAlignment="Left" Margin="31,134,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
+
+                <TextBlock HorizontalAlignment="Left" Margin="31,84,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red"/>
                 <TextBox x:Name="txt_UPDATEnombreEmpresa" HorizontalAlignment="Left" Height="23" Margin="190,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296"/>
                 <TextBox x:Name="txt_UPDATEdireccion" MaxLength="200" HorizontalAlignment="Left" Height="40" Margin="190,74,0,0" VerticalAlignment="Top" Width="296" />
-                <TextBox x:Name="txt_UPDATEtelefono" HorizontalAlignment="Left" Height="23" Margin="190,130,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296"/>
-                <TextBlock HorizontalAlignment="Left" Margin="43,172,0,0" TextWrapping="Wrap" Text="Pais" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="1.965,0.752"/>
-                <TextBlock HorizontalAlignment="Left" Margin="31,172,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
-                <ComboBox x:Name="cb_UPDATEpais" HorizontalAlignment="Left" Margin="190,171,0,0" VerticalAlignment="Top" Width="142"/>
+                <ComboBox x:Name="cb_correoEmpresa" HorizontalAlignment="Left" Margin="190,134,0,0" VerticalAlignment="Top" Width="296"/>
+
+                <TextBox x:Name="txt_UPDATEtelefono" HorizontalAlignment="Left" Height="23" Margin="190,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296"/>
+                <TextBlock HorizontalAlignment="Left" Margin="43,216,0,0" TextWrapping="Wrap" Text="Pais" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="1.965,0.752"/>
+                <TextBlock HorizontalAlignment="Left" Margin="31,221,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
+                <ComboBox x:Name="cb_UPDATEpais" HorizontalAlignment="Left" Margin="190,216,0,0" VerticalAlignment="Top" Width="296"/>
 
                 <Button x:Name="btn_UPDATE_Empresa"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="43"  Margin="291,266,0,0" Click="btn_UPDATE_Empresa_Click">
                     <DockPanel Height="31" >
@@ -102,8 +107,9 @@
                     </DockPanel>
                 </Button>
 
-                <TextBlock HorizontalAlignment="Left" Margin="43,131,0,0" TextWrapping="Wrap" Text="Telefono" VerticalAlignment="Top" FontSize="16"/>
-                <TextBlock HorizontalAlignment="Left" Margin="31,131,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
+                <TextBlock HorizontalAlignment="Left" Margin="43,175,0,0" TextWrapping="Wrap" Text="Telefono" VerticalAlignment="Top" FontSize="16"/>
+                <TextBlock HorizontalAlignment="Left" Margin="43,175,0,0" TextWrapping="Wrap" Text="Telefono" VerticalAlignment="Top" FontSize="16"/>
+                <TextBlock HorizontalAlignment="Left" Margin="31,175,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red" RenderTransformOrigin="0.619,-0.974"/>
                 <Button x:Name="btn_Regresar_Usuario"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="154" Height="43"  Margin="30,266,0,0" Click="btn_regresarUsuario" >
                     <DockPanel Height="31" >
 

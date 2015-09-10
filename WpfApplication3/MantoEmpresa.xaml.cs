@@ -55,6 +55,7 @@ namespace WpfApplication3
             
         }
 
+        //METODO PARA CARGAR LA LISTA 
         private void DataGrid_Empresas_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             //se guardan en listas los campos para editar el usuario al dar doble click en la fila 
@@ -77,6 +78,7 @@ namespace WpfApplication3
                 listData.Add(us[2].ToString());
                 listData.Add(us[3].ToString());
                 listData.Add(us[4].ToString());
+                listData.Add(us[5].ToString());
                 
 
                 ModificarEmpresa modEmpre = new ModificarEmpresa();

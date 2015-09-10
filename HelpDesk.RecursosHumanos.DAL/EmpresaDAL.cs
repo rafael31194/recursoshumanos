@@ -27,6 +27,25 @@ namespace HelpDesk.RecursosHumanos.DAL
                 return dsEmpresa;
             }
         }
+
+        public DataSet SelectCorreoEmpresaALL()
+        {
+            using (SqlConnection _conn = CommonDb.ObtenerConnSql())
+
+            {
+                SqlConnection _oConn = CommonDb.ObtenerConnSql();
+                SqlConnection oConn = CommonDb.ObtenerConnSql();
+                SqlCommand oCmd = new SqlCommand("SP_select_CorreoEmpresa", oConn);
+                oCmd.CommandType = CommandType.StoredProcedure;
+                SqlDataAdapter da = new SqlDataAdapter(oCmd);
+                DataSet dsCorreoEmpresa = new DataSet();
+                da.Fill(dsCorreoEmpresa);
+                return dsCorreoEmpresa;
+            }
+        }
+
+
+
         public List<EmpresaE> ObtenerEmpresa()
         {
             throw new NotImplementedException();
@@ -61,6 +80,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     comando.Parameters.AddWithValue("@ID", pEmpresa.id_empresa);
                     comando.Parameters.AddWithValue("@nombreEmpresa", pEmpresa.nombre);
                     comando.Parameters.AddWithValue("@direccionEmpresa", pEmpresa.direccion);
+                    comando.Parameters.AddWithValue("@correoEmpresa", pEmpresa.correoEmpresa);
                     comando.Parameters.AddWithValue("@telefonoEmpresa", pEmpresa.telefono);
                     comando.Parameters.AddWithValue("@idPais", pEmpresa.id_pais.id_pais);
 
@@ -112,6 +132,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     Comando.CommandText = "SP_insertar_empresas";
                     Comando.Parameters.AddWithValue("@nombre", pempresa.nombre);
                     Comando.Parameters.AddWithValue("@direccion", pempresa.direccion);
+                    Comando.Parameters.AddWithValue("@correoEmpresa", pempresa.correoEmpresa);
                     Comando.Parameters.AddWithValue("@telefono", pempresa.telefono);
                     Comando.Parameters.AddWithValue("@id_pais", pempresa.id_pais.id_pais);
                     resultado = Comando.ExecuteNonQuery();

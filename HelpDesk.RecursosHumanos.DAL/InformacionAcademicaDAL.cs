@@ -24,7 +24,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     comando.Connection = _conn;
                     comando.CommandType = System.Data.CommandType.StoredProcedure;
                     comando.CommandText = "SP_insertar_InformacionAcademica";
-                  //  comando.Parameters.AddWithValue("@id_informacionAcademica", pinformacionAcademica.id_informacionAcademica);
+                    //  comando.Parameters.AddWithValue("@id_informacionAcademica", pinformacionAcademica.id_informacionAcademica);
                     comando.Parameters.AddWithValue("@titulo", pinformacionAcademica.titulo);
                     comando.Parameters.AddWithValue("@institucion", pinformacionAcademica.institucion);
                     comando.Parameters.AddWithValue("@anio_de_finalizacion", pinformacionAcademica.anio_de_finalizacion);
@@ -136,23 +136,46 @@ namespace HelpDesk.RecursosHumanos.DAL
             }
         }
 
-        public DataTable SelectInfoAcade(int p, ref string oerro)
+        public DataTable SelectInfoAcade(int id, ref string oerro)
         {
-            
+            string query = @"
+                        declare @psexo int
+                        declare @nsexo varchar(max)
+                        declare @Id int
+
+                        set @Id=" + id + @"
+
+                        select @psexo=id_genero from InformacionBasica where id_candidato=@Id;
+
+                        select @nsexo=case @psexo 
+                        when 1 then 
+                        'User_default\Userman.png'
+                        else
+                        'User_default\userwoman.png' end
+
+
+                        SELECT SituacionProfesional.descripcion as situacionProfesional, Profesiones.descripcion AS profesion, Municipio.descripcion AS municipio, Genero.descripcion AS sexo, InformacionBasica.nombre, InformacionBasica.nacionalidad,
+                                                  InformacionBasica.telefono_celular, InformacionBasica.telefono_fijo, InformacionBasica.correo, InformacionBasica.fecha_nacimiento, InformacionBasica.direccion, InformacionBasica.DUI, InformacionBasica.NIT,
+                                                 InformacionBasica.AFP, InformacionBasica.ISSS,
+						                         CASE when  (InformacionBasica.Foto is null) or (InformacionBasica.Foto =' ')
+						                         then @nsexo else InformacionBasica.Foto end as Foto
+                                                     FROM            Genero INNER JOIN 
+                                                          InformacionBasica ON Genero.id_genero = InformacionBasica.id_genero INNER JOIN
+                                                          Municipio ON InformacionBasica.id_municipio = Municipio.id_municipio INNER JOIN
+                                                          Profesiones ON InformacionBasica.id_profesiones = Profesiones.id_profesiones INNER JOIN
+                                                          SituacionProfesional ON InformacionBasica.id_situacionProfesional = SituacionProfesional.id_SituacionProfesional where id_candidato=@Id";
+
             using (SqlConnection _conn = CommonDb.ObtenerConnSql())
             {
                 if (!(_conn == null))
                 {
-                    string query=
-                        "SELECT        InformacionAcademica.institucion, TipoEducacion.descripcion as tipoEducacion, InformacionAcademica.titulo, InformacionAcademica.anio_de_finalizacion, StatusAcademico.descripcion AS estado"+
-                            " FROM            InformacionAcademica INNER JOIN"+
-                         " StatusAcademico ON InformacionAcademica.id_statusAcademico = StatusAcademico.id_statusAcademico INNER JOIN"+
-                         " TipoEducacion ON InformacionAcademica.id_tipoEducacion = TipoEducacion.id_tipoEducacion where id_candidato =";
+
                     try
                     {
 
                         //Write Query For Delete Data From the Table using Creating Object Of SqlCommand...
-                        SqlCommand comm = new SqlCommand(query + p + "", _conn);
+                        SqlCommand comm = new SqlCommand(query, _conn);
+                        //comm.Parameters.Add(new SqlParameter("@Id", id));
                         SqlDataAdapter da = new SqlDataAdapter(comm);
                         DataTable dt = new DataTable();
                         da.Fill(dt);
@@ -161,7 +184,7 @@ namespace HelpDesk.RecursosHumanos.DAL
                     catch (Exception ex)
                     {
                         //If Any Exception Will Occur then It Will Display That Message...
-                        MessageBox.Show("Ocurrion un error al recuperar los tados la informacion academica.");
+                        MessageBox.Show("Ocurrion un error al recuperar los datos de la informacion basica.");
                         return null;
                         throw ex;
                     }
@@ -169,8 +192,6 @@ namespace HelpDesk.RecursosHumanos.DAL
                     {
                         //Finally Close the Connection...
                         _conn.Close();
-
-
                     }
                 }
                 else
@@ -181,3 +202,4 @@ namespace HelpDesk.RecursosHumanos.DAL
         }
     }
 }
+

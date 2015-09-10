@@ -4,7 +4,7 @@
         xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
         xmlns:rv="clr-namespace:Microsoft.Reporting.WinForms;assembly=Microsoft.ReportViewer.WinForms"
-         Title="NuevoCorreo" Height="500" Width="600" BorderBrush="DarkCyan">
+         Title="NuevoCorreo" Height="500" Width="600" BorderBrush="DarkCyan" HorizontalAlignment="Center" VerticalAlignment="Top" >
     <Grid Background="Azure">
         <TextBox Name="txt_destinatario"  HorizontalAlignment="Left" Height="23" Margin="127,46,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="340"/>
         <Label Content="Enviar a:" HorizontalAlignment="Left" Margin="28,41,0,0" VerticalAlignment="Top" Width="143" FontSize="16" FontWeight="Bold"/>

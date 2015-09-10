@@ -21,7 +21,8 @@ using System.Data;
 using System.Data.SqlClient;
 using MahApps.Metro.Controls;
 using WpfApplication3.Utilerias;
-
+using DesktopAlert;
+using HelpDesk.RecursosHumanos.Presentacion.Utilerias.Alertas;
 
 namespace WpfApplication3
 {
@@ -48,7 +49,7 @@ namespace WpfApplication3
         ProfesionesBLL _profesionesBL = new ProfesionesBLL();
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
         RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
-
+        bool Elijiomagen = false;
 
         static Imagenes _Imagen = new Imagenes();
 
@@ -640,7 +641,7 @@ namespace WpfApplication3
         //***BOTON PARA GUARDAR TODA LA INFORMACION DE UN NUEVO PERFIL***/// 
         private void GuardarTodo_Click(object sender, RoutedEventArgs e)
         {
-            
+
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
 
             int returVariable3 = 0;
@@ -780,19 +781,45 @@ namespace WpfApplication3
 
                         returReferencias = _referenciasBL.GuardarReferencias(refE, ref oerro);
 
-
-
                     }
                     if (oerro == "")
                     {
-                        MessageBoxResult mbr = MessageBox.Show("Registro fue guardado con exito..", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-                        if (mbr == MessageBoxResult.OK)
+                        #region Capturar imgen por genero
+                        string pMensaje = "", pURL = "";
+                        switch (_InfoBasicaE.id_genero)
                         {
-                            Busqueda _menusBusqueda = new Busqueda();
-                            _menusBusqueda.InitializeComponent();
-                            this.Close();
-                            _menusBusqueda.Show();
+                            case 1:
+                                pMensaje = "candidato";
+                                pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : _Imagen.RutaImagen;
+                                break;
+                            case 2:
+                                pMensaje = "candidata";
+                                pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : _Imagen.RutaImagen;
+                                break;
                         }
+                        #endregion
+
+                        if (Elijiomagen)
+                            ControlImagen.GuardarImagenEnRuta(_Imagen);
+
+                        #region Mostrar mensaje personalizado
+
+                        SimpleAlert simpleAlert = new SimpleAlert();
+                        simpleAlert.Title = "Nuevo Registro";
+                        simpleAlert.NamePeople = txtNombreInfBasica.Text;
+                        simpleAlert.Url = pURL;
+
+                        simpleAlert.Message = "Se ha creado el nuevo " + pMensaje;
+                        simpleAlert.ShowDialog();
+
+                        #region Redireccionamiento
+                        Busqueda _menusBusqueda = new Busqueda();
+                        _menusBusqueda.InitializeComponent();
+                        this.Close();
+                        _menusBusqueda.Show();
+                        #endregion
+                        #endregion
+
                     }
 
                     else
@@ -938,13 +965,15 @@ namespace WpfApplication3
         }
         private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
         {
-             //_Imagen.OnlyName = imgFoto.Source.ToString();
-             _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
-             if (_Imagen.ImagenEnObjeto != null)
-             {
-                 imgFoto.Source = _Imagen.ImagenEnObjeto;
-                 lbimagen.Content = _Imagen.RutaImagen;
-             }
+            //_Imagen.OnlyName = imgFoto.Source.ToString();
+            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
+           
+            if (_Imagen.ImagenEnObjeto != null)
+            {
+                Elijiomagen = true;
+                imgFoto.Source = _Imagen.ImagenEnObjeto;
+                lbimagen.Content = _Imagen.RutaImagen;
+            }
         }
     }
 

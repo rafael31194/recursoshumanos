@@ -21,6 +21,19 @@ namespace HelpDesk.RecursosHumanos.BEL
        {
            return _empresaDAL.SelectEmpresaALL();
        }
+
+       //METODO PARA SELECCIONAR LA EMPRESA Y CARGAR EL COMBOBOX 
+       EmpresaDAL _CorreoEmpresaDAL = new EmpresaDAL();
+       public List<EmpresaE> obtenerCorreoEmpresa()
+       {
+           return _CorreoEmpresaDAL.ObtenerEmpresa();
+       }
+       public DataSet SelectCorreoEmpresaALL()
+       {
+           return _CorreoEmpresaDAL.SelectCorreoEmpresaALL();
+       }
+      
+
        //METODO PARA GUARDAR CAMPOS DE  EMPRESA
     
        public int Guardarempresa(EmpresaE pempresa, ref string oerro)

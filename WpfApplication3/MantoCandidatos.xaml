@@ -19,12 +19,13 @@
                     <Grid.RowDefinitions>
                         <RowDefinition />
                     </Grid.RowDefinitions>
-
+                    
+                    <DockPanel HorizontalAlignment="Left">
                     <Grid Grid.Row="0" Grid.Column="0" Margin="-3,-20,821,5" Height="756" VerticalAlignment="Bottom" >
                         <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="70,64,0,0" MouseDown="CerrarSesionNuevoPerfil_MouseDown" RenderTransformOrigin="0.51,0.718" VerticalAlignment="Top" Height="35" HorizontalAlignment="Left" Width="58" />
                         <Image Source="Imagenes/logoHelpdesk.png" Margin="5,104,0,0" Height="51" Width="193" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Left" />
                     </Grid>
-
+                    </DockPanel>
                     <Grid Grid.Row="0" Margin="211,2,-5,638" RenderTransformOrigin="0.5,0.5" Background="White" HorizontalAlignment="Left" Width="810" >
                         <Grid.RenderTransform>
                             <TransformGroup>
@@ -41,7 +42,7 @@
 
                     <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center" >
                         <Grid
-          Background="White" Margin="200,106,10,143" >
+          Background="White" Margin="200,106,10,143" Height="492" Width="802" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
@@ -103,7 +104,7 @@
                                                     <TextBlock HorizontalAlignment="Left" Margin="10,90,0,0" TextWrapping="Wrap" Text="Fecha de Nacimiento" VerticalAlignment="Top" FontSize="14"/>
                                                     <TextBlock HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="Nacionalidad" VerticalAlignment="Top" FontSize="14"/>
                                                     <TextBox Name="txtNombreInfBasica"  HorizontalAlignment="Left" Height="26" Margin="148,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="250"  TabIndex="1" FontSize="11"  />
-                                                    <RadioButton Name="rbsexoM" Content="MASCULINO" HorizontalAlignment="Left" Margin="148,50,0,0" VerticalAlignment="Top" IsChecked="True" Height="26" Width="95" TabIndex="2"/>
+                                                    <RadioButton Name="rbsexoM" Content="MASCULINO" HorizontalAlignment="Left" Margin="148,50,0,0" VerticalAlignment="Top" Height="26" Width="95" TabIndex="2"/>
                                                     <RadioButton Name="rbsexoF" Content="FEMENINO" HorizontalAlignment="Left" Margin="260,50,0,0" VerticalAlignment="Top" Height="26" Width="88" TabIndex="2"/>
                                                     <DatePicker Name="DateFechNacInfoBasica" HorizontalAlignment="Left" Margin="148,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.566,0.542" TabIndex="2"/>
                                                     <TextBox Name="txtNacionalidadInfBasica" HorizontalAlignment="Left" Height="22" Margin="147,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150" FontSize="11" />
@@ -333,22 +334,23 @@
                                 <TabItem  Header="HABILIDADES" Name="tab4" Margin="0,0,-50,0" Controls:ControlsHelper.HeaderFontSize="15" HorizontalAlignment="Right" Width="108" Height="29" VerticalAlignment="Bottom">
                                     <Grid Margin="16,10,-1,26">
 
-                                        <GroupBox Header="Habilidades Tecnicas del perfil" VerticalAlignment="Top" Height="156" Margin="16,20,16,0">
-                                            <Grid>
-                                                <TextBlock Margin="25,20,550,0" TextWrapping="Wrap" Text="Habilidad Tecnica" Height="13" VerticalAlignment="Top"/>
-                                                <TextBlock Margin="282,20,368,0" TextWrapping="Wrap" Text="Nivel" VerticalAlignment="Top"/>
-                                                <TextBlock Margin="450,20,90,0" TextWrapping="Wrap" Text="Seleccione Aplicacion" VerticalAlignment="Top"/>
-                                                <ComboBox Name="cb_habtecnica" Margin="25,38,510,0" VerticalAlignment="Top" SelectionChanged="cb_habtecnica_SelectionChanged"/>
-                                                <ComboBox Name="cb_nivelhabapp" HorizontalAlignment="Left" Margin="300,38,0,0" VerticalAlignment="Top" Width="120"/>
-                                                <ComboBox Name="cb_habilidadApp" HorizontalAlignment="Left" Margin="450,38,0,0" VerticalAlignment="Top" Width="283"/>
-                                                <Button Name="BTOagregarHabTec" Content="Agregar" HorizontalAlignment="Left" Margin="524,102,0,0" VerticalAlignment="Top" Width="76" Click="BTOagregarHabTec_Click" />
-                                                <Button Name="BTOcancelarHabTec" Content="Cancelar" HorizontalAlignment="Left" Margin="624,101,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.213,0.7" Click="BTOcancelarHabTec_Click" />
+                                        <DockPanel HorizontalAlignment="Center">
+                                            <GroupBox Header="Habilidades Tecnicas del perfil" VerticalAlignment="Top" Height="167" Margin="16,20,16,0">
+                                                <Grid>
+                                                    <TextBlock Margin="25,20,550,0" TextWrapping="Wrap" Text="Habilidad Tecnica" Height="13" VerticalAlignment="Top"/>
+                                                    <TextBlock Margin="254,20,396,0" TextWrapping="Wrap" Text="Nivel" VerticalAlignment="Top"/>
+                                                    <TextBlock Margin="429,20,111,0" TextWrapping="Wrap" Text="Seleccione Aplicacion" VerticalAlignment="Top"/>
+                                                    <ComboBox Name="cb_habtecnica" Margin="25,38,510,0" VerticalAlignment="Top" SelectionChanged="cb_habtecnica_SelectionChanged"/>
+                                                    <ComboBox Name="cb_nivelhabapp" HorizontalAlignment="Left" Margin="252,38,0,0" VerticalAlignment="Top" Width="120"/>
+                                                    <ComboBox Name="cb_habilidadApp" Margin="429,38,13,0" VerticalAlignment="Top" SelectedIndex="0"/>
+                                                    <Button Name="BTOagregarHabTec" Content="Agregar" HorizontalAlignment="Left" Margin="524,102,0,0" VerticalAlignment="Top" Width="76" Click="BTOagregarHabTec_Click" />
+                                                    <Button Name="BTOcancelarHabTec" Content="Cancelar" HorizontalAlignment="Left" Margin="624,101,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.213,0.7" Click="BTOcancelarHabTec_Click" />
 
-                                            </Grid>
-                                        </GroupBox>
-
-
-                                        <DataGrid Margin="10,195,28,27" Name="DataG_Habilidades" 
+                                                </Grid>
+                                            </GroupBox>
+                                        </DockPanel>
+                                        <DockPanel HorizontalAlignment="Center">
+                                        <DataGrid Margin="10,200,28,22" Name="DataG_Habilidades" 
                         	ColumnHeaderHeight="25" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataG_Habilidades_MouseDoubleClick">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Header="Elim."  >
@@ -380,7 +382,7 @@
                                                 <DataGridTextColumn Header="Habilidad P" Binding="{Binding Path='HABILIDAD APLICACION'}"/>
                                             </DataGrid.Columns>
                                         </DataGrid>
-
+                                        </DockPanel>
 
                                     </Grid>
                                 </TabItem>
@@ -390,44 +392,45 @@
                                             <ColumnDefinition Width="761*"/>
                                             <ColumnDefinition Width="37*"/>
                                         </Grid.ColumnDefinitions>
-
-                                        <DataGrid Height="142" Margin="50,0,13.134,70" 
+                                        <DockPanel HorizontalAlignment="Center">
+                                            <DataGrid Height="142" Margin="150,0,113,61" 
                         	x:Name="DataGrid_Certificaciones" VerticalAlignment="Bottom" RowHeight="30" 
                         	ColumnHeaderHeight="20" HeadersVisibility="Column"  CanUserAddRows="False"
                         	AutoGenerateColumns="False" IsReadOnly="True"  MouseDoubleClick="DataGrid_Certificaciones_MouseDoubleClick">
-                                            <DataGrid.Columns>
-                                                <DataGridTemplateColumn Header="Elim."  >
-                                                    <DataGridTemplateColumn.CellTemplate>
-                                                        <ItemContainerTemplate>
-                                                            <DockPanel>
+                                                <DataGrid.Columns>
+                                                    <DataGridTemplateColumn Header="Elim."  >
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <ItemContainerTemplate>
+                                                                <DockPanel>
 
-                                                                <Button Click="Button_Click_DeleteCertificaciones" Opacity="3" MaxWidth="25"  >
-                                                                    <Button.Background>
-                                                                        <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+                                                                    <Button Click="Button_Click_DeleteCertificaciones" Opacity="3" MaxWidth="25"  >
+                                                                        <Button.Background>
+                                                                            <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
 
-                                                                        </LinearGradientBrush>
-                                                                    </Button.Background>
-                                                                    <DockPanel>
-                                                                        <Image Source="Imagenes\eliminar.png" Width="15" />
+                                                                            </LinearGradientBrush>
+                                                                        </Button.Background>
+                                                                        <DockPanel>
+                                                                            <Image Source="Imagenes\eliminar.png" Width="15" />
 
-                                                                    </DockPanel>
-                                                                </Button>
-                                                            </DockPanel>
-                                                        </ItemContainerTemplate>
-                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                        </DockPanel>
+                                                                    </Button>
+                                                                </DockPanel>
+                                                            </ItemContainerTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                </DataGridTemplateColumn>
+                                                    </DataGridTemplateColumn>
 
-                                                <DataGridTextColumn Header="IdCertifica" Visibility="Hidden" Binding="{Binding Path='ID Certi'}"/>
-                                                <DataGridTextColumn Header="CERTIFICACIONES" Visibility="Visible" Binding="{Binding Path='CERTIFICACION'}"/>
-                                                <DataGridTextColumn Header="INST. DE CERTIFICACION" Visibility="Visible" Binding="{Binding Path='INSTITUCION DE CERTIFICACION'}"/>
-                                                <DataGridTextColumn Header="AÑO DE FINALIZACION" Visibility="Visible" Binding="{Binding Path='AÑO DE FINALIZACION'}"/>
+                                                    <DataGridTextColumn Header="IdCertifica" Visibility="Hidden" Binding="{Binding Path='ID Certi'}"/>
+                                                    <DataGridTextColumn Header="CERTIFICACIONES" Visibility="Visible" Binding="{Binding Path='CERTIFICACION'}"/>
+                                                    <DataGridTextColumn Header="INST. DE CERTIFICACION" Visibility="Visible" Binding="{Binding Path='INSTITUCION DE CERTIFICACION'}"/>
+                                                    <DataGridTextColumn Header="AÑO DE FINALIZACION" Visibility="Visible" Binding="{Binding Path='AÑO DE FINALIZACION'}"/>
 
 
 
-                                            </DataGrid.Columns>
+                                                </DataGrid.Columns>
 
-                                        </DataGrid>
+                                            </DataGrid>
+                                        </DockPanel>
                                         <GroupBox Name="grub_certificaciones" Header="Certificaciones" Margin="150,25,113.134,0" VerticalAlignment="Top" Height="216">
                                             <Grid>
                                                 <TextBlock HorizontalAlignment="Left" Margin="40,20,0,0" TextWrapping="Wrap" Text="Titulo Certificacion" VerticalAlignment="Top"/>
@@ -474,6 +477,7 @@
 
                                             </Grid>
                                         </GroupBox>
+                                        <DockPanel HorizontalAlignment="Center">
                                         <DataGrid Height="177"  Style="{StaticResource AzureDataGrid}" Margin="10,0,30,49" 
                         	Name="DataGrid_Referencias" VerticalAlignment="Bottom" RowHeight="30"  
                         	ColumnHeaderHeight="25" HeadersVisibility="Column" CanUserAddRows="False" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGrid_Referencias_MouseDoubleClick">
@@ -510,6 +514,7 @@
 
                                             </DataGrid.Columns>
                                         </DataGrid>
+                                        </DockPanel>
                                     </Grid>
                                 </TabItem>
 

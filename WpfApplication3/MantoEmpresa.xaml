@@ -97,9 +97,10 @@
                 </DockPanel>
             </Border>
         </Button>
-        <DataGrid Height="232" Margin="345,277,177,0" 
-        	x:Name="DataGrid_Empresas" VerticalAlignment="Top" RowHeight="15" 
-        	ColumnHeaderHeight="30"  HeadersVisibility="Column"
+        <DockPanel HorizontalAlignment="Center">
+        <DataGrid Height="230" Margin="345,277,104,0" 
+        	x:Name="DataGrid_Empresas" VerticalAlignment="Top"  
+        	 HeadersVisibility="Column"
         	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Empresas_SelectionChanged" MouseDoubleClick="DataGrid_Empresas_MouseDoubleClick" >
 
             <DataGrid.Columns>
@@ -113,65 +114,17 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn  ClipboardContentBinding="{x:Null}" Header="EDITAR" Visibility="Hidden">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <ItemContainerTemplate>
-                            <DockPanel>
-                                <Image Source="Imagenes/EDG.png" Width="18"  />
-                            </DockPanel>
-                        </ItemContainerTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Ver."  >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <ItemContainerTemplate>
-                            <DockPanel>
-
-                                <Button Visibility="Visible" Opacity="3" MaxWidth="25">
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
-
-                                        </LinearGradientBrush>
-                                    </Button.Background>
-                                    <DockPanel>
-                                        <Image Source="Imagenes\view.png" Width="15" />
-
-                                    </DockPanel>
-                                </Button>
-                            </DockPanel>
-                        </ItemContainerTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
-                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="Elim."  >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <ItemContainerTemplate>
-                            <DockPanel>
-
-                                <Button Name="btn_eliminarEmpresa" Visibility="Visible" Opacity="3" MaxWidth="25" Click="btn_eliminarEmpresa_Click"  >
-                                    <Button.Background>
-                                        <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0"/>
-                                    </Button.Background>
-                                    <DockPanel>
-                                        <Image Source="Imagenes/eliminar.png" Width="15" />
-
-                                    </DockPanel>
-                                </Button>
-                            </DockPanel>
-                        </ItemContainerTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-
                 <DataGridTextColumn Header="COD EMPRESA" Binding="{Binding COD EMPRESA}" />
                 <DataGridTextColumn Header="NOMBRE EMPRESA" Binding="{Binding NOMBRE EMPRESA}" />
                 <DataGridTextColumn Header="DIRECCION" Binding="{Binding DIRECCION}" />
                 <DataGridTextColumn Header="TELEFONO" Binding="{Binding TELEFONO}" />
+                <DataGridTextColumn Header="CORREO EMPRESA" Binding="{Binding CORREO EMPRESA}" />
                 <DataGridTextColumn Header="PAIS" Binding="{Binding PAIS}" />
+             
 
             </DataGrid.Columns>
 
         </DataGrid>
-
+        </DockPanel>
     </Grid>
 </Window>

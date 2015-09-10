@@ -38,6 +38,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
+    <Reference Include="DesktopAlert, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\HELPRUDOCUMENTOS\DesktopAlertSample\SandboxApplication\bin\Debug\DesktopAlert.dll</HintPath>
+    </Reference>
     <Reference Include="HelpDesk.Recursos.entities">
       <HintPath>..\HelpDesk.RecursosHumanos.data\bin\Debug\HelpDesk.Recursos.entities.dll</HintPath>
     </Reference>
@@ -89,6 +93,7 @@
     <Compile Include="NuevoCorreo.xaml.cs">
       <DependentUpon>NuevoCorreo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Utilerias\Alertas\SimpleAlert.xaml.cs" />
     <Compile Include="Utilerias\ControlImagen.cs" />
     <Compile Include="Utilerias\Imagenes.cs" />
     <Compile Include="Utilerias\sendEmail.cs" />
@@ -234,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utilerias\Alertas\SimpleAlert.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -463,6 +472,7 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

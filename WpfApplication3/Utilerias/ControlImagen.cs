@@ -80,35 +80,36 @@ namespace WpfApplication3.Utilerias
         public static Imagenes GuardarImagenEnRuta(Imagenes pimagen)
         {
             string archivoOrigen = pimagen.RutaImagen;
-            string rutaDestino = @"C:\\Imagenes\\Fotos\\";
-            string rutadefault = @"User_default\\";
+            string rutaDestino = @"C:\Imagenes\Fotos\";
+            string rutadefault = @"User_default\";
             if (!Directory.Exists(rutaDestino))
                 Directory.CreateDirectory(rutaDestino);
             if (!Directory.Exists(rutaDestino + rutadefault))
                 Directory.CreateDirectory(rutaDestino + rutadefault);
 
-            if (!Directory.Exists(rutaDestino + rutadefault+ "Userman.png"))
+            if (!File.Exists(rutaDestino + rutadefault + "Userman.png"))
             {
                 string p = rutaDestino + rutadefault + "Userman.png";
                 string rutaOrigenDefaultMan = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\User_default\\Userman.png";
-                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + rutadefault+"Userman.png", true);
+                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + rutadefault + "Userman.png", true);
             }
-            if (!Directory.Exists(rutaDestino + rutadefault+"userwoman.png"))
+            if (!File.Exists(rutaDestino + rutadefault + "userwoman.png"))
             {
                 string rutaOrigenDefaultMan = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\User_default\\userwoman.png";
-                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino +rutadefault+ "userwoman.png", true);
+                System.IO.File.Copy(rutaOrigenDefaultMan, rutaDestino + rutadefault + "userwoman.png", true);
             }
             string archivoDestino = System.IO.Path.Combine(rutaDestino, pimagen.OnlyName);
-            
+
+            if (!(siExisteImagen(pimagen)))
                 System.IO.File.Copy(archivoOrigen, archivoDestino, true);
             return pimagen;
         }
-        public static Imagenes EliminarImagenEnRuta(Imagenes pimagen)
+        public static void EliminarImagenEnRuta(string pimagen)
         {
-            string rutaDestino = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\";
-            string archivoDestino = System.IO.Path.Combine(rutaDestino, pimagen.Deleteimagen);
+            string rutaDestino = @"C:\Imagenes\Fotos\";
+            //string rutaDestino = System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location))) + "\\Imagenes\\Fotos\\";
+            string archivoDestino = System.IO.Path.Combine(rutaDestino, pimagen);
             System.IO.File.Delete(archivoDestino);
-            return pimagen;
         }
         /*Proceso de facebook en la obtencion de imagen por el tipo de genero*/
         public static BitmapImage ObtenerImagenEnObjetoUri(Imagenes pImagen)
@@ -147,7 +148,25 @@ namespace WpfApplication3.Utilerias
                 return bi2;
             }
         }
+        public static bool siExisteImagen(Imagenes pimagen)
+        {
+            bool resultado = false;
 
+            string Name = pimagen.Deleteimagen;
+            string curFile = @"C:\Imagenes\Fotos\" + pimagen.OnlyName;
+            if (File.Exists(curFile))
+            {
+                resultado = true;
+                if (!(pimagen.Deleteimagen == "" ||pimagen.Deleteimagen ==null))
+                {
+                    ControlImagen.EliminarImagenEnRuta(Name);
+                }
+            }
+            else
+                resultado = false;
+
+            return resultado;
+        }
         #region MetodoAnteriores
         //public static BitmapImage ObtenerImagenEnObjetoUri(Imagenes pImagen)
         //{
