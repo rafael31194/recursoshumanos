@@ -178,6 +178,7 @@ namespace WpfApplication3
             pDefaultimagen = datos.ItemArray[18].ToString();
             _Imagen.Psexo = datos.ItemArray[3].ToString();
             imgFotoModificar.Source = ControlImagen.ObtenerImagenEnObjetoUri(_Imagen);
+           
             //Seteando Info Academica Tab*******************************
 
             tableInfoAcad.Columns.Add("ID InfoAcade", typeof(Int32));
@@ -1335,7 +1336,8 @@ namespace WpfApplication3
                 string oerro = "";
 
                 int returinfobasica = 0;
-
+                
+                //capturar la imagen por el genero 
                 #region Capturar imgen por genero
                 switch (_InfoBasicaE.id_genero)
                 {
@@ -1349,6 +1351,7 @@ namespace WpfApplication3
                         break;
                 }
                 #endregion
+
 
                 /*proceso de eliminacion de imagen*/
                 if (pCapturaImagen == true)

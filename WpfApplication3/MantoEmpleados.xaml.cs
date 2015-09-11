@@ -17,6 +17,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfApplication3.Utilerias;
+using DesktopAlert;
+using HelpDesk.RecursosHumanos.Presentacion.Utilerias.Alertas; 
 
 
 namespace WpfApplication3
@@ -26,6 +28,7 @@ namespace WpfApplication3
     /// </summary>
     public partial class MantoEmpleados : MetroWindow
     {
+         
         public MantoEmpleados()
         {
             InitializeComponent();
@@ -53,8 +56,9 @@ namespace WpfApplication3
         EstadoProyectoBLL _estdoProyecto = new EstadoProyectoBLL();
         ProyectoBLL _proyectoBL = new ProyectoBLL();
 
-        static Imagenes _Imagen = new Imagenes();    
-
+        static Imagenes _Imagen = new Imagenes();
+        bool pCapturaImagen = false;
+        string pMensaje = "", pURL = "", pDefaultimagen; 
 
         //***************TABLAS DE INFORMACION DEL CANDIDATO*****************
 
@@ -180,7 +184,6 @@ namespace WpfApplication3
             txtNafpInfBasica.Text = datos.ItemArray[13].ToString();
             txtNiss.Text = datos.ItemArray[14].ToString();
             idSituProfe = datos.ItemArray[15].ToString();
-
             _Imagen.OnlyName = datos.ItemArray[18].ToString();
             _Imagen.Psexo = datos.ItemArray[3].ToString();
             imgFotoMantenimiento.Source = ControlImagen.ObtenerImagenEnObjetoUri(_Imagen);
@@ -1597,12 +1600,59 @@ namespace WpfApplication3
                 string oerro = "";
 
                 int returinfobasica = 0;
-                returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+
+                #region Capturar imagen por genero
+                switch (_InfoBasicaE.id_genero)
+                {
+                    case 1:
+                        pMensaje = "el candidato";
+                        pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
+                        break;
+                    case 2:
+                        pMensaje = "la candidata";
+                        pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
+                        break;
+                }
+                #endregion
+
+                /*proceso de eliminacion de imagen*/
+                if (pCapturaImagen == true)
+                {
+                    ControlImagen.GuardarImagenEnRuta(_Imagen);
+                    //
+                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                }
+                else
+                {
+                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                }
                 if (returinfobasica <= 0)
                 {
                     MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
-                else MessageBox.Show("El candidato " + _InfoBasicaE.nombre + " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
+                else
+                {
+                    #region Mostrar mensaje personalizado
+
+                    SimpleAlert simpleAlert = new SimpleAlert();
+                    simpleAlert.Title = "Nuevo Registro";
+                    simpleAlert.NamePeople = txtNombreInfBasica.Text;
+                    simpleAlert.Url = pURL;
+
+                    simpleAlert.Message = "Se ha modificado " + pMensaje;
+                    simpleAlert.ShowDialog();
+
+                    #region Redireccionamiento
+                    BusquedaEmpleados _menusBusqueda = new BusquedaEmpleados();
+                    _menusBusqueda.InitializeComponent();
+                    this.Close();
+                    _menusBusqueda.Show();
+
+                    #endregion
+                    #endregion
+                }
+
+                //MessageBox.Show("El empleado "+_InfoBasicaE.nombre+ " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
             }
             else
             {
@@ -1677,15 +1727,9 @@ namespace WpfApplication3
             _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
             if (_Imagen.ImagenEnObjeto !=null)
             {
+                pCapturaImagen = true;
                 imgFotoMantenimiento.Source = _Imagen.ImagenEnObjeto;
-                lbimagenMantenimiento.Content = _Imagen.RutaImagen;
             }
         }
-
-       
-       
-
-
-
     }
 }
