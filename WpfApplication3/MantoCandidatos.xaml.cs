@@ -498,12 +498,34 @@ namespace WpfApplication3
                     infoObjeto.titulo = titulo;
                     infoObjeto.anio_de_finalizacion = finalizacion;
 
-                    InformacionAcademicaBLL infoBll = new InformacionAcademicaBLL();
-                    infoBll.ActualizarInfomacionAcademica(infoObjeto, int.Parse(idCandidato), ref oerro);
+
+                    bool agregar = true;
+                    foreach (DataRowView dr in DataGrid_InfAcademica.Items)
+                    {
+                        if ((dr.Row.ItemArray[0].ToString()) == id_tipoEducacion.ToString() && dr.Row.ItemArray[1].ToString() == tipoEducacion &&
+                            dr.Row.ItemArray[2].ToString() == titulo && dr.Row.ItemArray[3].ToString() == institucion && dr.Row.ItemArray[4].ToString() == finalizacion.ToString() &&
+                            dr.Row.ItemArray[5].ToString() == StatusName && dr.Row.ItemArray[6].ToString() == status.ToString())
+                        {
+                            agregar = false;
+                        }
+                    }
+                    if (agregar)
+                    {
+
+                        InformacionAcademicaBLL infoBll = new InformacionAcademicaBLL();
+                        infoBll.ActualizarInfomacionAcademica(infoObjeto, int.Parse(idCandidato), ref oerro);
+                        tableInfoAcad.Rows.Add(infoObjeto.id_informacionAcademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                        agregar = true;
+                    }
 
 
 
-                    tableInfoAcad.Rows.Add(infoObjeto.id_informacionAcademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+
+                    
 
                     //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
                     cb_tipoeducacion.Text = string.Empty;
@@ -607,13 +629,37 @@ namespace WpfApplication3
                     expeObj.fechaInicio = FechaInicio;
                     expeObj.fechaFin = fechaFin;
 
-                    ExperienciaLaboralBLL expeBll = new ExperienciaLaboralBLL();
+
+
+                    bool agregar = true;
+                    foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+                    {
+                        if (dr.Row.ItemArray[1].ToString() == NombreEmpesa.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == CargoDesempeñado.ToLower() &&
+                          dr.Row.ItemArray[3].ToString().ToLower() == DescripcionPuesto.ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == FechaInicio.ToLower() &&
+                          dr.Row.ItemArray[5].ToString().ToLower() == fechaFin.ToLower())
+                        {
+                            agregar = false;
+                        }
+                    }
+                    if (agregar)
+                    {
+
+                         ExperienciaLaboralBLL expeBll = new ExperienciaLaboralBLL();
                     expeBll.ActualizarExperienciaLab(expeObj, Int32.Parse(idCandidato), ref oerro);
 
 
 
                     tablaExperiencia.Rows.Add(idUpdateExpe, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
 
+                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                        agregar = true;
+                    }
+
+                   
 
 
                     txt_NombreEmpresaLab.Text = string.Empty;
@@ -793,12 +839,33 @@ namespace WpfApplication3
                     refeObj.telefono = Telefono;
                     refeObj.descripcion = Descripcion;
 
-                    ReferenciasBLL refeBll = new ReferenciasBLL();
-                    refeBll.ActualizarReferencias(refeObj, int.Parse(idCandidato), ref oerro);
+                    bool agregar = true;
+                    foreach (DataRowView dr in DataGrid_Referencias.Items)
+                    {
+                        if (dr.Row.ItemArray[1].ToString() == idReferencia.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == TipoReferencia.ToLower() &&
+                          dr.Row.ItemArray[3].ToString().ToLower() == Nombre.ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == Telefono.ToLower() &&
+                          dr.Row.ItemArray[5].ToString().ToLower() == Descripcion.ToLower())
+                        {
+                            agregar = false;
+                        }
+                    }
+                    if (agregar)
+                    {
 
 
-                    tablaReference.Rows.Add(refeObj.id_referencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+                        ReferenciasBLL refeBll = new ReferenciasBLL();
+                        refeBll.ActualizarReferencias(refeObj, int.Parse(idCandidato), ref oerro);
 
+
+                        tablaReference.Rows.Add(refeObj.id_referencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                        agregar = true;
+                    }
+                   
                     cb_tipoRef.Text = string.Empty;
                     txt_nombreRef.Text = string.Empty;
                     txt_telefonoRef.Text = string.Empty;
@@ -860,7 +927,7 @@ namespace WpfApplication3
 
         private void BTOagregarHabTec_Click(object sender, RoutedEventArgs e)
         {
-
+            //falta arreglar de que no elimine la ROW cuando encuentre una coincidencia 
             if (!(string.IsNullOrEmpty(cb_habtecnica.Text) | string.IsNullOrEmpty(cb_nivelhabapp.Text) | string.IsNullOrEmpty(cb_habilidadApp.Text)))
             {
 
@@ -900,11 +967,32 @@ namespace WpfApplication3
                         habObj.id_nivel = id_nivel;
                         habObj.idhabilidadTecnica = id_habilidadTecnica;
 
-                        HabilidadCandidatoBLL habiBll = new HabilidadCandidatoBLL();
-                        habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
+                        bool agregar = true;
+                        foreach (DataRowView dr in DataG_Habilidades.Items)
+                        {
+                            if (dr.Row.ItemArray[1].ToString() == id_habilidadTecnica.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == HabilidadTecnica.ToLower() &&
+                              dr.Row.ItemArray[3].ToString().ToLower() == id_nivel.ToString().ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == Nivel.ToLower() &&
+                              dr.Row.ItemArray[5].ToString().ToLower() == id_habilidadAplicacion.ToString().ToLower() && dr.Row.ItemArray[6].ToString().ToLower() == HabilidadAplicacion.ToString().ToLower())
+                            {
+                                agregar = false;
+                            }
+                        }
+                        if (agregar)
+                        {
 
 
-                        tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                            HabilidadCandidatoBLL habiBll = new HabilidadCandidatoBLL();
+                            habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
+
+
+                            tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                            agregar = true;
+                        }
+                       
 
 
                         cb_habtecnica.Text = string.Empty;
@@ -999,10 +1087,32 @@ namespace WpfApplication3
                 refinfoAcademica.id_statusAcademico = status;
                 int returinfoacademica = 0;
 
-                int id = Int32.Parse(idCandidato);
-                returinfoacademica = _informacionAcademicaBL.AgregarInfomacionAcademica(refinfoAcademica, int.Parse(idCandidato), ref oerro);
 
-                tableInfoAcad.Rows.Add(returinfoacademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                bool agregar = true;
+                foreach (DataRowView dr in DataGrid_InfAcademica.Items)
+                {
+                    if ((dr.Row.ItemArray[1].ToString()) == id_tipoEducacion.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == tipoEducacion.ToLower() &&
+                        dr.Row.ItemArray[3].ToString().ToLower() == titulo.ToLower() && dr.Row.ItemArray[4].ToString() == institucion && dr.Row.ItemArray[5].ToString().ToLower() == finalizacion.ToString().ToLower() &&
+                        dr.Row.ItemArray[6].ToString().ToLower() == StatusName.ToLower() && dr.Row.ItemArray[7].ToString().ToLower() == status.ToString().ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+
+
+                    int id = Int32.Parse(idCandidato);
+                    returinfoacademica = _informacionAcademicaBL.AgregarInfomacionAcademica(refinfoAcademica, int.Parse(idCandidato), ref oerro);
+
+                    tableInfoAcad.Rows.Add(returinfoacademica, id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
             }
             catch (Exception ex)
             {
@@ -1038,11 +1148,32 @@ namespace WpfApplication3
             refExpL.fechaInicio = FechaInicio;
             refExpL.fechaFin = fechaFin;
 
-            returinfoLaboral = _experienciaLabBL.AgregarexperienciaLab(refExpL, int.Parse(idCandidato), ref oerro);
+            bool agregar = true;
+                    foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+                    {
+                        if (dr.Row.ItemArray[1].ToString() == NombreEmpesa.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == CargoDesempeñado.ToLower() &&
+                            dr.Row.ItemArray[3].ToString().ToLower() == DescripcionPuesto.ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == FechaInicio.ToLower() &&
+                            dr.Row.ItemArray[5].ToString().ToLower() == fechaFin.ToLower())
+                        {
+                            agregar = false;
+                        }
+                    }
+                    if (agregar)
+                    {
+                        returinfoLaboral = _experienciaLabBL.AgregarexperienciaLab(refExpL, int.Parse(idCandidato), ref oerro);
 
-            //************************************************
+                            //************************************************
 
-            tablaExperiencia.Rows.Add(returinfoLaboral, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                            tablaExperiencia.Rows.Add(returinfoLaboral, NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                            
+                      
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                        agregar = true;
+                    }
+            
 
 
             txt_NombreEmpresaLab.Text = string.Empty;
@@ -1077,12 +1208,35 @@ namespace WpfApplication3
             refE.telefono = Telefono;
             refE.descripcion = Descripcion;
 
-            returReferencias = _referenciasBL.AgregarReferencias(refE, Int32.Parse(idCandidato), ref oerro);
+            bool agregar = true;
+            foreach (DataRowView dr in DataGrid_Referencias.Items)
+            {
+                if (dr.Row.ItemArray[1].ToString() == idReferencia.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == TipoReferencia.ToLower() &&
+                  dr.Row.ItemArray[3].ToString().ToLower() == Nombre.ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == Telefono.ToLower() &&
+                  dr.Row.ItemArray[5].ToString().ToLower() == Descripcion.ToLower())
+                {
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
 
 
-            //************************************************************************
+                returReferencias = _referenciasBL.AgregarReferencias(refE, Int32.Parse(idCandidato), ref oerro);
 
-            tablaReference.Rows.Add(returReferencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+                //************************************************************************
+
+                tablaReference.Rows.Add(returReferencias, idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+
+
+            }
+            else
+            {
+                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                agregar = true;
+            }
 
             cb_tipoRef.Text = string.Empty;
             txt_nombreRef.Text = string.Empty;
@@ -1302,96 +1456,104 @@ namespace WpfApplication3
                    (string.IsNullOrEmpty(txtCorreoInfBasica.Text)) || (string.IsNullOrEmpty(txtNoduiInfBasica.Text)) || (string.IsNullOrEmpty(txtNnitInfBasica.Text))
                    ))
             {
-                InfoBasicaE _InfoBasicaE = new InfoBasicaE();
-                DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
-                _InfoBasicaE.id_candidato = int.Parse(idCandidato);
-                _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
-                _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
-                _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
-                _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
-                //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
-                _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                _InfoBasicaE.correo = txtCorreoInfBasica.Text;
-                _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
-                _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-                //_Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.OnlyName);
-                if (pCapturaImagen)
-                    _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
-                if (rbsexoM.IsChecked == true)
+                if (DateTime.Compare(DateTime.Now.Date, DateFechNacInfoBasica.SelectedDate.Value.Date) > 0)
                 {
-                    _InfoBasicaE.id_genero = 1;
-                }
-                else if (rbsexoF.IsChecked == true)
-                {
-                    _InfoBasicaE.id_genero = 2;
-                }
+                    InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+                    DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+                    _InfoBasicaE.id_candidato = int.Parse(idCandidato);
+                    _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+                    _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+                    _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+                    _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+                    //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+                    _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+                    _InfoBasicaE.correo = txtCorreoInfBasica.Text;
+                    _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+                    _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+                    //_Imagen = ControlImagen.ObtenerImageEnBinario(_Imagen.OnlyName);
+                    if (pCapturaImagen)
+                        _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
+                    if (rbsexoM.IsChecked == true)
+                    {
+                        _InfoBasicaE.id_genero = 1;
+                    }
+                    else if (rbsexoF.IsChecked == true)
+                    {
+                        _InfoBasicaE.id_genero = 2;
+                    }
 
-                _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
-                _InfoBasicaE.NIT = txtNnitInfBasica.Text;
-                _InfoBasicaE.AFP = txtNafpInfBasica.Text;
-                _InfoBasicaE.ISSS = txtNiss.Text;
-                _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
-                _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+                    _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+                    _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+                    _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+                    _InfoBasicaE.ISSS = txtNiss.Text;
+                    _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+                    _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
 
-                string oerro = "";
+                    string oerro = "";
 
-                int returinfobasica = 0;
-                
-                //capturar la imagen por el genero 
-                #region Capturar imgen por genero
-                switch (_InfoBasicaE.id_genero)
-                {
-                    case 1:
-                        pMensaje = "el candidato";
-                        pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
-                        break;
-                    case 2:
-                        pMensaje = "la candidata";
-                        pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
-                        break;
-                }
-                #endregion
+                    int returinfobasica = 0;
+
+                    //capturar la imagen por el genero 
+                    #region Capturar imgen por genero
+                    switch (_InfoBasicaE.id_genero)
+                    {
+                        case 1:
+                            pMensaje = "el candidato";
+                            pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
+                            break;
+                        case 2:
+                            pMensaje = "la candidata";
+                            pURL = string.IsNullOrEmpty(_Imagen.OnlyName) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : @"C:\Imagenes\Fotos\" + _Imagen.OnlyName;
+                            break;
+                    }
+                    #endregion
 
 
-                /*proceso de eliminacion de imagen*/
-                if (pCapturaImagen == true)
-                {
-                    ControlImagen.GuardarImagenEnRuta(_Imagen);
-                    //
-                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                    /*proceso de eliminacion de imagen*/
+                    if (pCapturaImagen == true)
+                    {
+                        ControlImagen.GuardarImagenEnRuta(_Imagen);
+                        //
+                        returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                    }
+                    else
+                    {
+                        returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                    }
+                    if (returinfobasica <= 0)
+                    {
+                        MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        #region Mostrar mensaje personalizado
+
+                        SimpleAlert simpleAlert = new SimpleAlert();
+                        simpleAlert.Title = "Nuevo Registro";
+                        simpleAlert.NamePeople = txtNombreInfBasica.Text;
+                        simpleAlert.Url = pURL;
+
+                        simpleAlert.Message = "Se ha modificado " + pMensaje;
+                        simpleAlert.ShowDialog();
+
+                        #region Redireccionamiento
+                        Busqueda _menusBusqueda = new Busqueda();
+                        _menusBusqueda.InitializeComponent();
+                        this.Close();
+                        _menusBusqueda.Show();
+
+                        #endregion
+                        #endregion
+                    }
+
+                    //MessageBox.Show("El candidato "+_InfoBasicaE.nombre+ " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
                 }
                 else
                 {
-                    returinfobasica = _InfobasicaBL.ActualizarInfBasica(_InfoBasicaE, _InfoBasicaE.id_candidato, ref oerro);
+                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                if (returinfobasica <= 0)
-                {
-                    MessageBox.Show("Ocurrio un error y no se pudo actualizar al candidato", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                else
-                {
-                    #region Mostrar mensaje personalizado
-
-                    SimpleAlert simpleAlert = new SimpleAlert();
-                    simpleAlert.Title = "Nuevo Registro";
-                    simpleAlert.NamePeople = txtNombreInfBasica.Text;
-                    simpleAlert.Url = pURL;
-
-                    simpleAlert.Message = "Se ha modificado " + pMensaje;
-                    simpleAlert.ShowDialog();
-
-                    #region Redireccionamiento
-                    Busqueda _menusBusqueda = new Busqueda();
-                    _menusBusqueda.InitializeComponent();
-                    this.Close();
-                    _menusBusqueda.Show();
-
-                    #endregion
-                    #endregion
-                }
-
-                //MessageBox.Show("El candidato "+_InfoBasicaE.nombre+ " fue actualizado", "Exito", MessageBoxButton.OK, MessageBoxImage.None);
             }
+
             else
             {
                 MessageBox.Show("Asegurese de que los campos obligatorios no esten vacíos.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);

@@ -53,6 +53,12 @@ namespace WpfApplication3
 
         static Imagenes _Imagen = new Imagenes();
 
+        //datatables de cada grid
+        DataTable dt1 = new DataTable();
+        DataTable dt2 = new DataTable();
+        DataTable dt3 = new DataTable();
+        DataTable dt4 = new DataTable();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -109,6 +115,51 @@ namespace WpfApplication3
 
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
+
+            
+           
+            
+
+
+            try
+            {
+
+
+                dt1.Columns.Add("Nombre de la empresa", typeof(string));
+                dt1.Columns.Add("Cargo Desempeñado", typeof(string));
+                dt1.Columns.Add("Descripcion del puesto", typeof(string));
+                dt1.Columns.Add("Fecha Inicio", typeof(string));
+                dt1.Columns.Add("Fecha Fin", typeof(string));
+                
+                dt2.Columns.Add("IDTipoEduacion", typeof(Int32));
+                dt2.Columns.Add("Tipo Educacion", typeof(string));
+                dt2.Columns.Add("Titulo", typeof(string));
+                dt2.Columns.Add("Institucion", typeof(string));
+                dt2.Columns.Add("Año finalizacion", typeof(Int32));
+                dt2.Columns.Add("Nombre status", typeof(string));
+                dt2.Columns.Add("status", typeof(Int32));
+
+                dt3.Columns.Add("ID HAB TECNICA", typeof(Int32));
+                dt3.Columns.Add("HABILIDAD TECNICA", typeof(string));
+                dt3.Columns.Add("ID NIVELHABTEC", typeof(Int32));
+                dt3.Columns.Add("NIVEL", typeof(string));
+                dt3.Columns.Add("ID HAB APP", typeof(Int32));
+                dt3.Columns.Add("HABILIDAD APLICACION", typeof(string));
+
+                dt4.Columns.Add("IDTIPOREF", typeof(Int32));
+                dt4.Columns.Add("TIPO DE REFERENCIA", typeof(string));
+                dt4.Columns.Add("NOMBRE", typeof(string));
+                dt4.Columns.Add("TELEFONO", typeof(string));
+                dt4.Columns.Add("DESCRIPCION", typeof(string));
+
+                //id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
+                //HabilidadAplicacion = cb_habilidadApp.Text.ToString();
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error al crear las tablas de informacion.");
+            }
             try
             {
                 //***Esta linea de codigo es para que en el formulario en la parte superiro se vea que usuario esta en el sistema***///
@@ -254,57 +305,63 @@ namespace WpfApplication3
         }
 
 
-        DataTable dt2 = new DataTable();
+        
         private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
         {
             string tipoEducacion, titulo, institucion, StatusName;
             int id_tipoEducacion, status, finalizacion;
-
-            id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
-            tipoEducacion = cb_tipoeducacion.Text.ToString();
-            titulo = txt_Tituloedu.Text;
-            institucion = txt_institucionedu.Text;
-            finalizacion = Convert.ToInt32(cb_añofinalizacionedu.Text);
-            if (rb_InfoAcompleto.IsChecked == true)
+            if (!(string.IsNullOrEmpty(cb_tipoeducacion.SelectedValue.ToString()) | string.IsNullOrEmpty(cb_tipoeducacion.Text.ToString()) |
+                string.IsNullOrEmpty(txt_Tituloedu.Text) | rb_InfoAcompleto.IsChecked == false))
             {
-                status = 1;
-                StatusName = "Completo";
+                id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
+                tipoEducacion = cb_tipoeducacion.Text.ToString();
+                titulo = txt_Tituloedu.Text;
+                institucion = txt_institucionedu.Text;
+                finalizacion = Convert.ToInt32(cb_añofinalizacionedu.Text);
+                if (rb_InfoAcompleto.IsChecked == true)
+                {
+                    status = 1;
+                    StatusName = "Completo";
+                }
+                else
+                {
+                    status = 2;
+                    StatusName = "Incompleto";
+
+                }
+                bool agregar = true;
+                foreach (DataRowView dr in DataGrid_InfAcademica.Items)
+                {
+                    if ((dr.Row.ItemArray[0].ToString().ToLower()) == id_tipoEducacion.ToString().ToLower() && dr.Row.ItemArray[1].ToString().ToLower() == tipoEducacion.ToLower() &&
+                        dr.Row.ItemArray[2].ToString().ToLower() == titulo.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == institucion.ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == finalizacion.ToString().ToLower() &&
+                        dr.Row.ItemArray[5].ToString().ToLower() == StatusName.ToLower() && dr.Row.ItemArray[6].ToString().ToLower() == status.ToString().ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+
+                    dt2.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
+                DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
+                cb_tipoeducacion.Text = string.Empty;
+                txt_Tituloedu.Text = string.Empty;
+                txt_institucionedu.Text = string.Empty;
+                cb_añofinalizacionedu.Text = string.Empty;
+
+
             }
             else
             {
-                status = 2;
-                StatusName = "Incompleto";
-
+                MessageBox.Show("Complete todos los campos antes de agregar la informacion.");
             }
-
-
-            try
-            {
-                dt2.Columns.Add("IDTipoEduacion", typeof(Int32));
-                dt2.Columns.Add("Tipo Educacion", typeof(string));
-                dt2.Columns.Add("Titulo", typeof(string));
-                dt2.Columns.Add("Institucion", typeof(string));
-                dt2.Columns.Add("Año finalizacion", typeof(Int32));
-                dt2.Columns.Add("Nombre status", typeof(string));
-                dt2.Columns.Add("status", typeof(Int32));
-
-                //id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
-                //HabilidadAplicacion = cb_habilidadApp.Text.ToString();
-
-            }
-            catch (Exception)
-            {
-            }
-
-            dt2.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
-
-            DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
-            cb_tipoeducacion.Text = string.Empty;
-            txt_Tituloedu.Text = string.Empty;
-            txt_institucionedu.Text = string.Empty;
-            cb_añofinalizacionedu.Text = string.Empty;
-
-
         }
 
         private void DataGrid_InfAcademica_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -329,7 +386,7 @@ namespace WpfApplication3
         }
 
 
-        DataTable dt1 = new DataTable();
+        
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
         {
             //BOTON PARA AGREGAR COMO TEMPORAL A LA GRID DE INFO.LABORAL 
@@ -342,20 +399,29 @@ namespace WpfApplication3
             fechaFin = txt_FechaFinLab.Text;
 
             //ds.Tables.Add(dt);
-            try
-            {
-                dt1.Columns.Add("Nombre de la empresa", typeof(string));
-                dt1.Columns.Add("Cargo Desempeñado", typeof(string));
-                dt1.Columns.Add("Descripcion del puesto", typeof(string));
-                dt1.Columns.Add("Fecha Inicio", typeof(string));
-                dt1.Columns.Add("Fecha Fin", typeof(string));
-            }
-            catch (Exception)
-            {
-            }
 
+            bool agregar = true;
+            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            {
+                if (dr.Row.ItemArray[0].ToString() == NombreEmpesa.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == CargoDesempeñado.ToLower() &&
+                  dr.Row.ItemArray[2].ToString().ToLower() == DescripcionPuesto.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == FechaInicio.ToLower() &&
+                  dr.Row.ItemArray[4].ToString().ToLower() == fechaFin.ToLower())
+                {
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
 
-            dt1.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                dt1.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+
+            }
+            else
+            {
+                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                agregar = true;
+            }
+            
 
             DataGrid_Inf_Laboral.ItemsSource = dt1.DefaultView;
 
@@ -368,7 +434,7 @@ namespace WpfApplication3
             //DataGrid_InfAcademica.ItemsSource = dt;
 
         }
-        DataTable dt4 = new DataTable();
+        
         private void BTOAgregarTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
             string TipoReferencia, Nombre, Telefono, Descripcion;
@@ -379,19 +445,30 @@ namespace WpfApplication3
             Nombre = txt_nombreRef.Text;
             Telefono = txt_telefonoRef.Text;
             Descripcion = txt_descripcionREF.Text;
-            try
+
+            bool agregar = true;
+            foreach (DataRowView dr in DataGrid_Referencias.Items)
             {
-                dt4.Columns.Add("IDTIPOREF", typeof(Int32));
-                dt4.Columns.Add("TIPO DE REFERENCIA", typeof(string));
-                dt4.Columns.Add("NOMBRE", typeof(string));
-                dt4.Columns.Add("TELEFONO", typeof(string));
-                dt4.Columns.Add("DESCRIPCION", typeof(string));
+                if (dr.Row.ItemArray[0].ToString() == idReferencia.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == TipoReferencia.ToLower() &&
+                  dr.Row.ItemArray[2].ToString().ToLower() == Nombre.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == Telefono.ToLower() &&
+                  dr.Row.ItemArray[4].ToString().ToLower() == Descripcion.ToLower())
+                {
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
+
+                dt4.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
 
             }
-            catch (Exception)
+            else
             {
+                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                agregar = true;
             }
-            dt4.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+
             DataGrid_Referencias.ItemsSource = dt4.DefaultView;
             cb_tipoRef.Text = string.Empty;
             txt_nombreRef.Text = string.Empty;
@@ -399,7 +476,7 @@ namespace WpfApplication3
             txt_descripcionREF.Text = string.Empty;
         }
 
-        DataTable dt3 = new DataTable();
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
@@ -424,19 +501,6 @@ namespace WpfApplication3
                 id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
                 HabilidadAplicacion = cb_habilidadApp.Text.ToString();
 
-                try
-                {
-                    dt3.Columns.Add("ID HAB TECNICA", typeof(Int32));
-                    dt3.Columns.Add("HABILIDAD TECNICA", typeof(string));
-                    dt3.Columns.Add("ID NIVELHABTEC", typeof(Int32));
-                    dt3.Columns.Add("NIVEL", typeof(string));
-                    dt3.Columns.Add("ID HAB APP", typeof(Int32));
-                    dt3.Columns.Add("HABILIDAD APLICACION", typeof(string));
-
-                }
-                catch (Exception)
-                {
-                }
 
                 dt3.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
                 DataG_Habilidades.ItemsSource = dt3.DefaultView;
@@ -663,170 +727,178 @@ namespace WpfApplication3
             }
             else
             {
-                //SE VALIDAN QUE LOS DEMAS GRID CONTENGAN DATOS, SE RECOMIENDA AGREGAR AQUELLOS GRID QUE CONSIDEREN SEAN NECESARIOS.
-                if (DataG_Habilidades.Items.Count == 0 || DataGrid_InfAcademica.Items.Count == 0)
-                {
-                    cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
-                    MessageBox.Show("Ingrese informacion acdemica y habilidades ya que son formularios requeridos", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
 
+                if (DateTime.Compare(DateTime.Now.Date, DateFechNacInfoBasica.SelectedDate.Value.Date) > 0)
+                {
+                    //SE VALIDAN QUE LOS DEMAS GRID CONTENGAN DATOS, SE RECOMIENDA AGREGAR AQUELLOS GRID QUE CONSIDEREN SEAN NECESARIOS.
+                    if (DataG_Habilidades.Items.Count == 0 || DataGrid_InfAcademica.Items.Count == 0)
+                    {
+                        cadenaFaltanDatos = ", YA QUE NO A INGRESADO TODA LA INFORMACION NECESARIA.";
+                        MessageBox.Show("Ingrese informacion acdemica y habilidades ya que son formularios requeridos", "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                    }
+                    else
+                    {
+                        //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
+                        InfoBasicaE _InfoBasicaE = new InfoBasicaE();
+                        DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
+                        _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
+                        _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
+                        _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
+                        _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
+                        //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
+                        _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
+                        _InfoBasicaE.correo = txtCorreoInfBasica.Text;
+                        _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
+                        _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
+                        //_Imagen = ControlImagen.ObtenerImagenEnObjecto(_Imagen.RutaImagen);
+                        _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
+                        if (rbsexoM.IsChecked == true)
+                        {
+                            _InfoBasicaE.id_genero = 1;
+                        }
+                        else if (rbsexoF.IsChecked == true)
+                        {
+                            _InfoBasicaE.id_genero = 2;
+                        }
+
+                        _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
+                        _InfoBasicaE.NIT = txtNnitInfBasica.Text;
+                        _InfoBasicaE.AFP = txtNafpInfBasica.Text;
+                        _InfoBasicaE.ISSS = txtNiss.Text;
+                        _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
+                        _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
+                        string oerro = "";
+
+                        int returinfobasica = 0;
+                        returinfobasica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
+
+                        // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
+
+                        InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
+                        int returinfoacademica = 0;
+                        foreach (DataRowView row in DataGrid_InfAcademica.Items)
+                        {
+                            refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
+                            refinfoAcademica.titulo = Convert.ToString(row[2]);
+                            refinfoAcademica.institucion = Convert.ToString(row[3]);
+                            refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
+                            refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
+
+                            returinfoacademica = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerro);
+                        }
+
+                        //BOTON PARA GUARDAR INFORMACION LABORAL
+
+
+                        ExpLaboralE refExpL = new ExpLaboralE();
+                        int returinfoLaboral = 0;
+                        foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
+                        {
+                            refExpL.nombreEmpresa = Convert.ToString(row1[0]);
+                            refExpL.cargoDesp = Convert.ToString(row1[1]);
+                            refExpL.descripPuesto = Convert.ToString(row1[2]);
+                            refExpL.fechaInicio = Convert.ToString(row1[3]);
+                            refExpL.fechaFin = Convert.ToString(row1[4]);
+
+                            returinfoLaboral = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerro);
+
+                        }
+
+                        // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
+
+                        HabCandidatoE refHabCandidato = new HabCandidatoE();
+                        int returnHabilidades = 0;
+                        foreach (DataRowView row3 in DataG_Habilidades.Items)
+                        {
+
+
+                            refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row3[0]);
+                            refHabCandidato.id_nivel = Convert.ToInt32(row3[2]);
+                            refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row3[4]);
+
+                            returnHabilidades = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerro);
+
+                        }
+
+                        //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
+
+                        CertificacionesE certifi = new CertificacionesE();
+                        int returnCertificaciones = 0;
+
+                        foreach (DataRowView row2 in DataGrid_Certificaciones.Items)
+                        {
+                            certifi.nombre = Convert.ToString(row2[0]);
+                            certifi.institucion = Convert.ToString(row2[1]);
+                            certifi.anio = Convert.ToInt16(row2[2]);
+
+                            returnCertificaciones = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerro);
+
+                        }
+
+                        //BOTON PARA INGRESAR REFERENCIAS A
+                        RefecenciasE refE = new RefecenciasE();
+                        int returReferencias = 0;
+                        foreach (DataRowView row5 in DataGrid_Referencias.Items)
+                        {
+                            refE.id_tipoReferencias = Convert.ToInt32(row5[0]);
+                            refE.nombre = Convert.ToString(row5[2]);
+                            refE.telefono = Convert.ToString(row5[3]);
+                            refE.descripcion = Convert.ToString(row5[4]);
+
+                            returReferencias = _referenciasBL.GuardarReferencias(refE, ref oerro);
+
+                        }
+                        if (oerro == "")
+                        {
+                            #region Capturar imgen por genero
+                            string pMensaje = "", pURL = "";
+                            switch (_InfoBasicaE.id_genero)
+                            {
+                                case 1:
+                                    pMensaje = "candidato";
+                                    pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : _Imagen.RutaImagen;
+                                    break;
+                                case 2:
+                                    pMensaje = "candidata";
+                                    pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : _Imagen.RutaImagen;
+                                    break;
+                            }
+                            #endregion
+
+                            if (Elijiomagen)
+                                ControlImagen.GuardarImagenEnRuta(_Imagen);
+
+                            #region Mostrar mensaje personalizado
+
+                            SimpleAlert simpleAlert = new SimpleAlert();
+                            simpleAlert.Title = "Nuevo Registro";
+                            simpleAlert.NamePeople = txtNombreInfBasica.Text;
+                            simpleAlert.Url = pURL;
+
+                            simpleAlert.Message = "Se ha creado el nuevo " + pMensaje;
+                            simpleAlert.ShowDialog();
+
+                            #region Redireccionamiento
+                            Busqueda _menusBusqueda = new Busqueda();
+                            _menusBusqueda.InitializeComponent();
+                            this.Close();
+                            _menusBusqueda.Show();
+                            #endregion
+                            #endregion
+
+                        }
+
+                        else
+                        {
+                            MessageBoxResult mbr = MessageBox.Show("OCURRIO UN ERROR AL GUARDAR SUS DATOS... ERROR: " + oerro, "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
+
+                        }
+                    }
                 }
                 else
                 {
-                    //PARAMETROS QUE INGRESARAN A LA BASE TAB INFOMACION BASICA
-                    InfoBasicaE _InfoBasicaE = new InfoBasicaE();
-                    DateTime edad = DateFechNacInfoBasica.SelectedDate.Value;
-                    _InfoBasicaE.nombre = txtNombreInfBasica.Text.ToUpper();
-                    _InfoBasicaE.nacionalidad = txtNacionalidadInfBasica.Text.ToUpper();
-                    _InfoBasicaE.telefono_celular = txtTeNocelularInfBasica.Text.ToUpper();
-                    _InfoBasicaE.telefono_fijo = txtTelefonoCasaInfBasica.Text.ToUpper();
-                    //_InfoBasicaE.profesiones = cb_profesionesIB.Text.ToUpper();
-                    _InfoBasicaE.id_profesiones = Convert.ToInt32(cb_profesionesIB.SelectedValue);
-                    _InfoBasicaE.correo = txtCorreoInfBasica.Text;
-                    _InfoBasicaE.fecha_nacimiento = DateFechNacInfoBasica.SelectedDate.Value;
-                    _InfoBasicaE.direccion = txtLugarResidenciaInfBasica.Text.ToUpper();
-                    //_Imagen = ControlImagen.ObtenerImagenEnObjecto(_Imagen.RutaImagen);
-                    _InfoBasicaE.FotoCandidato = _Imagen.OnlyName;
-                    if (rbsexoM.IsChecked == true)
-                    {
-                        _InfoBasicaE.id_genero = 1;
-                    }
-                    else if (rbsexoF.IsChecked == true)
-                    {
-                        _InfoBasicaE.id_genero = 2;
-                    }
-
-                    _InfoBasicaE.DUI = txtNoduiInfBasica.Text;
-                    _InfoBasicaE.NIT = txtNnitInfBasica.Text;
-                    _InfoBasicaE.AFP = txtNafpInfBasica.Text;
-                    _InfoBasicaE.ISSS = txtNiss.Text;
-                    _InfoBasicaE.id_municipio = Convert.ToInt32(cbMunic.SelectedValue);
-                    _InfoBasicaE.id_situacionProfesional = Convert.ToInt32(cbSitLab.SelectedValue);
-                    string oerro = "";
-
-                    int returinfobasica = 0;
-                    returinfobasica = _InfobasicaBL.GudarInfBasica(_InfoBasicaE, ref oerro);
-
-                    // BOTON PARA GUARDAR INFORMACION ACADEMICA (EVENTO)
-
-                    InformacionAcademicaE refinfoAcademica = new InformacionAcademicaE();
-                    int returinfoacademica = 0;
-                    foreach (DataRowView row in DataGrid_InfAcademica.Items)
-                    {
-                        refinfoAcademica.id_tipoEducacion = Convert.ToInt32(row[0]);
-                        refinfoAcademica.titulo = Convert.ToString(row[2]);
-                        refinfoAcademica.institucion = Convert.ToString(row[3]);
-                        refinfoAcademica.anio_de_finalizacion = Convert.ToInt32(row[4]);
-                        refinfoAcademica.id_statusAcademico = Convert.ToInt32(row[6]);
-
-                        returinfoacademica = _informacionAcademicaBL.GuardarInfomacionAcademica(refinfoAcademica, ref oerro);
-                    }
-
-                    //BOTON PARA GUARDAR INFORMACION LABORAL
-
-
-                    ExpLaboralE refExpL = new ExpLaboralE();
-                    int returinfoLaboral = 0;
-                    foreach (DataRowView row1 in DataGrid_Inf_Laboral.Items)
-                    {
-                        refExpL.nombreEmpresa = Convert.ToString(row1[0]);
-                        refExpL.cargoDesp = Convert.ToString(row1[1]);
-                        refExpL.descripPuesto = Convert.ToString(row1[2]);
-                        refExpL.fechaInicio = Convert.ToString(row1[3]);
-                        refExpL.fechaFin = Convert.ToString(row1[4]);
-
-                        returinfoLaboral = _experienciaLabBL.GuardarexperienciaLab(refExpL, ref oerro);
-
-                    }
-
-                    // BOTON PARA GUARDARRR LOS DATOS HABILIDADES  (METODOS)
-
-                    HabCandidatoE refHabCandidato = new HabCandidatoE();
-                    int returnHabilidades = 0;
-                    foreach (DataRowView row3 in DataG_Habilidades.Items)
-                    {
-
-
-                        refHabCandidato.idhabilidadTecnica = Convert.ToInt32(row3[0]);
-                        refHabCandidato.id_nivel = Convert.ToInt32(row3[2]);
-                        refHabCandidato.id_habilidadAplicacion = Convert.ToInt32(row3[4]);
-
-                        returnHabilidades = _habilidadCandidatoBL.GuardarHabilidadCandidato(refHabCandidato, ref oerro);
-
-                    }
-
-                    //BOTON PARA GUARDAR CERTIFICACIONES EN LA BASE (METODOS)
-
-                    CertificacionesE certifi = new CertificacionesE();
-                    int returnCertificaciones = 0;
-
-                    foreach (DataRowView row2 in DataGrid_Certificaciones.Items)
-                    {
-                        certifi.nombre = Convert.ToString(row2[0]);
-                        certifi.institucion = Convert.ToString(row2[1]);
-                        certifi.anio = Convert.ToInt16(row2[2]);
-
-                        returnCertificaciones = _certificanesBL.GuardarCertificacionesLAB(certifi, ref oerro);
-
-                    }
-
-                    //BOTON PARA INGRESAR REFERENCIAS A
-                    RefecenciasE refE = new RefecenciasE();
-                    int returReferencias = 0;
-                    foreach (DataRowView row5 in DataGrid_Referencias.Items)
-                    {
-                        refE.id_tipoReferencias = Convert.ToInt32(row5[0]);
-                        refE.nombre = Convert.ToString(row5[2]);
-                        refE.telefono = Convert.ToString(row5[3]);
-                        refE.descripcion = Convert.ToString(row5[4]);
-
-                        returReferencias = _referenciasBL.GuardarReferencias(refE, ref oerro);
-
-                    }
-                    if (oerro == "")
-                    {
-                        #region Capturar imgen por genero
-                        string pMensaje = "", pURL = "";
-                        switch (_InfoBasicaE.id_genero)
-                        {
-                            case 1:
-                                pMensaje = "candidato";
-                                pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\Userman.png" : _Imagen.RutaImagen;
-                                break;
-                            case 2:
-                                pMensaje = "candidata";
-                                pURL = string.IsNullOrEmpty(_Imagen.RutaImagen) ? @"C:\Imagenes\Fotos\User_default\userwoman.png" : _Imagen.RutaImagen;
-                                break;
-                        }
-                        #endregion
-
-                        if (Elijiomagen)
-                            ControlImagen.GuardarImagenEnRuta(_Imagen);
-
-                        #region Mostrar mensaje personalizado
-
-                        SimpleAlert simpleAlert = new SimpleAlert();
-                        simpleAlert.Title = "Nuevo Registro";
-                        simpleAlert.NamePeople = txtNombreInfBasica.Text;
-                        simpleAlert.Url = pURL;
-
-                        simpleAlert.Message = "Se ha creado el nuevo " + pMensaje;
-                        simpleAlert.ShowDialog();
-
-                        #region Redireccionamiento
-                        Busqueda _menusBusqueda = new Busqueda();
-                        _menusBusqueda.InitializeComponent();
-                        this.Close();
-                        _menusBusqueda.Show();
-                        #endregion
-                        #endregion
-
-                    }
-
-                    else
-                    {
-                        MessageBoxResult mbr = MessageBox.Show("OCURRIO UN ERROR AL GUARDAR SUS DATOS... ERROR: " + oerro, "Infomacion", MessageBoxButton.OK, MessageBoxImage.Information);
-
-                    }
+                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.","Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
