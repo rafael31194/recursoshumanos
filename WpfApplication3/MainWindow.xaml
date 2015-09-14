@@ -541,7 +541,7 @@
                                                                     <ItemContainerTemplate>
                                                                         <DockPanel>
 
-                                                                            <Button  Opacity="3" MaxWidth="25"  >
+                                                                            <Button  Opacity="3" MaxWidth="25"  Click="eliminarReferencias_Click">
                                                                                 <Button.Background>
                                                                                     <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
 
