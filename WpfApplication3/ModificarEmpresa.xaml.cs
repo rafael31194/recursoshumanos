@@ -61,27 +61,12 @@ namespace WpfApplication3
             }
 
 
-            try
-            {
-                                DataSet dsCorreoEmpresa = new DataSet();
-                dsCorreoEmpresa = _CorreoEmpresa.SelectCorreoEmpresaALL();
-
-                cb_correoEmpresa.ItemsSource = dsCorreoEmpresa.Tables[0].DefaultView;
-                cb_correoEmpresa.DisplayMemberPath = dsCorreoEmpresa.Tables[0].Columns[1].ToString();
-                cb_correoEmpresa.SelectedValuePath = dsCorreoEmpresa.Tables[0].Columns[0].ToString();
-                cb_correoEmpresa.SelectedIndex = 0;
-            }
-            catch (Exception)
-            {
-                
-                throw;
-            }
             // 0 - ID, 1 - NOMBRE EMPRESA, 2 - DIRECION, 3 - TELEFONO , 4 - PAIS 
             txt_UPDATEnombreEmpresa.Text = listaData[1].ToString(); 
             txt_UPDATEdireccion.Text = listaData[2].ToString();          
             txt_UPDATEtelefono.Text = listaData[3].ToString();
             cb_UPDATEpais.Text = listaData[4].ToString();
-            cb_correoEmpresa.Text = listaData[5].ToString();
+            txt_UPDATEcorreo.Text = listaData[5].ToString();
         }
 
         private void btn_UPDATE_Empresa_Click(object sender, RoutedEventArgs e)
@@ -98,7 +83,7 @@ namespace WpfApplication3
                 _ActualizarEmpresaE.id_empresa = Convert.ToInt32(listaData[0]);
                 _ActualizarEmpresaE.nombre = txt_UPDATEnombreEmpresa.Text.ToUpper();
                 _ActualizarEmpresaE.direccion = txt_UPDATEdireccion.Text.ToUpper();
-                _ActualizarEmpresaE.correoEmpresa = cb_correoEmpresa.Text;
+                _ActualizarEmpresaE.correoEmpresa = txt_UPDATEcorreo.Text;
                 _ActualizarEmpresaE.telefono = txt_UPDATEtelefono.Text.ToUpper();
                 _ActualizarEmpresaE.id_pais = new PaisE();
                 _ActualizarEmpresaE.id_pais.id_pais = Convert.ToInt32(cb_UPDATEpais.SelectedValue);

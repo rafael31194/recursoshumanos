@@ -72,8 +72,10 @@
                 </Expander>
 
             </ListBox>
-            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,10,82,0"  RenderTransformOrigin="0.51,0.718" Width="38" VerticalAlignment="Top"  Height="35" HorizontalAlignment="Center" />
-            <Image Source="Imagenes/logoHelpdesk.png" Margin="6,50,10,0" Height="51" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Center"  Width="188" />
+            <StackPanel VerticalAlignment="Top" HorizontalAlignment="Left">
+            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="55,10,82,0"  RenderTransformOrigin="0.51,0.718" Width="38" VerticalAlignment="Center"  Height="35" HorizontalAlignment="Center" />
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,0,10,0" Height="51" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Center"  Width="188" />
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="0" Margin="204,45,46,0" Height="84" VerticalAlignment="Top" >
 
@@ -93,7 +95,7 @@
                 <TextBlock HorizontalAlignment="Left" Margin="31,84,0,0" TextWrapping="Wrap" Text="*" VerticalAlignment="Top" Foreground="Red"/>
                 <TextBox x:Name="txt_UPDATEnombreEmpresa" HorizontalAlignment="Left" Height="23" Margin="190,32,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296"/>
                 <TextBox x:Name="txt_UPDATEdireccion" MaxLength="200" HorizontalAlignment="Left" Height="40" Margin="190,74,0,0" VerticalAlignment="Top" Width="296" />
-                <ComboBox x:Name="cb_correoEmpresa" HorizontalAlignment="Left" Margin="190,134,0,0" VerticalAlignment="Top" Width="296"/>
+                <TextBox x:Name="txt_UPDATEcorreo" MaxLength="200" HorizontalAlignment="Left" Height="20" Margin="190,129,0,0" VerticalAlignment="Top" Width="296" RenderTransformOrigin="0.503,0.154" />
 
                 <TextBox x:Name="txt_UPDATEtelefono" HorizontalAlignment="Left" Height="23" Margin="190,175,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="296"/>
                 <TextBlock HorizontalAlignment="Left" Margin="43,216,0,0" TextWrapping="Wrap" Text="Pais" VerticalAlignment="Top" FontSize="16" RenderTransformOrigin="1.965,0.752"/>

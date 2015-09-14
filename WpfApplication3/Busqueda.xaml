@@ -202,7 +202,7 @@
            
             Orientation="Horizontal" Margin="0,741,0,0"/>
             <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,40,0,666"  RenderTransformOrigin="0.51,0.718" Width="52" MaxWidth="50" MaxHeight="35" HorizontalAlignment="Left" />
-            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,602" Width="189" HorizontalAlignment="Left" MouseDown="Image_MouseDown_1" MaxHeight="71" MaxWidth="200"/>
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="10,70,0,602"  Width="189" HorizontalAlignment="Left" MouseDown="Image_MouseDown_1" MaxHeight="71" MaxWidth="200"/>
         </Grid>
 
     </Controls:MetroContentControl>

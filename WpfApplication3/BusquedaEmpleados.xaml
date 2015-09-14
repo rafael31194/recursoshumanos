@@ -138,8 +138,8 @@
 
                             <DataGridTextColumn Header="NOMBRE" Binding="{Binding NOMBRE EMPLEADO}" />
                             <DataGridTextColumn Header="ASIGNADO A" Binding="{Binding PROYECTO ASIGNADO }" />
-                            <DataGridTextColumn Header="CORREO" Binding="{Binding FECHA CONTRATACION}" />
-                            <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding DISPONIBILIDAD }" />
+                            <DataGridTextColumn Header="CORREO" Binding="{Binding CORREO}" />
+                            <DataGridTextColumn Header="TELEFONO CELULAR" Binding="{Binding CELULAR }" />
 
 
 
