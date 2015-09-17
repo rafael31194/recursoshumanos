@@ -350,7 +350,7 @@
                                             </GroupBox>
                                         </DockPanel>
                                         <DockPanel HorizontalAlignment="Center">
-                                        <DataGrid Margin="10,200,28,22" Name="DataG_Habilidades" 
+                                        <DataGrid Margin="234,200,270,0" Name="DataG_Habilidades" 
                         	ColumnHeaderHeight="25" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataG_Habilidades_MouseDoubleClick">
                                             <DataGrid.Columns>
                                                 <DataGridTemplateColumn Header="Elim."  >

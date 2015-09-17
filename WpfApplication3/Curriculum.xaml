@@ -8,12 +8,26 @@
         Title="Curriculum" Height="768" Width="1024"  WindowState="Maximized" Loaded="MetroWindow_Loaded" AllowsTransparency="True" WindowStyle="None">
     <Controls:MetroContentControl>
 
-        <Grid Background="#FFFAFDFD" Margin="0,0,0,10">
-            <WindowsFormsHost HorizontalAlignment="Center" Height="630" Margin="132,60,132,0" VerticalAlignment="Top" Width="752" ChildChanged="WindowsFormsHost_ChildChanged">
+        <Grid Background="#FFFAFDFD">
+
+            <WindowsFormsHost HorizontalAlignment="Center" Height="630" Margin="136,60,136,0" VerticalAlignment="Top" Width="752" ChildChanged="WindowsFormsHost_ChildChanged">
                 <rv:ReportViewer x:Name="ReportViewerCurriculum"/>
             </WindowsFormsHost>
-            <Button x:Name="btnRegresar" Content="Regresar" HorizontalAlignment="Left" Margin="931,23,0,0" VerticalAlignment="Top" Width="75" Click="btnRegresar_Click"/>
-            <Button Content="ENVIAR POR CORREO" Name="CORREO" HorizontalAlignment="Left" Margin="32,23,0,0" VerticalAlignment="Top" Width="112" Click="CORREO_Click"/>
+
+                
+                <Button x:Name="btnRegresar" ToolTip="Regresar una pagina atras"  HorizontalAlignment="Left" Margin="791,10,0,0" VerticalAlignment="Top" Width="40" Click="btnRegresar_Click" Height="39">
+                <DockPanel>
+                    <Image Source="Imagenes\Regresar.png" Width="27" Height="17" />
+                </DockPanel>
+            
+                </Button>
+
+            <Button Name="CORREO" ToolTip="Enviar Correo"  Margin="848,10,0,0" VerticalAlignment="Top" Click="CORREO_Click" Height="39" HorizontalAlignment="Left" Width="40">
+                <DockPanel>
+                    <Image Source="Imagenes\EnviarCorreo.png" Width="27" Height="17" />
+                </DockPanel>
+            </Button>
+       
         </Grid>
     </Controls:MetroContentControl>
 </Controls:MetroWindow>

@@ -16,6 +16,10 @@ using HelpDesk.RecursosHumanos.BEL;
 using HelpDesk.RecursosHumanos.BLL;
 using WpfApplication3.Utilerias;
 
+
+using System.Windows.Interop;
+
+
 namespace WpfApplication3
 {
     /// <summary>
@@ -41,6 +45,14 @@ namespace WpfApplication3
 
         }
 
+        ////DIMENSION DE PANTALLA 
+        //static class ExtensionsForWPF
+        //{
+        //    public static System.Windows.Forms.Screen GetScreen(this  Window window)
+        //    {
+        //        return System.Windows.Forms.Screen.FromHandle(new WindowInteropHelper(window).Handle);
+        //    }
+        //}
         private void MetroWindow_Loaded(object sender, RoutedEventArgs e)
         {
             txt_usuarioInicio.Focus();
@@ -58,7 +70,7 @@ namespace WpfApplication3
                 UsuarioBLL _administradorBL = new UsuarioBLL();
 
                 usuariosE _administradorL = new usuariosE();
-                System.Windows.SplashScreen hola = new System.Windows.SplashScreen("Cargando.jpg");
+                System.Windows.SplashScreen hola = new System.Windows.SplashScreen("Cargando.png");
                 hola.Show(true);
                 _administradorL = _administradorBL.AutentificacionUser(_administrador);
                 hola.Close(new TimeSpan(0, 0, 1));

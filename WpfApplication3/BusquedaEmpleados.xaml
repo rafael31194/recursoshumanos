@@ -160,6 +160,7 @@
                 <StackPanel HorizontalAlignment="Left" Margin="16,0,0,0" Width="552">
                     <TextBox Controls:TextBoxHelper.ClearTextButton="True" x:Name="txtBusquedaEmpleado" Controls:TextBoxHelper.Watermark="Nombre de empleado"    Margin="193,91,10,0" TextWrapping="Wrap"   TextChanged="TextBox_TextChanged_1" KeyDown="txtBusquedaEmpleado_KeyDown" />
                 </StackPanel>
+                
                 <StackPanel HorizontalAlignment="Left">
                     <Button Name="btn_buscarEmpleado"  HorizontalAlignment="Left" Margin="588,86,5,0" VerticalAlignment="Top" Width="132" Height="32" Click="btn_buscarEmpleado_1Click">
                         <DockPanel>

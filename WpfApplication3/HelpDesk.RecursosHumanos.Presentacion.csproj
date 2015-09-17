@@ -93,6 +93,10 @@
     <Compile Include="NuevoCorreo.xaml.cs">
       <DependentUpon>NuevoCorreo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PantallaBienvenida.xaml.cs">
+      <DependentUpon>PantallaBienvenida.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="sampleusercontrol.cs" />
     <Compile Include="Utilerias\Alertas\SimpleAlert.xaml.cs" />
     <Compile Include="Utilerias\ControlImagen.cs" />
     <Compile Include="Utilerias\Imagenes.cs" />
@@ -235,6 +239,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="NuevoCorreo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PantallaBienvenida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -439,9 +447,6 @@
     <Resource Include="Imagenes\PerfielLogin.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Cargando.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Imagenes\logOffIcon.png" />
   </ItemGroup>
   <ItemGroup>
@@ -472,7 +477,36 @@
   <ItemGroup>
     <Resource Include="Resources\Entypo-license.txt" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Imagenes\EnviarCorreo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\Regresar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Cargando.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\914393__seven-windows-wallpaper-widescreen-wallpapers-original_p.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\buscarEmpleados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\busquedaEmpleado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MenuCandidatos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MenuEmpresa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Imagenes\MenuNuevoUsuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\MenuNuevoCandidato.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
