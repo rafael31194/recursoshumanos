@@ -970,6 +970,19 @@ namespace WpfApplication3
 
 
         }
+
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarReferencias_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt4.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
+            }
+
+
+        }
         //*******Elimina la fila de un registro en la grid sin afecta la base*****///
         private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
         {
