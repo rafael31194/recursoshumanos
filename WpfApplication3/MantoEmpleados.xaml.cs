@@ -913,8 +913,7 @@ namespace WpfApplication3
                 if (nuevoCerti == false)
                 {
 
-                    tablaCerti.Rows.Remove(RowPivotInfoAca);
-                    RowPivotInfoAca = null;
+                    
                     string nombre, institutucion;
                     int anio;
                     nombre = txt_TitutloCertificacion.Text;
@@ -929,12 +928,34 @@ namespace WpfApplication3
                     certiObj.nombre = nombre;
                     certiObj.anio = anio;
 
-                    CertificacionesBLL certiBll = new CertificacionesBLL();
-                    certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
+                  
 
+                    bool agregar = true;
+                    foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+                    {
+                        if ((dr.Row.ItemArray[1].ToString().ToLower()) == nombre.ToLower() && dr.Row.ItemArray[2].ToString().ToLower() == institutucion.ToLower() &&
+                            dr.Row.ItemArray[3].ToString().ToLower() == anio.ToString().ToLower() )
+                        {
+                            agregar = false;
+                        }
+                    }
+                    if (agregar)
+                    {
+                        tablaCerti.Rows.Remove(RowPivotInfoAca);
+                        RowPivotInfoAca = null;
 
+                        CertificacionesBLL certiBll = new CertificacionesBLL();
+                        certiBll.ActualizarCertificacionesLAB(certiObj, certiObj.id_candidato, ref oerro);
 
-                    tablaCerti.Rows.Add(certiObj.id_certificaciones, nombre, institutucion, anio);
+                        tablaCerti.Rows.Add(certiObj.id_certificaciones, nombre, institutucion, anio);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                        agregar = true;
+                    }
+
+                    
 
                     txt_TitutloCertificacion.Text = string.Empty;
                     txt_InstCertiicacion.Text = string.Empty;
@@ -1115,9 +1136,7 @@ namespace WpfApplication3
 
                 if (nuevoHabi == false)
                 {
-                    tablaHabilidades.Rows.Remove(RowPivotInfoAca);
-
-                    RowPivotInfoAca = null;
+                    
 
                     if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
                     {
@@ -1149,12 +1168,37 @@ namespace WpfApplication3
                         habObj.id_nivel = id_nivel;
                         habObj.idhabilidadTecnica = id_habilidadTecnica;
 
-                        HabilidadCandidatoBLL habiBll = new HabilidadCandidatoBLL();
-                        habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
+                        bool agregar = true;
+                        foreach (DataRowView dr in DataG_Habilidades.Items)
+                        {
+                            if (dr.Row.ItemArray[1].ToString() == id_habilidadTecnica.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == HabilidadTecnica.ToString().ToLower() &&
+                              dr.Row.ItemArray[3].ToString().ToLower() == id_nivel.ToString().ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == Nivel.ToLower() &&
+                              dr.Row.ItemArray[5].ToString().ToLower() == id_habilidadAplicacion.ToString().ToLower() &&
+                              dr.Row.ItemArray[6].ToString().ToLower() == HabilidadAplicacion.ToLower())
+                            {
+                                agregar = false;
+                            }
+                        }
+                        if (agregar)
+                        {
+
+                            tablaHabilidades.Rows.Remove(RowPivotInfoAca);
+
+                            RowPivotInfoAca = null;
+                            HabilidadCandidatoBLL habiBll = new HabilidadCandidatoBLL();
+                            habiBll.ActualizarHabilidadCandidato(habObj, habObj.id_candidato, ref oerro);
 
 
-                        tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
 
+                            tablaHabilidades.Rows.Add(habObj.id_habilidadCandidato, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                      
+                        }
+                        else
+                        {
+                            MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                            agregar = true;
+                        }
+               
 
                         cb_habtecnica.Text = string.Empty;
                         cb_nivelhabapp.Text = string.Empty;
@@ -1443,13 +1487,34 @@ namespace WpfApplication3
                 refHabCandidato.id_nivel = id_nivel;
                 refHabCandidato.id_habilidadAplicacion = id_habilidadAplicacion;
 
-                returnHabilidades = _habilidadCandidatoBL.AgregarHabilidadCandidato(refHabCandidato, int.Parse(idCandidato), ref oerro);
 
 
+
+                bool agregar = true;
+                foreach (DataRowView dr in DataG_Habilidades.Items)
+                {
+                    if (dr.Row.ItemArray[1].ToString() == id_habilidadTecnica.ToString() && dr.Row.ItemArray[2].ToString().ToLower() == HabilidadTecnica.ToString().ToLower() &&
+                      dr.Row.ItemArray[3].ToString().ToLower() == id_nivel.ToString().ToLower() && dr.Row.ItemArray[4].ToString().ToLower() == Nivel.ToLower() &&
+                      dr.Row.ItemArray[5].ToString().ToLower() == id_habilidadAplicacion.ToString().ToLower() &&
+                      dr.Row.ItemArray[6].ToString().ToLower() == HabilidadAplicacion.ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+                    returnHabilidades = _habilidadCandidatoBL.AgregarHabilidadCandidato(refHabCandidato, int.Parse(idCandidato), ref oerro);
+                    tablaHabilidades.Rows.Add(returnHabilidades, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
                 //********************************************************
 
 
-                tablaHabilidades.Rows.Add(returnHabilidades, id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                
                 DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
 
                 cb_habtecnica.Text = string.Empty;
@@ -1482,10 +1547,31 @@ namespace WpfApplication3
             certifi.institucion = institutucion;
             certifi.anio = anio;
 
-            returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato), ref oerro);
+           
+
+
+            bool agregar = true;
+            foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+            {
+                if ((dr.Row.ItemArray[1].ToString().ToLower()) == nombre.ToLower() && dr.Row.ItemArray[2].ToString().ToLower() == institutucion.ToLower() &&
+                    dr.Row.ItemArray[3].ToString().ToLower() == anio.ToString().ToLower())
+                {
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
+                returnCertificaciones = _certificanesBL.AgregarCertificacionesLAB(certifi, int.Parse(idCandidato), ref oerro);
+                tablaCerti.Rows.Add(returnCertificaciones, nombre, institutucion, anio);
+            }
+            else
+            {
+                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                agregar = true;
+            }
 
             //*****************************************************
-            tablaCerti.Rows.Add(returnCertificaciones, nombre, institutucion, anio);
+            
 
             cb_añofinalizacionedu.SelectedIndex = -1;
             txt_InstCertiicacion.Text = string.Empty;

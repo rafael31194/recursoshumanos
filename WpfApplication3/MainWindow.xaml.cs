@@ -502,7 +502,32 @@ namespace WpfApplication3
                 HabilidadAplicacion = cb_habilidadApp.Text.ToString();
 
 
-                dt3.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+                bool agregar = true;
+                foreach (DataRowView dr in DataG_Habilidades.Items)
+                {
+                    if (dr.Row.ItemArray[0].ToString() == id_habilidadTecnica.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == HabilidadTecnica.ToLower() &&
+                      dr.Row.ItemArray[2].ToString().ToLower() == id_nivel.ToString().ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == Nivel.ToLower() &&
+                      dr.Row.ItemArray[4].ToString().ToLower() == id_habilidadAplicacion.ToString().ToLower() && dr.Row.ItemArray[5].ToString().ToLower() == HabilidadAplicacion.ToString().ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+                    //este codigo borra la fila y luego inserta la nueva, estaba justo despues del if para comprobar si era actualizacion o una nuevo
+
+
+                    dt3.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+
+                  
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+                       
+                
                 DataG_Habilidades.ItemsSource = dt3.DefaultView;
 
                 //cb_habtecnica.Text = string.Empty;
@@ -592,7 +617,31 @@ namespace WpfApplication3
             {
 
             }
-            dt9.Rows.Add(nombre, institutucion, anio);
+
+
+
+            bool agregar = true;
+            foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+            {
+                if ((dr.Row.ItemArray[0].ToString().ToLower()) == nombre.ToLower() && dr.Row.ItemArray[1].ToString().ToLower() == institutucion.ToLower() &&
+                    dr.Row.ItemArray[2].ToString().ToLower() == anio.ToString().ToLower())
+                {
+                    agregar = false;
+                }
+            }
+            if (agregar)
+            {
+                dt9.Rows.Add(nombre, institutucion, anio);
+            }
+            else
+            {
+                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                agregar = true;
+            }
+
+            //*****************************************************
+           
+          
 
             DataGrid_Certificaciones.ItemsSource = dt9.DefaultView;
             txt_TitutloCertificacion.Text = string.Empty;
