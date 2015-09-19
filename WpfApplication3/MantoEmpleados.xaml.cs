@@ -594,7 +594,7 @@ namespace WpfApplication3
                     }
                    
 
-                    //DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
+                    //DataGrid_InfAcademica.ItemsSource = tablaInfoAcademica.DefaultView;
                     cb_tipoeducacion.Text = string.Empty;
                     txt_Tituloedu.Text = string.Empty;
                     txt_institucionedu.Text = string.Empty;
