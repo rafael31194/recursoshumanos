@@ -50,14 +50,20 @@ namespace WpfApplication3
         CertificacionesBLL _certificanesBL = new CertificacionesBLL();
         RolUsuarioBLL _RolusuarioBL = new RolUsuarioBLL();
         bool Elijiomagen = false;
-
+        AnioBLL _anios = new AnioBLL();
         static Imagenes _Imagen = new Imagenes();
 
         //datatables de cada grid
-        DataTable dt1 = new DataTable();
-        DataTable dt2 = new DataTable();
-        DataTable dt3 = new DataTable();
-        DataTable dt4 = new DataTable();
+        DataTable tablaExperienciaLab = new DataTable();
+        DataTable tablaInfoAcademica = new DataTable();
+        DataTable tablaHabilidades = new DataTable();
+        DataTable tablaReferencias = new DataTable();
+        DataTable tablaCertificaciones = new DataTable();
+
+
+        //booleanos para la edicion de las grids
+
+        bool nuevoInfoAca = true, nuevoExpe = true, nuevoRefe = true, nuevoCerti = true, nuevoHabi = true;
 
         public MainWindow()
         {
@@ -116,41 +122,49 @@ namespace WpfApplication3
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
 
-
-
-
+            
+           
+            
 
 
             try
             {
 
 
-                dt1.Columns.Add("Nombre de la empresa", typeof(string));
-                dt1.Columns.Add("Cargo Desempeñado", typeof(string));
-                dt1.Columns.Add("Descripcion del puesto", typeof(string));
-                dt1.Columns.Add("Fecha Inicio", typeof(string));
-                dt1.Columns.Add("Fecha Fin", typeof(string));
+                tablaExperienciaLab.Columns.Add("Nombre de la empresa", typeof(string));
+                tablaExperienciaLab.Columns.Add("Cargo Desempeñado", typeof(string));
+                tablaExperienciaLab.Columns.Add("Descripcion del puesto", typeof(string));
+                tablaExperienciaLab.Columns.Add("Fecha Inicio", typeof(string));
+                tablaExperienciaLab.Columns.Add("Fecha Fin", typeof(string));
+                
+                tablaInfoAcademica.Columns.Add("IDTipoEduacion", typeof(Int32));
+                tablaInfoAcademica.Columns.Add("Tipo Educacion", typeof(string));
+                tablaInfoAcademica.Columns.Add("Titulo", typeof(string));
+                tablaInfoAcademica.Columns.Add("Institucion", typeof(string));
+                tablaInfoAcademica.Columns.Add("Año finalizacion", typeof(Int32));
+                tablaInfoAcademica.Columns.Add("Nombre status", typeof(string));
+                tablaInfoAcademica.Columns.Add("status", typeof(Int32));
 
-                dt2.Columns.Add("IDTipoEduacion", typeof(Int32));
-                dt2.Columns.Add("Tipo Educacion", typeof(string));
-                dt2.Columns.Add("Titulo", typeof(string));
-                dt2.Columns.Add("Institucion", typeof(string));
-                dt2.Columns.Add("Año finalizacion", typeof(Int32));
-                dt2.Columns.Add("Nombre status", typeof(string));
-                dt2.Columns.Add("status", typeof(Int32));
+                tablaHabilidades.Columns.Add("ID HAB TECNICA", typeof(Int32));
+                tablaHabilidades.Columns.Add("HABILIDAD TECNICA", typeof(string));
+                tablaHabilidades.Columns.Add("ID NIVELHABTEC", typeof(Int32));
+                tablaHabilidades.Columns.Add("NIVEL", typeof(string));
+                tablaHabilidades.Columns.Add("ID HAB APP", typeof(Int32));
+                tablaHabilidades.Columns.Add("HABILIDAD APLICACION", typeof(string));
 
-                dt3.Columns.Add("ID HAB TECNICA", typeof(Int32));
-                dt3.Columns.Add("HABILIDAD TECNICA", typeof(string));
-                dt3.Columns.Add("ID NIVELHABTEC", typeof(Int32));
-                dt3.Columns.Add("NIVEL", typeof(string));
-                dt3.Columns.Add("ID HAB APP", typeof(Int32));
-                dt3.Columns.Add("HABILIDAD APLICACION", typeof(string));
+                tablaReferencias.Columns.Add("IDTIPOREF", typeof(Int32));
+                tablaReferencias.Columns.Add("TIPO DE REFERENCIA", typeof(string));
+                tablaReferencias.Columns.Add("NOMBRE", typeof(string));
+                tablaReferencias.Columns.Add("TELEFONO", typeof(string));
+                tablaReferencias.Columns.Add("DESCRIPCION", typeof(string));
 
-                dt4.Columns.Add("IDTIPOREF", typeof(Int32));
-                dt4.Columns.Add("TIPO DE REFERENCIA", typeof(string));
-                dt4.Columns.Add("NOMBRE", typeof(string));
-                dt4.Columns.Add("TELEFONO", typeof(string));
-                dt4.Columns.Add("DESCRIPCION", typeof(string));
+                
+                    
+                tablaCertificaciones.Columns.Add("CERTIFICACION", typeof(string));
+                tablaCertificaciones.Columns.Add("INSTITUCION DE CERTIFICACION", typeof(string));
+                tablaCertificaciones.Columns.Add("AÑO DE FINALIZACION", typeof(Int32));
+
+
 
                 //id_habilidadAplicacion = Convert.ToInt32(cb_habilidadApp.SelectedValue);
                 //HabilidadAplicacion = cb_habilidadApp.Text.ToString();
@@ -224,6 +238,20 @@ namespace WpfApplication3
                 cbSitLab.DisplayMemberPath = dss.Tables[0].Columns[1].ToString();
                 cbSitLab.SelectedValuePath = dss.Tables[0].Columns[0].ToString();
                 cbSitLab.SelectedIndex = 0;
+
+
+                DataSet dsAnio = new DataSet();
+                dsAnio = _anios.getAnios();
+                cb_añofinalizacionedu.ItemsSource = dsAnio.Tables[0].DefaultView;
+                cb_añofinalizacionedu.DisplayMemberPath = dsAnio.Tables[0].Columns[1].ToString();
+                cb_añofinalizacionedu.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
+                cb_añofinalizacionedu.SelectedIndex = 0;
+
+                cb_añoFinCertificacion.ItemsSource = dsAnio.Tables[0].DefaultView;
+                cb_añoFinCertificacion.DisplayMemberPath = dsAnio.Tables[0].Columns[1].ToString();
+                cb_añoFinCertificacion.SelectedValuePath = dsAnio.Tables[0].Columns[0].ToString();
+                cb_añoFinCertificacion.SelectedIndex = 0;
+
 
             }
             catch (Exception)
@@ -305,14 +333,15 @@ namespace WpfApplication3
         }
 
 
-
+        
         private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
         {
             string tipoEducacion, titulo, institucion, StatusName;
             int id_tipoEducacion, status, finalizacion;
             if (!(string.IsNullOrEmpty(cb_tipoeducacion.SelectedValue.ToString()) | string.IsNullOrEmpty(cb_tipoeducacion.Text.ToString()) |
-                string.IsNullOrEmpty(txt_Tituloedu.Text) | rb_InfoAcompleto.IsChecked == false))
+                string.IsNullOrEmpty(txt_Tituloedu.Text) | (rb_InfoAcompleto.IsChecked == false && rb_InfoIncompleto.IsChecked==false)))
             {
+
                 id_tipoEducacion = Convert.ToInt32(cb_tipoeducacion.SelectedValue);
                 tipoEducacion = cb_tipoeducacion.Text.ToString();
                 titulo = txt_Tituloedu.Text;
@@ -329,6 +358,11 @@ namespace WpfApplication3
                     StatusName = "Incompleto";
 
                 }
+
+                if (nuevoInfoAca == false)
+                {
+                    tablaInfoAcademica.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+                }
                 bool agregar = true;
                 foreach (DataRowView dr in DataGrid_InfAcademica.Items)
                 {
@@ -342,7 +376,7 @@ namespace WpfApplication3
                 if (agregar)
                 {
 
-                    dt2.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
+                    tablaInfoAcademica.Rows.Add(id_tipoEducacion, tipoEducacion, titulo, institucion, finalizacion, StatusName, status);
                 }
                 else
                 {
@@ -350,11 +384,14 @@ namespace WpfApplication3
                     agregar = true;
                 }
 
-                DataGrid_InfAcademica.ItemsSource = dt2.DefaultView;
+                DataGrid_InfAcademica.ItemsSource = tablaInfoAcademica.DefaultView;
                 cb_tipoeducacion.Text = string.Empty;
                 txt_Tituloedu.Text = string.Empty;
                 txt_institucionedu.Text = string.Empty;
                 cb_añofinalizacionedu.Text = string.Empty;
+
+                
+                nuevoInfoAca = true;
 
 
             }
@@ -386,111 +423,134 @@ namespace WpfApplication3
         }
 
 
-
+        
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
         {
             //BOTON PARA AGREGAR COMO TEMPORAL A LA GRID DE INFO.LABORAL 
-
-            string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
-            NombreEmpesa = txt_NombreEmpresaLab.Text;
-            CargoDesempeñado = txt_CargoDespeLab.Text;
-            DescripcionPuesto = txt_DescripPuestoLab.Text;
-            FechaInicio = txt_FechaInicioLab.Text;
-            fechaFin = txt_FechaFinLab.Text;
-
-            //ds.Tables.Add(dt);
-
-            bool agregar = true;
-            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            if (!(string.IsNullOrEmpty(txt_NombreEmpresaLab.Text) | string.IsNullOrEmpty(txt_CargoDespeLab.Text) |
+                   string.IsNullOrEmpty(txt_DescripPuestoLab.Text) | string.IsNullOrEmpty(txt_FechaInicioLab.Text) |
+                   string.IsNullOrEmpty(txt_FechaFinLab.Text)))
             {
-                if (dr.Row.ItemArray[0].ToString() == NombreEmpesa.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == CargoDesempeñado.ToLower() &&
-                  dr.Row.ItemArray[2].ToString().ToLower() == DescripcionPuesto.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == FechaInicio.ToLower() &&
-                  dr.Row.ItemArray[4].ToString().ToLower() == fechaFin.ToLower())
+                if (nuevoExpe == false)
                 {
-                    agregar = false;
+                    tablaExperienciaLab.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
                 }
-            }
-            if (agregar)
-            {
+                string NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin;
+                NombreEmpesa = txt_NombreEmpresaLab.Text;
+                CargoDesempeñado = txt_CargoDespeLab.Text;
+                DescripcionPuesto = txt_DescripPuestoLab.Text;
+                FechaInicio = txt_FechaInicioLab.Text;
+                fechaFin = txt_FechaFinLab.Text;
 
-                dt1.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+                //ds.Tables.Add(dt);
 
+                bool agregar = true;
+                foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+                {
+                    if (dr.Row.ItemArray[0].ToString() == NombreEmpesa.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == CargoDesempeñado.ToLower() &&
+                      dr.Row.ItemArray[2].ToString().ToLower() == DescripcionPuesto.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == FechaInicio.ToLower() &&
+                      dr.Row.ItemArray[4].ToString().ToLower() == fechaFin.ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+
+                    tablaExperienciaLab.Rows.Add(NombreEmpesa, CargoDesempeñado, DescripcionPuesto, FechaInicio, fechaFin);
+
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
+
+                DataGrid_Inf_Laboral.ItemsSource = tablaExperienciaLab.DefaultView;
+
+                txt_NombreEmpresaLab.Text = string.Empty;
+                txt_CargoDespeLab.Text = string.Empty;
+                txt_DescripPuestoLab.Text = string.Empty;
+                txt_FechaInicioLab.Text = string.Empty;
+                txt_FechaFinLab.Text = string.Empty;
+                nuevoExpe = true;
+                //DataGrid_InfAcademica.ItemsSource = dt;
             }
             else
             {
-                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
-                agregar = true;
+                MessageBox.Show("Debe llenar todos los datos solicitados");
             }
-
-
-            DataGrid_Inf_Laboral.ItemsSource = dt1.DefaultView;
-
-            txt_NombreEmpresaLab.Text = string.Empty;
-            txt_CargoDespeLab.Text = string.Empty;
-            txt_DescripPuestoLab.Text = string.Empty;
-            txt_FechaInicioLab.Text = string.Empty;
-            txt_FechaFinLab.Text = string.Empty;
-
-            //DataGrid_InfAcademica.ItemsSource = dt;
-
         }
+        
+
 
         private void BTOAgregarTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
-            string TipoReferencia, Nombre, Telefono, Descripcion;
-            int idReferencia;
 
-            idReferencia = Convert.ToInt32(cb_tipoRef.SelectedValue);
-            TipoReferencia = cb_tipoRef.Text.ToString();
-            Nombre = txt_nombreRef.Text;
-            Telefono = txt_telefonoRef.Text;
-            Descripcion = txt_descripcionREF.Text;
-
-            bool agregar = true;
-            foreach (DataRowView dr in DataGrid_Referencias.Items)
+            if (!(string.IsNullOrEmpty(cb_tipoRef.Text) | string.IsNullOrEmpty(txt_nombreRef.Text) | string.IsNullOrEmpty(txt_telefonoRef.Text) |
+                string.IsNullOrEmpty(txt_descripcionREF.Text)))
             {
-                if (dr.Row.ItemArray[0].ToString() == idReferencia.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == TipoReferencia.ToLower() &&
-                  dr.Row.ItemArray[2].ToString().ToLower() == Nombre.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == Telefono.ToLower() &&
-                  dr.Row.ItemArray[4].ToString().ToLower() == Descripcion.ToLower())
+                if (nuevoRefe == false)
                 {
-                    agregar = false;
+                    tablaReferencias.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
                 }
-            }
-            if (agregar)
-            {
+                string TipoReferencia, Nombre, Telefono, Descripcion;
+                int idReferencia;
 
-                dt4.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+                idReferencia = Convert.ToInt32(cb_tipoRef.SelectedValue);
+                TipoReferencia = cb_tipoRef.Text.ToString();
+                Nombre = txt_nombreRef.Text;
+                Telefono = txt_telefonoRef.Text;
+                Descripcion = txt_descripcionREF.Text;
 
+                bool agregar = true;
+                foreach (DataRowView dr in DataGrid_Referencias.Items)
+                {
+                    if (dr.Row.ItemArray[0].ToString() == idReferencia.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == TipoReferencia.ToLower() &&
+                      dr.Row.ItemArray[2].ToString().ToLower() == Nombre.ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == Telefono.ToLower() &&
+                      dr.Row.ItemArray[4].ToString().ToLower() == Descripcion.ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+
+                    tablaReferencias.Rows.Add(idReferencia, TipoReferencia, Nombre, Telefono, Descripcion);
+
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
+
+                DataGrid_Referencias.ItemsSource = tablaReferencias.DefaultView;
+                cb_tipoRef.Text = string.Empty;
+                txt_nombreRef.Text = string.Empty;
+                txt_telefonoRef.Text = string.Empty;
+                txt_descripcionREF.Text = string.Empty;
+                nuevoRefe = true;
             }
             else
             {
-                MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
-                agregar = true;
+                MessageBox.Show("Inserte todos los datos solicitados");
             }
-
-
-            DataGrid_Referencias.ItemsSource = dt4.DefaultView;
-            cb_tipoRef.Text = string.Empty;
-            txt_nombreRef.Text = string.Empty;
-            txt_telefonoRef.Text = string.Empty;
-            txt_descripcionREF.Text = string.Empty;
         }
 
-
+        
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
+            if (!(string.IsNullOrEmpty(cb_habtecnica.Text) | string.IsNullOrEmpty(cb_nivelhabapp.Text) | string.IsNullOrEmpty(cb_habilidadApp.Text)))
             {
-                MessageBox.Show("SELECCIONE EL NIVEL DE SU HABILIDAD TECNICA");
-            }
-            else if (string.IsNullOrEmpty(cb_habtecnica.Text))
-            {
-                MessageBox.Show("EL CAMPO DE HABILIDADA TECNICA NO PUEDE QUEDAR VACIO");
-            }
 
+                if (nuevoHabi == false)
+                {
+                    tablaHabilidades.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
+                }
 
-            else
-            {
                 string HabilidadTecnica, Nivel, HabilidadAplicacion;
                 int id_habilidadTecnica, id_nivel, id_habilidadAplicacion;
 
@@ -502,12 +562,42 @@ namespace WpfApplication3
                 HabilidadAplicacion = cb_habilidadApp.Text.ToString();
 
 
-                dt3.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
-                DataG_Habilidades.ItemsSource = dt3.DefaultView;
+                bool agregar = true;
+                foreach (DataRowView dr in DataG_Habilidades.Items)
+                {
+                    if (dr.Row.ItemArray[0].ToString() == id_habilidadTecnica.ToString() && dr.Row.ItemArray[1].ToString().ToLower() == HabilidadTecnica.ToLower() &&
+                      dr.Row.ItemArray[2].ToString().ToLower() == id_nivel.ToString().ToLower() && dr.Row.ItemArray[3].ToString().ToLower() == Nivel.ToLower() &&
+                      dr.Row.ItemArray[4].ToString().ToLower() == id_habilidadAplicacion.ToString().ToLower() && dr.Row.ItemArray[5].ToString().ToLower() == HabilidadAplicacion.ToString().ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+                    //este codigo borra la fila y luego inserta la nueva, estaba justo despues del if para comprobar si era actualizacion o una nuevo
+
+
+                    tablaHabilidades.Rows.Add(id_habilidadTecnica, HabilidadTecnica, id_nivel, Nivel, id_habilidadAplicacion, HabilidadAplicacion);
+
+
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
+
+                DataG_Habilidades.ItemsSource = tablaHabilidades.DefaultView;
 
                 //cb_habtecnica.Text = string.Empty;
                 //cb_nivelhabapp.Text = string.Empty;
                 cb_habilidadApp.Text = string.Empty;
+                nuevoHabi = true;
+            }
+            else
+            {
+                MessageBox.Show("Inserte todos los datos solicitados");
             }
 
 
@@ -535,7 +625,7 @@ namespace WpfApplication3
         //    }
         //    if (returVariable1 > 0)
         //    {
-        //        MessageBox.Show("Registro fue 1dado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
         //        tcPrincipal.SelectedIndex = 4;
         //        tab4.IsEnabled = false;
 
@@ -571,33 +661,60 @@ namespace WpfApplication3
         //        tab3.IsEnabled = false;
         //    }
         //}
-        DataTable dt9 = new DataTable();
+        
         private void btn_agragarcertificaciones_Click(object sender, RoutedEventArgs e)
         {
-            string nombre, institutucion;
-            int anio;
-            nombre = txt_TitutloCertificacion.Text;
-            institutucion = txt_InstCertiicacion.Text;
-            anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
 
-            try
+            if (!(string.IsNullOrEmpty(txt_TitutloCertificacion.Text) | string.IsNullOrEmpty(txt_InstCertiicacion.Text) | cb_añoFinCertificacion.SelectedIndex == -1))
             {
-                dt9.Columns.Add("CERTIFICACION", typeof(string));
-                dt9.Columns.Add("INSTITUCION DE CERTIFICACION", typeof(string));
-                dt9.Columns.Add("AÑO DE FINALIZACION", typeof(Int32));
+                if (nuevoCerti == false)
+                {
+                    tablaCertificaciones.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
+                
+                }
+                string nombre, institutucion;
+                int anio;
+                nombre = txt_TitutloCertificacion.Text;
+                institutucion = txt_InstCertiicacion.Text;
+                anio = Convert.ToInt32(cb_añoFinCertificacion.Text);
 
 
+
+
+
+                bool agregar = true;
+                foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+                {
+                    if ((dr.Row.ItemArray[0].ToString().ToLower()) == nombre.ToLower() && dr.Row.ItemArray[1].ToString().ToLower() == institutucion.ToLower() &&
+                        dr.Row.ItemArray[2].ToString().ToLower() == anio.ToString().ToLower())
+                    {
+                        agregar = false;
+                    }
+                }
+                if (agregar)
+                {
+                    tablaCertificaciones.Rows.Add(nombre, institutucion, anio);
+                }
+                else
+                {
+                    MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
+                    agregar = true;
+                }
+
+                //*****************************************************
+
+
+
+                DataGrid_Certificaciones.ItemsSource = tablaCertificaciones.DefaultView;
+                txt_TitutloCertificacion.Text = string.Empty;
+                txt_InstCertiicacion.Text = string.Empty;
+                cb_añoFinCertificacion.SelectedIndex = 0;
+                nuevoCerti = true;
             }
-            catch (Exception)
+            else
             {
-
+                MessageBox.Show("Inserte todos los datos solicitados");
             }
-            dt9.Rows.Add(nombre, institutucion, anio);
-
-            DataGrid_Certificaciones.ItemsSource = dt9.DefaultView;
-            txt_TitutloCertificacion.Text = string.Empty;
-            txt_InstCertiicacion.Text = string.Empty;
-            cb_añoFinCertificacion.SelectedIndex = 0;
         }
 
         //private void btn_Certificaciones_Click(object sender, RoutedEventArgs e)
@@ -640,6 +757,7 @@ namespace WpfApplication3
             txt_Tituloedu.Text = string.Empty;
             txt_institucionedu.Text = string.Empty;
             cb_añofinalizacionedu.Text = string.Empty;
+            nuevoInfoAca = true;
         }
         private void BTOCancelarIngresoInfLaboral_Click(object sender, RoutedEventArgs e)
         {
@@ -649,11 +767,15 @@ namespace WpfApplication3
             txt_DescripPuestoLab.Text = string.Empty;
             txt_FechaInicioLab.Text = string.Empty;
             txt_FechaFinLab.Text = string.Empty;
+            nuevoExpe = true;
 
         }
         private void BTOcancelarHabTec_Click(object sender, RoutedEventArgs e)
         {
-
+            cb_habtecnica.Text = string.Empty;
+            cb_nivelhabapp.Text = string.Empty;
+            cb_habilidadApp.Text = string.Empty;
+            nuevoHabi = true;
         }
         private void bt_cancerAcertificaciones_Click(object sender, RoutedEventArgs e)
         {
@@ -661,6 +783,8 @@ namespace WpfApplication3
             txt_TitutloCertificacion.Text = string.Empty;
             txt_InstCertiicacion.Text = string.Empty;
             cb_añoFinCertificacion.Text = string.Empty;
+            nuevoCerti = true;
+            
         }
         private void BTOCancelaringreTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
@@ -668,6 +792,8 @@ namespace WpfApplication3
             txt_nombreRef.Text = string.Empty;
             txt_telefonoRef.Text = string.Empty;
             txt_descripcionREF.Text = string.Empty;
+
+            nuevoRefe = true;
 
         }
         private void buscarPerfil_MouseDown_1(object sender, MouseButtonEventArgs e)
@@ -703,176 +829,7 @@ namespace WpfApplication3
         }
 
         //***BOTON PARA GUARDAR TODA LA INFORMACION DE UN NUEVO PERFIL***/// 
-
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoginInicio _Li = new LoginInicio();
-            _Li.InitializeComponent();
-            this.Close();
-            _Li.ShowDialog();
-        }
-
-        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoginInicio _Li = new LoginInicio();
-            _Li.InitializeComponent();
-            this.Close();
-            _Li.ShowDialog();
-        }
-
-        private void txtNoduiInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-            else e.Handled = true;
-        }
-
-        private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-            else e.Handled = true;
-        }
-
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
-
-        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
-
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Login _lo = new Login();
-            _lo.InitializeComponent();
-            this.Close();
-            _lo.ShowDialog();
-        }
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
-            }
-
-
-        }
-
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void eliminarReferencias_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt4.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
-            }
-
-
-        }
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt1.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
-            }
-        }
-
-        private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt3.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
-            }
-        }
-
-        private void eliminarFilaCertifi_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt9.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
-            }
-        }
-        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-        private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-            Busqueda _menusBusqueda = new Busqueda();
-            _menusBusqueda.InitializeComponent();
-            this.Close();
-            _menusBusqueda.Show();
-        }
-
-        private void menuEmpleado_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
-            _busEmple.InitializeComponent();
-            this.Close();
-            _busEmple.Show();
-
-        }
-        private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Login _mt = new Login();
-            _mt.InitializeComponent();
-            this.Close();
-            _mt.ShowDialog();
-        }
-        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MantoEmpresa _menuEmpresa = new MantoEmpresa();
-            _menuEmpresa.InitializeComponent();
-            this.Close();
-            _menuEmpresa.ShowDialog();
-        }
-        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
-        {
-            //_Imagen.OnlyName = imgFoto.Source.ToString();
-            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
-
-            if (_Imagen.ImagenEnObjeto != null)
-            {
-                Elijiomagen = true;
-                imgFoto.Source = _Imagen.ImagenEnObjeto;
-                lbimagen.Content = _Imagen.RutaImagen;
-            }
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-            Busqueda _menusBusqueda = new Busqueda();
-            _menusBusqueda.InitializeComponent();
-            this.Close();
-            _menusBusqueda.Show();
-        }
-
-        private void GuardarTodo(object sender, RoutedEventArgs e)
+        private void GuardarTodo_Click(object sender, RoutedEventArgs e)
         {
 
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
@@ -1067,15 +1024,322 @@ namespace WpfApplication3
                 }
                 else
                 {
-                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.","Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
         }
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void txtNoduiInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _lo = new Login();
+            _lo.InitializeComponent();
+            this.Close();
+            _lo.ShowDialog();
+        }
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                tablaInfoAcademica.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+            }
+
+
+        }
+
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarReferencias_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                tablaReferencias.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
+            }
+
+
+        }
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                tablaExperienciaLab.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
+            }
+        }
+
+        private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                tablaHabilidades.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
+            }
+        }
+
+        private void eliminarFilaCertifi_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                tablaCertificaciones.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
+            }
+        }
+        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }
+
+        private void menuEmpleado_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
+
+        }
+        private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
+        {
+            //_Imagen.OnlyName = imgFoto.Source.ToString();
+            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
+           
+            if (_Imagen.ImagenEnObjeto != null)
+            {
+                Elijiomagen = true;
+                imgFoto.Source = _Imagen.ImagenEnObjeto;
+                lbimagen.Content = _Imagen.RutaImagen;
+            }
+        }
+
+
+
+        protected void llenarHabilidadApp()
+        {
+            //PARA LLENAR COMBOBOX DE HABILIDAD TECNICA
+
+            int id_habilidadTecnica = Convert.ToInt32(cb_habtecnica.SelectedValue);
+            DataSet ds5 = new DataSet();
+            ds5 = _HabilidadApliBL.SelecthabilidadApliALL(id_habilidadTecnica);
+
+
+            cb_habilidadApp.ItemsSource = ds5.Tables[0].DefaultView;
+            cb_habilidadApp.DisplayMemberPath = ds5.Tables[0].Columns[1].ToString();
+            cb_habilidadApp.SelectedValuePath = ds5.Tables[0].Columns[0].ToString();
+            cb_habilidadApp.SelectedIndex = 0;
+        }
+
+        //***********************METHODS FOR DOUBLE CLICK***************************
+
+        private void DataGrid_InfAcademica_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            nuevoInfoAca = false;
+
+            foreach (DataRowView dr in DataGrid_InfAcademica.Items)
+            {
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_InfAcademica.SelectedItem)
+                {
+                    
+                    cb_tipoeducacion.SelectedValue = dr[0].ToString();
+                    txt_Tituloedu.Text = dr[2].ToString();
+                    txt_institucionedu.Text = dr[3].ToString();
+                    cb_añofinalizacionedu.SelectedValue = Int32.Parse(dr[4].ToString());
+                    if (dr[5].ToString() == "1") rb_InfoAcompleto.IsChecked = true;
+                    else rb_InfoIncompleto.IsChecked = true;
+
+                    
+                    
+                }
+
+            }
+           
+            
+        }
+
+
+
+        //**************DOUBLE CLICK FOR INFO LABORAL***********************
+
+        private void DataGrid_Inf_Laboral_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+
+            nuevoExpe = false;
+            foreach (DataRowView dr in DataGrid_Inf_Laboral.Items)
+            {
+                
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Inf_Laboral.SelectedItem)
+                {
+                    
+                    txt_NombreEmpresaLab.Text = dr[0].ToString();
+                    txt_CargoDespeLab.Text = dr[1].ToString();
+                    txt_DescripPuestoLab.Text = dr[2].ToString();
+                    txt_FechaInicioLab.Text = dr[3].ToString();
+                    txt_FechaFinLab.Text = dr[4].ToString();
+                    //txt_FechaFinLab.Text = dr[5].ToString();
+
+                                      
+                }
+            }
+            
+        }
+
+
+
+        //****************DOUBLE CLICK FOR CERTIFICATIONS************
+
+
+        private void DataGrid_Certificaciones_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+            nuevoCerti = false;
+            foreach (DataRowView dr in DataGrid_Certificaciones.Items)
+            {
+
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Certificaciones.SelectedItem)
+                {
+                  
+                    txt_TitutloCertificacion.Text = dr[0].ToString();
+                    txt_InstCertiicacion.Text = dr[1].ToString();
+                    cb_añoFinCertificacion.SelectedValue = dr[2].ToString();
+                                        
+                }
+            }
+           
+
+        }
+
+
+        //******************DOUBLE CLICK FOR REFERENCES*******************
+
+
+        private void DataGrid_Referencias_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            nuevoRefe = false;
+            foreach (DataRowView dr in DataGrid_Referencias.Items)
+            {
+                //entro a la linea que le di doble click
+                if (dr == DataGrid_Referencias.SelectedItem)
+                {
+                   
+                    cb_tipoRef.SelectedValue = dr[0].ToString();
+                    txt_nombreRef.Text = dr[2].ToString();
+                    txt_telefonoRef.Text = dr[3].ToString();
+                    txt_descripcionREF.Text = dr[4].ToString();
+                                       
+                }
+            }
+
+            
+        }
+
+
+        //*****************DOUBLE CLICK FOR HABILIDADES**********************
+
+        private void DataG_Habilidades_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            nuevoHabi = false;
+            foreach (DataRowView dr in DataG_Habilidades.Items)
+            {
+                 //entro a la linea que le di doble click
+                if (dr == DataG_Habilidades.SelectedItem)
+                {
+                
+                    cb_habtecnica.SelectedValue = dr[0].ToString();
+                    cb_nivelhabapp.SelectedValue = dr[2].ToString();
+                    llenarHabilidadApp();
+                    cb_habilidadApp.SelectedValue = dr[4].ToString();
+                    
+                }
+            }
+
+            
+        }
+
+
+        //**********************DOUBLE CLICK FOR 
     }
 
 }
-
-
 
 
 
