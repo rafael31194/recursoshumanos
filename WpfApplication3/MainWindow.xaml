@@ -162,13 +162,14 @@
 
                                             <Grid Margin="10,0,-5,-17" HorizontalAlignment="Left" Width="795">
                                                 <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="331*"/>
+                                                    <ColumnDefinition Width="464*"/>
                                                 </Grid.ColumnDefinitions>
                                                 <!--<TextBox Name="TBInfAcademicaStatusSecuandaria" HorizontalAlignment="Left" Height="22" Margin="500,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
 
                                                 <!--<TextBox HorizontalAlignment="Left" Height="24" Margin="500,310,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>-->
 
-                                                <Grid Height="397" Width="507" Margin="48,89,239,43">
+                                                <Grid Height="397" Width="507" Margin="48,89,239,43" Grid.ColumnSpan="2">
 
 
 
@@ -188,8 +189,8 @@
                                                     <Grid Margin="412,127,-158,53"/>
 
                                                 </Grid>
-                                                <StackPanel Margin="0,0,392,398" Orientation="Vertical"/>
-                                                <GroupBox Header="Nivel Educativo Alcanzado" Margin="114,10,119,0" VerticalAlignment="Top" Height="277">
+                                                <StackPanel Margin="0,0,392,398" Orientation="Vertical" Grid.ColumnSpan="2"/>
+                                                <GroupBox Header="Nivel Educativo Alcanzado" Margin="114,10,119,0" VerticalAlignment="Top" Height="277" Grid.ColumnSpan="2">
                                                     <Grid>
                                                         <TextBlock HorizontalAlignment="Left" Margin="15,60,0,0" TextWrapping="Wrap" Text="Titulo" VerticalAlignment="Top" Height="14"/>
 
@@ -200,36 +201,7 @@
                                                         <TextBox Name="txt_Tituloedu"  Height="35" MaxLength="50" Margin="125,60,30,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                                                         <TextBox Name="txt_institucionedu" Height="35" Margin="125,105,30,0"  MaxLength="100" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
                                                         <ComboBox Name="cb_añofinalizacionedu" HorizontalAlignment="Left" Margin="125,155,0,0" VerticalAlignment="Top" Width="99" >
-                                                            <ComboBoxItem Content="1986"/>
-                                                            <ComboBoxItem Content="1987"/>
-                                                            <ComboBoxItem Content="1988"/>
-                                                            <ComboBoxItem Content="1989"/>
-                                                            <ComboBoxItem Content="1990"/>
-                                                            <ComboBoxItem Content="1991"/>
-                                                            <ComboBoxItem Content="1992"/>
-                                                            <ComboBoxItem Content="1993"/>
-                                                            <ComboBoxItem Content="1993"/>
-                                                            <ComboBoxItem Content="1994"/>
-                                                            <ComboBoxItem Content="1995"/>
-                                                            <ComboBoxItem Content="1996"/>
-                                                            <ComboBoxItem Content="1997"/>
-                                                            <ComboBoxItem Content="1998"/>
-                                                            <ComboBoxItem Content="1999"/>
-                                                            <ComboBoxItem Content="2000"/>
-                                                            <ComboBoxItem Content="2001"/>
-                                                            <ComboBoxItem Content="2002"/>
-                                                            <ComboBoxItem Content="2003"/>
-                                                            <ComboBoxItem Content="2004"/>
-                                                            <ComboBoxItem Content="2005"/>
-                                                            <ComboBoxItem Content="2006"/>
-                                                            <ComboBoxItem Content="2007"/>
-                                                            <ComboBoxItem Content="2008"/>
-                                                            <ComboBoxItem Content="2009"/>
-                                                            <ComboBoxItem Content="2010"/>
-                                                            <ComboBoxItem Content="2012"/>
-                                                            <ComboBoxItem Content="2013"/>
-                                                            <ComboBoxItem Content="2014"/>
-                                                            <ComboBoxItem Content="2015"/>
+
                                                         </ComboBox>
 
 
@@ -242,11 +214,11 @@
                                                     </Grid>
                                                 </GroupBox>
 
-                                                <Grid/>
+                                                <Grid Grid.ColumnSpan="2"/>
                                                 <DataGrid   Style="{StaticResource AzureDataGrid}" Margin="114,316,119,43" 
                         	Name="DataGrid_InfAcademica" RowHeight="30" CanUserAddRows="False"
                         	ColumnHeaderHeight="20" HeadersVisibility="Column" 
-                          AutoGenerateColumns="False"  SelectionChanged="DataGrid_InfAcademica_SelectionChanged" IsReadOnly="True">
+                          AutoGenerateColumns="False"  SelectionChanged="DataGrid_InfAcademica_SelectionChanged" IsReadOnly="True" MouseDoubleClick="DataGrid_InfAcademica_MouseDoubleClick" Grid.ColumnSpan="2">
                                                     <DataGrid.Columns>
 
                                                         <DataGridTemplateColumn Header="Elim." Visibility="Visible"  >
@@ -323,7 +295,7 @@
                                                 <Grid Margin="0,54,96,0"/>
                                                 <DataGrid  Height="127" Margin="106,0,30,24" 
                         	Name="DataGrid_Inf_Laboral" VerticalAlignment="Bottom" RowHeight="25" ColumnWidth="150" 
-                        	ColumnHeaderHeight="25" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True" RenderTransformOrigin="0.5,0.5">
+                        	ColumnHeaderHeight="25" HeadersVisibility="Column" AutoGenerateColumns="False" IsReadOnly="True" RenderTransformOrigin="0.5,0.5" MouseDoubleClick="DataGrid_Inf_Laboral_MouseDoubleClick">
                                                     <DataGrid.RenderTransform>
                                                         <TransformGroup>
                                                             <ScaleTransform/>
@@ -389,7 +361,7 @@
 
                                                 <DockPanel HorizontalAlignment="Center">
                                                     <DataGrid Margin="10,194,10,28" Name="DataG_Habilidades" ColumnHeaderHeight="25" 
-                        	         AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource AzureDataGrid}" >
+                        	         AutoGenerateColumns="False" IsReadOnly="True" Style="{StaticResource AzureDataGrid}"  MouseDoubleClick="DataG_Habilidades_MouseDoubleClick">
 
                                                         <DataGrid.Columns>
                                                             <DataGridTemplateColumn Header="Elim."  >
@@ -434,7 +406,7 @@
                                                     <DataGrid Height="142" Margin="10,0,10,99" 
                         	x:Name="DataGrid_Certificaciones" VerticalAlignment="Bottom" RowHeight="30" 
                         	ColumnHeaderHeight="20" HeadersVisibility="Column"  CanUserAddRows="False"
-                        	AutoGenerateColumns="False" IsReadOnly="True" >
+                        	AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataGrid_Certificaciones_MouseDoubleClick" >
 
                                                         <DataGrid.Columns>
                                                             <DataGridTemplateColumn Header="Elim."  >
@@ -477,25 +449,10 @@
                                                         <TextBox  HorizontalAlignment="Left"  Name="txt_TitutloCertificacion" Height="23" Margin="160,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250" LostFocus="txt_TitutloCertificacion_LostFocus"/>
                                                         <TextBox  HorizontalAlignment="Left"  Name="txt_InstCertiicacion" Height="23" Margin="160,80,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  Width="250"/>
                                                         <ComboBox HorizontalAlignment="Left" Name="cb_añoFinCertificacion" Margin="160,140,0,0" VerticalAlignment="Top" Width="120">
-                                                            <ComboBoxItem Content="2000" />
-                                                            <ComboBoxItem Content="2001" />
-                                                            <ComboBoxItem Content="2002" />
-                                                            <ComboBoxItem Content="2003" />
-                                                            <ComboBoxItem Content="2004" />
-                                                            <ComboBoxItem Content="2005" />
-                                                            <ComboBoxItem Content="2006" />
-                                                            <ComboBoxItem Content="2007" />
-                                                            <ComboBoxItem Content="2008" />
-                                                            <ComboBoxItem Content="2009" />
-                                                            <ComboBoxItem Content="2010" />
-                                                            <ComboBoxItem Content="2012" />
-                                                            <ComboBoxItem Content="2013" />
-                                                            <ComboBoxItem Content="2014" />
-                                                            <ComboBoxItem Content="2015" />
 
                                                         </ComboBox>
                                                         <Button Name="btn_agragarcertificaciones" Content="Agregar" HorizontalAlignment="Left" Margin="320,140,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="0.507,-1.8" Click="btn_agragarcertificaciones_Click"/>
-                                                        <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Width="75"/>
+                                                        <Button Name="bt_cancerAcertificaciones" Content="Cancelar" HorizontalAlignment="Left" Margin="400,140,0,0" VerticalAlignment="Top" Width="75" Click="bt_cancerAcertificaciones_Click"/>
 
                                                     </Grid>
                                                 </GroupBox>
@@ -506,7 +463,7 @@
 
                                             </Grid>
                                         </TabItem>
-                                        <TabItem Header="REFERENCIAS" Name="tab6" Margin="74,0,-84,0" HorizontalAlignment="Left" Width="105" Controls:ControlsHelper.HeaderFontSize="15" >
+                                        <TabItem Header="REFERENCIAS" Name="tab6" Margin="74,0,-84,0" HorizontalAlignment="Left" Width="105" Controls:ControlsHelper.HeaderFontSize="15" MouseDoubleClick="DataGrid_Referencias_MouseDoubleClick">
                                             <Grid>
                                                 <Grid.ColumnDefinitions>
                                                     <ColumnDefinition/>
@@ -592,7 +549,7 @@
                                     <TranslateTransform/>
                                 </TransformGroup>
                             </Grid.RenderTransform>
-                            <Button ToolTip="Click aqui para guardar el registro" Height="60" Width="60" VerticalAlignment="Top" Style="{DynamicResource MetroCircleButtonStyle}" Margin="902,2,47,0" Click="GuardarTodo">
+                            <Button ToolTip="Click aqui para guardar el registro" Height="60" Width="60" VerticalAlignment="Top" Style="{DynamicResource MetroCircleButtonStyle}" Margin="902,2,47,0" Click="GuardarTodo_Click">
                                 <Rectangle Width="30" Height="31">
                                     <Rectangle.Fill>
                                         <VisualBrush Stretch="Fill" Visual="{StaticResource appbar_disk}" />
