@@ -116,9 +116,9 @@ namespace WpfApplication3
         private void Window_Loaded_1(object sender, RoutedEventArgs e)
         {
 
-            
-           
-            
+
+
+
 
 
             try
@@ -130,7 +130,7 @@ namespace WpfApplication3
                 dt1.Columns.Add("Descripcion del puesto", typeof(string));
                 dt1.Columns.Add("Fecha Inicio", typeof(string));
                 dt1.Columns.Add("Fecha Fin", typeof(string));
-                
+
                 dt2.Columns.Add("IDTipoEduacion", typeof(Int32));
                 dt2.Columns.Add("Tipo Educacion", typeof(string));
                 dt2.Columns.Add("Titulo", typeof(string));
@@ -305,7 +305,7 @@ namespace WpfApplication3
         }
 
 
-        
+
         private void BTOAgregarInfAcademica_Click(object sender, RoutedEventArgs e)
         {
             string tipoEducacion, titulo, institucion, StatusName;
@@ -386,7 +386,7 @@ namespace WpfApplication3
         }
 
 
-        
+
         private void BTOAgregarInfLaboral_Click(object sender, RoutedEventArgs e)
         {
             //BOTON PARA AGREGAR COMO TEMPORAL A LA GRID DE INFO.LABORAL 
@@ -421,7 +421,7 @@ namespace WpfApplication3
                 MessageBox.Show("Esa informacion ya ha sido ingresada, por favor revisar los datos.");
                 agregar = true;
             }
-            
+
 
             DataGrid_Inf_Laboral.ItemsSource = dt1.DefaultView;
 
@@ -434,7 +434,7 @@ namespace WpfApplication3
             //DataGrid_InfAcademica.ItemsSource = dt;
 
         }
-        
+
         private void BTOAgregarTipoReferencia_Click(object sender, RoutedEventArgs e)
         {
             string TipoReferencia, Nombre, Telefono, Descripcion;
@@ -476,7 +476,7 @@ namespace WpfApplication3
             txt_descripcionREF.Text = string.Empty;
         }
 
-        
+
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(cb_nivelhabapp.Text))
@@ -535,7 +535,7 @@ namespace WpfApplication3
         //    }
         //    if (returVariable1 > 0)
         //    {
-        //        MessageBox.Show("Registro fue guardado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
+        //        MessageBox.Show("Registro fue 1dado con exito..", "Informacion", MessageBoxButton.OK, MessageBoxImage.Information);
         //        tcPrincipal.SelectedIndex = 4;
         //        tab4.IsEnabled = false;
 
@@ -703,7 +703,176 @@ namespace WpfApplication3
         }
 
         //***BOTON PARA GUARDAR TODA LA INFORMACION DE UN NUEVO PERFIL***/// 
-        private void GuardarTodo_Click(object sender, RoutedEventArgs e)
+
+
+        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            LoginInicio _Li = new LoginInicio();
+            _Li.InitializeComponent();
+            this.Close();
+            _Li.ShowDialog();
+        }
+
+        private void txtNoduiInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
+            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
+            if (ascci >= 48 && ascci <= 57) e.Handled = false;
+            else e.Handled = true;
+        }
+
+        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
+            Busqueda _bw = new Busqueda();
+            _bw.InitializeComponent();
+            this.Close();
+            _bw.ShowDialog();
+        }
+
+        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _lo = new Login();
+            _lo.InitializeComponent();
+            this.Close();
+            _lo.ShowDialog();
+        }
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
+            }
+
+
+        }
+
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void eliminarReferencias_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt4.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
+            }
+
+
+        }
+        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
+        private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt1.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
+            }
+        }
+
+        private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt3.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
+            }
+        }
+
+        private void eliminarFilaCertifi_Click(object sender, RoutedEventArgs e)
+        {
+            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
+            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            if (result == MessageBoxResult.Yes)
+            {
+                dt9.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
+            }
+        }
+        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }
+
+        private void menuEmpleado_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
+            _busEmple.InitializeComponent();
+            this.Close();
+            _busEmple.Show();
+
+        }
+        private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Login _mt = new Login();
+            _mt.InitializeComponent();
+            this.Close();
+            _mt.ShowDialog();
+        }
+        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MantoEmpresa _menuEmpresa = new MantoEmpresa();
+            _menuEmpresa.InitializeComponent();
+            this.Close();
+            _menuEmpresa.ShowDialog();
+        }
+        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
+        {
+            //_Imagen.OnlyName = imgFoto.Source.ToString();
+            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
+
+            if (_Imagen.ImagenEnObjeto != null)
+            {
+                Elijiomagen = true;
+                imgFoto.Source = _Imagen.ImagenEnObjeto;
+                lbimagen.Content = _Imagen.RutaImagen;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+            Busqueda _menusBusqueda = new Busqueda();
+            _menusBusqueda.InitializeComponent();
+            this.Close();
+            _menusBusqueda.Show();
+        }
+
+        private void GuardarTodo(object sender, RoutedEventArgs e)
         {
 
             //VARIABLE DE MENSAJE AL GUARDAR INFORMACION ACADEMICA 
@@ -898,171 +1067,15 @@ namespace WpfApplication3
                 }
                 else
                 {
-                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.","Error", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MessageBox.Show("La fecha de nacimiento debe ser menor a la fecha actual.", "Error", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-            }
-        }
-
-        private void Grid_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoginInicio _Li = new LoginInicio();
-            _Li.InitializeComponent();
-            this.Close();
-            _Li.ShowDialog();
-        }
-
-        private void CerrarSesionNuevoPerfil_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            LoginInicio _Li = new LoginInicio();
-            _Li.InitializeComponent();
-            this.Close();
-            _Li.ShowDialog();
-        }
-
-        private void txtNoduiInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-            else e.Handled = true;
-        }
-
-        private void txtTelefonoCasaInfBasica_PreviewTextInput(object sender, TextCompositionEventArgs e)
-        { //VALIDACION PARA QUE SOLO ACEPTE NUMEROS EN EL EVENTO PreviewTextInput 
-            int ascci = Convert.ToInt32(Convert.ToChar(e.Text));
-            if (ascci >= 48 && ascci <= 57) e.Handled = false;
-            else e.Handled = true;
-        }
-
-        private void Image_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
-
-        private void Image_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-            //EVENTO PARA REDIRECCIONAR AL FORMULARIO DE BUSQUEDA
-            Busqueda _bw = new Busqueda();
-            _bw.InitializeComponent();
-            this.Close();
-            _bw.ShowDialog();
-        }
-
-        private void Label_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Login _lo = new Login();
-            _lo.InitializeComponent();
-            this.Close();
-            _lo.ShowDialog();
-        }
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void eliminarFilaNewPerfil_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt2.Rows.Remove(((DataRowView)DataGrid_InfAcademica.SelectedItem).Row);
-            }
-
-
-        }
-
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void eliminarReferencias_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_Referencias.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt4.Rows.Remove(((DataRowView)DataGrid_Referencias.SelectedItem).Row);
-            }
-
-
-        }
-        //*******Elimina la fila de un registro en la grid sin afecta la base*****///
-        private void EliminarFilaInfLaboral_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt1.Rows.Remove(((DataRowView)DataGrid_Inf_Laboral.SelectedItem).Row);
-            }
-        }
-
-        private void eliminarFiladeHabilidades_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt3.Rows.Remove(((DataRowView)DataG_Habilidades.SelectedItem).Row);
-            }
-        }
-
-        private void eliminarFilaCertifi_Click(object sender, RoutedEventArgs e)
-        {
-            DataRowView currentRow = (DataRowView)DataGrid_InfAcademica.SelectedItem;
-            MessageBoxResult result = MessageBox.Show("Esta seguro de Eliminar este registro ", "Mensaje de Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-            if (result == MessageBoxResult.Yes)
-            {
-                dt9.Rows.Remove(((DataRowView)DataGrid_Certificaciones.SelectedItem).Row);
-            }
-        }
-        private void Label_MouseDown_1(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-        private void menuCandidato_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-            Busqueda _menusBusqueda = new Busqueda();
-            _menusBusqueda.InitializeComponent();
-            this.Close();
-            _menusBusqueda.Show();
-        }
-
-        private void menuEmpleado_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            BusquedaEmpleados _busEmple = new BusquedaEmpleados();
-            _busEmple.InitializeComponent();
-            this.Close();
-            _busEmple.Show();
-
-        }
-        private void menuUsuarios_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            Login _mt = new Login();
-            _mt.InitializeComponent();
-            this.Close();
-            _mt.ShowDialog();
-        }
-        private void MenusEmpresa_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            MantoEmpresa _menuEmpresa = new MantoEmpresa();
-            _menuEmpresa.InitializeComponent();
-            this.Close();
-            _menuEmpresa.ShowDialog();
-        }
-        private void btnCargarImagen_Click(object sender, RoutedEventArgs e)
-        {
-            //_Imagen.OnlyName = imgFoto.Source.ToString();
-            _Imagen = ControlImagen.ObtenerImageDesdeUnArchivo(_Imagen);
-           
-            if (_Imagen.ImagenEnObjeto != null)
-            {
-                Elijiomagen = true;
-                imgFoto.Source = _Imagen.ImagenEnObjeto;
-                lbimagen.Content = _Imagen.RutaImagen;
             }
         }
     }
 
 }
+
+
 
 
 

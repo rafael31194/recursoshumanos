@@ -86,7 +86,7 @@ namespace WpfApplication3
                     UserLogin.Nombre = _administradorL.name;
                     UserLogin.RolID = _administradorL.id_rol.id_rol;
                     UserLogin.NRol = _administradorL.id_rol.descripcion;
-                    Busqueda ver = new Busqueda();
+                    PantallaBienvenida ver = new PantallaBienvenida();
                     ver.InitializeComponent();
                     this.Close();
                     ver.Show();

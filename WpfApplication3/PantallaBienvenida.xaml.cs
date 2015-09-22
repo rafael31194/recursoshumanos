@@ -24,7 +24,7 @@ namespace WpfApplication3
             InitializeComponent();
         }
 
-       
+
         private void MenuPerfilesCandidato_Click(object sender, RoutedEventArgs e)
         {
             Busqueda _menusBusqueda = new Busqueda();
@@ -66,8 +66,13 @@ namespace WpfApplication3
             _mw.Show();
         }
 
-        
 
-       
+        private void MenuCerrarSesion_Click(object sender, RoutedEventArgs e)
+        {
+            Login Mcerrar = new Login();
+            Mcerrar.InitializeComponent();
+            this.Close();
+            Mcerrar.ShowDialog();
+        }
     }
 }

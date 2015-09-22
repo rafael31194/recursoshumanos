@@ -505,7 +505,7 @@
     <Resource Include="Imagenes\MenuNuevoUsuario.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Imagenes\MenuNuevoCandidato.png" />
+    <Resource Include="Imagenes\MenuCerrarSecion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

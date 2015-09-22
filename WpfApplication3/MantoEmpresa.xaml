@@ -73,23 +73,26 @@
                 </Expander>
 
             </ListBox>
-            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="76,10,82,0"  RenderTransformOrigin="0.51,0.718" Width="38" VerticalAlignment="Top"  Height="35" HorizontalAlignment="Center" />
-            <Image Source="Imagenes/logoHelpdesk.png" Margin="6,50,10,0" Height="51" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top" HorizontalAlignment="Center"  Width="188" />
+            <Image x:Name="CerrarSesionNuevoPerfil" ToolTip="CERRAR SESION"  Source="Imagenes/logOffIcon.png" Margin="80,10,0,0"  RenderTransformOrigin="0.51,0.718" VerticalAlignment="Top"  Height="35" HorizontalAlignment="Left" Width="38"/>
+            <Image Source="Imagenes/logoHelpdesk.png" Margin="6,50,0,0" Height="46" MaxHeight="71" MaxWidth="200" VerticalAlignment="Top"  Width="188" HorizontalAlignment="Left" />
         </Grid>
         <Grid Grid.Row="0" Margin="204,45,46,0" Height="84" VerticalAlignment="Top" >
 
             <Label  Content="MANTENIMIENTO DE EMPRESA " Margin="0,0,48,8" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" HorizontalAlignment="Right" Width="698" Height="51" VerticalAlignment="Bottom"/>
         </Grid>
 
-        <TextBox x:Name="txt_busquedaEmpresa" Custom:TextBoxHelper.ClearTextButton="True" Custom:TextBoxHelper.Watermark="Busqueda por nonbre de empresa"  Height="21" Margin="521,213,226,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"  />
-        <TextBlock HorizontalAlignment="Left" Margin="365,226,0,0" TextWrapping="Wrap" Text="BUSQUEDA DE EMPRESA" VerticalAlignment="Top"/>
-        <Button x:Name="btn_buscarEmpresa" HorizontalAlignment="Left" Margin="815,208,0,0" VerticalAlignment="Top" Width="142" Height="31" Click="btn_buscarEmpresa_Click">
-            <DockPanel>
-                <Image Source="Imagenes/helpdesBusqueda.png" Width="32" />
-                <TextBlock Height="24"  Width="63" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="BUSCAR"/></TextBlock>
-            </DockPanel>
-        </Button>
-        <Button x:Name="btn_nuevaEmpresas" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="229,164,0,0" VerticalAlignment="Top" Width="257" Height="40" MouseDown="btn_nuevaEmpresas_MouseDown" Click="btn_nuevaEmpresas_MouseClick">
+        <TextBlock HorizontalAlignment="Left" Margin="350,223,0,0" TextWrapping="Wrap" Text="BUSQUEDA DE EMPRESA" VerticalAlignment="Top"/>
+        <TextBox x:Name="txt_busquedaEmpresa" Custom:TextBoxHelper.ClearTextButton="True" Custom:TextBoxHelper.Watermark="Busqueda por nonbre de empresa" Margin="508,213,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="314"  />
+
+        <DockPanel HorizontalAlignment="Center">
+            <Button x:Name="btn_buscarEmpresa" HorizontalAlignment="Left" Margin="815,208,0,0" VerticalAlignment="Top" Width="142" Height="31" Click="btn_buscarEmpresa_Click">
+                <DockPanel>
+                    <Image Source="Imagenes/helpdesBusqueda.png" Width="32" />
+                    <TextBlock Height="24"  Width="63" HorizontalAlignment="Center" VerticalAlignment="Center" RenderTransformOrigin="0.656,0.75" Margin="15,5,5,0" FontSize="15" FontWeight="Bold"><Run Text="BUSCAR"/></TextBlock>
+                </DockPanel>
+            </Button>
+        </DockPanel>
+        <Button x:Name="btn_nuevaEmpresas" Style="{StaticResource AccentedSquareButtonStyle}" HorizontalAlignment="Left" Margin="226,134,0,0" VerticalAlignment="Top" Width="257" Height="40" MouseDown="btn_nuevaEmpresas_MouseDown" Click="btn_nuevaEmpresas_MouseClick">
             <Border BorderBrush="Gray" BorderThickness="1,1,1,1" CornerRadius="15">
                 <DockPanel>
                     <Image Source="Imagenes/New_candidato.png" Width="35" RenderTransformOrigin="0.506,-0.758" />
@@ -98,33 +101,33 @@
             </Border>
         </Button>
         <DockPanel HorizontalAlignment="Center">
-        <DataGrid Height="230" Margin="345,277,104,0" 
+            <DataGrid Height="230" Margin="345,277,104,0" 
         	x:Name="DataGrid_Empresas" VerticalAlignment="Top"  
         	 HeadersVisibility="Column"
         	AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DataGrid_Empresas_SelectionChanged" MouseDoubleClick="DataGrid_Empresas_MouseDoubleClick" >
 
-            <DataGrid.Columns>
-                <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" Visibility="Hidden" >
-                    <DataGridTemplateColumn.CellTemplate>
-                        <ItemContainerTemplate>
-                            <DockPanel>
-                                <Image Source="Imagenes/helpdesBusqueda.png" Width="18" />
-                            </DockPanel>
-                        </ItemContainerTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn ClipboardContentBinding="{x:Null}" Header="BUSCAR" Visibility="Hidden" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <ItemContainerTemplate>
+                                <DockPanel>
+                                    <Image Source="Imagenes/helpdesBusqueda.png" Width="18" />
+                                </DockPanel>
+                            </ItemContainerTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
 
-                <DataGridTextColumn Header="COD EMPRESA" Binding="{Binding COD EMPRESA}" />
-                <DataGridTextColumn Header="NOMBRE EMPRESA" Binding="{Binding NOMBRE EMPRESA}" />
-                <DataGridTextColumn Header="DIRECCION" Binding="{Binding DIRECCION}" />
-                <DataGridTextColumn Header="TELEFONO" Binding="{Binding TELEFONO}" />
-                <DataGridTextColumn Header="CORREO EMPRESA" Binding="{Binding CORREO EMPRESA}" />
-                <DataGridTextColumn Header="PAIS" Binding="{Binding PAIS}" />
-             
+                    <DataGridTextColumn Header="COD EMPRESA" Binding="{Binding COD EMPRESA}" />
+                    <DataGridTextColumn Header="NOMBRE EMPRESA" Binding="{Binding NOMBRE EMPRESA}" />
+                    <DataGridTextColumn Header="DIRECCION" Binding="{Binding DIRECCION}" />
+                    <DataGridTextColumn Header="TELEFONO" Binding="{Binding TELEFONO}" />
+                    <DataGridTextColumn Header="CORREO EMPRESA" Binding="{Binding CORREO EMPRESA}" />
+                    <DataGridTextColumn Header="PAIS" Binding="{Binding PAIS}" />
 
-            </DataGrid.Columns>
 
-        </DataGrid>
+                </DataGrid.Columns>
+
+            </DataGrid>
         </DockPanel>
     </Grid>
 </Window>

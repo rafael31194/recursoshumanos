@@ -36,8 +36,8 @@
                         </Grid.RenderTransform>
                         <StackPanel HorizontalAlignment="Center">
                             <DockPanel >
-                            <Label Content="MODIFICAR EMPLEADO "  Margin="10,64,406,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" Height="37"  VerticalAlignment="Top"/>
-                        </DockPanel>
+                                <Label Content="MODIFICAR EMPLEADO "  Margin="10,64,406,0" FontWeight="Bold" FontSize="23" FontFamily="{DynamicResource {x:Static SystemFonts.IconFontFamilyKey}}" Height="37"  VerticalAlignment="Top"/>
+                            </DockPanel>
                         </StackPanel>
                     </Grid>
 
@@ -354,36 +354,36 @@
                                         <DockPanel HorizontalAlignment="Center">
                                             <DataGrid Margin="234,200,270,0" Name="DataG_Habilidades" 
                         	ColumnHeaderHeight="25" AutoGenerateColumns="False" IsReadOnly="True" MouseDoubleClick="DataG_Habilidades_MouseDoubleClick" Width="286">
-                                            <DataGrid.Columns>
-                                                <DataGridTemplateColumn Header="Elim."  >
-                                                    <DataGridTemplateColumn.CellTemplate>
-                                                        <ItemContainerTemplate>
-                                                            <DockPanel>
+                                                <DataGrid.Columns>
+                                                    <DataGridTemplateColumn Header="Elim."  >
+                                                        <DataGridTemplateColumn.CellTemplate>
+                                                            <ItemContainerTemplate>
+                                                                <DockPanel>
 
-                                                                <Button Click="Button_Click_DeleteHabili" Opacity="3" MaxWidth="25"  >
-                                                                    <Button.Background>
-                                                                        <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
+                                                                    <Button Click="Button_Click_DeleteHabili" Opacity="3" MaxWidth="25"  >
+                                                                        <Button.Background>
+                                                                            <LinearGradientBrush EndPoint="0.0,0" StartPoint="0.0,0">
 
-                                                                        </LinearGradientBrush>
-                                                                    </Button.Background>
-                                                                    <DockPanel>
-                                                                        <Image Source="Imagenes\eliminar.png" Width="15" />
+                                                                            </LinearGradientBrush>
+                                                                        </Button.Background>
+                                                                        <DockPanel>
+                                                                            <Image Source="Imagenes\eliminar.png" Width="15" />
 
-                                                                    </DockPanel>
-                                                                </Button>
-                                                            </DockPanel>
-                                                        </ItemContainerTemplate>
-                                                    </DataGridTemplateColumn.CellTemplate>
+                                                                        </DockPanel>
+                                                                    </Button>
+                                                                </DockPanel>
+                                                            </ItemContainerTemplate>
+                                                        </DataGridTemplateColumn.CellTemplate>
 
-                                                </DataGridTemplateColumn>
-                                                <DataGridTextColumn Header="IdH" Visibility="Hidden" Binding="{Binding Path='ID HAB TECNICA'}"/>
-                                                <DataGridTextColumn Header="Habilidad" Binding="{Binding Path='HABILIDAD TECNICA'}"/>
-                                                <DataGridTextColumn Header="IdN" Visibility="Hidden" Binding="{Binding Path='ID NIVELHABTEC'}" />
-                                                <DataGridTextColumn Header="Nivel" Binding="{Binding Path='NIVEL'}"/>
-                                                <DataGridTextColumn Header="IdA" Visibility="Hidden" Binding="{Binding Path='ID HAB APP'}"/>
-                                                <DataGridTextColumn Header="Habilidad P" Binding="{Binding Path='HABILIDAD APLICACION'}"/>
-                                            </DataGrid.Columns>
-                                        </DataGrid>
+                                                    </DataGridTemplateColumn>
+                                                    <DataGridTextColumn Header="IdH" Visibility="Hidden" Binding="{Binding Path='ID HAB TECNICA'}"/>
+                                                    <DataGridTextColumn Header="Habilidad" Binding="{Binding Path='HABILIDAD TECNICA'}"/>
+                                                    <DataGridTextColumn Header="IdN" Visibility="Hidden" Binding="{Binding Path='ID NIVELHABTEC'}" />
+                                                    <DataGridTextColumn Header="Nivel" Binding="{Binding Path='NIVEL'}"/>
+                                                    <DataGridTextColumn Header="IdA" Visibility="Hidden" Binding="{Binding Path='ID HAB APP'}"/>
+                                                    <DataGridTextColumn Header="Habilidad P" Binding="{Binding Path='HABILIDAD APLICACION'}"/>
+                                                </DataGrid.Columns>
+                                            </DataGrid>
                                         </DockPanel>
 
                                     </Grid>
@@ -688,10 +688,10 @@
                             </Style>
                         </ListBox.ItemContainerStyle>
 
-                        <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="190">
+                        <Expander Background="#CC119EDA" Margin="0,0,0,-56" HorizontalAlignment="Left" Width="200">
                             <Expander.Header>
                                 <BulletDecorator Width="133" Height="48">
-                                    <TextBlock Margin="0,10,-4,0" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="153" Height="44" FontWeight="Bold" FontSize="15" ><Run Language="es-sv" Text="Mantenimiento"/><LineBreak/><Run Language="es-sv" Text="Perfiles"/></TextBlock>
+                                    <TextBlock Margin="0,7,0,-3" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" Width="133" Height="44" FontWeight="Bold" FontSize="15" ><Run Language="es-sv" Text="Mantenimiento"/><LineBreak/><Run Language="es-sv" Text="Perfiles"/></TextBlock>
                                 </BulletDecorator>
                             </Expander.Header>
                             <WrapPanel>
@@ -699,7 +699,7 @@
                                 <Label x:Name="lab_nw" Margin="20,5,5,5" Foreground="Black" Content="Empleados       " MouseDown="Label_MouseDown_1" />
                             </WrapPanel>
                         </Expander>
-                        <Expander Background="#CC119EDA" Margin="0,76,-5,-231" HorizontalAlignment="Left" Width="200" VerticalAlignment="Top" Height="196">
+                        <Expander Background="#CC119EDA" Margin="0,75,0,-231" HorizontalAlignment="Left" Width="195" VerticalAlignment="Top" Height="197">
                             <Expander.Header>
                                 <BulletDecorator Height="48">
                                     <TextBlock x:Name="btnConfiguracion" Margin="0,14" Text="Configuraciones" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="White" FontSize="14" Height="20" FontWeight="Bold" Width="142" />
